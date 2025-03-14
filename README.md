@@ -1,0 +1,2 @@
+# DataMinds
+ESG Risk Analysis
