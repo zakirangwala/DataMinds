@@ -640,3 +640,164 @@
 2025-03-15 17:42:03,976 - INFO - ESG data for TPX-A.TO already exists, updating...
 2025-03-15 17:42:04,017 - WARNING - No historical ESG data available for TPX-A.TO
 2025-03-15 17:42:04,059 - INFO - Successfully processed TPX-A.TO
+2025-03-15 17:44:30,414 - INFO - Starting data upload process
+2025-03-15 17:44:30,415 - INFO - Found companies.txt at companies.txt
+2025-03-15 17:44:30,415 - INFO - Found 35 tickers to process
+2025-03-15 17:44:30,415 - INFO - Processing ticker 1/35: BR.TO
+2025-03-15 17:44:30,415 - INFO - Processing ticker: BR.TO
+2025-03-15 17:44:30,415 - INFO - Running test-data.py for BR.TO
+2025-03-15 17:45:11,190 - INFO - Starting data upload process
+2025-03-15 17:45:11,190 - INFO - Processing single ticker: TPX-A.TO
+2025-03-15 17:45:11,190 - INFO - Processing ticker: TPX-A.TO
+2025-03-15 17:45:11,191 - INFO - Running test-data.py for TPX-A.TO
+2025-03-15 17:45:54,324 - INFO - Retrieved data for TPX-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 17:45:54,693 - INFO - Company TPX-A.TO already exists, updating...
+2025-03-15 17:45:54,754 - INFO - Inserting financial data for TPX-A.TO on 2024-12-31
+2025-03-15 17:45:54,816 - INFO - Inserting financial data for TPX-A.TO on 2024-09-30
+2025-03-15 17:45:54,876 - INFO - Inserting financial data for TPX-A.TO on 2024-06-30
+2025-03-15 17:45:54,935 - INFO - Inserting financial data for TPX-A.TO on 2024-03-31
+2025-03-15 17:45:54,994 - INFO - Inserting financial data for TPX-A.TO on 2023-12-31
+2025-03-15 17:45:55,053 - INFO - Inserting financial data for TPX-A.TO on 2023-09-30
+2025-03-15 17:45:55,113 - INFO - Inserting financial data for TPX-A.TO on 2023-06-30
+2025-03-15 17:45:55,171 - INFO - Inserting market data for TPX-A.TO on 2025-02-14
+2025-03-15 17:45:55,229 - INFO - Inserting market data for TPX-A.TO on 2025-02-18
+2025-03-15 17:45:55,286 - INFO - Inserting market data for TPX-A.TO on 2025-02-19
+2025-03-15 17:45:55,345 - INFO - Inserting market data for TPX-A.TO on 2025-02-20
+2025-03-15 17:45:55,403 - INFO - Inserting market data for TPX-A.TO on 2025-02-21
+2025-03-15 17:45:55,461 - INFO - Inserting market data for TPX-A.TO on 2025-02-24
+2025-03-15 17:45:55,523 - INFO - Inserting market data for TPX-A.TO on 2025-02-25
+2025-03-15 17:45:55,582 - INFO - Inserting market data for TPX-A.TO on 2025-02-26
+2025-03-15 17:45:55,640 - INFO - Inserting market data for TPX-A.TO on 2025-02-27
+2025-03-15 17:45:55,697 - INFO - Inserting market data for TPX-A.TO on 2025-02-28
+2025-03-15 17:45:55,757 - INFO - Inserting market data for TPX-A.TO on 2025-03-03
+2025-03-15 17:45:55,814 - INFO - Inserting market data for TPX-A.TO on 2025-03-04
+2025-03-15 17:45:55,871 - INFO - Inserting market data for TPX-A.TO on 2025-03-05
+2025-03-15 17:45:55,930 - INFO - Inserting market data for TPX-A.TO on 2025-03-06
+2025-03-15 17:45:55,989 - INFO - Inserting market data for TPX-A.TO on 2025-03-07
+2025-03-15 17:45:56,047 - INFO - Inserting market data for TPX-A.TO on 2025-03-10
+2025-03-15 17:45:56,105 - INFO - Inserting market data for TPX-A.TO on 2025-03-11
+2025-03-15 17:45:56,164 - INFO - Inserting market data for TPX-A.TO on 2025-03-12
+2025-03-15 17:45:56,224 - INFO - Inserting market data for TPX-A.TO on 2025-03-13
+2025-03-15 17:45:56,283 - INFO - Inserting market data for TPX-A.TO on 2025-03-14
+2025-03-15 17:45:56,343 - INFO - Inserting analyst data for TPX-A.TO on 2025-03-15
+2025-03-15 17:45:56,402 - INFO - ESG data for TPX-A.TO already exists, updating...
+2025-03-15 17:45:56,431 - WARNING - No governance risk data available for TPX-A.TO
+2025-03-15 17:45:56,461 - INFO - Successfully processed TPX-A.TO
+2025-03-15 17:45:56,461 - INFO - Successfully processed TPX-A.TO
+2025-03-15 17:47:16,715 - INFO - Starting data upload process
+2025-03-15 17:47:16,715 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 17:47:16,715 - INFO - Processing ticker: SHOP.TO
+2025-03-15 17:47:16,716 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 17:47:26,570 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 17:47:27,039 - INFO - Inserting new company SHOP.TO
+2025-03-15 17:47:27,126 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 17:47:27,211 - INFO - Inserting financial data for SHOP.TO on 2024-09-30
+2025-03-15 17:47:27,296 - INFO - Inserting financial data for SHOP.TO on 2024-06-30
+2025-03-15 17:47:27,382 - INFO - Inserting financial data for SHOP.TO on 2024-03-31
+2025-03-15 17:47:27,467 - INFO - Inserting financial data for SHOP.TO on 2023-12-31
+2025-03-15 17:47:27,551 - INFO - Inserting financial data for SHOP.TO on 2023-09-30
+2025-03-15 17:47:27,635 - INFO - Inserting financial data for SHOP.TO on 2023-06-30
+2025-03-15 17:47:27,717 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 17:47:27,801 - INFO - Inserting market data for SHOP.TO on 2025-02-18
+2025-03-15 17:47:27,884 - INFO - Inserting market data for SHOP.TO on 2025-02-19
+2025-03-15 17:47:27,966 - INFO - Inserting market data for SHOP.TO on 2025-02-20
+2025-03-15 17:47:28,048 - INFO - Inserting market data for SHOP.TO on 2025-02-21
+2025-03-15 17:47:28,132 - INFO - Inserting market data for SHOP.TO on 2025-02-24
+2025-03-15 17:47:28,218 - INFO - Inserting market data for SHOP.TO on 2025-02-25
+2025-03-15 17:47:28,300 - INFO - Inserting market data for SHOP.TO on 2025-02-26
+2025-03-15 17:47:28,384 - INFO - Inserting market data for SHOP.TO on 2025-02-27
+2025-03-15 17:47:28,467 - INFO - Inserting market data for SHOP.TO on 2025-02-28
+2025-03-15 17:47:28,552 - INFO - Inserting market data for SHOP.TO on 2025-03-03
+2025-03-15 17:47:28,637 - INFO - Inserting market data for SHOP.TO on 2025-03-04
+2025-03-15 17:47:28,720 - INFO - Inserting market data for SHOP.TO on 2025-03-05
+2025-03-15 17:47:28,803 - INFO - Inserting market data for SHOP.TO on 2025-03-06
+2025-03-15 17:47:28,888 - INFO - Inserting market data for SHOP.TO on 2025-03-07
+2025-03-15 17:47:28,971 - INFO - Inserting market data for SHOP.TO on 2025-03-10
+2025-03-15 17:47:29,055 - INFO - Inserting market data for SHOP.TO on 2025-03-11
+2025-03-15 17:47:29,143 - INFO - Inserting market data for SHOP.TO on 2025-03-12
+2025-03-15 17:47:29,228 - INFO - Inserting market data for SHOP.TO on 2025-03-13
+2025-03-15 17:47:29,313 - INFO - Inserting market data for SHOP.TO on 2025-03-14
+2025-03-15 17:47:29,396 - INFO - Inserting analyst data for SHOP.TO on 2025-03-15
+2025-03-15 17:47:29,479 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 17:47:29,563 - INFO - Inserting governance risk data for SHOP.TO
+2025-03-15 17:47:29,656 - INFO - Successfully processed SHOP.TO
+2025-03-15 17:47:29,657 - INFO - Successfully processed SHOP.TO
+2025-03-15 17:49:50,444 - INFO - Starting data upload process
+2025-03-15 17:49:50,444 - INFO - Processing single ticker: LSPD.TO
+2025-03-15 17:49:50,444 - INFO - Processing ticker: LSPD.TO
+2025-03-15 17:49:50,445 - INFO - Running test-data.py for LSPD.TO
+2025-03-15 17:50:53,728 - WARNING - Could not remove temporary script: [Errno 2] No such file or directory: '/Users/zakirangwala/Desktop/DataMinds/data/temp-test-data.py'
+2025-03-15 17:50:53,729 - INFO - Retrieved data for LSPD.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 17:50:54,223 - INFO - Inserting new company LSPD.TO
+2025-03-15 17:50:54,313 - INFO - Inserting financial data for LSPD.TO on 2024-12-31
+2025-03-15 17:50:54,397 - INFO - Inserting financial data for LSPD.TO on 2024-09-30
+2025-03-15 17:50:54,480 - INFO - Inserting financial data for LSPD.TO on 2024-06-30
+2025-03-15 17:50:54,564 - INFO - Inserting financial data for LSPD.TO on 2024-03-31
+2025-03-15 17:50:54,648 - INFO - Inserting financial data for LSPD.TO on 2023-12-31
+2025-03-15 17:50:54,731 - INFO - Inserting financial data for LSPD.TO on 2023-09-30
+2025-03-15 17:50:54,814 - INFO - Inserting market data for LSPD.TO on 2025-02-14
+2025-03-15 17:50:54,899 - INFO - Inserting market data for LSPD.TO on 2025-02-18
+2025-03-15 17:50:54,983 - INFO - Inserting market data for LSPD.TO on 2025-02-19
+2025-03-15 17:50:55,066 - INFO - Inserting market data for LSPD.TO on 2025-02-20
+2025-03-15 17:50:55,151 - INFO - Inserting market data for LSPD.TO on 2025-02-21
+2025-03-15 17:50:55,235 - INFO - Inserting market data for LSPD.TO on 2025-02-24
+2025-03-15 17:50:55,319 - INFO - Inserting market data for LSPD.TO on 2025-02-25
+2025-03-15 17:50:55,404 - INFO - Inserting market data for LSPD.TO on 2025-02-26
+2025-03-15 17:50:55,486 - INFO - Inserting market data for LSPD.TO on 2025-02-27
+2025-03-15 17:50:55,571 - INFO - Inserting market data for LSPD.TO on 2025-02-28
+2025-03-15 17:50:55,656 - INFO - Inserting market data for LSPD.TO on 2025-03-03
+2025-03-15 17:50:55,741 - INFO - Inserting market data for LSPD.TO on 2025-03-04
+2025-03-15 17:50:55,828 - INFO - Inserting market data for LSPD.TO on 2025-03-05
+2025-03-15 17:50:55,912 - INFO - Inserting market data for LSPD.TO on 2025-03-06
+2025-03-15 17:50:55,995 - INFO - Inserting market data for LSPD.TO on 2025-03-07
+2025-03-15 17:50:56,078 - INFO - Inserting market data for LSPD.TO on 2025-03-10
+2025-03-15 17:50:56,163 - INFO - Inserting market data for LSPD.TO on 2025-03-11
+2025-03-15 17:50:56,248 - INFO - Inserting market data for LSPD.TO on 2025-03-12
+2025-03-15 17:50:56,331 - INFO - Inserting market data for LSPD.TO on 2025-03-13
+2025-03-15 17:50:56,414 - INFO - Inserting market data for LSPD.TO on 2025-03-14
+2025-03-15 17:50:56,498 - INFO - Inserting analyst data for LSPD.TO on 2025-03-15
+2025-03-15 17:50:56,583 - INFO - Inserting ESG data for LSPD.TO
+2025-03-15 17:50:56,669 - INFO - Inserting governance risk data for LSPD.TO from sustainability
+2025-03-15 17:50:56,711 - ERROR - Error inserting governance risk data from sustainability for LSPD.TO: invalid input syntax for type integer: "3.9"
+LINE 4:                             VALUES ('LSPD.TO', '3.9', '2025-...
+                                                       ^
+
+2025-03-15 17:50:56,752 - INFO - Successfully processed LSPD.TO
+2025-03-15 17:50:56,752 - INFO - Successfully processed LSPD.TO
+2025-03-15 17:56:37,839 - INFO - Starting data upload process
+2025-03-15 17:56:37,839 - INFO - Processing single ticker: LSPD.TO
+2025-03-15 17:56:37,839 - INFO - Processing ticker: LSPD.TO
+2025-03-15 17:56:37,839 - INFO - Running test-data.py for LSPD.TO
+2025-03-15 17:57:23,418 - INFO - Retrieved data for LSPD.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 17:57:23,976 - INFO - Inserting new company LSPD.TO
+2025-03-15 17:57:24,069 - INFO - Inserting financial data for LSPD.TO on 2024-12-31
+2025-03-15 17:57:24,155 - INFO - Inserting financial data for LSPD.TO on 2024-09-30
+2025-03-15 17:57:24,240 - INFO - Inserting financial data for LSPD.TO on 2024-06-30
+2025-03-15 17:57:24,326 - INFO - Inserting financial data for LSPD.TO on 2024-03-31
+2025-03-15 17:57:24,411 - INFO - Inserting financial data for LSPD.TO on 2023-12-31
+2025-03-15 17:57:24,497 - INFO - Inserting financial data for LSPD.TO on 2023-09-30
+2025-03-15 17:57:24,591 - INFO - Inserting market data for LSPD.TO on 2025-02-14
+2025-03-15 17:57:24,681 - INFO - Inserting market data for LSPD.TO on 2025-02-18
+2025-03-15 17:57:24,768 - INFO - Inserting market data for LSPD.TO on 2025-02-19
+2025-03-15 17:57:24,853 - INFO - Inserting market data for LSPD.TO on 2025-02-20
+2025-03-15 17:57:24,940 - INFO - Inserting market data for LSPD.TO on 2025-02-21
+2025-03-15 17:57:25,026 - INFO - Inserting market data for LSPD.TO on 2025-02-24
+2025-03-15 17:57:25,112 - INFO - Inserting market data for LSPD.TO on 2025-02-25
+2025-03-15 17:57:25,199 - INFO - Inserting market data for LSPD.TO on 2025-02-26
+2025-03-15 17:57:25,285 - INFO - Inserting market data for LSPD.TO on 2025-02-27
+2025-03-15 17:57:25,373 - INFO - Inserting market data for LSPD.TO on 2025-02-28
+2025-03-15 17:57:25,457 - INFO - Inserting market data for LSPD.TO on 2025-03-03
+2025-03-15 17:57:25,544 - INFO - Inserting market data for LSPD.TO on 2025-03-04
+2025-03-15 17:57:25,630 - INFO - Inserting market data for LSPD.TO on 2025-03-05
+2025-03-15 17:57:25,720 - INFO - Inserting market data for LSPD.TO on 2025-03-06
+2025-03-15 17:57:25,807 - INFO - Inserting market data for LSPD.TO on 2025-03-07
+2025-03-15 17:57:25,894 - INFO - Inserting market data for LSPD.TO on 2025-03-10
+2025-03-15 17:57:25,997 - INFO - Inserting market data for LSPD.TO on 2025-03-11
+2025-03-15 17:57:26,098 - INFO - Inserting market data for LSPD.TO on 2025-03-12
+2025-03-15 17:57:26,206 - INFO - Inserting market data for LSPD.TO on 2025-03-13
+2025-03-15 17:57:26,296 - INFO - Inserting market data for LSPD.TO on 2025-03-14
+2025-03-15 17:57:26,388 - INFO - Inserting analyst data for LSPD.TO on 2025-03-15
+2025-03-15 17:57:26,473 - INFO - Inserting ESG data for LSPD.TO
+2025-03-15 17:57:26,559 - INFO - Inserting governance risk data for LSPD.TO from Company Info
+2025-03-15 17:57:26,645 - INFO - Successfully processed LSPD.TO
+2025-03-15 17:57:26,646 - INFO - Successfully processed LSPD.TO

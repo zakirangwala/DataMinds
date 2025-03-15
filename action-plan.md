@@ -27,6 +27,7 @@ Map data from test-data.py output to database tables:
 1. **Company Info** → companies table
 
    - ticker, name, sector, industry, website, headquarters, employees
+   - Also used for governance_risk and market_data (analyst targets)
 
 2. **Calendar** → No direct mapping, may extract relevant dates
 
@@ -47,6 +48,7 @@ Map data from test-data.py output to database tables:
 7. **Sustainability** → esg_scores table
 
    - esg_risk_score, esg_risk_severity, environment_score, social_score, governance_score
+   - Also used as fallback for governance_risk
 
 8. **Historical ESG Scores** → governance_risk table
    - audit_risk, board_risk, compensation_risk, shareholder_rights_risk, overall_risk
@@ -56,13 +58,60 @@ Map data from test-data.py output to database tables:
 ### Key Functions
 
 1. `run_test_data_script(ticker)`: Runs test-data.py for a specific ticker by creating a temporary modified version
-2. `insert_company_data(conn, ticker, data)`: Inserts/updates company information
-3. `insert_financial_data(conn, ticker, data)`: Inserts/updates quarterly financial data
-4. `insert_market_data(conn, ticker, data)`: Inserts/updates market data and analyst targets
-5. `insert_esg_data(conn, ticker, data)`: Inserts/updates ESG scores
-6. `insert_governance_risk_data(conn, ticker, data)`: Inserts/updates governance risk data
-7. `process_ticker(ticker)`: Orchestrates the data collection and insertion for a single ticker
-8. `main()`: Processes all tickers from the companies.txt file
+
+   - Enhanced to capture script output and handle errors
+   - Improved JSON encoding to handle NumPy types and NaN values
+   - Added validation of returned data
+   - Added logging of available data categories
+
+2. `parse_date_string(date_str)`: Helper function to parse various date formats
+
+   - Handles multiple date formats including timezone information
+   - Uses regex to extract date components when needed
+   - Gracefully handles invalid date strings
+
+3. `insert_company_data(conn, ticker, data)`: Inserts/updates company information
+
+4. `insert_financial_data(conn, ticker, data)`: Inserts/updates quarterly financial data
+
+   - Fixed date parsing to handle various formats
+   - Added support for financial ratios (ROA, ROE)
+   - Improved error handling for missing or invalid data
+
+5. `insert_market_data(conn, ticker, data)`: Inserts/updates market data and analyst targets
+
+   - Fixed date parsing for market history data
+   - Added support for creating new records with analyst data
+   - Improved handling of missing data fields
+   - Now checks both Analyst Price Targets and Company Info for analyst data
+   - Properly normalizes data types before insertion
+
+6. `insert_esg_data(conn, ticker, data)`: Inserts/updates ESG scores
+
+   - Added data type normalization for numeric fields
+   - Converts string values to appropriate numeric types
+   - Handles conversion errors gracefully
+
+7. `insert_governance_risk_data(conn, ticker, data)`: Inserts/updates governance risk data
+
+   - Now checks Company Info first for governance risk data
+   - Added fallback to use Sustainability data if other sources not available
+   - Added data type normalization for all integer fields
+   - Improved error handling and logging
+
+8. `process_ticker(ticker)`: Orchestrates the data collection and insertion for a single ticker
+
+9. `main()`: Processes all tickers from the companies.txt file
+   - Added command-line arguments for single ticker processing and verbosity
+
+### Data Normalization
+
+- All numeric data is properly converted to the correct data type before insertion
+- String values that should be numeric are converted appropriately
+- Integer fields in governance_risk are properly converted from strings or floats
+- Decimal fields in esg_scores are properly converted from strings
+- All conversion errors are handled gracefully with fallback to NULL values
+- Multiple data sources are checked to ensure complete data coverage
 
 ### Error Handling
 
@@ -71,12 +120,15 @@ Map data from test-data.py output to database tables:
 - Missing data categories are gracefully skipped
 - API errors are logged but don't stop the process
 - Database connection issues are handled
+- Added retry logic with exponential backoff for transient errors
+- Data type conversion errors are handled gracefully
 
 ### Logging
 
 - Detailed logging to both console and file (data_upload.log)
 - Tracks progress, successes, and failures
 - Provides visibility into the data processing pipeline
+- Added logging of available data categories for each ticker
 
 ## How to Run
 
@@ -102,13 +154,59 @@ Map data from test-data.py output to database tables:
    python push-data.py
    ```
 
-5. Monitor the output and check data_upload.log for detailed progress
+5. For a single ticker (useful for testing):
+
+   ```
+   python push-data.py --ticker SHOP.TO
+   ```
+
+6. For more verbose logging:
+
+   ```
+   python push-data.py --verbose
+   ```
+
+7. To adjust the delay between processing tickers:
+
+   ```
+   python push-data.py --delay 5
+   ```
+
+8. Monitor the output and check data_upload.log for detailed progress
+
+## Troubleshooting
+
+### Date Format Issues
+
+- The script now handles various date formats including those with timezone information
+- A custom date parser handles multiple formats and extracts date components when needed
+- Invalid dates are logged and skipped rather than causing errors
+
+### Data Type Issues
+
+- All numeric data is properly normalized before insertion
+- String values are converted to appropriate numeric types (int, float)
+- Conversion errors are handled gracefully with fallback to NULL values
+- Database constraints are respected by ensuring correct data types
+
+### Empty Tables
+
+- If tables remain empty, check the logs for specific errors
+- Verify that the data from test-data.py contains the expected categories
+- Use the `--ticker` and `--verbose` options to test with a single ticker
+- Check database constraints and data types
+
+### API Errors
+
+- FMP API errors (402 Payment Required) are expected and handled gracefully
+- ESG data scraping errors are handled and won't stop the process
+- Network timeouts now have retry logic with exponential backoff
 
 ## Potential Improvements
 
 1. Add command-line arguments to:
 
-   - Process a single ticker
+   - Process a subset of tickers
    - Skip certain data categories
    - Control logging verbosity
 
