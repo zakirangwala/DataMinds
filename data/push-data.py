@@ -309,47 +309,6 @@ def insert_financial_data(conn, ticker, data):
         # Get company info for additional financial metrics
         company_info = data.get('Company Info', {})
 
-        # Extract financial metrics from company info
-        revenue_growth = company_info.get('revenueGrowth')
-        return_on_equity = company_info.get('returnOnEquity')
-        return_on_assets = company_info.get('returnOnAssets')
-        free_cashflow = company_info.get('freeCashflow')
-        operating_cashflow = company_info.get('operatingCashflow')
-        total_debt = company_info.get('totalDebt')
-
-        # Create otherData JSON object with selected fields
-        other_data = {}
-
-        # Add fields from lines 11-72 and 95-119 to otherData
-        financial_keys = [
-            'exDividendDate', 'payoutRatio', 'fiveYearAvgDividendYield', 'forwardPE',
-            'averageVolume', 'averageVolume10days', 'marketCap', 'fiftyTwoWeekLow',
-            'fiftyTwoWeekHigh', 'priceToSalesTrailing12Months', 'fiftyDayAverage',
-            'twoHundredDayAverage', 'trailingAnnualDividendRate', 'trailingAnnualDividendYield',
-            'currency', 'enterpriseValue', 'profitMargins', 'floatShares',
-            'sharesOutstanding', 'sharesShort', 'sharesShortPriorMonth',
-            'sharesShortPreviousMonthDate', 'dateShortInterest', 'sharesPercentSharesOut',
-            'heldPercentInsiders', 'heldPercentInstitutions', 'shortRatio',
-            'impliedSharesOutstanding', 'bookValue', 'priceToBook',
-            'lastFiscalYearEnd', 'nextFiscalYearEnd', 'mostRecentQuarter',
-            'netIncomeToCommon', 'trailingEps', 'forwardEps',
-            'enterpriseToRevenue', 'enterpriseToEbitda', '52WeekChange',
-            'lastDividendValue', 'lastDividendDate', 'quoteType',
-            'currentPrice', 'recommendationKey', 'totalCash',
-            'totalCashPerShare', 'ebitda', 'quickRatio',
-            'currentRatio', 'debtToEquity', 'revenuePerShare',
-            'grossProfits', 'operatingMargins', 'ebitdaMargins',
-            'grossMargins'
-        ]
-
-        for key in financial_keys:
-            if key in company_info:
-                other_data[key] = company_info[key]
-
-        # Generate a custom price alert confidence (placeholder)
-        # In a real implementation, this would be calculated based on some algorithm
-        custom_price_alert_confidence = 0.5  # Default value
-
         # Process quarterly income statement data
         if 'Quarterly Income Statement' in data:
             income_stmt = data['Quarterly Income Statement']
@@ -369,34 +328,20 @@ def insert_financial_data(conn, ticker, data):
                         # Get the data for this date
                         quarter_data = income_stmt[date_str]
 
+                        # Skip if 'Net Income Continuous Operations' is missing
+                        if 'Net Income Continuous Operations' not in quarter_data:
+                            logger.warning(
+                                f"Skipping record for {ticker} on {report_date} - missing 'Net Income Continuous Operations'")
+                            continue
+
                         # Extract relevant financial metrics
                         revenue = quarter_data.get('Total Revenue')
                         net_income = quarter_data.get('Net Income')
                         ebitda = quarter_data.get('EBITDA')
                         gross_profit = quarter_data.get('Gross Profit')
 
-                        # Calculate ratios if possible
-                        total_assets = quarter_data.get('Total Assets')
-                        total_equity = quarter_data.get(
-                            'Total Equity Gross Minority Interest')
-
-                        # Use values from quarterly data if available, otherwise use company info
-                        roa = None
-                        roe = None
-                        if net_income is not None:
-                            if total_assets is not None and total_assets != 0:
-                                roa = float(net_income) / float(total_assets)
-                            if total_equity is not None and total_equity != 0:
-                                roe = float(net_income) / float(total_equity)
-
-                        # If quarterly data doesn't have these values, use the ones from company info
-                        if roa is None:
-                            roa = return_on_assets
-                        if roe is None:
-                            roe = return_on_equity
-
-                        # Convert otherData to JSON string
-                        other_data_json = json.dumps(other_data)
+                        # Store the entire quarter data as JSON
+                        other_data_json = json.dumps(quarter_data)
 
                         # Check if record already exists
                         cur.execute("""
@@ -409,24 +354,14 @@ def insert_financial_data(conn, ticker, data):
                                 f"Financial data for {ticker} on {report_date} already exists, updating...")
                             cur.execute("""
                                 UPDATE financials 
-                                SET revenue = %s, net_income = %s, ebitda = %s, gross_profit = %s,
-                                    total_debt = %s, operating_cashflow = %s, free_cashflow = %s,
-                                    return_on_assets = %s, return_on_equity = %s, revenue_growth = %s,
-                                    other_data = %s, custom_price_alert_confidence = %s
+                                SET revenue = %s, net_income = %s, ebitda = %s, gross_profit = %s, other_data = %s
                                 WHERE ticker = %s AND report_date = %s
                             """, (
                                 revenue,
                                 net_income,
                                 ebitda,
                                 gross_profit,
-                                total_debt,
-                                operating_cashflow,
-                                free_cashflow,
-                                roa,
-                                roe,
-                                revenue_growth,
                                 other_data_json,
-                                custom_price_alert_confidence,
                                 ticker,
                                 report_date
                             ))
@@ -435,10 +370,8 @@ def insert_financial_data(conn, ticker, data):
                                 f"Inserting financial data for {ticker} on {report_date}")
                             cur.execute("""
                                 INSERT INTO financials 
-                                (ticker, report_date, revenue, net_income, ebitda, gross_profit,
-                                total_debt, operating_cashflow, free_cashflow, return_on_assets, 
-                                return_on_equity, revenue_growth, other_data, custom_price_alert_confidence)
-                                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                (ticker, report_date, revenue, net_income, ebitda, gross_profit, other_data)
+                                VALUES (%s, %s, %s, %s, %s, %s, %s)
                             """, (
                                 ticker,
                                 report_date,
@@ -446,23 +379,13 @@ def insert_financial_data(conn, ticker, data):
                                 net_income,
                                 ebitda,
                                 gross_profit,
-                                total_debt,
-                                operating_cashflow,
-                                free_cashflow,
-                                roa,
-                                roe,
-                                revenue_growth,
-                                other_data_json,
-                                custom_price_alert_confidence
+                                other_data_json
                             ))
         # If no quarterly data but we have company info, create a record with just the company info data
         elif company_info:
             with conn.cursor() as cur:
                 # Use today's date for the report
                 report_date = datetime.now().date()
-
-                # Convert otherData to JSON string
-                other_data_json = json.dumps(other_data)
 
                 # Check if record already exists
                 cur.execute("""
@@ -472,44 +395,21 @@ def insert_financial_data(conn, ticker, data):
 
                 if cur.fetchone():
                     logger.info(
-                        f"Financial data for {ticker} on {report_date} already exists, updating from company info...")
-                    cur.execute("""
-                        UPDATE financials 
-                        SET total_debt = %s, operating_cashflow = %s, free_cashflow = %s,
-                            return_on_assets = %s, return_on_equity = %s, revenue_growth = %s,
-                            other_data = %s, custom_price_alert_confidence = %s
-                        WHERE ticker = %s AND report_date = %s
-                    """, (
-                        total_debt,
-                        operating_cashflow,
-                        free_cashflow,
-                        return_on_assets,
-                        return_on_equity,
-                        revenue_growth,
-                        other_data_json,
-                        custom_price_alert_confidence,
-                        ticker,
-                        report_date
-                    ))
+                        f"Financial data for {ticker} on {report_date} already exists, but no quarterly data available")
                 else:
+                    # Store company info as other_data
+                    other_data_json = json.dumps(company_info)
+
                     logger.info(
-                        f"Inserting financial data for {ticker} from company info")
+                        f"Inserting minimal financial data for {ticker} from company info")
                     cur.execute("""
                         INSERT INTO financials 
-                        (ticker, report_date, total_debt, operating_cashflow, free_cashflow, 
-                        return_on_assets, return_on_equity, revenue_growth, other_data, custom_price_alert_confidence)
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        (ticker, report_date, other_data)
+                        VALUES (%s, %s, %s)
                     """, (
                         ticker,
                         report_date,
-                        total_debt,
-                        operating_cashflow,
-                        free_cashflow,
-                        return_on_assets,
-                        return_on_equity,
-                        revenue_growth,
-                        other_data_json,
-                        custom_price_alert_confidence
+                        other_data_json
                     ))
 
         return True
@@ -588,126 +488,6 @@ def insert_market_data(conn, ticker, data):
                             ))
                     success = True
 
-            # Process analyst price targets from Analyst Price Targets
-            if 'Analyst Price Targets' in data:
-                targets = data['Analyst Price Targets']
-
-                # Get the most recent date for this ticker
-                today = datetime.now().date()
-
-                # Extract analyst targets
-                target_high = targets.get('high')
-                target_low = targets.get('low')
-                target_mean = targets.get('mean')
-
-                # Get recommendation from Company Info if available
-                recommendation = None
-                if 'Company Info' in data:
-                    recommendation = data['Company Info'].get(
-                        'recommendationKey')
-
-                # Check if we already have a record for today
-                cur.execute("""
-                    SELECT id FROM market_data 
-                    WHERE ticker = %s AND date = %s
-                """, (ticker, today))
-
-                record = cur.fetchone()
-
-                if record:
-                    # Update existing record
-                    record_id = record[0]
-                    logger.info(
-                        f"Updating analyst targets for {ticker} on {today}")
-
-                    cur.execute("""
-                        UPDATE market_data 
-                        SET analyst_target_high = %s, analyst_target_low = %s, 
-                            analyst_target_mean = %s, recommendation_key = %s
-                        WHERE id = %s
-                    """, (
-                        target_high,
-                        target_low,
-                        target_mean,
-                        recommendation,
-                        record_id
-                    ))
-                else:
-                    # Create a new record with just the analyst data
-                    logger.info(
-                        f"Inserting analyst data for {ticker} on {today}")
-                    cur.execute("""
-                        INSERT INTO market_data 
-                        (ticker, date, analyst_target_high, analyst_target_low, analyst_target_mean, recommendation_key)
-                        VALUES (%s, %s, %s, %s, %s, %s)
-                    """, (
-                        ticker,
-                        today,
-                        target_high,
-                        target_low,
-                        target_mean,
-                        recommendation
-                    ))
-                success = True
-
-            # If no analyst data in Analyst Price Targets, try Company Info
-            elif 'Company Info' in data and not success:
-                info = data['Company Info']
-
-                # Get the most recent date for this ticker
-                today = datetime.now().date()
-
-                # Extract analyst targets from company info
-                target_high = info.get('targetHighPrice')
-                target_low = info.get('targetLowPrice')
-                target_mean = info.get('targetMeanPrice')
-                recommendation = info.get('recommendationKey')
-
-                if any([target_high, target_low, target_mean, recommendation]):
-                    # Check if we already have a record for today
-                    cur.execute("""
-                        SELECT id FROM market_data 
-                        WHERE ticker = %s AND date = %s
-                    """, (ticker, today))
-
-                    record = cur.fetchone()
-
-                    if record:
-                        # Update existing record
-                        record_id = record[0]
-                        logger.info(
-                            f"Updating analyst targets from Company Info for {ticker} on {today}")
-
-                        cur.execute("""
-                            UPDATE market_data 
-                            SET analyst_target_high = %s, analyst_target_low = %s, 
-                                analyst_target_mean = %s, recommendation_key = %s
-                            WHERE id = %s
-                        """, (
-                            target_high,
-                            target_low,
-                            target_mean,
-                            recommendation,
-                            record_id
-                        ))
-                    else:
-                        # Create a new record with just the analyst data
-                        logger.info(
-                            f"Inserting analyst data from Company Info for {ticker} on {today}")
-                        cur.execute("""
-                            INSERT INTO market_data 
-                            (ticker, date, analyst_target_high, analyst_target_low, analyst_target_mean, recommendation_key)
-                            VALUES (%s, %s, %s, %s, %s, %s)
-                        """, (
-                            ticker,
-                            today,
-                            target_high,
-                            target_low,
-                            target_mean,
-                            recommendation
-                        ))
-                    success = True
-
         return success
     except Exception as e:
         logger.error(f"Error inserting market data for {ticker}: {str(e)}")
@@ -723,6 +503,11 @@ def insert_esg_data(conn, ticker, data):
 
     try:
         sustainability = data['Sustainability']
+
+        # Get historical ESG scores if available
+        historical_scores = None
+        if 'Historical ESG Scores' in data:
+            historical_scores = json.dumps(data['Historical ESG Scores'])
 
         with conn.cursor() as cur:
             # Check if record already exists
@@ -768,7 +553,7 @@ def insert_esg_data(conn, ticker, data):
                     UPDATE esg_scores 
                     SET esg_risk_score = %s, esg_risk_severity = %s, 
                         environment_score = %s, social_score = %s, governance_score = %s,
-                        last_updated = %s
+                        historical_scores = %s, last_updated = %s
                     WHERE ticker = %s
                 """, (
                     esg_risk_score,
@@ -776,6 +561,7 @@ def insert_esg_data(conn, ticker, data):
                     environment_score,
                     social_score,
                     governance_score,
+                    historical_scores,
                     datetime.now(),
                     ticker
                 ))
@@ -783,8 +569,8 @@ def insert_esg_data(conn, ticker, data):
                 logger.info(f"Inserting ESG data for {ticker}")
                 cur.execute("""
                     INSERT INTO esg_scores 
-                    (ticker, esg_risk_score, esg_risk_severity, environment_score, social_score, governance_score, last_updated)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    (ticker, esg_risk_score, esg_risk_severity, environment_score, social_score, governance_score, historical_scores, last_updated)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     ticker,
                     esg_risk_score,
@@ -792,6 +578,7 @@ def insert_esg_data(conn, ticker, data):
                     environment_score,
                     social_score,
                     governance_score,
+                    historical_scores,
                     datetime.now()
                 ))
         return True
@@ -803,251 +590,197 @@ def insert_esg_data(conn, ticker, data):
 
 def insert_governance_risk_data(conn, ticker, data):
     """Insert governance risk data into the governance_risk table"""
-    # First try to get data from Company Info directly
-    if 'Company Info' in data:
-        company_info = data['Company Info']
-        governance_data = {}
+    # Get company info for financial and analyst metrics
+    company_info = data.get('Company Info', {})
 
-        # Check if governance risk data is available in Company Info
-        if any(key in company_info for key in ['auditRisk', 'boardRisk', 'compensationRisk', 'shareHolderRightsRisk', 'overallRisk']):
-            try:
-                with conn.cursor() as cur:
-                    # Check if record already exists
-                    cur.execute(
-                        "SELECT id FROM governance_risk WHERE ticker = %s", (ticker,))
+    # Initialize variables
+    total_debt = company_info.get('totalDebt')
+    operating_cashflow = company_info.get('operatingCashflow')
+    free_cashflow = company_info.get('freeCashflow')
+    return_on_assets = company_info.get('returnOnAssets')
+    return_on_equity = company_info.get('returnOnEquity')
+    revenue_growth = company_info.get('revenueGrowth')
+    earnings_growth = company_info.get('earningsGrowth')
 
-                    # Convert string values to integers if needed
-                    audit_risk = company_info.get('auditRisk')
-                    board_risk = company_info.get('boardRisk')
-                    compensation_risk = company_info.get('compensationRisk')
-                    shareholder_rights_risk = company_info.get(
-                        'shareHolderRightsRisk', company_info.get('shareholder_rights_risk'))
-                    overall_risk = company_info.get(
-                        'overallRisk', company_info.get('governanceEpochDate'))
+    # Extract customPriceAlertConfidence from company info
+    custom_price_alert_confidence = company_info.get(
+        'customPriceAlertConfidence')
+    if custom_price_alert_confidence is None:
+        logger.info(
+            f"customPriceAlertConfidence not found for {ticker}, using default value")
+        custom_price_alert_confidence = "0.5"
+    else:
+        logger.info(
+            f"Found customPriceAlertConfidence for {ticker}: {custom_price_alert_confidence}")
 
-                    # Ensure all values are integers
-                    if audit_risk is not None and not isinstance(audit_risk, int):
-                        try:
-                            audit_risk = int(float(audit_risk))
-                        except (ValueError, TypeError):
-                            audit_risk = None
+    # Create otherData JSON object with selected fields
+    other_data = {}
+    financial_keys = [
+        'exDividendDate', 'payoutRatio', 'fiveYearAvgDividendYield', 'forwardPE',
+        'averageVolume', 'averageVolume10days', 'marketCap', 'fiftyTwoWeekLow',
+        'fiftyTwoWeekHigh', 'priceToSalesTrailing12Months', 'fiftyDayAverage',
+        'twoHundredDayAverage', 'trailingAnnualDividendRate', 'trailingAnnualDividendYield',
+        'currency', 'enterpriseValue', 'profitMargins', 'floatShares',
+        'sharesOutstanding', 'sharesShort', 'sharesShortPriorMonth',
+        'sharesShortPreviousMonthDate', 'dateShortInterest', 'sharesPercentSharesOut',
+        'heldPercentInsiders', 'heldPercentInstitutions', 'shortRatio',
+        'impliedSharesOutstanding', 'bookValue', 'priceToBook',
+        'lastFiscalYearEnd', 'nextFiscalYearEnd', 'mostRecentQuarter',
+        'netIncomeToCommon', 'trailingEps', 'forwardEps',
+        'enterpriseToRevenue', 'enterpriseToEbitda', '52WeekChange',
+        'lastDividendValue', 'lastDividendDate', 'quoteType',
+        'currentPrice', 'totalCash',
+        'totalCashPerShare', 'ebitda', 'quickRatio',
+        'currentRatio', 'debtToEquity', 'revenuePerShare',
+        'grossProfits', 'operatingMargins', 'ebitdaMargins',
+        'grossMargins'
+    ]
 
-                    if board_risk is not None and not isinstance(board_risk, int):
-                        try:
-                            board_risk = int(float(board_risk))
-                        except (ValueError, TypeError):
-                            board_risk = None
+    for key in financial_keys:
+        if key in company_info:
+            other_data[key] = company_info[key]
 
-                    if compensation_risk is not None and not isinstance(compensation_risk, int):
-                        try:
-                            compensation_risk = int(float(compensation_risk))
-                        except (ValueError, TypeError):
-                            compensation_risk = None
+    # Get analyst price targets
+    target_high = None
+    target_low = None
+    target_mean = None
+    recommendation = company_info.get('recommendationKey')
 
-                    if shareholder_rights_risk is not None and not isinstance(shareholder_rights_risk, int):
-                        try:
-                            shareholder_rights_risk = int(
-                                float(shareholder_rights_risk))
-                        except (ValueError, TypeError):
-                            shareholder_rights_risk = None
+    # Try to get analyst targets from Analyst Price Targets first
+    if 'Analyst Price Targets' in data:
+        targets = data['Analyst Price Targets']
+        target_high = targets.get('high', company_info.get('targetHighPrice'))
+        target_low = targets.get('low', company_info.get('targetLowPrice'))
+        target_mean = targets.get('mean', company_info.get('targetMeanPrice'))
+    # If not available, get from Company Info
+    else:
+        target_high = company_info.get('targetHighPrice')
+        target_low = company_info.get('targetLowPrice')
+        target_mean = company_info.get('targetMeanPrice')
 
-                    if overall_risk is not None and not isinstance(overall_risk, int):
-                        try:
-                            overall_risk = int(float(overall_risk))
-                        except (ValueError, TypeError):
-                            overall_risk = None
+    # First try to get governance risk data from Company Info directly
+    audit_risk = company_info.get('auditRisk')
+    board_risk = company_info.get('boardRisk')
+    compensation_risk = company_info.get('compensationRisk')
+    shareholder_rights_risk = company_info.get(
+        'shareHolderRightsRisk', company_info.get('shareholder_rights_risk'))
+    overall_risk = company_info.get(
+        'overallRisk', company_info.get('governanceEpochDate'))
 
-                    if cur.fetchone():
-                        logger.info(
-                            f"Governance risk data for {ticker} already exists, updating from Company Info...")
-                        cur.execute("""
-                            UPDATE governance_risk 
-                            SET audit_risk = %s, board_risk = %s, 
-                                compensation_risk = %s, shareholder_rights_risk = %s,
-                                overall_risk = %s, governance_last_updated = %s
-                            WHERE ticker = %s
-                        """, (
-                            audit_risk,
-                            board_risk,
-                            compensation_risk,
-                            shareholder_rights_risk,
-                            overall_risk,
-                            datetime.now(),
-                            ticker
-                        ))
-                    else:
-                        logger.info(
-                            f"Inserting governance risk data for {ticker} from Company Info")
-                        cur.execute("""
-                            INSERT INTO governance_risk 
-                            (ticker, audit_risk, board_risk, compensation_risk, shareholder_rights_risk, overall_risk, governance_last_updated)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s)
-                        """, (
-                            ticker,
-                            audit_risk,
-                            board_risk,
-                            compensation_risk,
-                            shareholder_rights_risk,
-                            overall_risk,
-                            datetime.now()
-                        ))
-                return True
-            except Exception as e:
-                logger.error(
-                    f"Error inserting governance risk data from Company Info for {ticker}: {str(e)}")
-                conn.rollback()
-                return False
+    # Convert otherData to JSON string
+    other_data_json = json.dumps(other_data)
 
-    # Next try to get data from Historical ESG Scores
-    if 'Historical ESG Scores' in data:
-        historical_esg = data['Historical ESG Scores']
+    try:
+        with conn.cursor() as cur:
+            # Check if record already exists
+            cur.execute(
+                "SELECT id FROM governance_risk WHERE ticker = %s", (ticker,))
 
-        # Extract governance risk data if available
-        governance_data = {}
-        if isinstance(historical_esg, list) and len(historical_esg) > 0:
-            for item in historical_esg:
-                if 'governanceScore' in item:
-                    governance_data = item
-                    break
+            # Ensure all values are properly converted
+            if audit_risk is not None and not isinstance(audit_risk, int):
+                try:
+                    audit_risk = int(float(audit_risk))
+                except (ValueError, TypeError):
+                    audit_risk = None
 
-        if governance_data:
-            try:
-                with conn.cursor() as cur:
-                    # Check if record already exists
-                    cur.execute(
-                        "SELECT id FROM governance_risk WHERE ticker = %s", (ticker,))
+            if board_risk is not None and not isinstance(board_risk, int):
+                try:
+                    board_risk = int(float(board_risk))
+                except (ValueError, TypeError):
+                    board_risk = None
 
-                    # Convert string values to integers if needed
-                    audit_risk = governance_data.get('auditRisk')
-                    board_risk = governance_data.get('boardRisk')
-                    compensation_risk = governance_data.get('compensationRisk')
-                    shareholder_rights_risk = governance_data.get(
-                        'shareholderRightsRisk')
-                    overall_risk = governance_data.get('governanceScore')
+            if compensation_risk is not None and not isinstance(compensation_risk, int):
+                try:
+                    compensation_risk = int(float(compensation_risk))
+                except (ValueError, TypeError):
+                    compensation_risk = None
 
-                    # Ensure all values are integers
-                    if audit_risk is not None and not isinstance(audit_risk, int):
-                        try:
-                            audit_risk = int(float(audit_risk))
-                        except (ValueError, TypeError):
-                            audit_risk = None
+            if shareholder_rights_risk is not None and not isinstance(shareholder_rights_risk, int):
+                try:
+                    shareholder_rights_risk = int(
+                        float(shareholder_rights_risk))
+                except (ValueError, TypeError):
+                    shareholder_rights_risk = None
 
-                    if board_risk is not None and not isinstance(board_risk, int):
-                        try:
-                            board_risk = int(float(board_risk))
-                        except (ValueError, TypeError):
-                            board_risk = None
+            if overall_risk is not None and not isinstance(overall_risk, int):
+                try:
+                    overall_risk = int(float(overall_risk))
+                except (ValueError, TypeError):
+                    overall_risk = None
 
-                    if compensation_risk is not None and not isinstance(compensation_risk, int):
-                        try:
-                            compensation_risk = int(float(compensation_risk))
-                        except (ValueError, TypeError):
-                            compensation_risk = None
-
-                    if shareholder_rights_risk is not None and not isinstance(shareholder_rights_risk, int):
-                        try:
-                            shareholder_rights_risk = int(
-                                float(shareholder_rights_risk))
-                        except (ValueError, TypeError):
-                            shareholder_rights_risk = None
-
-                    if overall_risk is not None and not isinstance(overall_risk, int):
-                        try:
-                            overall_risk = int(float(overall_risk))
-                        except (ValueError, TypeError):
-                            overall_risk = None
-
-                    if cur.fetchone():
-                        logger.info(
-                            f"Governance risk data for {ticker} already exists, updating...")
-                        cur.execute("""
-                            UPDATE governance_risk 
-                            SET audit_risk = %s, board_risk = %s, 
-                                compensation_risk = %s, shareholder_rights_risk = %s,
-                                overall_risk = %s, governance_last_updated = %s
-                            WHERE ticker = %s
-                        """, (
-                            audit_risk,
-                            board_risk,
-                            compensation_risk,
-                            shareholder_rights_risk,
-                            overall_risk,
-                            datetime.now(),
-                            ticker
-                        ))
-                    else:
-                        logger.info(
-                            f"Inserting governance risk data for {ticker}")
-                        cur.execute("""
-                            INSERT INTO governance_risk 
-                            (ticker, audit_risk, board_risk, compensation_risk, shareholder_rights_risk, overall_risk, governance_last_updated)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s)
-                        """, (
-                            ticker,
-                            audit_risk,
-                            board_risk,
-                            compensation_risk,
-                            shareholder_rights_risk,
-                            overall_risk,
-                            datetime.now()
-                        ))
-                return True
-            except Exception as e:
-                logger.error(
-                    f"Error inserting governance risk data for {ticker}: {str(e)}")
-                conn.rollback()
-                return False
-
-    # If no historical ESG data, try to extract from Sustainability data
-    if 'Sustainability' in data:
-        sustainability = data['Sustainability']
-        governance_score = sustainability.get('Governance Score')
-
-        if governance_score:
-            try:
-                with conn.cursor() as cur:
-                    # Check if record already exists
-                    cur.execute(
-                        "SELECT id FROM governance_risk WHERE ticker = %s", (ticker,))
-
-                    # Convert string value to integer if needed
-                    if governance_score is not None and not isinstance(governance_score, int):
-                        try:
-                            governance_score = int(float(governance_score))
-                        except (ValueError, TypeError):
-                            # If conversion fails, set to NULL
-                            governance_score = None
-
-                    if cur.fetchone():
-                        logger.info(
-                            f"Governance risk data for {ticker} already exists, updating from sustainability...")
-                        cur.execute("""
-                            UPDATE governance_risk 
-                            SET overall_risk = %s, governance_last_updated = %s
-                            WHERE ticker = %s
-                        """, (
-                            governance_score,
-                            datetime.now(),
-                            ticker
-                        ))
-                    else:
-                        logger.info(
-                            f"Inserting governance risk data for {ticker} from sustainability")
-                        cur.execute("""
-                            INSERT INTO governance_risk 
-                            (ticker, overall_risk, governance_last_updated)
-                            VALUES (%s, %s, %s)
-                        """, (
-                            ticker,
-                            governance_score,
-                            datetime.now()
-                        ))
-                return True
-            except Exception as e:
-                logger.error(
-                    f"Error inserting governance risk data from sustainability for {ticker}: {str(e)}")
-                conn.rollback()
-                return False
+            if cur.fetchone():
+                logger.info(
+                    f"Governance risk data for {ticker} already exists, updating...")
+                cur.execute("""
+                    UPDATE governance_risk 
+                    SET audit_risk = %s, board_risk = %s, compensation_risk = %s, 
+                        shareholder_rights_risk = %s, overall_risk = %s, 
+                        total_debt = %s, operating_cashflow = %s, free_cashflow = %s,
+                        return_on_assets = %s, return_on_equity = %s, revenue_growth = %s,
+                        earnings_growth = %s, other_data = %s, custom_price_alert_confidence = %s,
+                        analyst_target_high = %s, analyst_target_low = %s, analyst_target_mean = %s,
+                        recommendation_key = %s, governance_last_updated = %s
+                    WHERE ticker = %s
+                """, (
+                    audit_risk,
+                    board_risk,
+                    compensation_risk,
+                    shareholder_rights_risk,
+                    overall_risk,
+                    total_debt,
+                    operating_cashflow,
+                    free_cashflow,
+                    return_on_assets,
+                    return_on_equity,
+                    revenue_growth,
+                    earnings_growth,
+                    other_data_json,
+                    custom_price_alert_confidence,
+                    target_high,
+                    target_low,
+                    target_mean,
+                    recommendation,
+                    datetime.now(),
+                    ticker
+                ))
+            else:
+                logger.info(f"Inserting governance risk data for {ticker}")
+                cur.execute("""
+                    INSERT INTO governance_risk 
+                    (ticker, audit_risk, board_risk, compensation_risk, shareholder_rights_risk, 
+                    overall_risk, total_debt, operating_cashflow, free_cashflow, return_on_assets, 
+                    return_on_equity, revenue_growth, earnings_growth, other_data, 
+                    custom_price_alert_confidence, analyst_target_high, analyst_target_low, 
+                    analyst_target_mean, recommendation_key, governance_last_updated)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """, (
+                    ticker,
+                    audit_risk,
+                    board_risk,
+                    compensation_risk,
+                    shareholder_rights_risk,
+                    overall_risk,
+                    total_debt,
+                    operating_cashflow,
+                    free_cashflow,
+                    return_on_assets,
+                    return_on_equity,
+                    revenue_growth,
+                    earnings_growth,
+                    other_data_json,
+                    custom_price_alert_confidence,
+                    target_high,
+                    target_low,
+                    target_mean,
+                    recommendation,
+                    datetime.now()
+                ))
+            return True
+    except Exception as e:
+        logger.error(
+            f"Error inserting governance risk data for {ticker}: {str(e)}")
+        conn.rollback()
+        return False
 
     # If we get here, no governance data was found
     logger.warning(f"No governance risk data available for {ticker}")

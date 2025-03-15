@@ -2599,3 +2599,487 @@ DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
 2025-03-15 18:44:28,867 - INFO - Inserting governance risk data for SHOP.TO from Company Info
 2025-03-15 18:44:28,926 - INFO - Successfully processed SHOP.TO
 2025-03-15 18:44:28,927 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:47:39,446 - INFO - Starting data upload process
+2025-03-15 18:47:39,446 - INFO - Found companies.txt at companies.txt
+2025-03-15 18:47:39,446 - INFO - Found 322 tickers to process
+2025-03-15 18:47:39,447 - INFO - Processing ticker 1/322: ACX.TO
+2025-03-15 18:47:39,447 - INFO - Processing ticker: ACX.TO
+2025-03-15 18:47:39,447 - INFO - Running test-data.py for ACX.TO
+2025-03-15 18:48:45,072 - INFO - Retrieved data for ACX.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:48:45,638 - INFO - Inserting new company ACX.TO
+2025-03-15 18:48:45,722 - INFO - Inserting financial data for ACX.TO on 2024-09-30
+2025-03-15 18:48:45,809 - INFO - Inserting financial data for ACX.TO on 2024-06-30
+2025-03-15 18:48:45,890 - INFO - Inserting financial data for ACX.TO on 2024-03-31
+2025-03-15 18:48:45,972 - INFO - Inserting financial data for ACX.TO on 2023-12-31
+2025-03-15 18:48:46,063 - INFO - Inserting financial data for ACX.TO on 2023-09-30
+2025-03-15 18:48:46,146 - INFO - Inserting financial data for ACX.TO on 2023-06-30
+2025-03-15 18:48:46,230 - INFO - Inserting market data for ACX.TO on 2025-02-14
+2025-03-15 18:48:46,314 - INFO - Inserting market data for ACX.TO on 2025-02-18
+2025-03-15 18:48:46,396 - INFO - Inserting market data for ACX.TO on 2025-02-19
+2025-03-15 18:48:46,479 - INFO - Inserting market data for ACX.TO on 2025-02-20
+2025-03-15 18:48:46,563 - INFO - Inserting market data for ACX.TO on 2025-02-21
+2025-03-15 18:48:46,648 - INFO - Inserting market data for ACX.TO on 2025-02-24
+2025-03-15 18:48:46,731 - INFO - Inserting market data for ACX.TO on 2025-02-25
+2025-03-15 18:48:46,814 - INFO - Inserting market data for ACX.TO on 2025-02-26
+2025-03-15 18:48:46,897 - INFO - Inserting market data for ACX.TO on 2025-02-27
+2025-03-15 18:48:46,980 - INFO - Inserting market data for ACX.TO on 2025-02-28
+2025-03-15 18:48:47,063 - INFO - Inserting market data for ACX.TO on 2025-03-03
+2025-03-15 18:48:47,147 - INFO - Inserting market data for ACX.TO on 2025-03-04
+2025-03-15 18:48:47,232 - INFO - Inserting market data for ACX.TO on 2025-03-05
+2025-03-15 18:48:47,314 - INFO - Inserting market data for ACX.TO on 2025-03-06
+2025-03-15 18:48:47,399 - INFO - Inserting market data for ACX.TO on 2025-03-07
+2025-03-15 18:48:47,482 - INFO - Inserting market data for ACX.TO on 2025-03-10
+2025-03-15 18:48:47,565 - INFO - Inserting market data for ACX.TO on 2025-03-11
+2025-03-15 18:48:47,648 - INFO - Inserting market data for ACX.TO on 2025-03-12
+2025-03-15 18:48:47,731 - INFO - Inserting market data for ACX.TO on 2025-03-13
+2025-03-15 18:48:47,813 - INFO - Inserting market data for ACX.TO on 2025-03-14
+2025-03-15 18:48:47,895 - INFO - Inserting analyst data for ACX.TO on 2025-03-15
+2025-03-15 18:48:47,978 - INFO - Inserting ESG data for ACX.TO
+2025-03-15 18:48:48,020 - WARNING - No governance risk data available for ACX.TO
+2025-03-15 18:48:48,062 - INFO - Successfully processed ACX.TO
+2025-03-15 18:48:50,068 - INFO - Processing ticker 2/322: AKT-A.TO
+2025-03-15 18:48:50,068 - INFO - Processing ticker: AKT-A.TO
+2025-03-15 18:48:50,071 - INFO - Running test-data.py for AKT-A.TO
+2025-03-15 18:49:00,370 - INFO - Retrieved data for AKT-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:49:00,657 - INFO - Inserting new company AKT-A.TO
+2025-03-15 18:49:00,724 - INFO - Inserting financial data for AKT-A.TO on 2024-12-31
+2025-03-15 18:49:00,796 - INFO - Inserting financial data for AKT-A.TO on 2024-09-30
+2025-03-15 18:49:00,853 - INFO - Inserting financial data for AKT-A.TO on 2024-06-30
+2025-03-15 18:49:00,913 - INFO - Inserting financial data for AKT-A.TO on 2024-03-31
+2025-03-15 18:49:00,970 - INFO - Inserting financial data for AKT-A.TO on 2023-12-31
+2025-03-15 18:49:01,027 - INFO - Inserting financial data for AKT-A.TO on 2023-09-30
+2025-03-15 18:49:01,085 - INFO - Inserting financial data for AKT-A.TO on 2023-06-30
+2025-03-15 18:49:01,142 - INFO - Inserting market data for AKT-A.TO on 2025-02-14
+2025-03-15 18:49:01,199 - INFO - Inserting market data for AKT-A.TO on 2025-02-18
+2025-03-15 18:49:01,258 - INFO - Inserting market data for AKT-A.TO on 2025-02-19
+2025-03-15 18:49:01,316 - INFO - Inserting market data for AKT-A.TO on 2025-02-20
+2025-03-15 18:49:01,373 - INFO - Inserting market data for AKT-A.TO on 2025-02-21
+2025-03-15 18:49:01,430 - INFO - Inserting market data for AKT-A.TO on 2025-02-24
+2025-03-15 18:49:01,490 - INFO - Inserting market data for AKT-A.TO on 2025-02-25
+2025-03-15 18:49:01,547 - INFO - Inserting market data for AKT-A.TO on 2025-02-26
+2025-03-15 18:49:01,605 - INFO - Inserting market data for AKT-A.TO on 2025-02-27
+2025-03-15 18:49:01,665 - INFO - Inserting market data for AKT-A.TO on 2025-02-28
+2025-03-15 18:49:01,723 - INFO - Inserting market data for AKT-A.TO on 2025-03-03
+2025-03-15 18:49:01,782 - INFO - Inserting market data for AKT-A.TO on 2025-03-04
+2025-03-15 18:49:01,839 - INFO - Inserting market data for AKT-A.TO on 2025-03-05
+2025-03-15 18:49:01,898 - INFO - Inserting market data for AKT-A.TO on 2025-03-06
+2025-03-15 18:49:01,957 - INFO - Inserting market data for AKT-A.TO on 2025-03-07
+2025-03-15 18:49:02,015 - INFO - Inserting market data for AKT-A.TO on 2025-03-10
+2025-03-15 18:49:02,074 - INFO - Inserting market data for AKT-A.TO on 2025-03-11
+2025-03-15 18:49:02,133 - INFO - Inserting market data for AKT-A.TO on 2025-03-12
+2025-03-15 18:49:02,194 - INFO - Inserting market data for AKT-A.TO on 2025-03-13
+2025-03-15 18:49:02,253 - INFO - Inserting market data for AKT-A.TO on 2025-03-14
+2025-03-15 18:49:02,313 - INFO - Inserting analyst data for AKT-A.TO on 2025-03-15
+2025-03-15 18:49:02,372 - INFO - Inserting ESG data for AKT-A.TO
+2025-03-15 18:49:02,401 - WARNING - No governance risk data available for AKT-A.TO
+2025-03-15 18:49:02,432 - INFO - Successfully processed AKT-A.TO
+2025-03-15 18:49:04,438 - INFO - Processing ticker 3/322: ESI.TO
+2025-03-15 18:49:04,438 - INFO - Processing ticker: ESI.TO
+2025-03-15 18:49:04,440 - INFO - Running test-data.py for ESI.TO
+2025-03-15 18:49:16,053 - INFO - Retrieved data for ESI.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:49:16,469 - INFO - Inserting new company ESI.TO
+2025-03-15 18:49:16,556 - INFO - Inserting financial data for ESI.TO on 2024-12-31
+2025-03-15 18:49:16,645 - INFO - Inserting financial data for ESI.TO on 2024-09-30
+2025-03-15 18:49:16,735 - INFO - Inserting financial data for ESI.TO on 2024-06-30
+2025-03-15 18:49:16,839 - INFO - Inserting financial data for ESI.TO on 2024-03-31
+2025-03-15 18:49:16,924 - INFO - Inserting financial data for ESI.TO on 2023-12-31
+2025-03-15 18:49:17,008 - INFO - Inserting financial data for ESI.TO on 2023-09-30
+2025-03-15 18:49:17,097 - INFO - Inserting market data for ESI.TO on 2025-02-14
+2025-03-15 18:49:17,185 - INFO - Inserting market data for ESI.TO on 2025-02-18
+2025-03-15 18:49:17,268 - INFO - Inserting market data for ESI.TO on 2025-02-19
+2025-03-15 18:49:17,354 - INFO - Inserting market data for ESI.TO on 2025-02-20
+2025-03-15 18:49:17,441 - INFO - Inserting market data for ESI.TO on 2025-02-21
+2025-03-15 18:49:17,524 - INFO - Inserting market data for ESI.TO on 2025-02-24
+2025-03-15 18:49:17,609 - INFO - Inserting market data for ESI.TO on 2025-02-25
+2025-03-15 18:49:17,695 - INFO - Inserting market data for ESI.TO on 2025-02-26
+2025-03-15 18:49:17,786 - INFO - Inserting market data for ESI.TO on 2025-02-27
+2025-03-15 18:49:17,872 - INFO - Inserting market data for ESI.TO on 2025-02-28
+2025-03-15 18:49:17,958 - INFO - Inserting market data for ESI.TO on 2025-03-03
+2025-03-15 18:49:18,043 - INFO - Inserting market data for ESI.TO on 2025-03-04
+2025-03-15 18:49:18,130 - INFO - Inserting market data for ESI.TO on 2025-03-05
+2025-03-15 18:49:18,220 - INFO - Inserting market data for ESI.TO on 2025-03-06
+2025-03-15 18:49:18,307 - INFO - Inserting market data for ESI.TO on 2025-03-07
+2025-03-15 18:49:18,392 - INFO - Inserting market data for ESI.TO on 2025-03-10
+2025-03-15 18:49:18,477 - INFO - Inserting market data for ESI.TO on 2025-03-11
+2025-03-15 18:49:18,564 - INFO - Inserting market data for ESI.TO on 2025-03-12
+2025-03-15 18:49:18,649 - INFO - Inserting market data for ESI.TO on 2025-03-13
+2025-03-15 18:49:18,736 - INFO - Inserting market data for ESI.TO on 2025-03-14
+2025-03-15 18:49:18,822 - INFO - Inserting analyst data for ESI.TO on 2025-03-15
+2025-03-15 18:49:18,907 - INFO - Inserting ESG data for ESI.TO
+2025-03-15 18:49:18,993 - INFO - Inserting governance risk data for ESI.TO from Company Info
+2025-03-15 18:49:19,082 - INFO - Successfully processed ESI.TO
+2025-03-15 18:49:21,088 - INFO - Processing ticker 4/322: PHX.TO
+2025-03-15 18:49:21,089 - INFO - Processing ticker: PHX.TO
+2025-03-15 18:49:21,091 - INFO - Running test-data.py for PHX.TO
+2025-03-15 18:52:36,758 - INFO - Starting data upload process
+2025-03-15 18:52:36,758 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 18:52:36,758 - INFO - Processing ticker: SHOP.TO
+2025-03-15 18:52:36,758 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 18:53:21,838 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 18:53:22,436 - INFO - Inserting new company SHOP.TO
+2025-03-15 18:53:22,477 - INFO - Found customPriceAlertConfidence for SHOP.TO: HIGH
+2025-03-15 18:53:22,522 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 18:53:22,609 - INFO - Inserting financial data for SHOP.TO on 2024-09-30
+2025-03-15 18:53:22,695 - INFO - Inserting financial data for SHOP.TO on 2024-06-30
+2025-03-15 18:53:22,780 - INFO - Inserting financial data for SHOP.TO on 2024-03-31
+2025-03-15 18:53:22,865 - INFO - Inserting financial data for SHOP.TO on 2023-12-31
+2025-03-15 18:53:22,949 - INFO - Inserting financial data for SHOP.TO on 2023-09-30
+2025-03-15 18:53:23,034 - INFO - Inserting financial data for SHOP.TO on 2023-06-30
+2025-03-15 18:53:23,119 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 18:53:23,204 - INFO - Inserting market data for SHOP.TO on 2025-02-18
+2025-03-15 18:53:23,288 - INFO - Inserting market data for SHOP.TO on 2025-02-19
+2025-03-15 18:53:23,376 - INFO - Inserting market data for SHOP.TO on 2025-02-20
+2025-03-15 18:53:23,460 - INFO - Inserting market data for SHOP.TO on 2025-02-21
+2025-03-15 18:53:23,543 - INFO - Inserting market data for SHOP.TO on 2025-02-24
+2025-03-15 18:53:23,626 - INFO - Inserting market data for SHOP.TO on 2025-02-25
+2025-03-15 18:53:23,711 - INFO - Inserting market data for SHOP.TO on 2025-02-26
+2025-03-15 18:53:23,795 - INFO - Inserting market data for SHOP.TO on 2025-02-27
+2025-03-15 18:53:23,884 - INFO - Inserting market data for SHOP.TO on 2025-02-28
+2025-03-15 18:53:23,970 - INFO - Inserting market data for SHOP.TO on 2025-03-03
+2025-03-15 18:53:24,058 - INFO - Inserting market data for SHOP.TO on 2025-03-04
+2025-03-15 18:53:24,143 - INFO - Inserting market data for SHOP.TO on 2025-03-05
+2025-03-15 18:53:24,228 - INFO - Inserting market data for SHOP.TO on 2025-03-06
+2025-03-15 18:53:24,311 - INFO - Inserting market data for SHOP.TO on 2025-03-07
+2025-03-15 18:53:24,400 - INFO - Inserting market data for SHOP.TO on 2025-03-10
+2025-03-15 18:53:24,484 - INFO - Inserting market data for SHOP.TO on 2025-03-11
+2025-03-15 18:53:24,567 - INFO - Inserting market data for SHOP.TO on 2025-03-12
+2025-03-15 18:53:24,653 - INFO - Inserting market data for SHOP.TO on 2025-03-13
+2025-03-15 18:53:24,739 - INFO - Inserting market data for SHOP.TO on 2025-03-14
+2025-03-15 18:53:24,825 - INFO - Inserting analyst data for SHOP.TO on 2025-03-15
+2025-03-15 18:53:24,915 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 18:53:25,000 - INFO - Inserting governance risk data for SHOP.TO from Company Info
+2025-03-15 18:53:25,087 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:53:25,088 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:09:38,051 - INFO - Starting data upload process
+2025-03-15 19:09:38,051 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 19:09:38,051 - INFO - Processing ticker: SHOP.TO
+2025-03-15 19:09:38,051 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 19:09:47,379 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 19:09:47,964 - INFO - Inserting new company SHOP.TO
+2025-03-15 19:09:48,049 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 19:09:48,133 - INFO - Inserting financial data for SHOP.TO on 2024-09-30
+2025-03-15 19:09:48,216 - INFO - Inserting financial data for SHOP.TO on 2024-06-30
+2025-03-15 19:09:48,299 - INFO - Inserting financial data for SHOP.TO on 2024-03-31
+2025-03-15 19:09:48,386 - INFO - Inserting financial data for SHOP.TO on 2023-12-31
+2025-03-15 19:09:48,473 - INFO - Inserting financial data for SHOP.TO on 2023-09-30
+2025-03-15 19:09:48,566 - INFO - Inserting financial data for SHOP.TO on 2023-06-30
+2025-03-15 19:09:48,661 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 19:09:48,746 - INFO - Inserting market data for SHOP.TO on 2025-02-18
+2025-03-15 19:09:48,830 - INFO - Inserting market data for SHOP.TO on 2025-02-19
+2025-03-15 19:09:48,913 - INFO - Inserting market data for SHOP.TO on 2025-02-20
+2025-03-15 19:09:48,998 - INFO - Inserting market data for SHOP.TO on 2025-02-21
+2025-03-15 19:09:49,088 - INFO - Inserting market data for SHOP.TO on 2025-02-24
+2025-03-15 19:09:49,171 - INFO - Inserting market data for SHOP.TO on 2025-02-25
+2025-03-15 19:09:49,256 - INFO - Inserting market data for SHOP.TO on 2025-02-26
+2025-03-15 19:09:49,340 - INFO - Inserting market data for SHOP.TO on 2025-02-27
+2025-03-15 19:09:49,424 - INFO - Inserting market data for SHOP.TO on 2025-02-28
+2025-03-15 19:09:49,507 - INFO - Inserting market data for SHOP.TO on 2025-03-03
+2025-03-15 19:09:49,591 - INFO - Inserting market data for SHOP.TO on 2025-03-04
+2025-03-15 19:09:49,675 - INFO - Inserting market data for SHOP.TO on 2025-03-05
+2025-03-15 19:09:49,757 - INFO - Inserting market data for SHOP.TO on 2025-03-06
+2025-03-15 19:09:49,840 - INFO - Inserting market data for SHOP.TO on 2025-03-07
+2025-03-15 19:09:49,925 - INFO - Inserting market data for SHOP.TO on 2025-03-10
+2025-03-15 19:09:50,008 - INFO - Inserting market data for SHOP.TO on 2025-03-11
+2025-03-15 19:09:50,092 - INFO - Inserting market data for SHOP.TO on 2025-03-12
+2025-03-15 19:09:50,178 - INFO - Inserting market data for SHOP.TO on 2025-03-13
+2025-03-15 19:09:50,262 - INFO - Inserting market data for SHOP.TO on 2025-03-14
+2025-03-15 19:09:50,344 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 19:09:50,388 - INFO - Found customPriceAlertConfidence for SHOP.TO: HIGH
+2025-03-15 19:09:50,430 - INFO - Inserting governance risk data for SHOP.TO
+2025-03-15 19:09:50,514 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:09:50,515 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:14:10,946 - INFO - Starting data upload process
+2025-03-15 19:14:10,947 - INFO - Processing single ticker: AAPL
+2025-03-15 19:14:10,947 - INFO - Processing ticker: AAPL
+2025-03-15 19:14:10,947 - INFO - Running test-data.py for AAPL
+2025-03-15 19:14:57,122 - INFO - Retrieved data for AAPL with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Option Chain', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 19:14:57,797 - INFO - Inserting new company AAPL
+2025-03-15 19:14:57,884 - INFO - Inserting financial data for AAPL on 2024-12-31
+2025-03-15 19:14:57,968 - INFO - Inserting financial data for AAPL on 2024-09-30
+2025-03-15 19:14:58,051 - INFO - Inserting financial data for AAPL on 2024-06-30
+2025-03-15 19:14:58,136 - INFO - Inserting financial data for AAPL on 2024-03-31
+2025-03-15 19:14:58,220 - INFO - Inserting financial data for AAPL on 2023-12-31
+2025-03-15 19:14:58,262 - WARNING - Skipping record for AAPL on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:14:58,262 - WARNING - Skipping record for AAPL on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:14:58,304 - INFO - Inserting market data for AAPL on 2025-02-18
+2025-03-15 19:14:58,389 - INFO - Inserting market data for AAPL on 2025-02-19
+2025-03-15 19:14:58,472 - INFO - Inserting market data for AAPL on 2025-02-20
+2025-03-15 19:14:58,556 - INFO - Inserting market data for AAPL on 2025-02-21
+2025-03-15 19:14:58,641 - INFO - Inserting market data for AAPL on 2025-02-24
+2025-03-15 19:14:58,726 - INFO - Inserting market data for AAPL on 2025-02-25
+2025-03-15 19:14:58,810 - INFO - Inserting market data for AAPL on 2025-02-26
+2025-03-15 19:14:58,895 - INFO - Inserting market data for AAPL on 2025-02-27
+2025-03-15 19:14:58,980 - INFO - Inserting market data for AAPL on 2025-02-28
+2025-03-15 19:14:59,064 - INFO - Inserting market data for AAPL on 2025-03-03
+2025-03-15 19:14:59,148 - INFO - Inserting market data for AAPL on 2025-03-04
+2025-03-15 19:14:59,233 - INFO - Inserting market data for AAPL on 2025-03-05
+2025-03-15 19:14:59,316 - INFO - Inserting market data for AAPL on 2025-03-06
+2025-03-15 19:14:59,402 - INFO - Inserting market data for AAPL on 2025-03-07
+2025-03-15 19:14:59,489 - INFO - Inserting market data for AAPL on 2025-03-10
+2025-03-15 19:14:59,572 - INFO - Inserting market data for AAPL on 2025-03-11
+2025-03-15 19:14:59,658 - INFO - Inserting market data for AAPL on 2025-03-12
+2025-03-15 19:14:59,745 - INFO - Inserting market data for AAPL on 2025-03-13
+2025-03-15 19:14:59,831 - INFO - Inserting market data for AAPL on 2025-03-14
+2025-03-15 19:14:59,916 - INFO - Inserting ESG data for AAPL
+2025-03-15 19:14:59,961 - INFO - Found customPriceAlertConfidence for AAPL: HIGH
+2025-03-15 19:15:00,004 - INFO - Inserting governance risk data for AAPL
+2025-03-15 19:15:00,094 - INFO - Successfully processed AAPL
+2025-03-15 19:15:00,095 - INFO - Successfully processed AAPL
+2025-03-15 19:17:58,635 - INFO - Starting data upload process
+2025-03-15 19:17:58,635 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 19:17:58,635 - INFO - Processing ticker: SHOP.TO
+2025-03-15 19:17:58,636 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 19:18:10,406 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 19:18:10,783 - INFO - Company SHOP.TO already exists, updating...
+2025-03-15 19:18:10,849 - INFO - Financial data for SHOP.TO on 2024-12-31 already exists, updating...
+2025-03-15 19:18:10,909 - INFO - Financial data for SHOP.TO on 2024-09-30 already exists, updating...
+2025-03-15 19:18:10,968 - INFO - Financial data for SHOP.TO on 2024-06-30 already exists, updating...
+2025-03-15 19:18:11,025 - INFO - Financial data for SHOP.TO on 2024-03-31 already exists, updating...
+2025-03-15 19:18:11,093 - INFO - Financial data for SHOP.TO on 2023-12-31 already exists, updating...
+2025-03-15 19:18:11,123 - WARNING - Skipping record for SHOP.TO on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:18:11,123 - WARNING - Skipping record for SHOP.TO on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:18:11,151 - INFO - Market data for SHOP.TO on 2025-02-14 already exists, updating...
+2025-03-15 19:18:11,210 - INFO - Market data for SHOP.TO on 2025-02-18 already exists, updating...
+2025-03-15 19:18:11,269 - INFO - Market data for SHOP.TO on 2025-02-19 already exists, updating...
+2025-03-15 19:18:11,328 - INFO - Market data for SHOP.TO on 2025-02-20 already exists, updating...
+2025-03-15 19:18:11,386 - INFO - Market data for SHOP.TO on 2025-02-21 already exists, updating...
+2025-03-15 19:18:11,445 - INFO - Market data for SHOP.TO on 2025-02-24 already exists, updating...
+2025-03-15 19:18:11,514 - INFO - Market data for SHOP.TO on 2025-02-25 already exists, updating...
+2025-03-15 19:18:11,575 - INFO - Market data for SHOP.TO on 2025-02-26 already exists, updating...
+2025-03-15 19:18:11,634 - INFO - Market data for SHOP.TO on 2025-02-27 already exists, updating...
+2025-03-15 19:18:11,693 - INFO - Market data for SHOP.TO on 2025-02-28 already exists, updating...
+2025-03-15 19:18:11,751 - INFO - Market data for SHOP.TO on 2025-03-03 already exists, updating...
+2025-03-15 19:18:11,811 - INFO - Market data for SHOP.TO on 2025-03-04 already exists, updating...
+2025-03-15 19:18:11,869 - INFO - Market data for SHOP.TO on 2025-03-05 already exists, updating...
+2025-03-15 19:18:11,933 - INFO - Market data for SHOP.TO on 2025-03-06 already exists, updating...
+2025-03-15 19:18:11,992 - INFO - Market data for SHOP.TO on 2025-03-07 already exists, updating...
+2025-03-15 19:18:12,049 - INFO - Market data for SHOP.TO on 2025-03-10 already exists, updating...
+2025-03-15 19:18:12,108 - INFO - Market data for SHOP.TO on 2025-03-11 already exists, updating...
+2025-03-15 19:18:12,168 - INFO - Market data for SHOP.TO on 2025-03-12 already exists, updating...
+2025-03-15 19:18:12,227 - INFO - Market data for SHOP.TO on 2025-03-13 already exists, updating...
+2025-03-15 19:18:12,286 - INFO - Market data for SHOP.TO on 2025-03-14 already exists, updating...
+2025-03-15 19:18:12,343 - INFO - ESG data for SHOP.TO already exists, updating...
+2025-03-15 19:18:12,372 - INFO - Found customPriceAlertConfidence for SHOP.TO: HIGH
+2025-03-15 19:18:12,402 - INFO - Governance risk data for SHOP.TO already exists, updating...
+2025-03-15 19:18:12,474 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:18:12,475 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:21:26,313 - INFO - Starting data upload process
+2025-03-15 19:21:26,314 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 19:21:26,314 - INFO - Processing ticker: SHOP.TO
+2025-03-15 19:21:26,314 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 19:22:04,712 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 19:22:05,348 - INFO - Inserting new company SHOP.TO
+2025-03-15 19:22:05,436 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 19:22:05,525 - INFO - Inserting financial data for SHOP.TO on 2024-09-30
+2025-03-15 19:22:05,608 - INFO - Inserting financial data for SHOP.TO on 2024-06-30
+2025-03-15 19:22:05,691 - INFO - Inserting financial data for SHOP.TO on 2024-03-31
+2025-03-15 19:22:05,775 - INFO - Inserting financial data for SHOP.TO on 2023-12-31
+2025-03-15 19:22:05,819 - WARNING - Skipping record for SHOP.TO on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:22:05,819 - WARNING - Skipping record for SHOP.TO on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:22:05,861 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 19:22:05,948 - INFO - Inserting market data for SHOP.TO on 2025-02-18
+2025-03-15 19:22:06,032 - INFO - Inserting market data for SHOP.TO on 2025-02-19
+2025-03-15 19:22:06,117 - INFO - Inserting market data for SHOP.TO on 2025-02-20
+2025-03-15 19:22:06,200 - INFO - Inserting market data for SHOP.TO on 2025-02-21
+2025-03-15 19:22:06,285 - INFO - Inserting market data for SHOP.TO on 2025-02-24
+2025-03-15 19:22:06,369 - INFO - Inserting market data for SHOP.TO on 2025-02-25
+2025-03-15 19:22:06,454 - INFO - Inserting market data for SHOP.TO on 2025-02-26
+2025-03-15 19:22:06,539 - INFO - Inserting market data for SHOP.TO on 2025-02-27
+2025-03-15 19:22:06,622 - INFO - Inserting market data for SHOP.TO on 2025-02-28
+2025-03-15 19:22:06,708 - INFO - Inserting market data for SHOP.TO on 2025-03-03
+2025-03-15 19:22:06,793 - INFO - Inserting market data for SHOP.TO on 2025-03-04
+2025-03-15 19:22:06,882 - INFO - Inserting market data for SHOP.TO on 2025-03-05
+2025-03-15 19:22:06,966 - INFO - Inserting market data for SHOP.TO on 2025-03-06
+2025-03-15 19:22:07,051 - INFO - Inserting market data for SHOP.TO on 2025-03-07
+2025-03-15 19:22:07,134 - INFO - Inserting market data for SHOP.TO on 2025-03-10
+2025-03-15 19:22:07,220 - INFO - Inserting market data for SHOP.TO on 2025-03-11
+2025-03-15 19:22:07,304 - INFO - Inserting market data for SHOP.TO on 2025-03-12
+2025-03-15 19:22:07,386 - INFO - Inserting market data for SHOP.TO on 2025-03-13
+2025-03-15 19:22:07,469 - INFO - Inserting market data for SHOP.TO on 2025-03-14
+2025-03-15 19:22:07,553 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 19:22:07,598 - INFO - Found customPriceAlertConfidence for SHOP.TO: HIGH
+2025-03-15 19:22:07,639 - INFO - Inserting governance risk data for SHOP.TO
+2025-03-15 19:22:07,728 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:22:07,729 - INFO - Successfully processed SHOP.TO
+2025-03-15 19:25:55,390 - INFO - Starting data upload process
+2025-03-15 19:25:55,390 - INFO - Found companies.txt at companies.txt
+2025-03-15 19:25:55,390 - INFO - Found 324 tickers to process
+2025-03-15 19:25:55,390 - INFO - Processing ticker 1/324: SHOP
+2025-03-15 19:25:55,390 - INFO - Processing ticker: SHOP
+2025-03-15 19:25:55,390 - INFO - Running test-data.py for SHOP
+2025-03-15 19:26:05,824 - INFO - Retrieved data for SHOP with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Option Chain', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 19:26:06,344 - INFO - Inserting new company SHOP
+2025-03-15 19:26:06,402 - INFO - Inserting financial data for SHOP on 2024-12-31
+2025-03-15 19:26:06,459 - INFO - Inserting financial data for SHOP on 2024-09-30
+2025-03-15 19:26:06,518 - INFO - Inserting financial data for SHOP on 2024-06-30
+2025-03-15 19:26:06,574 - INFO - Inserting financial data for SHOP on 2024-03-31
+2025-03-15 19:26:06,629 - INFO - Inserting financial data for SHOP on 2023-12-31
+2025-03-15 19:26:06,657 - WARNING - Skipping record for SHOP on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:26:06,657 - WARNING - Skipping record for SHOP on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:26:06,685 - INFO - Inserting market data for SHOP on 2025-02-18
+2025-03-15 19:26:06,743 - INFO - Inserting market data for SHOP on 2025-02-19
+2025-03-15 19:26:06,801 - INFO - Inserting market data for SHOP on 2025-02-20
+2025-03-15 19:26:06,859 - INFO - Inserting market data for SHOP on 2025-02-21
+2025-03-15 19:26:06,916 - INFO - Inserting market data for SHOP on 2025-02-24
+2025-03-15 19:26:06,973 - INFO - Inserting market data for SHOP on 2025-02-25
+2025-03-15 19:26:07,030 - INFO - Inserting market data for SHOP on 2025-02-26
+2025-03-15 19:26:07,087 - INFO - Inserting market data for SHOP on 2025-02-27
+2025-03-15 19:26:07,143 - INFO - Inserting market data for SHOP on 2025-02-28
+2025-03-15 19:26:07,199 - INFO - Inserting market data for SHOP on 2025-03-03
+2025-03-15 19:26:07,255 - INFO - Inserting market data for SHOP on 2025-03-04
+2025-03-15 19:26:07,312 - INFO - Inserting market data for SHOP on 2025-03-05
+2025-03-15 19:26:07,369 - INFO - Inserting market data for SHOP on 2025-03-06
+2025-03-15 19:26:07,428 - INFO - Inserting market data for SHOP on 2025-03-07
+2025-03-15 19:26:07,483 - INFO - Inserting market data for SHOP on 2025-03-10
+2025-03-15 19:26:07,542 - INFO - Inserting market data for SHOP on 2025-03-11
+2025-03-15 19:26:07,599 - INFO - Inserting market data for SHOP on 2025-03-12
+2025-03-15 19:26:07,655 - INFO - Inserting market data for SHOP on 2025-03-13
+2025-03-15 19:26:07,710 - INFO - Inserting market data for SHOP on 2025-03-14
+2025-03-15 19:26:07,767 - INFO - Inserting ESG data for SHOP
+2025-03-15 19:26:07,796 - INFO - Found customPriceAlertConfidence for SHOP: HIGH
+2025-03-15 19:26:07,824 - INFO - Inserting governance risk data for SHOP
+2025-03-15 19:26:07,883 - INFO - Successfully processed SHOP
+2025-03-15 19:26:09,888 - INFO - Processing ticker 2/324: PLTR
+2025-03-15 19:26:09,890 - INFO - Processing ticker: PLTR
+2025-03-15 19:26:09,896 - INFO - Running test-data.py for PLTR
+2025-03-15 19:27:22,148 - INFO - Retrieved data for PLTR with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Option Chain', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 19:27:22,588 - INFO - Inserting new company PLTR
+2025-03-15 19:27:22,673 - INFO - Inserting financial data for PLTR on 2024-12-31
+2025-03-15 19:27:22,760 - INFO - Inserting financial data for PLTR on 2024-09-30
+2025-03-15 19:27:22,843 - INFO - Inserting financial data for PLTR on 2024-06-30
+2025-03-15 19:27:22,930 - INFO - Inserting financial data for PLTR on 2024-03-31
+2025-03-15 19:27:23,013 - INFO - Inserting financial data for PLTR on 2023-12-31
+2025-03-15 19:27:23,056 - WARNING - Skipping record for PLTR on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:27:23,056 - WARNING - Skipping record for PLTR on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:27:23,098 - INFO - Inserting market data for PLTR on 2025-02-18
+2025-03-15 19:27:23,181 - INFO - Inserting market data for PLTR on 2025-02-19
+2025-03-15 19:27:23,264 - INFO - Inserting market data for PLTR on 2025-02-20
+2025-03-15 19:27:23,347 - INFO - Inserting market data for PLTR on 2025-02-21
+2025-03-15 19:27:23,433 - INFO - Inserting market data for PLTR on 2025-02-24
+2025-03-15 19:27:23,516 - INFO - Inserting market data for PLTR on 2025-02-25
+2025-03-15 19:27:23,600 - INFO - Inserting market data for PLTR on 2025-02-26
+2025-03-15 19:27:23,682 - INFO - Inserting market data for PLTR on 2025-02-27
+2025-03-15 19:27:23,765 - INFO - Inserting market data for PLTR on 2025-02-28
+2025-03-15 19:27:23,850 - INFO - Inserting market data for PLTR on 2025-03-03
+2025-03-15 19:27:23,935 - INFO - Inserting market data for PLTR on 2025-03-04
+2025-03-15 19:27:24,018 - INFO - Inserting market data for PLTR on 2025-03-05
+2025-03-15 19:27:24,111 - INFO - Inserting market data for PLTR on 2025-03-06
+2025-03-15 19:27:24,196 - INFO - Inserting market data for PLTR on 2025-03-07
+2025-03-15 19:27:24,281 - INFO - Inserting market data for PLTR on 2025-03-10
+2025-03-15 19:27:24,368 - INFO - Inserting market data for PLTR on 2025-03-11
+2025-03-15 19:27:24,454 - INFO - Inserting market data for PLTR on 2025-03-12
+2025-03-15 19:27:24,538 - INFO - Inserting market data for PLTR on 2025-03-13
+2025-03-15 19:27:24,627 - INFO - Inserting market data for PLTR on 2025-03-14
+2025-03-15 19:27:24,710 - INFO - Inserting ESG data for PLTR
+2025-03-15 19:27:24,754 - INFO - Found customPriceAlertConfidence for PLTR: HIGH
+2025-03-15 19:27:24,797 - INFO - Inserting governance risk data for PLTR
+2025-03-15 19:27:24,883 - INFO - Successfully processed PLTR
+2025-03-15 19:27:26,887 - INFO - Processing ticker 3/324: ACX.TO
+2025-03-15 19:27:26,888 - INFO - Processing ticker: ACX.TO
+2025-03-15 19:27:26,890 - INFO - Running test-data.py for ACX.TO
+2025-03-15 19:28:11,252 - INFO - Retrieved data for ACX.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 19:28:11,685 - INFO - Inserting new company ACX.TO
+2025-03-15 19:28:11,772 - INFO - Inserting financial data for ACX.TO on 2024-09-30
+2025-03-15 19:28:11,855 - INFO - Inserting financial data for ACX.TO on 2024-06-30
+2025-03-15 19:28:11,941 - INFO - Inserting financial data for ACX.TO on 2024-03-31
+2025-03-15 19:28:12,023 - INFO - Inserting financial data for ACX.TO on 2023-12-31
+2025-03-15 19:28:12,107 - INFO - Inserting financial data for ACX.TO on 2023-09-30
+2025-03-15 19:28:12,149 - WARNING - Skipping record for ACX.TO on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:28:12,191 - INFO - Inserting market data for ACX.TO on 2025-02-14
+2025-03-15 19:28:12,276 - INFO - Inserting market data for ACX.TO on 2025-02-18
+2025-03-15 19:28:12,359 - INFO - Inserting market data for ACX.TO on 2025-02-19
+2025-03-15 19:28:12,453 - INFO - Inserting market data for ACX.TO on 2025-02-20
+2025-03-15 19:28:12,538 - INFO - Inserting market data for ACX.TO on 2025-02-21
+2025-03-15 19:28:12,625 - INFO - Inserting market data for ACX.TO on 2025-02-24
+2025-03-15 19:28:12,709 - INFO - Inserting market data for ACX.TO on 2025-02-25
+2025-03-15 19:28:12,792 - INFO - Inserting market data for ACX.TO on 2025-02-26
+2025-03-15 19:28:12,875 - INFO - Inserting market data for ACX.TO on 2025-02-27
+2025-03-15 19:28:12,959 - INFO - Inserting market data for ACX.TO on 2025-02-28
+2025-03-15 19:28:13,045 - INFO - Inserting market data for ACX.TO on 2025-03-03
+2025-03-15 19:28:13,129 - INFO - Inserting market data for ACX.TO on 2025-03-04
+2025-03-15 19:28:13,212 - INFO - Inserting market data for ACX.TO on 2025-03-05
+2025-03-15 19:28:13,297 - INFO - Inserting market data for ACX.TO on 2025-03-06
+2025-03-15 19:28:13,381 - INFO - Inserting market data for ACX.TO on 2025-03-07
+2025-03-15 19:28:13,466 - INFO - Inserting market data for ACX.TO on 2025-03-10
+2025-03-15 19:28:13,549 - INFO - Inserting market data for ACX.TO on 2025-03-11
+2025-03-15 19:28:13,632 - INFO - Inserting market data for ACX.TO on 2025-03-12
+2025-03-15 19:28:13,716 - INFO - Inserting market data for ACX.TO on 2025-03-13
+2025-03-15 19:28:13,798 - INFO - Inserting market data for ACX.TO on 2025-03-14
+2025-03-15 19:28:13,882 - INFO - Inserting ESG data for ACX.TO
+2025-03-15 19:28:13,925 - INFO - Found customPriceAlertConfidence for ACX.TO: HIGH
+2025-03-15 19:28:13,967 - INFO - Inserting governance risk data for ACX.TO
+2025-03-15 19:28:14,052 - INFO - Successfully processed ACX.TO
+2025-03-15 19:28:16,056 - INFO - Processing ticker 4/324: AKT-A.TO
+2025-03-15 19:28:16,057 - INFO - Processing ticker: AKT-A.TO
+2025-03-15 19:28:16,058 - INFO - Running test-data.py for AKT-A.TO
+2025-03-15 19:28:57,673 - INFO - Retrieved data for AKT-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 19:28:58,087 - INFO - Inserting new company AKT-A.TO
+2025-03-15 19:28:58,173 - INFO - Inserting financial data for AKT-A.TO on 2024-12-31
+2025-03-15 19:28:58,258 - INFO - Inserting financial data for AKT-A.TO on 2024-09-30
+2025-03-15 19:28:58,341 - INFO - Inserting financial data for AKT-A.TO on 2024-06-30
+2025-03-15 19:28:58,424 - INFO - Inserting financial data for AKT-A.TO on 2024-03-31
+2025-03-15 19:28:58,509 - INFO - Inserting financial data for AKT-A.TO on 2023-12-31
+2025-03-15 19:28:58,552 - WARNING - Skipping record for AKT-A.TO on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:28:58,552 - WARNING - Skipping record for AKT-A.TO on 2023-06-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:28:58,594 - INFO - Inserting market data for AKT-A.TO on 2025-02-14
+2025-03-15 19:28:58,678 - INFO - Inserting market data for AKT-A.TO on 2025-02-18
+2025-03-15 19:28:58,762 - INFO - Inserting market data for AKT-A.TO on 2025-02-19
+2025-03-15 19:28:58,845 - INFO - Inserting market data for AKT-A.TO on 2025-02-20
+2025-03-15 19:28:58,931 - INFO - Inserting market data for AKT-A.TO on 2025-02-21
+2025-03-15 19:28:59,015 - INFO - Inserting market data for AKT-A.TO on 2025-02-24
+2025-03-15 19:28:59,100 - INFO - Inserting market data for AKT-A.TO on 2025-02-25
+2025-03-15 19:28:59,184 - INFO - Inserting market data for AKT-A.TO on 2025-02-26
+2025-03-15 19:28:59,269 - INFO - Inserting market data for AKT-A.TO on 2025-02-27
+2025-03-15 19:28:59,353 - INFO - Inserting market data for AKT-A.TO on 2025-02-28
+2025-03-15 19:28:59,438 - INFO - Inserting market data for AKT-A.TO on 2025-03-03
+2025-03-15 19:28:59,523 - INFO - Inserting market data for AKT-A.TO on 2025-03-04
+2025-03-15 19:28:59,607 - INFO - Inserting market data for AKT-A.TO on 2025-03-05
+2025-03-15 19:28:59,689 - INFO - Inserting market data for AKT-A.TO on 2025-03-06
+2025-03-15 19:28:59,774 - INFO - Inserting market data for AKT-A.TO on 2025-03-07
+2025-03-15 19:28:59,858 - INFO - Inserting market data for AKT-A.TO on 2025-03-10
+2025-03-15 19:28:59,941 - INFO - Inserting market data for AKT-A.TO on 2025-03-11
+2025-03-15 19:29:00,026 - INFO - Inserting market data for AKT-A.TO on 2025-03-12
+2025-03-15 19:29:00,112 - INFO - Inserting market data for AKT-A.TO on 2025-03-13
+2025-03-15 19:29:00,196 - INFO - Inserting market data for AKT-A.TO on 2025-03-14
+2025-03-15 19:29:00,279 - INFO - Inserting ESG data for AKT-A.TO
+2025-03-15 19:29:00,322 - INFO - Found customPriceAlertConfidence for AKT-A.TO: HIGH
+2025-03-15 19:29:00,365 - INFO - Inserting governance risk data for AKT-A.TO
+2025-03-15 19:29:00,454 - INFO - Successfully processed AKT-A.TO
+2025-03-15 19:29:02,459 - INFO - Processing ticker 5/324: ESI.TO
+2025-03-15 19:29:02,459 - INFO - Processing ticker: ESI.TO
+2025-03-15 19:29:02,461 - INFO - Running test-data.py for ESI.TO
+2025-03-15 19:29:14,917 - INFO - Retrieved data for ESI.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 19:29:15,321 - INFO - Inserting new company ESI.TO
+2025-03-15 19:29:15,404 - INFO - Inserting financial data for ESI.TO on 2024-12-31
+2025-03-15 19:29:15,488 - INFO - Inserting financial data for ESI.TO on 2024-09-30
+2025-03-15 19:29:15,571 - INFO - Inserting financial data for ESI.TO on 2024-06-30
+2025-03-15 19:29:15,654 - INFO - Inserting financial data for ESI.TO on 2024-03-31
+2025-03-15 19:29:15,737 - INFO - Inserting financial data for ESI.TO on 2023-12-31
+2025-03-15 19:29:15,778 - WARNING - Skipping record for ESI.TO on 2023-09-30 - missing 'Net Income Continuous Operations'
+2025-03-15 19:29:15,820 - INFO - Inserting market data for ESI.TO on 2025-02-14
+2025-03-15 19:29:15,903 - INFO - Inserting market data for ESI.TO on 2025-02-18
+2025-03-15 19:29:15,986 - INFO - Inserting market data for ESI.TO on 2025-02-19
+2025-03-15 19:29:16,069 - INFO - Inserting market data for ESI.TO on 2025-02-20
+2025-03-15 19:29:16,152 - INFO - Inserting market data for ESI.TO on 2025-02-21
+2025-03-15 19:29:16,238 - INFO - Inserting market data for ESI.TO on 2025-02-24
+2025-03-15 19:29:16,321 - INFO - Inserting market data for ESI.TO on 2025-02-25
+2025-03-15 19:29:16,404 - INFO - Inserting market data for ESI.TO on 2025-02-26
+2025-03-15 19:29:16,489 - INFO - Inserting market data for ESI.TO on 2025-02-27
+2025-03-15 19:29:16,574 - INFO - Inserting market data for ESI.TO on 2025-02-28
+2025-03-15 19:29:16,659 - INFO - Inserting market data for ESI.TO on 2025-03-03
+2025-03-15 19:29:16,742 - INFO - Inserting market data for ESI.TO on 2025-03-04
+2025-03-15 19:29:16,827 - INFO - Inserting market data for ESI.TO on 2025-03-05
+2025-03-15 19:29:16,910 - INFO - Inserting market data for ESI.TO on 2025-03-06
+2025-03-15 19:29:16,995 - INFO - Inserting market data for ESI.TO on 2025-03-07
+2025-03-15 19:29:17,078 - INFO - Inserting market data for ESI.TO on 2025-03-10
+2025-03-15 19:29:17,164 - INFO - Inserting market data for ESI.TO on 2025-03-11
+2025-03-15 19:29:17,247 - INFO - Inserting market data for ESI.TO on 2025-03-12
+2025-03-15 19:29:17,330 - INFO - Inserting market data for ESI.TO on 2025-03-13
+2025-03-15 19:29:17,413 - INFO - Inserting market data for ESI.TO on 2025-03-14
+2025-03-15 19:29:17,497 - INFO - Inserting ESG data for ESI.TO
+2025-03-15 19:29:17,539 - INFO - Found customPriceAlertConfidence for ESI.TO: HIGH
+2025-03-15 19:29:17,582 - INFO - Inserting governance risk data for ESI.TO
+2025-03-15 19:29:17,669 - INFO - Successfully processed ESI.TO
+2025-03-15 19:29:19,672 - INFO - Processing ticker 6/324: PHX.TO
+2025-03-15 19:29:19,673 - INFO - Processing ticker: PHX.TO
+2025-03-15 19:29:19,675 - INFO - Running test-data.py for PHX.TO
