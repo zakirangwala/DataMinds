@@ -1,0 +1,72 @@
+CREATE TABLE companies (
+    ticker VARCHAR(10) PRIMARY KEY,
+    name VARCHAR(255),
+    sector VARCHAR(100),
+    industry VARCHAR(100),
+    website VARCHAR(255),
+    headquarters VARCHAR(255),
+    employees INT
+);
+
+CREATE TABLE financials (
+    id SERIAL PRIMARY KEY,
+    ticker VARCHAR(10) REFERENCES companies(ticker),
+    report_date DATE,
+    revenue BIGINT,
+    net_income BIGINT,
+    ebitda BIGINT,
+    gross_profit BIGINT,
+    total_debt BIGINT,
+    operating_cashflow BIGINT,
+    free_cashflow BIGINT,
+    return_on_assets DECIMAL(5,4),
+    return_on_equity DECIMAL(5,4),
+    earnings_growth DECIMAL(5,4),
+    revenue_growth DECIMAL(5,4),
+    FOREIGN KEY (ticker) REFERENCES companies(ticker)
+);
+
+CREATE TABLE market_data (
+    id SERIAL PRIMARY KEY,
+    ticker VARCHAR(10) REFERENCES companies(ticker),
+    date DATE,
+    open_price DECIMAL(10,2),
+    close_price DECIMAL(10,2),
+    day_high DECIMAL(10,2),
+    day_low DECIMAL(10,2),
+    volume BIGINT,
+    analyst_target_high DECIMAL(10,2),
+    analyst_target_low DECIMAL(10,2),
+    analyst_target_mean DECIMAL(10,2),
+    recommendation_key VARCHAR(20)
+);
+
+CREATE TABLE governance_risk (
+    id SERIAL PRIMARY KEY,
+    ticker VARCHAR(10) REFERENCES companies(ticker),
+    audit_risk INT,
+    board_risk INT,
+    compensation_risk INT,
+    shareholder_rights_risk INT,
+    overall_risk INT,
+    governance_last_updated TIMESTAMP
+);
+
+CREATE TABLE esg_scores (
+    id SERIAL PRIMARY KEY,
+    ticker VARCHAR(10) REFERENCES companies(ticker),
+    esg_risk_score DECIMAL(5,2),
+    esg_risk_severity VARCHAR(50),
+    environment_score DECIMAL(5,2),
+    social_score DECIMAL(5,2),
+    governance_score DECIMAL(5,2),
+    last_updated TIMESTAMP
+);
+
+CREATE TABLE sentiment_data (
+    id SERIAL PRIMARY KEY,
+    ticker VARCHAR(10) REFERENCES companies(ticker),
+    source VARCHAR(50),
+    sentiment_score DECIMAL(3,2),
+    date TIMESTAMP
+);

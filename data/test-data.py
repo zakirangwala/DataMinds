@@ -30,11 +30,49 @@ def get_historical_esg_data(ticker):
     url = f"https://financialmodelingprep.com/stable/esg-disclosures?symbol={base_ticker}&apikey={api_key}"
 
     try:
-        response = requests.get(url)
-        response.raise_for_status()  # Raise an exception for bad status codes
-        return response.json()
+        # Add timeout to prevent hanging
+        response = requests.get(url, timeout=10)
+
+        # Check status code first
+        if response.status_code == 401:
+            print("Error: Invalid API key or unauthorized access")
+            return None
+        elif response.status_code == 403:
+            print("Error: API access forbidden. Please check your subscription plan")
+            return None
+        elif response.status_code == 429:
+            print("Error: API rate limit exceeded")
+            return None
+        elif response.status_code == 404:
+            print(f"Error: No ESG data found for ticker {base_ticker}")
+            return None
+        elif response.status_code != 200:
+            print(
+                f"Error: API request failed with status code {response.status_code}")
+            return None
+
+        # Try to parse JSON response
+        try:
+            data = response.json()
+            if not data or (isinstance(data, list) and len(data) == 0):
+                print(f"No ESG data available for {base_ticker}")
+                return None
+            return data
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON response: {str(e)}")
+            return None
+
+    except requests.exceptions.Timeout:
+        print(f"Error: API request timed out for {base_ticker}")
+        return None
+    except requests.exceptions.ConnectionError:
+        print(f"Error: Connection failed. Please check your internet connection")
+        return None
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching historical ESG data: {str(e)}")
+        print(f"Error making API request: {str(e)}")
+        return None
+    except Exception as e:
+        print(f"Unexpected error while fetching ESG data: {str(e)}")
         return None
 
 

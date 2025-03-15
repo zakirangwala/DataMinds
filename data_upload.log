@@ -1,0 +1,642 @@
+2025-03-15 17:35:44,708 - INFO - Starting data upload process
+2025-03-15 17:35:44,708 - ERROR - Error reading tickers file: [Errno 2] No such file or directory: '../companies.txt'
+2025-03-15 17:38:10,075 - INFO - Starting data upload process
+2025-03-15 17:38:10,075 - INFO - Found companies.txt at companies.txt
+2025-03-15 17:38:10,076 - INFO - Found 35 tickers to process
+2025-03-15 17:38:10,076 - INFO - Processing ticker 1/35: BR.TO
+2025-03-15 17:38:10,076 - INFO - Processing ticker: BR.TO
+2025-03-15 17:38:20,624 - INFO - Inserting new company BR.TO
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: EBIT
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Interest Expense
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Diluted Average Shares
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Basic Average Shares
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Diluted EPS
+2025-03-15 17:38:20,671 - WARNING - Invalid date format: Basic EPS
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Average Dilution Earnings
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Net Income
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Gain On Sale Of Ppe
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Other Special Charges
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Interest Expense Non Operating
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Depreciation Amortization Depletion Income Statement
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Depreciation And Amortization In Income Statement
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Selling And Marketing Expense
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Salaries And Wages
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Excise Taxes
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:38:20,672 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:38:20,760 - INFO - Inserting ESG data for BR.TO
+2025-03-15 17:38:20,803 - WARNING - No historical ESG data available for BR.TO
+2025-03-15 17:38:20,847 - INFO - Successfully processed BR.TO
+2025-03-15 17:38:22,852 - INFO - Processing ticker 2/35: TPX-A.TO
+2025-03-15 17:38:22,853 - INFO - Processing ticker: TPX-A.TO
+2025-03-15 17:38:29,675 - INFO - Inserting new company TPX-A.TO
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: EBIT
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:38:29,719 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Net Income
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Minority Interests
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Gain On Sale Of Ppe
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Restructuring And Mergern Acquisition
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Earnings From Equity Interest
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Excise Taxes
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:38:29,720 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:38:29,721 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:38:29,806 - INFO - Inserting ESG data for TPX-A.TO
+2025-03-15 17:38:29,848 - WARNING - No historical ESG data available for TPX-A.TO
+2025-03-15 17:38:29,892 - INFO - Successfully processed TPX-A.TO
+2025-03-15 17:38:31,897 - INFO - Processing ticker 3/35: TPX-B.TO
+2025-03-15 17:38:31,897 - INFO - Processing ticker: TPX-B.TO
+2025-03-15 17:39:44,742 - INFO - Inserting new company TPX-B.TO
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: EBIT
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Net Income
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Minority Interests
+2025-03-15 17:39:44,774 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Gain On Sale Of Ppe
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Restructuring And Mergern Acquisition
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Earnings From Equity Interest
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Excise Taxes
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:39:44,775 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:39:44,776 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:39:44,841 - INFO - Inserting ESG data for TPX-B.TO
+2025-03-15 17:39:44,870 - WARNING - No historical ESG data available for TPX-B.TO
+2025-03-15 17:39:44,900 - INFO - Successfully processed TPX-B.TO
+2025-03-15 17:39:46,902 - INFO - Processing ticker 4/35: LAS-A.TO
+2025-03-15 17:39:46,903 - INFO - Processing ticker: LAS-A.TO
+2025-03-15 17:39:55,071 - INFO - Inserting new company LAS-A.TO
+2025-03-15 17:39:55,114 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:39:55,114 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:39:55,114 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:39:55,114 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:39:55,114 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:39:55,114 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:39:55,115 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:39:55,115 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:39:55,115 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:39:55,115 - WARNING - Invalid date format: EBIT
+2025-03-15 17:39:55,115 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:39:55,116 - WARNING - Invalid date format: Interest Expense
+2025-03-15 17:39:55,121 - WARNING - Invalid date format: Interest Income
+2025-03-15 17:39:55,124 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:39:55,124 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:39:55,152 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:39:55,158 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:39:55,158 - WARNING - Invalid date format: Diluted Average Shares
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Basic Average Shares
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Diluted EPS
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Basic EPS
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Net Income
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Minority Interests
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:39:55,159 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:39:55,164 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Restructuring And Mergern Acquisition
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Earnings From Equity Interest
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Gain On Sale Of Security
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Total Other Finance Cost
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Interest Expense Non Operating
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Interest Income Non Operating
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:39:55,167 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:39:55,168 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:39:55,170 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:39:55,170 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:39:55,173 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:39:55,173 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:39:55,173 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:39:55,174 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:39:55,174 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:39:55,257 - INFO - Inserting ESG data for LAS-A.TO
+2025-03-15 17:39:55,300 - WARNING - No historical ESG data available for LAS-A.TO
+2025-03-15 17:39:55,343 - INFO - Successfully processed LAS-A.TO
+2025-03-15 17:39:57,349 - INFO - Processing ticker 5/35: SOY.TO
+2025-03-15 17:39:57,349 - INFO - Processing ticker: SOY.TO
+2025-03-15 17:40:04,601 - INFO - Inserting new company SOY.TO
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:40:04,631 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: EBIT
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Interest Expense
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Diluted Average Shares
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Basic Average Shares
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Diluted EPS
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Basic EPS
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Preferred Stock Dividends
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Income
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Income Discontinuous Operations
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Gain On Sale Of Security
+2025-03-15 17:40:04,632 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Interest Expense Non Operating
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Depreciation Amortization Depletion Income Statement
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Depreciation And Amortization In Income Statement
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Amortization
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Amortization Of Intangibles Income Statement
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:40:04,633 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:40:04,634 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:40:04,634 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:40:04,634 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:40:04,634 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:40:04,634 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:40:04,634 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:40:04,696 - INFO - Inserting ESG data for SOY.TO
+2025-03-15 17:40:04,726 - WARNING - No historical ESG data available for SOY.TO
+2025-03-15 17:40:04,756 - INFO - Successfully processed SOY.TO
+2025-03-15 17:40:06,761 - INFO - Processing ticker 6/35: ADW-A.TO
+2025-03-15 17:40:06,762 - INFO - Processing ticker: ADW-A.TO
+2025-03-15 17:40:48,422 - INFO - Inserting new company ADW-A.TO
+2025-03-15 17:40:48,454 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: EBIT
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Interest Expense
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Diluted Average Shares
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Basic Average Shares
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Diluted EPS
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Basic EPS
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Income
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:40:48,455 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Gain On Sale Of Security
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Interest Expense Non Operating
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Depreciation Amortization Depletion Income Statement
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Depreciation And Amortization In Income Statement
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:40:48,456 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:40:48,457 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:40:48,520 - INFO - Inserting ESG data for ADW-A.TO
+2025-03-15 17:40:48,550 - WARNING - No historical ESG data available for ADW-A.TO
+2025-03-15 17:40:48,581 - INFO - Successfully processed ADW-A.TO
+2025-03-15 17:40:50,586 - INFO - Processing ticker 7/35: ADW-B.TO
+2025-03-15 17:40:50,586 - INFO - Processing ticker: ADW-B.TO
+2025-03-15 17:40:57,358 - INFO - Inserting new company ADW-B.TO
+2025-03-15 17:40:57,403 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:40:57,403 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:40:57,403 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:40:57,403 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:40:57,403 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: EBIT
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Interest Expense
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Diluted Average Shares
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Basic Average Shares
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Diluted EPS
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Basic EPS
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Income
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Gain On Sale Of Security
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Interest Expense Non Operating
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Depreciation Amortization Depletion Income Statement
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Depreciation And Amortization In Income Statement
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:40:57,404 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:40:57,405 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:40:57,406 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:40:57,406 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:40:57,493 - INFO - Inserting ESG data for ADW-B.TO
+2025-03-15 17:40:57,535 - WARNING - No historical ESG data available for ADW-B.TO
+2025-03-15 17:40:57,577 - INFO - Successfully processed ADW-B.TO
+2025-03-15 17:40:59,581 - INFO - Processing ticker 8/35: CSW-B.TO
+2025-03-15 17:40:59,581 - INFO - Processing ticker: CSW-B.TO
+2025-03-15 17:41:36,657 - INFO - Starting data upload process
+2025-03-15 17:41:36,657 - INFO - Found companies.txt at companies.txt
+2025-03-15 17:41:36,657 - INFO - Found 35 tickers to process
+2025-03-15 17:41:36,657 - INFO - Processing ticker 1/35: BR.TO
+2025-03-15 17:41:36,658 - INFO - Processing ticker: BR.TO
+2025-03-15 17:41:46,415 - INFO - Starting data upload process
+2025-03-15 17:41:46,415 - INFO - Found companies.txt at companies.txt
+2025-03-15 17:41:46,415 - INFO - Found 35 tickers to process
+2025-03-15 17:41:46,415 - INFO - Processing ticker 1/35: BR.TO
+2025-03-15 17:41:46,415 - INFO - Processing ticker: BR.TO
+2025-03-15 17:41:55,104 - INFO - Company BR.TO already exists, updating...
+2025-03-15 17:41:55,149 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:41:55,149 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:41:55,149 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: EBIT
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Interest Expense
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Diluted Average Shares
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Basic Average Shares
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Diluted EPS
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Basic EPS
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Average Dilution Earnings
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Income
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Gain On Sale Of Ppe
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Other Special Charges
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Interest Expense Non Operating
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Depreciation Amortization Depletion Income Statement
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Depreciation And Amortization In Income Statement
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Selling And Marketing Expense
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Salaries And Wages
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Excise Taxes
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:41:55,150 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:41:55,151 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:41:55,238 - INFO - ESG data for BR.TO already exists, updating...
+2025-03-15 17:41:55,281 - WARNING - No historical ESG data available for BR.TO
+2025-03-15 17:41:55,325 - INFO - Successfully processed BR.TO
+2025-03-15 17:41:57,328 - INFO - Processing ticker 2/35: TPX-A.TO
+2025-03-15 17:41:57,328 - INFO - Processing ticker: TPX-A.TO
+2025-03-15 17:42:03,849 - INFO - Company TPX-A.TO already exists, updating...
+2025-03-15 17:42:03,890 - WARNING - Invalid date format: Tax Effect Of Unusual Items
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Tax Rate For Calcs
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Normalized EBITDA
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Total Unusual Items
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Total Unusual Items Excluding Goodwill
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Income From Continuing Operation Net Minority Interest
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Reconciled Depreciation
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Reconciled Cost Of Revenue
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: EBITDA
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: EBIT
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Interest Income
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Normalized Income
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Income From Continuing And Discontinued Operation
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Total Expenses
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Total Operating Income As Reported
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Diluted NI Availto Com Stockholders
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Income Common Stockholders
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Income
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Minority Interests
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Income Including Noncontrolling Interests
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Income Continuous Operations
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Tax Provision
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Pretax Income
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Other Income Expense
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Other Non Operating Income Expenses
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Special Income Charges
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Gain On Sale Of Ppe
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Restructuring And Mergern Acquisition
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Earnings From Equity Interest
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Net Non Operating Interest Income Expense
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Operating Income
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Operating Expense
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Selling General And Administration
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: General And Administrative Expense
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Other Gand A
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Gross Profit
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Cost Of Revenue
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Total Revenue
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Excise Taxes
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: Operating Revenue
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: 2025-02-14 00:00:00-05:00
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: 2025-02-18 00:00:00-05:00
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: 2025-02-19 00:00:00-05:00
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: 2025-02-20 00:00:00-05:00
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: 2025-02-21 00:00:00-05:00
+2025-03-15 17:42:03,891 - WARNING - Invalid date format: 2025-02-24 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-02-25 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-02-26 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-02-27 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-02-28 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-03 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-04 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-05 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-06 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-07 00:00:00-05:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-10 00:00:00-04:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-11 00:00:00-04:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-12 00:00:00-04:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-13 00:00:00-04:00
+2025-03-15 17:42:03,892 - WARNING - Invalid date format: 2025-03-14 00:00:00-04:00
+2025-03-15 17:42:03,976 - INFO - ESG data for TPX-A.TO already exists, updating...
+2025-03-15 17:42:04,017 - WARNING - No historical ESG data available for TPX-A.TO
+2025-03-15 17:42:04,059 - INFO - Successfully processed TPX-A.TO
