@@ -9,6 +9,33 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 import time
+import requests
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+
+def get_historical_esg_data(ticker):
+    """Fetch historical ESG data from Financial Modeling Prep API"""
+    # Remove .TO suffix if present for FMP API
+    base_ticker = ticker.split('.')[0]
+
+    api_key = os.getenv('FMP_API_KEY')
+    if not api_key:
+        print("Warning: FMP_API_KEY not found in environment variables")
+        return None
+
+    url = f"https://financialmodelingprep.com/stable/esg-disclosures?symbol={base_ticker}&apikey={api_key}"
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching historical ESG data: {str(e)}")
+        return None
 
 
 def scrape_sustainability_data(ticker):
@@ -132,7 +159,7 @@ def safe_get_data(func, default=None):
 
 if __name__ == "__main__":
     # fetch data from yfinance
-    ticker_symbol = "ENB.TO"
+    ticker_symbol = "ACX.TO"
     dat = yf.Ticker(ticker_symbol)
 
     # save all data to a json file
@@ -174,10 +201,15 @@ if __name__ == "__main__":
         except Exception:
             pass
 
-        # Sustainability Data
+        # Current Sustainability Data from Yahoo Finance
         sustainability_data = scrape_sustainability_data(ticker_symbol)
         if sustainability_data:
             data["Sustainability"] = sustainability_data
+
+        # Historical ESG Data from Financial Modeling Prep
+        historical_esg = get_historical_esg_data(ticker_symbol)
+        if historical_esg:
+            data["Historical ESG Scores"] = historical_esg
 
         # Write the data to file
         json.dump(data, f, cls=CustomJSONEncoder, indent=4)

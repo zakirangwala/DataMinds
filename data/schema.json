@@ -1,0 +1,68 @@
+{
+    "companies": {
+        "ticker": "character varying",
+        "name": "character varying",
+        "sector": "character varying",
+        "industry": "character varying",
+        "website": "character varying",
+        "headquarters": "character varying",
+        "employees": "integer"
+    },
+    "esg_scores": {
+        "id": "integer",
+        "ticker": "character varying",
+        "esg_risk_score": "numeric",
+        "esg_risk_severity": "character varying",
+        "environment_score": "numeric",
+        "social_score": "numeric",
+        "governance_score": "numeric",
+        "last_updated": "timestamp without time zone"
+    },
+    "financials": {
+        "id": "integer",
+        "ticker": "character varying",
+        "report_date": "date",
+        "revenue": "bigint",
+        "net_income": "bigint",
+        "ebitda": "bigint",
+        "gross_profit": "bigint",
+        "total_debt": "bigint",
+        "operating_cashflow": "bigint",
+        "free_cashflow": "bigint",
+        "return_on_assets": "numeric",
+        "return_on_equity": "numeric",
+        "earnings_growth": "numeric",
+        "revenue_growth": "numeric"
+    },
+    "governance_risk": {
+        "id": "integer",
+        "ticker": "character varying",
+        "audit_risk": "integer",
+        "board_risk": "integer",
+        "compensation_risk": "integer",
+        "shareholder_rights_risk": "integer",
+        "overall_risk": "integer",
+        "governance_last_updated": "timestamp without time zone"
+    },
+    "market_data": {
+        "id": "integer",
+        "ticker": "character varying",
+        "date": "date",
+        "open_price": "numeric",
+        "close_price": "numeric",
+        "day_high": "numeric",
+        "day_low": "numeric",
+        "volume": "bigint",
+        "analyst_target_high": "numeric",
+        "analyst_target_low": "numeric",
+        "analyst_target_mean": "numeric",
+        "recommendation_key": "character varying"
+    },
+    "sentiment_data": {
+        "id": "integer",
+        "ticker": "character varying",
+        "source": "character varying",
+        "sentiment_score": "numeric",
+        "date": "timestamp without time zone"
+    }
+} 
