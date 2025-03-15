@@ -2511,3 +2511,91 @@ LINE 6:                                     other_data = '{"payoutRa...
 2025-03-15 18:38:41,917 - INFO - Processing single ticker: SHOP.TO
 2025-03-15 18:38:41,917 - INFO - Processing ticker: SHOP.TO
 2025-03-15 18:38:41,918 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 18:39:26,461 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 18:39:26,834 - INFO - Inserting new company SHOP.TO
+2025-03-15 18:39:26,864 - ERROR - Error inserting company data for SHOP.TO: column "long_business_summary" of relation "companies" does not exist
+LINE 3: ...ctor, industry, website, headquarters, employees, long_busin...
+                                                             ^
+
+2025-03-15 18:39:26,948 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 18:39:26,977 - ERROR - Error inserting financial data for SHOP.TO: column "other_data" of relation "financials" does not exist
+LINE 5: ...                return_on_equity, revenue_growth, other_data...
+                                                             ^
+
+2025-03-15 18:39:27,060 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 18:39:27,091 - ERROR - Error inserting market data for SHOP.TO: insert or update on table "market_data" violates foreign key constraint "market_data_ticker_fkey"
+DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
+
+2025-03-15 18:39:27,177 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 18:39:27,205 - ERROR - Error inserting ESG data for SHOP.TO: insert or update on table "esg_scores" violates foreign key constraint "esg_scores_ticker_fkey"
+DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
+
+2025-03-15 18:39:27,290 - INFO - Inserting governance risk data for SHOP.TO from Company Info
+2025-03-15 18:39:27,323 - ERROR - Error inserting governance risk data from Company Info for SHOP.TO: insert or update on table "governance_risk" violates foreign key constraint "governance_risk_ticker_fkey"
+DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
+
+2025-03-15 18:39:27,351 - WARNING - No data was inserted for SHOP.TO
+2025-03-15 18:39:27,352 - ERROR - Failed to process SHOP.TO
+2025-03-15 18:41:57,572 - INFO - Starting data upload process
+2025-03-15 18:41:57,572 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 18:41:57,572 - INFO - Processing ticker: SHOP.TO
+2025-03-15 18:41:57,573 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 18:42:28,277 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 18:42:28,855 - INFO - Inserting new company SHOP.TO
+2025-03-15 18:42:28,946 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 18:42:28,989 - ERROR - Error inserting financial data for SHOP.TO: column "other_data" of relation "financials" does not exist
+LINE 5: ...                return_on_equity, revenue_growth, other_data...
+                                                             ^
+
+2025-03-15 18:42:29,117 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 18:42:29,161 - ERROR - Error inserting market data for SHOP.TO: insert or update on table "market_data" violates foreign key constraint "market_data_ticker_fkey"
+DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
+
+2025-03-15 18:42:29,290 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 18:42:29,333 - ERROR - Error inserting ESG data for SHOP.TO: insert or update on table "esg_scores" violates foreign key constraint "esg_scores_ticker_fkey"
+DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
+
+2025-03-15 18:42:29,461 - INFO - Inserting governance risk data for SHOP.TO from Company Info
+2025-03-15 18:42:29,505 - ERROR - Error inserting governance risk data from Company Info for SHOP.TO: insert or update on table "governance_risk" violates foreign key constraint "governance_risk_ticker_fkey"
+DETAIL:  Key (ticker)=(SHOP.TO) is not present in table "companies".
+
+2025-03-15 18:42:29,547 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:42:29,548 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:43:41,667 - INFO - Starting data upload process
+2025-03-15 18:43:41,668 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 18:43:41,668 - INFO - Processing ticker: SHOP.TO
+2025-03-15 18:43:41,668 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 18:44:26,719 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 18:44:27,068 - INFO - Inserting new company SHOP.TO
+2025-03-15 18:44:27,131 - INFO - Inserting financial data for SHOP.TO on 2024-12-31
+2025-03-15 18:44:27,190 - INFO - Inserting financial data for SHOP.TO on 2024-09-30
+2025-03-15 18:44:27,247 - INFO - Inserting financial data for SHOP.TO on 2024-06-30
+2025-03-15 18:44:27,305 - INFO - Inserting financial data for SHOP.TO on 2024-03-31
+2025-03-15 18:44:27,364 - INFO - Inserting financial data for SHOP.TO on 2023-12-31
+2025-03-15 18:44:27,423 - INFO - Inserting financial data for SHOP.TO on 2023-09-30
+2025-03-15 18:44:27,480 - INFO - Inserting financial data for SHOP.TO on 2023-06-30
+2025-03-15 18:44:27,542 - INFO - Inserting market data for SHOP.TO on 2025-02-14
+2025-03-15 18:44:27,603 - INFO - Inserting market data for SHOP.TO on 2025-02-18
+2025-03-15 18:44:27,660 - INFO - Inserting market data for SHOP.TO on 2025-02-19
+2025-03-15 18:44:27,717 - INFO - Inserting market data for SHOP.TO on 2025-02-20
+2025-03-15 18:44:27,776 - INFO - Inserting market data for SHOP.TO on 2025-02-21
+2025-03-15 18:44:27,835 - INFO - Inserting market data for SHOP.TO on 2025-02-24
+2025-03-15 18:44:27,894 - INFO - Inserting market data for SHOP.TO on 2025-02-25
+2025-03-15 18:44:27,951 - INFO - Inserting market data for SHOP.TO on 2025-02-26
+2025-03-15 18:44:28,009 - INFO - Inserting market data for SHOP.TO on 2025-02-27
+2025-03-15 18:44:28,068 - INFO - Inserting market data for SHOP.TO on 2025-02-28
+2025-03-15 18:44:28,127 - INFO - Inserting market data for SHOP.TO on 2025-03-03
+2025-03-15 18:44:28,185 - INFO - Inserting market data for SHOP.TO on 2025-03-04
+2025-03-15 18:44:28,243 - INFO - Inserting market data for SHOP.TO on 2025-03-05
+2025-03-15 18:44:28,305 - INFO - Inserting market data for SHOP.TO on 2025-03-06
+2025-03-15 18:44:28,398 - INFO - Inserting market data for SHOP.TO on 2025-03-07
+2025-03-15 18:44:28,456 - INFO - Inserting market data for SHOP.TO on 2025-03-10
+2025-03-15 18:44:28,515 - INFO - Inserting market data for SHOP.TO on 2025-03-11
+2025-03-15 18:44:28,574 - INFO - Inserting market data for SHOP.TO on 2025-03-12
+2025-03-15 18:44:28,633 - INFO - Inserting market data for SHOP.TO on 2025-03-13
+2025-03-15 18:44:28,692 - INFO - Inserting market data for SHOP.TO on 2025-03-14
+2025-03-15 18:44:28,751 - INFO - Inserting analyst data for SHOP.TO on 2025-03-15
+2025-03-15 18:44:28,810 - INFO - Inserting ESG data for SHOP.TO
+2025-03-15 18:44:28,867 - INFO - Inserting governance risk data for SHOP.TO from Company Info
+2025-03-15 18:44:28,926 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:44:28,927 - INFO - Successfully processed SHOP.TO
