@@ -13,12 +13,12 @@ Created a script (push-data.py) that:
 
 Based on queries.txt, the database has these tables:
 
-- companies
-- financials
-- market_data
-- governance_risk
-- esg_scores
-- sentiment_data
+- companies (ticker, name, sector, industry, website, headquarters, employees, long_business_summary, market_cap)
+- financials (ticker, report_date, revenue, net_income, ebitda, gross_profit, total_debt, operating_cashflow, free_cashflow, return_on_assets, return_on_equity, earnings_growth, revenue_growth, other_data, custom_price_alert_confidence)
+- market_data (ticker, date, open_price, close_price, day_high, day_low, volume, analyst_target_high, analyst_target_low, analyst_target_mean, recommendation_key)
+- governance_risk (ticker, audit_risk, board_risk, compensation_risk, shareholder_rights_risk, overall_risk, governance_last_updated)
+- esg_scores (ticker, esg_risk_score, esg_risk_severity, environment_score, social_score, governance_score, last_updated)
+- sentiment_data (ticker, source, sentiment_score, date)
 
 ## Data Mapping
 
@@ -27,7 +27,9 @@ Map data from test-data.py output to database tables:
 1. **Company Info** → companies table
 
    - ticker, name, sector, industry, website, headquarters, employees
+   - Added: long_business_summary, market_cap
    - Also used for governance_risk and market_data (analyst targets)
+   - Also used for financials (revenue_growth, return_on_equity, return_on_assets, free_cashflow, operating_cashflow, total_debt)
 
 2. **Calendar** → No direct mapping, may extract relevant dates
 
@@ -38,6 +40,8 @@ Map data from test-data.py output to database tables:
 4. **Quarterly Income Statement** → financials table
 
    - revenue, net_income, ebitda, gross_profit, etc.
+   - Added: other_data (JSONB field containing additional financial metrics)
+   - Added: custom_price_alert_confidence
 
 5. **History** → market_data table
 
@@ -72,11 +76,17 @@ Map data from test-data.py output to database tables:
 
 3. `insert_company_data(conn, ticker, data)`: Inserts/updates company information
 
+   - Added support for long_business_summary and market_cap fields
+
 4. `insert_financial_data(conn, ticker, data)`: Inserts/updates quarterly financial data
 
    - Fixed date parsing to handle various formats
    - Added support for financial ratios (ROA, ROE)
-   - Improved error handling for missing or invalid data
+   - Added support for revenue_growth, free_cashflow, operating_cashflow, total_debt
+   - Added other_data JSONB field with additional financial metrics
+   - Added custom_price_alert_confidence field
+   - Now extracts data from both Quarterly Income Statement and Company Info
+   - Creates a record with just Company Info data if Quarterly Income Statement is not available
 
 5. `insert_market_data(conn, ticker, data)`: Inserts/updates market data and analyst targets
 

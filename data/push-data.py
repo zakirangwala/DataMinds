@@ -210,35 +210,51 @@ def insert_company_data(conn, ticker, data):
             # Check if company already exists
             cur.execute(
                 "SELECT ticker FROM companies WHERE ticker = %s", (ticker,))
+
+            # Extract additional fields
+            name = info.get('shortName', info.get('longName', None))
+            sector = info.get('sector', None)
+            industry = info.get('industry', None)
+            website = info.get('website', None)
+            headquarters = info.get('city', None)
+            employees = info.get('fullTimeEmployees', None)
+            long_business_summary = info.get('longBusinessSummary', None)
+            market_cap = info.get('marketCap', None)
+
             if cur.fetchone():
                 logger.info(f"Company {ticker} already exists, updating...")
                 cur.execute("""
                     UPDATE companies 
                     SET name = %s, sector = %s, industry = %s, website = %s, 
-                        headquarters = %s, employees = %s
+                        headquarters = %s, employees = %s, long_business_summary = %s, market_cap = %s
                     WHERE ticker = %s
                 """, (
-                    info.get('shortName', info.get('longName', None)),
-                    info.get('sector', None),
-                    info.get('industry', None),
-                    info.get('website', None),
-                    info.get('city', None),
-                    info.get('fullTimeEmployees', None),
+                    name,
+                    sector,
+                    industry,
+                    website,
+                    headquarters,
+                    employees,
+                    long_business_summary,
+                    market_cap,
                     ticker
                 ))
             else:
                 logger.info(f"Inserting new company {ticker}")
                 cur.execute("""
-                    INSERT INTO companies (ticker, name, sector, industry, website, headquarters, employees)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    INSERT INTO companies 
+                    (ticker, name, sector, industry, website, headquarters, employees, long_business_summary, market_cap)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     ticker,
-                    info.get('shortName', info.get('longName', None)),
-                    info.get('sector', None),
-                    info.get('industry', None),
-                    info.get('website', None),
-                    info.get('city', None),
-                    info.get('fullTimeEmployees', None)
+                    name,
+                    sector,
+                    industry,
+                    website,
+                    headquarters,
+                    employees,
+                    long_business_summary,
+                    market_cap
                 ))
         return True
     except Exception as e:
@@ -285,98 +301,217 @@ def parse_date_string(date_str):
 
 def insert_financial_data(conn, ticker, data):
     """Insert financial data into the financials table"""
-    if 'Quarterly Income Statement' not in data:
+    if 'Quarterly Income Statement' not in data and 'Company Info' not in data:
         logger.warning(f"No financial data available for {ticker}")
         return False
 
     try:
-        income_stmt = data['Quarterly Income Statement']
+        # Get company info for additional financial metrics
+        company_info = data.get('Company Info', {})
 
-        # Convert dictionary to DataFrame for easier processing
-        if isinstance(income_stmt, dict):
-            # Process each date key properly
-            with conn.cursor() as cur:
-                for date_str in income_stmt.keys():
-                    # Try to parse the date string
-                    report_date = parse_date_string(date_str)
-                    if not report_date:
-                        logger.warning(f"Skipping non-date key: {date_str}")
-                        continue
+        # Extract financial metrics from company info
+        revenue_growth = company_info.get('revenueGrowth')
+        return_on_equity = company_info.get('returnOnEquity')
+        return_on_assets = company_info.get('returnOnAssets')
+        free_cashflow = company_info.get('freeCashflow')
+        operating_cashflow = company_info.get('operatingCashflow')
+        total_debt = company_info.get('totalDebt')
 
-                    # Get the data for this date
-                    quarter_data = income_stmt[date_str]
+        # Create otherData JSON object with selected fields
+        other_data = {}
 
-                    # Extract relevant financial metrics
-                    revenue = quarter_data.get('Total Revenue')
-                    net_income = quarter_data.get('Net Income')
-                    ebitda = quarter_data.get('EBITDA')
-                    gross_profit = quarter_data.get('Gross Profit')
-                    total_debt = None  # Not available in quarterly income statement
-                    operating_cashflow = None  # Not available in quarterly income statement
-                    free_cashflow = None  # Not available in quarterly income statement
+        # Add fields from lines 11-72 and 95-119 to otherData
+        financial_keys = [
+            'exDividendDate', 'payoutRatio', 'fiveYearAvgDividendYield', 'forwardPE',
+            'averageVolume', 'averageVolume10days', 'marketCap', 'fiftyTwoWeekLow',
+            'fiftyTwoWeekHigh', 'priceToSalesTrailing12Months', 'fiftyDayAverage',
+            'twoHundredDayAverage', 'trailingAnnualDividendRate', 'trailingAnnualDividendYield',
+            'currency', 'enterpriseValue', 'profitMargins', 'floatShares',
+            'sharesOutstanding', 'sharesShort', 'sharesShortPriorMonth',
+            'sharesShortPreviousMonthDate', 'dateShortInterest', 'sharesPercentSharesOut',
+            'heldPercentInsiders', 'heldPercentInstitutions', 'shortRatio',
+            'impliedSharesOutstanding', 'bookValue', 'priceToBook',
+            'lastFiscalYearEnd', 'nextFiscalYearEnd', 'mostRecentQuarter',
+            'netIncomeToCommon', 'trailingEps', 'forwardEps',
+            'enterpriseToRevenue', 'enterpriseToEbitda', '52WeekChange',
+            'lastDividendValue', 'lastDividendDate', 'quoteType',
+            'currentPrice', 'recommendationKey', 'totalCash',
+            'totalCashPerShare', 'ebitda', 'quickRatio',
+            'currentRatio', 'debtToEquity', 'revenuePerShare',
+            'grossProfits', 'operatingMargins', 'ebitdaMargins',
+            'grossMargins'
+        ]
 
-                    # Calculate ratios if possible
-                    total_assets = quarter_data.get('Total Assets')
-                    total_equity = quarter_data.get(
-                        'Total Equity Gross Minority Interest')
+        for key in financial_keys:
+            if key in company_info:
+                other_data[key] = company_info[key]
 
-                    roa = None
-                    roe = None
-                    if net_income is not None:
-                        if total_assets is not None and total_assets != 0:
-                            roa = float(net_income) / float(total_assets)
-                        if total_equity is not None and total_equity != 0:
-                            roe = float(net_income) / float(total_equity)
+        # Generate a custom price alert confidence (placeholder)
+        # In a real implementation, this would be calculated based on some algorithm
+        custom_price_alert_confidence = 0.5  # Default value
 
-                    # Check if record already exists
-                    cur.execute("""
-                        SELECT id FROM financials 
-                        WHERE ticker = %s AND report_date = %s
-                    """, (ticker, report_date))
+        # Process quarterly income statement data
+        if 'Quarterly Income Statement' in data:
+            income_stmt = data['Quarterly Income Statement']
 
-                    if cur.fetchone():
-                        logger.info(
-                            f"Financial data for {ticker} on {report_date} already exists, updating...")
+            # Convert dictionary to DataFrame for easier processing
+            if isinstance(income_stmt, dict):
+                # Process each date key properly
+                with conn.cursor() as cur:
+                    for date_str in income_stmt.keys():
+                        # Try to parse the date string
+                        report_date = parse_date_string(date_str)
+                        if not report_date:
+                            logger.warning(
+                                f"Skipping non-date key: {date_str}")
+                            continue
+
+                        # Get the data for this date
+                        quarter_data = income_stmt[date_str]
+
+                        # Extract relevant financial metrics
+                        revenue = quarter_data.get('Total Revenue')
+                        net_income = quarter_data.get('Net Income')
+                        ebitda = quarter_data.get('EBITDA')
+                        gross_profit = quarter_data.get('Gross Profit')
+
+                        # Calculate ratios if possible
+                        total_assets = quarter_data.get('Total Assets')
+                        total_equity = quarter_data.get(
+                            'Total Equity Gross Minority Interest')
+
+                        # Use values from quarterly data if available, otherwise use company info
+                        roa = None
+                        roe = None
+                        if net_income is not None:
+                            if total_assets is not None and total_assets != 0:
+                                roa = float(net_income) / float(total_assets)
+                            if total_equity is not None and total_equity != 0:
+                                roe = float(net_income) / float(total_equity)
+
+                        # If quarterly data doesn't have these values, use the ones from company info
+                        if roa is None:
+                            roa = return_on_assets
+                        if roe is None:
+                            roe = return_on_equity
+
+                        # Convert otherData to JSON string
+                        other_data_json = json.dumps(other_data)
+
+                        # Check if record already exists
                         cur.execute("""
-                            UPDATE financials 
-                            SET revenue = %s, net_income = %s, ebitda = %s, gross_profit = %s,
-                                total_debt = %s, operating_cashflow = %s, free_cashflow = %s,
-                                return_on_assets = %s, return_on_equity = %s
+                            SELECT id FROM financials 
                             WHERE ticker = %s AND report_date = %s
-                        """, (
-                            revenue,
-                            net_income,
-                            ebitda,
-                            gross_profit,
-                            total_debt,
-                            operating_cashflow,
-                            free_cashflow,
-                            roa,
-                            roe,
-                            ticker,
-                            report_date
-                        ))
-                    else:
-                        logger.info(
-                            f"Inserting financial data for {ticker} on {report_date}")
-                        cur.execute("""
-                            INSERT INTO financials 
-                            (ticker, report_date, revenue, net_income, ebitda, gross_profit,
-                            total_debt, operating_cashflow, free_cashflow, return_on_assets, return_on_equity)
-                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        """, (
-                            ticker,
-                            report_date,
-                            revenue,
-                            net_income,
-                            ebitda,
-                            gross_profit,
-                            total_debt,
-                            operating_cashflow,
-                            free_cashflow,
-                            roa,
-                            roe
-                        ))
+                        """, (ticker, report_date))
+
+                        if cur.fetchone():
+                            logger.info(
+                                f"Financial data for {ticker} on {report_date} already exists, updating...")
+                            cur.execute("""
+                                UPDATE financials 
+                                SET revenue = %s, net_income = %s, ebitda = %s, gross_profit = %s,
+                                    total_debt = %s, operating_cashflow = %s, free_cashflow = %s,
+                                    return_on_assets = %s, return_on_equity = %s, revenue_growth = %s,
+                                    other_data = %s, custom_price_alert_confidence = %s
+                                WHERE ticker = %s AND report_date = %s
+                            """, (
+                                revenue,
+                                net_income,
+                                ebitda,
+                                gross_profit,
+                                total_debt,
+                                operating_cashflow,
+                                free_cashflow,
+                                roa,
+                                roe,
+                                revenue_growth,
+                                other_data_json,
+                                custom_price_alert_confidence,
+                                ticker,
+                                report_date
+                            ))
+                        else:
+                            logger.info(
+                                f"Inserting financial data for {ticker} on {report_date}")
+                            cur.execute("""
+                                INSERT INTO financials 
+                                (ticker, report_date, revenue, net_income, ebitda, gross_profit,
+                                total_debt, operating_cashflow, free_cashflow, return_on_assets, 
+                                return_on_equity, revenue_growth, other_data, custom_price_alert_confidence)
+                                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                            """, (
+                                ticker,
+                                report_date,
+                                revenue,
+                                net_income,
+                                ebitda,
+                                gross_profit,
+                                total_debt,
+                                operating_cashflow,
+                                free_cashflow,
+                                roa,
+                                roe,
+                                revenue_growth,
+                                other_data_json,
+                                custom_price_alert_confidence
+                            ))
+        # If no quarterly data but we have company info, create a record with just the company info data
+        elif company_info:
+            with conn.cursor() as cur:
+                # Use today's date for the report
+                report_date = datetime.now().date()
+
+                # Convert otherData to JSON string
+                other_data_json = json.dumps(other_data)
+
+                # Check if record already exists
+                cur.execute("""
+                    SELECT id FROM financials 
+                    WHERE ticker = %s AND report_date = %s
+                """, (ticker, report_date))
+
+                if cur.fetchone():
+                    logger.info(
+                        f"Financial data for {ticker} on {report_date} already exists, updating from company info...")
+                    cur.execute("""
+                        UPDATE financials 
+                        SET total_debt = %s, operating_cashflow = %s, free_cashflow = %s,
+                            return_on_assets = %s, return_on_equity = %s, revenue_growth = %s,
+                            other_data = %s, custom_price_alert_confidence = %s
+                        WHERE ticker = %s AND report_date = %s
+                    """, (
+                        total_debt,
+                        operating_cashflow,
+                        free_cashflow,
+                        return_on_assets,
+                        return_on_equity,
+                        revenue_growth,
+                        other_data_json,
+                        custom_price_alert_confidence,
+                        ticker,
+                        report_date
+                    ))
+                else:
+                    logger.info(
+                        f"Inserting financial data for {ticker} from company info")
+                    cur.execute("""
+                        INSERT INTO financials 
+                        (ticker, report_date, total_debt, operating_cashflow, free_cashflow, 
+                        return_on_assets, return_on_equity, revenue_growth, other_data, custom_price_alert_confidence)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """, (
+                        ticker,
+                        report_date,
+                        total_debt,
+                        operating_cashflow,
+                        free_cashflow,
+                        return_on_assets,
+                        return_on_equity,
+                        revenue_growth,
+                        other_data_json,
+                        custom_price_alert_confidence
+                    ))
+
         return True
     except Exception as e:
         logger.error(f"Error inserting financial data for {ticker}: {str(e)}")

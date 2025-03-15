@@ -801,3 +801,1713 @@ LINE 4:                             VALUES ('LSPD.TO', '3.9', '2025-...
 2025-03-15 17:57:26,559 - INFO - Inserting governance risk data for LSPD.TO from Company Info
 2025-03-15 17:57:26,645 - INFO - Successfully processed LSPD.TO
 2025-03-15 17:57:26,646 - INFO - Successfully processed LSPD.TO
+2025-03-15 18:02:05,454 - INFO - Starting data upload process
+2025-03-15 18:02:05,454 - INFO - Found companies.txt at companies.txt
+2025-03-15 18:02:05,454 - INFO - Found 35 tickers to process
+2025-03-15 18:02:05,454 - INFO - Processing ticker 1/35: BR.TO
+2025-03-15 18:02:05,454 - INFO - Processing ticker: BR.TO
+2025-03-15 18:02:05,455 - INFO - Running test-data.py for BR.TO
+2025-03-15 18:02:17,721 - INFO - Retrieved data for BR.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:02:18,189 - INFO - Company BR.TO already exists, updating...
+2025-03-15 18:02:18,279 - INFO - Inserting financial data for BR.TO on 2024-09-30
+2025-03-15 18:02:18,365 - INFO - Inserting financial data for BR.TO on 2024-06-30
+2025-03-15 18:02:18,449 - INFO - Inserting financial data for BR.TO on 2024-03-31
+2025-03-15 18:02:18,532 - INFO - Inserting financial data for BR.TO on 2023-12-31
+2025-03-15 18:02:18,614 - INFO - Inserting financial data for BR.TO on 2023-09-30
+2025-03-15 18:02:18,699 - INFO - Inserting financial data for BR.TO on 2023-06-30
+2025-03-15 18:02:18,782 - INFO - Inserting market data for BR.TO on 2025-02-14
+2025-03-15 18:02:18,870 - INFO - Inserting market data for BR.TO on 2025-02-18
+2025-03-15 18:02:18,954 - INFO - Inserting market data for BR.TO on 2025-02-19
+2025-03-15 18:02:19,040 - INFO - Inserting market data for BR.TO on 2025-02-20
+2025-03-15 18:02:19,162 - INFO - Inserting market data for BR.TO on 2025-02-21
+2025-03-15 18:02:19,254 - INFO - Inserting market data for BR.TO on 2025-02-24
+2025-03-15 18:02:19,341 - INFO - Inserting market data for BR.TO on 2025-02-25
+2025-03-15 18:02:19,423 - INFO - Inserting market data for BR.TO on 2025-02-26
+2025-03-15 18:02:19,509 - INFO - Inserting market data for BR.TO on 2025-02-27
+2025-03-15 18:02:19,594 - INFO - Inserting market data for BR.TO on 2025-02-28
+2025-03-15 18:02:19,679 - INFO - Inserting market data for BR.TO on 2025-03-03
+2025-03-15 18:02:19,765 - INFO - Inserting market data for BR.TO on 2025-03-04
+2025-03-15 18:02:19,850 - INFO - Inserting market data for BR.TO on 2025-03-05
+2025-03-15 18:02:19,935 - INFO - Inserting market data for BR.TO on 2025-03-06
+2025-03-15 18:02:20,019 - INFO - Inserting market data for BR.TO on 2025-03-07
+2025-03-15 18:02:20,106 - INFO - Inserting market data for BR.TO on 2025-03-10
+2025-03-15 18:02:20,192 - INFO - Inserting market data for BR.TO on 2025-03-11
+2025-03-15 18:02:20,276 - INFO - Inserting market data for BR.TO on 2025-03-12
+2025-03-15 18:02:20,360 - INFO - Inserting market data for BR.TO on 2025-03-13
+2025-03-15 18:02:20,445 - INFO - Inserting market data for BR.TO on 2025-03-14
+2025-03-15 18:02:20,532 - INFO - Inserting analyst data for BR.TO on 2025-03-15
+2025-03-15 18:02:20,616 - INFO - ESG data for BR.TO already exists, updating...
+2025-03-15 18:02:20,658 - WARNING - No governance risk data available for BR.TO
+2025-03-15 18:02:20,700 - INFO - Successfully processed BR.TO
+2025-03-15 18:02:22,706 - INFO - Processing ticker 2/35: TPX-A.TO
+2025-03-15 18:02:22,706 - INFO - Processing ticker: TPX-A.TO
+2025-03-15 18:02:22,709 - INFO - Running test-data.py for TPX-A.TO
+2025-03-15 18:02:28,436 - INFO - Retrieved data for TPX-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:02:28,720 - INFO - Company TPX-A.TO already exists, updating...
+2025-03-15 18:02:28,781 - INFO - Financial data for TPX-A.TO on 2024-12-31 already exists, updating...
+2025-03-15 18:02:28,838 - INFO - Financial data for TPX-A.TO on 2024-09-30 already exists, updating...
+2025-03-15 18:02:28,896 - INFO - Financial data for TPX-A.TO on 2024-06-30 already exists, updating...
+2025-03-15 18:02:28,952 - INFO - Financial data for TPX-A.TO on 2024-03-31 already exists, updating...
+2025-03-15 18:02:29,011 - INFO - Financial data for TPX-A.TO on 2023-12-31 already exists, updating...
+2025-03-15 18:02:29,070 - INFO - Financial data for TPX-A.TO on 2023-09-30 already exists, updating...
+2025-03-15 18:02:29,128 - INFO - Financial data for TPX-A.TO on 2023-06-30 already exists, updating...
+2025-03-15 18:02:29,185 - INFO - Market data for TPX-A.TO on 2025-02-14 already exists, updating...
+2025-03-15 18:02:29,244 - INFO - Market data for TPX-A.TO on 2025-02-18 already exists, updating...
+2025-03-15 18:02:29,302 - INFO - Market data for TPX-A.TO on 2025-02-19 already exists, updating...
+2025-03-15 18:02:29,358 - INFO - Market data for TPX-A.TO on 2025-02-20 already exists, updating...
+2025-03-15 18:02:29,414 - INFO - Market data for TPX-A.TO on 2025-02-21 already exists, updating...
+2025-03-15 18:02:29,471 - INFO - Market data for TPX-A.TO on 2025-02-24 already exists, updating...
+2025-03-15 18:02:29,528 - INFO - Market data for TPX-A.TO on 2025-02-25 already exists, updating...
+2025-03-15 18:02:29,586 - INFO - Market data for TPX-A.TO on 2025-02-26 already exists, updating...
+2025-03-15 18:02:29,646 - INFO - Market data for TPX-A.TO on 2025-02-27 already exists, updating...
+2025-03-15 18:02:29,704 - INFO - Market data for TPX-A.TO on 2025-02-28 already exists, updating...
+2025-03-15 18:02:29,762 - INFO - Market data for TPX-A.TO on 2025-03-03 already exists, updating...
+2025-03-15 18:02:29,830 - INFO - Market data for TPX-A.TO on 2025-03-04 already exists, updating...
+2025-03-15 18:02:29,886 - INFO - Market data for TPX-A.TO on 2025-03-05 already exists, updating...
+2025-03-15 18:02:29,944 - INFO - Market data for TPX-A.TO on 2025-03-06 already exists, updating...
+2025-03-15 18:02:30,000 - INFO - Market data for TPX-A.TO on 2025-03-07 already exists, updating...
+2025-03-15 18:02:30,058 - INFO - Market data for TPX-A.TO on 2025-03-10 already exists, updating...
+2025-03-15 18:02:30,118 - INFO - Market data for TPX-A.TO on 2025-03-11 already exists, updating...
+2025-03-15 18:02:30,173 - INFO - Market data for TPX-A.TO on 2025-03-12 already exists, updating...
+2025-03-15 18:02:30,230 - INFO - Market data for TPX-A.TO on 2025-03-13 already exists, updating...
+2025-03-15 18:02:30,291 - INFO - Market data for TPX-A.TO on 2025-03-14 already exists, updating...
+2025-03-15 18:02:30,348 - INFO - Updating analyst targets for TPX-A.TO on 2025-03-15
+2025-03-15 18:02:30,407 - INFO - ESG data for TPX-A.TO already exists, updating...
+2025-03-15 18:02:30,434 - WARNING - No governance risk data available for TPX-A.TO
+2025-03-15 18:02:30,464 - INFO - Successfully processed TPX-A.TO
+2025-03-15 18:02:32,469 - INFO - Processing ticker 3/35: TPX-B.TO
+2025-03-15 18:02:32,470 - INFO - Processing ticker: TPX-B.TO
+2025-03-15 18:02:32,471 - INFO - Running test-data.py for TPX-B.TO
+2025-03-15 18:02:41,968 - INFO - Retrieved data for TPX-B.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:02:42,257 - INFO - Company TPX-B.TO already exists, updating...
+2025-03-15 18:02:42,316 - INFO - Inserting financial data for TPX-B.TO on 2024-12-31
+2025-03-15 18:02:42,377 - INFO - Inserting financial data for TPX-B.TO on 2024-09-30
+2025-03-15 18:02:42,436 - INFO - Inserting financial data for TPX-B.TO on 2024-06-30
+2025-03-15 18:02:42,494 - INFO - Inserting financial data for TPX-B.TO on 2024-03-31
+2025-03-15 18:02:42,554 - INFO - Inserting financial data for TPX-B.TO on 2023-12-31
+2025-03-15 18:02:42,613 - INFO - Inserting financial data for TPX-B.TO on 2023-09-30
+2025-03-15 18:02:42,673 - INFO - Inserting financial data for TPX-B.TO on 2023-06-30
+2025-03-15 18:02:42,732 - INFO - Inserting market data for TPX-B.TO on 2025-02-14
+2025-03-15 18:02:42,791 - INFO - Inserting market data for TPX-B.TO on 2025-02-18
+2025-03-15 18:02:42,849 - INFO - Inserting market data for TPX-B.TO on 2025-02-19
+2025-03-15 18:02:42,910 - INFO - Inserting market data for TPX-B.TO on 2025-02-20
+2025-03-15 18:02:42,969 - INFO - Inserting market data for TPX-B.TO on 2025-02-21
+2025-03-15 18:02:43,027 - INFO - Inserting market data for TPX-B.TO on 2025-02-24
+2025-03-15 18:02:43,093 - INFO - Inserting market data for TPX-B.TO on 2025-02-25
+2025-03-15 18:02:43,150 - INFO - Inserting market data for TPX-B.TO on 2025-02-26
+2025-03-15 18:02:43,209 - INFO - Inserting market data for TPX-B.TO on 2025-02-27
+2025-03-15 18:02:43,267 - INFO - Inserting market data for TPX-B.TO on 2025-02-28
+2025-03-15 18:02:43,327 - INFO - Inserting market data for TPX-B.TO on 2025-03-03
+2025-03-15 18:02:43,385 - INFO - Inserting market data for TPX-B.TO on 2025-03-04
+2025-03-15 18:02:43,445 - INFO - Inserting market data for TPX-B.TO on 2025-03-05
+2025-03-15 18:02:43,508 - INFO - Inserting market data for TPX-B.TO on 2025-03-06
+2025-03-15 18:02:43,567 - INFO - Inserting market data for TPX-B.TO on 2025-03-07
+2025-03-15 18:02:43,625 - INFO - Inserting market data for TPX-B.TO on 2025-03-10
+2025-03-15 18:02:43,682 - INFO - Inserting market data for TPX-B.TO on 2025-03-11
+2025-03-15 18:02:43,739 - INFO - Inserting market data for TPX-B.TO on 2025-03-12
+2025-03-15 18:02:43,797 - INFO - Inserting market data for TPX-B.TO on 2025-03-13
+2025-03-15 18:02:43,856 - INFO - Inserting market data for TPX-B.TO on 2025-03-14
+2025-03-15 18:02:43,915 - INFO - Inserting analyst data for TPX-B.TO on 2025-03-15
+2025-03-15 18:02:43,974 - INFO - ESG data for TPX-B.TO already exists, updating...
+2025-03-15 18:02:44,003 - WARNING - No governance risk data available for TPX-B.TO
+2025-03-15 18:02:44,033 - INFO - Successfully processed TPX-B.TO
+2025-03-15 18:02:46,038 - INFO - Processing ticker 4/35: LAS-A.TO
+2025-03-15 18:02:46,039 - INFO - Processing ticker: LAS-A.TO
+2025-03-15 18:02:46,040 - INFO - Running test-data.py for LAS-A.TO
+2025-03-15 18:02:52,937 - INFO - Retrieved data for LAS-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:02:53,284 - INFO - Company LAS-A.TO already exists, updating...
+2025-03-15 18:02:53,345 - INFO - Inserting financial data for LAS-A.TO on 2024-09-30
+2025-03-15 18:02:53,402 - INFO - Inserting financial data for LAS-A.TO on 2024-06-30
+2025-03-15 18:02:53,461 - INFO - Inserting financial data for LAS-A.TO on 2024-03-31
+2025-03-15 18:02:53,520 - INFO - Inserting financial data for LAS-A.TO on 2023-12-31
+2025-03-15 18:02:53,578 - INFO - Inserting financial data for LAS-A.TO on 2023-09-30
+2025-03-15 18:02:53,637 - INFO - Inserting financial data for LAS-A.TO on 2023-06-30
+2025-03-15 18:02:53,695 - INFO - Inserting market data for LAS-A.TO on 2025-02-14
+2025-03-15 18:02:53,755 - INFO - Inserting market data for LAS-A.TO on 2025-02-18
+2025-03-15 18:02:53,811 - INFO - Inserting market data for LAS-A.TO on 2025-02-19
+2025-03-15 18:02:53,871 - INFO - Inserting market data for LAS-A.TO on 2025-02-20
+2025-03-15 18:02:53,929 - INFO - Inserting market data for LAS-A.TO on 2025-02-21
+2025-03-15 18:02:53,987 - INFO - Inserting market data for LAS-A.TO on 2025-02-24
+2025-03-15 18:02:54,047 - INFO - Inserting market data for LAS-A.TO on 2025-02-25
+2025-03-15 18:02:54,104 - INFO - Inserting market data for LAS-A.TO on 2025-02-26
+2025-03-15 18:02:54,161 - INFO - Inserting market data for LAS-A.TO on 2025-02-27
+2025-03-15 18:02:54,221 - INFO - Inserting market data for LAS-A.TO on 2025-02-28
+2025-03-15 18:02:54,279 - INFO - Inserting market data for LAS-A.TO on 2025-03-03
+2025-03-15 18:02:54,337 - INFO - Inserting market data for LAS-A.TO on 2025-03-04
+2025-03-15 18:02:54,395 - INFO - Inserting market data for LAS-A.TO on 2025-03-05
+2025-03-15 18:02:54,455 - INFO - Inserting market data for LAS-A.TO on 2025-03-06
+2025-03-15 18:02:54,513 - INFO - Inserting market data for LAS-A.TO on 2025-03-07
+2025-03-15 18:02:54,569 - INFO - Inserting market data for LAS-A.TO on 2025-03-10
+2025-03-15 18:02:54,630 - INFO - Inserting market data for LAS-A.TO on 2025-03-11
+2025-03-15 18:02:54,691 - INFO - Inserting market data for LAS-A.TO on 2025-03-12
+2025-03-15 18:02:54,748 - INFO - Inserting market data for LAS-A.TO on 2025-03-13
+2025-03-15 18:02:54,806 - INFO - Inserting market data for LAS-A.TO on 2025-03-14
+2025-03-15 18:02:54,865 - INFO - Inserting analyst data for LAS-A.TO on 2025-03-15
+2025-03-15 18:02:54,923 - INFO - ESG data for LAS-A.TO already exists, updating...
+2025-03-15 18:02:54,980 - INFO - Inserting governance risk data for LAS-A.TO from Company Info
+2025-03-15 18:02:55,039 - INFO - Successfully processed LAS-A.TO
+2025-03-15 18:02:57,042 - INFO - Processing ticker 5/35: SOY.TO
+2025-03-15 18:02:57,045 - INFO - Processing ticker: SOY.TO
+2025-03-15 18:02:57,047 - INFO - Running test-data.py for SOY.TO
+2025-03-15 18:03:05,845 - INFO - Retrieved data for SOY.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:03:06,147 - INFO - Company SOY.TO already exists, updating...
+2025-03-15 18:03:06,204 - INFO - Inserting financial data for SOY.TO on 2024-12-31
+2025-03-15 18:03:06,260 - INFO - Inserting financial data for SOY.TO on 2024-09-30
+2025-03-15 18:03:06,317 - INFO - Inserting financial data for SOY.TO on 2024-06-30
+2025-03-15 18:03:06,372 - INFO - Inserting financial data for SOY.TO on 2024-03-31
+2025-03-15 18:03:06,428 - INFO - Inserting financial data for SOY.TO on 2023-12-31
+2025-03-15 18:03:06,483 - INFO - Inserting financial data for SOY.TO on 2023-06-30
+2025-03-15 18:03:06,540 - INFO - Inserting market data for SOY.TO on 2025-02-14
+2025-03-15 18:03:06,597 - INFO - Inserting market data for SOY.TO on 2025-02-18
+2025-03-15 18:03:06,653 - INFO - Inserting market data for SOY.TO on 2025-02-19
+2025-03-15 18:03:06,708 - INFO - Inserting market data for SOY.TO on 2025-02-20
+2025-03-15 18:03:06,767 - INFO - Inserting market data for SOY.TO on 2025-02-21
+2025-03-15 18:03:06,826 - INFO - Inserting market data for SOY.TO on 2025-02-24
+2025-03-15 18:03:06,881 - INFO - Inserting market data for SOY.TO on 2025-02-25
+2025-03-15 18:03:06,937 - INFO - Inserting market data for SOY.TO on 2025-02-26
+2025-03-15 18:03:06,991 - INFO - Inserting market data for SOY.TO on 2025-02-27
+2025-03-15 18:03:07,050 - INFO - Inserting market data for SOY.TO on 2025-02-28
+2025-03-15 18:03:07,111 - INFO - Inserting market data for SOY.TO on 2025-03-03
+2025-03-15 18:03:07,166 - INFO - Inserting market data for SOY.TO on 2025-03-04
+2025-03-15 18:03:07,223 - INFO - Inserting market data for SOY.TO on 2025-03-05
+2025-03-15 18:03:07,279 - INFO - Inserting market data for SOY.TO on 2025-03-06
+2025-03-15 18:03:07,338 - INFO - Inserting market data for SOY.TO on 2025-03-07
+2025-03-15 18:03:07,395 - INFO - Inserting market data for SOY.TO on 2025-03-10
+2025-03-15 18:03:07,450 - INFO - Inserting market data for SOY.TO on 2025-03-11
+2025-03-15 18:03:07,505 - INFO - Inserting market data for SOY.TO on 2025-03-12
+2025-03-15 18:03:07,562 - INFO - Inserting market data for SOY.TO on 2025-03-13
+2025-03-15 18:03:07,620 - INFO - Inserting market data for SOY.TO on 2025-03-14
+2025-03-15 18:03:07,675 - INFO - Inserting analyst data for SOY.TO on 2025-03-15
+2025-03-15 18:03:07,730 - INFO - ESG data for SOY.TO already exists, updating...
+2025-03-15 18:03:07,786 - INFO - Inserting governance risk data for SOY.TO from Company Info
+2025-03-15 18:03:07,842 - INFO - Successfully processed SOY.TO
+2025-03-15 18:03:09,844 - INFO - Processing ticker 6/35: ADW-A.TO
+2025-03-15 18:03:09,844 - INFO - Processing ticker: ADW-A.TO
+2025-03-15 18:03:09,845 - INFO - Running test-data.py for ADW-A.TO
+2025-03-15 18:03:20,337 - INFO - Retrieved data for ADW-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:03:20,745 - INFO - Company ADW-A.TO already exists, updating...
+2025-03-15 18:03:20,830 - INFO - Inserting financial data for ADW-A.TO on 2024-12-31
+2025-03-15 18:03:20,914 - INFO - Inserting financial data for ADW-A.TO on 2024-09-30
+2025-03-15 18:03:20,997 - INFO - Inserting financial data for ADW-A.TO on 2024-03-31
+2025-03-15 18:03:21,080 - INFO - Inserting financial data for ADW-A.TO on 2023-12-31
+2025-03-15 18:03:21,164 - INFO - Inserting financial data for ADW-A.TO on 2023-09-30
+2025-03-15 18:03:21,248 - INFO - Inserting financial data for ADW-A.TO on 2023-06-30
+2025-03-15 18:03:21,332 - INFO - Inserting market data for ADW-A.TO on 2025-02-14
+2025-03-15 18:03:21,418 - INFO - Inserting market data for ADW-A.TO on 2025-02-18
+2025-03-15 18:03:21,503 - INFO - Inserting market data for ADW-A.TO on 2025-02-19
+2025-03-15 18:03:21,589 - INFO - Inserting market data for ADW-A.TO on 2025-02-20
+2025-03-15 18:03:21,671 - INFO - Inserting market data for ADW-A.TO on 2025-02-21
+2025-03-15 18:03:21,755 - INFO - Inserting market data for ADW-A.TO on 2025-02-24
+2025-03-15 18:03:21,840 - INFO - Inserting market data for ADW-A.TO on 2025-02-25
+2025-03-15 18:03:21,923 - INFO - Inserting market data for ADW-A.TO on 2025-02-26
+2025-03-15 18:03:22,006 - INFO - Inserting market data for ADW-A.TO on 2025-02-27
+2025-03-15 18:03:22,089 - INFO - Inserting market data for ADW-A.TO on 2025-02-28
+2025-03-15 18:03:22,174 - INFO - Inserting market data for ADW-A.TO on 2025-03-03
+2025-03-15 18:03:22,256 - INFO - Inserting market data for ADW-A.TO on 2025-03-04
+2025-03-15 18:03:22,340 - INFO - Inserting market data for ADW-A.TO on 2025-03-05
+2025-03-15 18:03:22,424 - INFO - Inserting market data for ADW-A.TO on 2025-03-06
+2025-03-15 18:03:22,507 - INFO - Inserting market data for ADW-A.TO on 2025-03-07
+2025-03-15 18:03:22,592 - INFO - Inserting market data for ADW-A.TO on 2025-03-10
+2025-03-15 18:03:22,677 - INFO - Inserting market data for ADW-A.TO on 2025-03-11
+2025-03-15 18:03:22,763 - INFO - Inserting market data for ADW-A.TO on 2025-03-12
+2025-03-15 18:03:22,847 - INFO - Inserting market data for ADW-A.TO on 2025-03-13
+2025-03-15 18:03:22,932 - INFO - Inserting market data for ADW-A.TO on 2025-03-14
+2025-03-15 18:03:23,016 - INFO - Inserting analyst data for ADW-A.TO on 2025-03-15
+2025-03-15 18:03:23,099 - INFO - ESG data for ADW-A.TO already exists, updating...
+2025-03-15 18:03:23,185 - INFO - Inserting governance risk data for ADW-A.TO from Company Info
+2025-03-15 18:03:23,269 - INFO - Successfully processed ADW-A.TO
+2025-03-15 18:03:25,276 - INFO - Processing ticker 7/35: ADW-B.TO
+2025-03-15 18:03:25,278 - INFO - Processing ticker: ADW-B.TO
+2025-03-15 18:03:25,285 - INFO - Running test-data.py for ADW-B.TO
+2025-03-15 18:03:41,535 - INFO - Retrieved data for ADW-B.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:03:41,862 - INFO - Company ADW-B.TO already exists, updating...
+2025-03-15 18:03:41,923 - INFO - Inserting financial data for ADW-B.TO on 2024-12-31
+2025-03-15 18:03:41,980 - INFO - Inserting financial data for ADW-B.TO on 2024-09-30
+2025-03-15 18:03:42,038 - INFO - Inserting financial data for ADW-B.TO on 2024-03-31
+2025-03-15 18:03:42,098 - INFO - Inserting financial data for ADW-B.TO on 2023-12-31
+2025-03-15 18:03:42,158 - INFO - Inserting financial data for ADW-B.TO on 2023-09-30
+2025-03-15 18:03:42,216 - INFO - Inserting financial data for ADW-B.TO on 2023-06-30
+2025-03-15 18:03:42,278 - INFO - Inserting market data for ADW-B.TO on 2025-02-14
+2025-03-15 18:03:42,335 - INFO - Inserting market data for ADW-B.TO on 2025-02-18
+2025-03-15 18:03:42,392 - INFO - Inserting market data for ADW-B.TO on 2025-02-19
+2025-03-15 18:03:42,451 - INFO - Inserting market data for ADW-B.TO on 2025-02-20
+2025-03-15 18:03:42,515 - INFO - Inserting market data for ADW-B.TO on 2025-02-21
+2025-03-15 18:03:42,571 - INFO - Inserting market data for ADW-B.TO on 2025-02-24
+2025-03-15 18:03:42,628 - INFO - Inserting market data for ADW-B.TO on 2025-02-25
+2025-03-15 18:03:42,688 - INFO - Inserting market data for ADW-B.TO on 2025-02-26
+2025-03-15 18:03:42,746 - INFO - Inserting market data for ADW-B.TO on 2025-02-27
+2025-03-15 18:03:42,805 - INFO - Inserting market data for ADW-B.TO on 2025-02-28
+2025-03-15 18:03:42,862 - INFO - Inserting market data for ADW-B.TO on 2025-03-03
+2025-03-15 18:03:42,923 - INFO - Inserting market data for ADW-B.TO on 2025-03-04
+2025-03-15 18:03:42,981 - INFO - Inserting market data for ADW-B.TO on 2025-03-05
+2025-03-15 18:03:43,040 - INFO - Inserting market data for ADW-B.TO on 2025-03-06
+2025-03-15 18:03:43,101 - INFO - Inserting market data for ADW-B.TO on 2025-03-07
+2025-03-15 18:03:43,160 - INFO - Inserting market data for ADW-B.TO on 2025-03-10
+2025-03-15 18:03:43,220 - INFO - Inserting market data for ADW-B.TO on 2025-03-11
+2025-03-15 18:03:43,281 - INFO - Inserting market data for ADW-B.TO on 2025-03-12
+2025-03-15 18:03:43,339 - INFO - Inserting market data for ADW-B.TO on 2025-03-13
+2025-03-15 18:03:43,400 - INFO - Inserting market data for ADW-B.TO on 2025-03-14
+2025-03-15 18:03:43,460 - INFO - Inserting analyst data for ADW-B.TO on 2025-03-15
+2025-03-15 18:03:43,518 - INFO - ESG data for ADW-B.TO already exists, updating...
+2025-03-15 18:03:43,547 - WARNING - No governance risk data available for ADW-B.TO
+2025-03-15 18:03:43,578 - INFO - Successfully processed ADW-B.TO
+2025-03-15 18:03:45,584 - INFO - Processing ticker 8/35: CSW-B.TO
+2025-03-15 18:03:45,584 - INFO - Processing ticker: CSW-B.TO
+2025-03-15 18:03:45,587 - INFO - Running test-data.py for CSW-B.TO
+2025-03-15 18:03:52,064 - INFO - Retrieved data for CSW-B.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:03:52,364 - INFO - Inserting new company CSW-B.TO
+2025-03-15 18:03:52,425 - INFO - Inserting financial data for CSW-B.TO on 2024-12-31
+2025-03-15 18:03:52,481 - INFO - Inserting financial data for CSW-B.TO on 2024-09-30
+2025-03-15 18:03:52,555 - INFO - Inserting financial data for CSW-B.TO on 2024-06-30
+2025-03-15 18:03:52,610 - INFO - Inserting financial data for CSW-B.TO on 2024-03-31
+2025-03-15 18:03:52,667 - INFO - Inserting financial data for CSW-B.TO on 2023-12-31
+2025-03-15 18:03:52,723 - INFO - Inserting financial data for CSW-B.TO on 2023-09-30
+2025-03-15 18:03:52,781 - INFO - Inserting market data for CSW-B.TO on 2025-02-14
+2025-03-15 18:03:52,840 - INFO - Inserting market data for CSW-B.TO on 2025-02-18
+2025-03-15 18:03:52,896 - INFO - Inserting market data for CSW-B.TO on 2025-02-19
+2025-03-15 18:03:52,954 - INFO - Inserting market data for CSW-B.TO on 2025-02-20
+2025-03-15 18:03:53,009 - INFO - Inserting market data for CSW-B.TO on 2025-02-21
+2025-03-15 18:03:53,065 - INFO - Inserting market data for CSW-B.TO on 2025-02-24
+2025-03-15 18:03:53,120 - INFO - Inserting market data for CSW-B.TO on 2025-02-25
+2025-03-15 18:03:53,177 - INFO - Inserting market data for CSW-B.TO on 2025-02-26
+2025-03-15 18:03:53,236 - INFO - Inserting market data for CSW-B.TO on 2025-02-27
+2025-03-15 18:03:53,293 - INFO - Inserting market data for CSW-B.TO on 2025-02-28
+2025-03-15 18:03:53,350 - INFO - Inserting market data for CSW-B.TO on 2025-03-03
+2025-03-15 18:03:53,409 - INFO - Inserting market data for CSW-B.TO on 2025-03-04
+2025-03-15 18:03:53,465 - INFO - Inserting market data for CSW-B.TO on 2025-03-05
+2025-03-15 18:03:53,525 - INFO - Inserting market data for CSW-B.TO on 2025-03-06
+2025-03-15 18:03:53,582 - INFO - Inserting market data for CSW-B.TO on 2025-03-07
+2025-03-15 18:03:53,637 - INFO - Inserting market data for CSW-B.TO on 2025-03-10
+2025-03-15 18:03:53,693 - INFO - Inserting market data for CSW-B.TO on 2025-03-11
+2025-03-15 18:03:53,750 - INFO - Inserting market data for CSW-B.TO on 2025-03-12
+2025-03-15 18:03:53,809 - INFO - Inserting market data for CSW-B.TO on 2025-03-13
+2025-03-15 18:03:53,865 - INFO - Inserting market data for CSW-B.TO on 2025-03-14
+2025-03-15 18:03:53,922 - INFO - Inserting analyst data for CSW-B.TO on 2025-03-15
+2025-03-15 18:03:53,980 - INFO - Inserting ESG data for CSW-B.TO
+2025-03-15 18:03:54,009 - WARNING - No governance risk data available for CSW-B.TO
+2025-03-15 18:03:54,038 - INFO - Successfully processed CSW-B.TO
+2025-03-15 18:03:56,043 - INFO - Processing ticker 9/35: CSW-A.TO
+2025-03-15 18:03:56,043 - INFO - Processing ticker: CSW-A.TO
+2025-03-15 18:03:56,046 - INFO - Running test-data.py for CSW-A.TO
+2025-03-15 18:04:03,349 - INFO - Retrieved data for CSW-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:04:03,657 - INFO - Inserting new company CSW-A.TO
+2025-03-15 18:04:03,718 - INFO - Inserting financial data for CSW-A.TO on 2024-12-31
+2025-03-15 18:04:03,778 - INFO - Inserting financial data for CSW-A.TO on 2024-09-30
+2025-03-15 18:04:03,838 - INFO - Inserting financial data for CSW-A.TO on 2024-06-30
+2025-03-15 18:04:03,897 - INFO - Inserting financial data for CSW-A.TO on 2024-03-31
+2025-03-15 18:04:03,961 - INFO - Inserting financial data for CSW-A.TO on 2023-12-31
+2025-03-15 18:04:04,019 - INFO - Inserting financial data for CSW-A.TO on 2023-09-30
+2025-03-15 18:04:04,079 - INFO - Inserting market data for CSW-A.TO on 2025-02-14
+2025-03-15 18:04:04,138 - INFO - Inserting market data for CSW-A.TO on 2025-02-18
+2025-03-15 18:04:04,197 - INFO - Inserting market data for CSW-A.TO on 2025-02-19
+2025-03-15 18:04:04,256 - INFO - Inserting market data for CSW-A.TO on 2025-02-20
+2025-03-15 18:04:04,314 - INFO - Inserting market data for CSW-A.TO on 2025-02-21
+2025-03-15 18:04:04,373 - INFO - Inserting market data for CSW-A.TO on 2025-02-24
+2025-03-15 18:04:04,431 - INFO - Inserting market data for CSW-A.TO on 2025-02-25
+2025-03-15 18:04:04,492 - INFO - Inserting market data for CSW-A.TO on 2025-02-26
+2025-03-15 18:04:04,551 - INFO - Inserting market data for CSW-A.TO on 2025-02-27
+2025-03-15 18:04:04,611 - INFO - Inserting market data for CSW-A.TO on 2025-02-28
+2025-03-15 18:04:04,676 - INFO - Inserting market data for CSW-A.TO on 2025-03-03
+2025-03-15 18:04:04,735 - INFO - Inserting market data for CSW-A.TO on 2025-03-04
+2025-03-15 18:04:04,794 - INFO - Inserting market data for CSW-A.TO on 2025-03-05
+2025-03-15 18:04:04,852 - INFO - Inserting market data for CSW-A.TO on 2025-03-06
+2025-03-15 18:04:04,912 - INFO - Inserting market data for CSW-A.TO on 2025-03-07
+2025-03-15 18:04:04,970 - INFO - Inserting market data for CSW-A.TO on 2025-03-10
+2025-03-15 18:04:05,028 - INFO - Inserting market data for CSW-A.TO on 2025-03-11
+2025-03-15 18:04:05,086 - INFO - Inserting market data for CSW-A.TO on 2025-03-12
+2025-03-15 18:04:05,147 - INFO - Inserting market data for CSW-A.TO on 2025-03-13
+2025-03-15 18:04:05,203 - INFO - Inserting market data for CSW-A.TO on 2025-03-14
+2025-03-15 18:04:05,261 - INFO - Inserting analyst data for CSW-A.TO on 2025-03-15
+2025-03-15 18:04:05,320 - INFO - Inserting ESG data for CSW-A.TO
+2025-03-15 18:04:05,379 - INFO - Inserting governance risk data for CSW-A.TO from Company Info
+2025-03-15 18:04:05,451 - INFO - Successfully processed CSW-A.TO
+2025-03-15 18:04:07,458 - INFO - Processing ticker 10/35: RSI.TO
+2025-03-15 18:04:07,459 - INFO - Processing ticker: RSI.TO
+2025-03-15 18:04:07,463 - INFO - Running test-data.py for RSI.TO
+2025-03-15 18:04:49,843 - INFO - Retrieved data for RSI.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:04:50,285 - INFO - Inserting new company RSI.TO
+2025-03-15 18:04:50,374 - INFO - Inserting financial data for RSI.TO on 2024-12-31
+2025-03-15 18:04:50,462 - INFO - Inserting financial data for RSI.TO on 2024-09-30
+2025-03-15 18:04:50,548 - INFO - Inserting financial data for RSI.TO on 2024-06-30
+2025-03-15 18:04:50,645 - INFO - Inserting financial data for RSI.TO on 2024-03-31
+2025-03-15 18:04:50,753 - INFO - Inserting financial data for RSI.TO on 2023-12-31
+2025-03-15 18:04:50,956 - INFO - Inserting financial data for RSI.TO on 2023-09-30
+2025-03-15 18:04:51,044 - INFO - Inserting financial data for RSI.TO on 2023-06-30
+2025-03-15 18:04:51,130 - INFO - Inserting market data for RSI.TO on 2025-02-14
+2025-03-15 18:04:51,215 - INFO - Inserting market data for RSI.TO on 2025-02-18
+2025-03-15 18:04:51,302 - INFO - Inserting market data for RSI.TO on 2025-02-19
+2025-03-15 18:04:51,388 - INFO - Inserting market data for RSI.TO on 2025-02-20
+2025-03-15 18:04:51,475 - INFO - Inserting market data for RSI.TO on 2025-02-21
+2025-03-15 18:04:51,559 - INFO - Inserting market data for RSI.TO on 2025-02-24
+2025-03-15 18:04:51,667 - INFO - Inserting market data for RSI.TO on 2025-02-25
+2025-03-15 18:04:51,751 - INFO - Inserting market data for RSI.TO on 2025-02-26
+2025-03-15 18:04:51,869 - INFO - Inserting market data for RSI.TO on 2025-02-27
+2025-03-15 18:04:51,999 - INFO - Inserting market data for RSI.TO on 2025-02-28
+2025-03-15 18:04:52,088 - INFO - Inserting market data for RSI.TO on 2025-03-03
+2025-03-15 18:04:52,172 - INFO - Inserting market data for RSI.TO on 2025-03-04
+2025-03-15 18:04:52,257 - INFO - Inserting market data for RSI.TO on 2025-03-05
+2025-03-15 18:04:52,343 - INFO - Inserting market data for RSI.TO on 2025-03-06
+2025-03-15 18:04:52,427 - INFO - Inserting market data for RSI.TO on 2025-03-07
+2025-03-15 18:04:52,510 - INFO - Inserting market data for RSI.TO on 2025-03-10
+2025-03-15 18:04:52,602 - INFO - Inserting market data for RSI.TO on 2025-03-11
+2025-03-15 18:04:52,696 - INFO - Inserting market data for RSI.TO on 2025-03-12
+2025-03-15 18:04:52,779 - INFO - Inserting market data for RSI.TO on 2025-03-13
+2025-03-15 18:04:52,864 - INFO - Inserting market data for RSI.TO on 2025-03-14
+2025-03-15 18:04:52,949 - INFO - Inserting analyst data for RSI.TO on 2025-03-15
+2025-03-15 18:04:53,033 - INFO - Inserting ESG data for RSI.TO
+2025-03-15 18:04:53,118 - INFO - Inserting governance risk data for RSI.TO from Company Info
+2025-03-15 18:04:53,204 - INFO - Successfully processed RSI.TO
+2025-03-15 18:04:55,208 - INFO - Processing ticker 11/35: SUGR.V
+2025-03-15 18:04:55,209 - INFO - Processing ticker: SUGR.V
+2025-03-15 18:04:55,210 - INFO - Running test-data.py for SUGR.V
+2025-03-15 18:05:41,794 - INFO - Retrieved data for SUGR.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:05:42,580 - INFO - Inserting new company SUGR.V
+2025-03-15 18:05:42,665 - INFO - Inserting financial data for SUGR.V on 2024-09-30
+2025-03-15 18:05:42,726 - INFO - Inserting financial data for SUGR.V on 2024-06-30
+2025-03-15 18:05:42,787 - INFO - Inserting financial data for SUGR.V on 2024-03-31
+2025-03-15 18:05:42,845 - INFO - Inserting financial data for SUGR.V on 2023-12-31
+2025-03-15 18:05:42,912 - INFO - Inserting financial data for SUGR.V on 2023-09-30
+2025-03-15 18:05:42,967 - INFO - Inserting financial data for SUGR.V on 2023-06-30
+2025-03-15 18:05:43,026 - INFO - Inserting market data for SUGR.V on 2025-02-14
+2025-03-15 18:05:43,087 - INFO - Inserting market data for SUGR.V on 2025-02-18
+2025-03-15 18:05:43,154 - INFO - Inserting market data for SUGR.V on 2025-02-19
+2025-03-15 18:05:43,213 - INFO - Inserting market data for SUGR.V on 2025-02-20
+2025-03-15 18:05:43,274 - INFO - Inserting market data for SUGR.V on 2025-02-21
+2025-03-15 18:05:43,332 - INFO - Inserting market data for SUGR.V on 2025-02-24
+2025-03-15 18:05:43,397 - INFO - Inserting market data for SUGR.V on 2025-02-25
+2025-03-15 18:05:43,459 - INFO - Inserting market data for SUGR.V on 2025-02-26
+2025-03-15 18:05:43,518 - INFO - Inserting market data for SUGR.V on 2025-02-27
+2025-03-15 18:05:43,573 - INFO - Inserting market data for SUGR.V on 2025-02-28
+2025-03-15 18:05:43,637 - INFO - Inserting market data for SUGR.V on 2025-03-03
+2025-03-15 18:05:43,702 - INFO - Inserting market data for SUGR.V on 2025-03-04
+2025-03-15 18:05:43,764 - INFO - Inserting market data for SUGR.V on 2025-03-05
+2025-03-15 18:05:43,826 - INFO - Inserting market data for SUGR.V on 2025-03-06
+2025-03-15 18:05:43,918 - INFO - Inserting market data for SUGR.V on 2025-03-07
+2025-03-15 18:05:43,976 - INFO - Inserting market data for SUGR.V on 2025-03-10
+2025-03-15 18:05:44,033 - INFO - Inserting market data for SUGR.V on 2025-03-11
+2025-03-15 18:05:44,096 - INFO - Inserting market data for SUGR.V on 2025-03-12
+2025-03-15 18:05:44,180 - INFO - Inserting market data for SUGR.V on 2025-03-13
+2025-03-15 18:05:44,463 - INFO - Inserting market data for SUGR.V on 2025-03-14
+2025-03-15 18:05:44,657 - INFO - Inserting analyst data for SUGR.V on 2025-03-15
+2025-03-15 18:05:44,715 - INFO - Inserting ESG data for SUGR.V
+2025-03-15 18:05:44,742 - WARNING - No governance risk data available for SUGR.V
+2025-03-15 18:05:44,771 - INFO - Successfully processed SUGR.V
+2025-03-15 18:05:46,780 - INFO - Processing ticker 12/35: DOL.TO
+2025-03-15 18:05:46,788 - INFO - Processing ticker: DOL.TO
+2025-03-15 18:05:46,805 - INFO - Running test-data.py for DOL.TO
+2025-03-15 18:06:07,961 - INFO - Retrieved data for DOL.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:06:08,312 - INFO - Inserting new company DOL.TO
+2025-03-15 18:06:08,376 - INFO - Inserting financial data for DOL.TO on 2024-10-31
+2025-03-15 18:06:08,435 - INFO - Inserting financial data for DOL.TO on 2024-07-31
+2025-03-15 18:06:08,495 - INFO - Inserting financial data for DOL.TO on 2024-04-30
+2025-03-15 18:06:08,559 - INFO - Inserting financial data for DOL.TO on 2024-01-31
+2025-03-15 18:06:08,618 - INFO - Inserting financial data for DOL.TO on 2023-10-31
+2025-03-15 18:06:08,677 - INFO - Inserting financial data for DOL.TO on 2023-07-31
+2025-03-15 18:06:08,758 - INFO - Inserting market data for DOL.TO on 2025-02-14
+2025-03-15 18:06:08,819 - INFO - Inserting market data for DOL.TO on 2025-02-18
+2025-03-15 18:06:08,876 - INFO - Inserting market data for DOL.TO on 2025-02-19
+2025-03-15 18:06:08,933 - INFO - Inserting market data for DOL.TO on 2025-02-20
+2025-03-15 18:06:09,029 - INFO - Inserting market data for DOL.TO on 2025-02-21
+2025-03-15 18:06:09,090 - INFO - Inserting market data for DOL.TO on 2025-02-24
+2025-03-15 18:06:09,147 - INFO - Inserting market data for DOL.TO on 2025-02-25
+2025-03-15 18:06:09,204 - INFO - Inserting market data for DOL.TO on 2025-02-26
+2025-03-15 18:06:09,260 - INFO - Inserting market data for DOL.TO on 2025-02-27
+2025-03-15 18:06:09,319 - INFO - Inserting market data for DOL.TO on 2025-02-28
+2025-03-15 18:06:09,375 - INFO - Inserting market data for DOL.TO on 2025-03-03
+2025-03-15 18:06:09,451 - INFO - Inserting market data for DOL.TO on 2025-03-04
+2025-03-15 18:06:09,518 - INFO - Inserting market data for DOL.TO on 2025-03-05
+2025-03-15 18:06:09,576 - INFO - Inserting market data for DOL.TO on 2025-03-06
+2025-03-15 18:06:09,637 - INFO - Inserting market data for DOL.TO on 2025-03-07
+2025-03-15 18:06:09,694 - INFO - Inserting market data for DOL.TO on 2025-03-10
+2025-03-15 18:06:09,752 - INFO - Inserting market data for DOL.TO on 2025-03-11
+2025-03-15 18:06:09,808 - INFO - Inserting market data for DOL.TO on 2025-03-12
+2025-03-15 18:06:09,865 - INFO - Inserting market data for DOL.TO on 2025-03-13
+2025-03-15 18:06:09,923 - INFO - Inserting market data for DOL.TO on 2025-03-14
+2025-03-15 18:06:09,990 - INFO - Inserting analyst data for DOL.TO on 2025-03-15
+2025-03-15 18:06:10,047 - INFO - Inserting ESG data for DOL.TO
+2025-03-15 18:06:10,104 - INFO - Inserting governance risk data for DOL.TO from Company Info
+2025-03-15 18:06:10,162 - INFO - Successfully processed DOL.TO
+2025-03-15 18:06:12,199 - INFO - Processing ticker 13/35: EMP-A.TO
+2025-03-15 18:06:12,204 - INFO - Processing ticker: EMP-A.TO
+2025-03-15 18:06:12,242 - INFO - Running test-data.py for EMP-A.TO
+2025-03-15 18:06:40,383 - INFO - Retrieved data for EMP-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:06:41,026 - INFO - Inserting new company EMP-A.TO
+2025-03-15 18:06:41,122 - INFO - Inserting financial data for EMP-A.TO on 2025-01-31
+2025-03-15 18:06:41,219 - INFO - Inserting financial data for EMP-A.TO on 2024-10-31
+2025-03-15 18:06:41,312 - INFO - Inserting financial data for EMP-A.TO on 2024-07-31
+2025-03-15 18:06:41,395 - INFO - Inserting financial data for EMP-A.TO on 2024-04-30
+2025-03-15 18:06:41,483 - INFO - Inserting financial data for EMP-A.TO on 2024-01-31
+2025-03-15 18:06:41,566 - INFO - Inserting financial data for EMP-A.TO on 2023-10-31
+2025-03-15 18:06:41,652 - INFO - Inserting market data for EMP-A.TO on 2025-02-14
+2025-03-15 18:06:41,786 - INFO - Inserting market data for EMP-A.TO on 2025-02-18
+2025-03-15 18:06:41,874 - INFO - Inserting market data for EMP-A.TO on 2025-02-19
+2025-03-15 18:06:41,962 - INFO - Inserting market data for EMP-A.TO on 2025-02-20
+2025-03-15 18:06:42,050 - INFO - Inserting market data for EMP-A.TO on 2025-02-21
+2025-03-15 18:06:42,138 - INFO - Inserting market data for EMP-A.TO on 2025-02-24
+2025-03-15 18:06:42,222 - INFO - Inserting market data for EMP-A.TO on 2025-02-25
+2025-03-15 18:06:42,305 - INFO - Inserting market data for EMP-A.TO on 2025-02-26
+2025-03-15 18:06:42,391 - INFO - Inserting market data for EMP-A.TO on 2025-02-27
+2025-03-15 18:06:42,481 - INFO - Inserting market data for EMP-A.TO on 2025-02-28
+2025-03-15 18:06:42,565 - INFO - Inserting market data for EMP-A.TO on 2025-03-03
+2025-03-15 18:06:42,651 - INFO - Inserting market data for EMP-A.TO on 2025-03-04
+2025-03-15 18:06:42,735 - INFO - Inserting market data for EMP-A.TO on 2025-03-05
+2025-03-15 18:06:42,820 - INFO - Inserting market data for EMP-A.TO on 2025-03-06
+2025-03-15 18:06:42,904 - INFO - Inserting market data for EMP-A.TO on 2025-03-07
+2025-03-15 18:06:42,987 - INFO - Inserting market data for EMP-A.TO on 2025-03-10
+2025-03-15 18:06:43,071 - INFO - Inserting market data for EMP-A.TO on 2025-03-11
+2025-03-15 18:06:43,166 - INFO - Inserting market data for EMP-A.TO on 2025-03-12
+2025-03-15 18:06:43,271 - INFO - Inserting market data for EMP-A.TO on 2025-03-13
+2025-03-15 18:06:43,355 - INFO - Inserting market data for EMP-A.TO on 2025-03-14
+2025-03-15 18:06:43,442 - INFO - Inserting analyst data for EMP-A.TO on 2025-03-15
+2025-03-15 18:06:43,523 - INFO - Inserting ESG data for EMP-A.TO
+2025-03-15 18:06:43,608 - INFO - Inserting governance risk data for EMP-A.TO from Company Info
+2025-03-15 18:06:43,691 - INFO - Successfully processed EMP-A.TO
+2025-03-15 18:06:45,699 - INFO - Processing ticker 14/35: WN-PA.TO
+2025-03-15 18:06:45,701 - INFO - Processing ticker: WN-PA.TO
+2025-03-15 18:06:45,706 - INFO - Running test-data.py for WN-PA.TO
+2025-03-15 18:07:01,296 - INFO - Retrieved data for WN-PA.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:07:02,157 - INFO - Inserting new company WN-PA.TO
+2025-03-15 18:07:02,235 - INFO - Inserting financial data for WN-PA.TO on 2024-12-31
+2025-03-15 18:07:02,295 - INFO - Inserting financial data for WN-PA.TO on 2024-09-30
+2025-03-15 18:07:02,354 - INFO - Inserting financial data for WN-PA.TO on 2024-06-30
+2025-03-15 18:07:02,413 - INFO - Inserting financial data for WN-PA.TO on 2024-03-31
+2025-03-15 18:07:02,474 - INFO - Inserting financial data for WN-PA.TO on 2023-12-31
+2025-03-15 18:07:02,534 - INFO - Inserting financial data for WN-PA.TO on 2023-09-30
+2025-03-15 18:07:02,593 - INFO - Inserting financial data for WN-PA.TO on 2023-06-30
+2025-03-15 18:07:02,652 - INFO - Inserting market data for WN-PA.TO on 2025-02-14
+2025-03-15 18:07:02,718 - INFO - Inserting market data for WN-PA.TO on 2025-02-18
+2025-03-15 18:07:02,779 - INFO - Inserting market data for WN-PA.TO on 2025-02-19
+2025-03-15 18:07:02,838 - INFO - Inserting market data for WN-PA.TO on 2025-02-20
+2025-03-15 18:07:02,897 - INFO - Inserting market data for WN-PA.TO on 2025-02-21
+2025-03-15 18:07:02,957 - INFO - Inserting market data for WN-PA.TO on 2025-02-24
+2025-03-15 18:07:03,018 - INFO - Inserting market data for WN-PA.TO on 2025-02-25
+2025-03-15 18:07:03,077 - INFO - Inserting market data for WN-PA.TO on 2025-02-26
+2025-03-15 18:07:03,136 - INFO - Inserting market data for WN-PA.TO on 2025-02-27
+2025-03-15 18:07:03,194 - INFO - Inserting market data for WN-PA.TO on 2025-02-28
+2025-03-15 18:07:03,254 - INFO - Inserting market data for WN-PA.TO on 2025-03-03
+2025-03-15 18:07:03,314 - INFO - Inserting market data for WN-PA.TO on 2025-03-04
+2025-03-15 18:07:03,373 - INFO - Inserting market data for WN-PA.TO on 2025-03-05
+2025-03-15 18:07:03,437 - INFO - Inserting market data for WN-PA.TO on 2025-03-06
+2025-03-15 18:07:03,498 - INFO - Inserting market data for WN-PA.TO on 2025-03-07
+2025-03-15 18:07:03,558 - INFO - Inserting market data for WN-PA.TO on 2025-03-10
+2025-03-15 18:07:03,617 - INFO - Inserting market data for WN-PA.TO on 2025-03-11
+2025-03-15 18:07:03,676 - INFO - Inserting market data for WN-PA.TO on 2025-03-12
+2025-03-15 18:07:03,736 - INFO - Inserting market data for WN-PA.TO on 2025-03-13
+2025-03-15 18:07:03,796 - INFO - Inserting market data for WN-PA.TO on 2025-03-14
+2025-03-15 18:07:03,855 - INFO - Inserting analyst data for WN-PA.TO on 2025-03-15
+2025-03-15 18:07:03,918 - INFO - Inserting ESG data for WN-PA.TO
+2025-03-15 18:07:03,949 - WARNING - No governance risk data available for WN-PA.TO
+2025-03-15 18:07:03,979 - INFO - Successfully processed WN-PA.TO
+2025-03-15 18:07:05,986 - INFO - Processing ticker 15/35: WN-PC.TO
+2025-03-15 18:07:05,986 - INFO - Processing ticker: WN-PC.TO
+2025-03-15 18:07:05,988 - INFO - Running test-data.py for WN-PC.TO
+2025-03-15 18:07:22,107 - INFO - Retrieved data for WN-PC.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:07:22,544 - INFO - Inserting new company WN-PC.TO
+2025-03-15 18:07:22,629 - INFO - Inserting financial data for WN-PC.TO on 2024-12-31
+2025-03-15 18:07:22,712 - INFO - Inserting financial data for WN-PC.TO on 2024-09-30
+2025-03-15 18:07:22,796 - INFO - Inserting financial data for WN-PC.TO on 2024-06-30
+2025-03-15 18:07:22,879 - INFO - Inserting financial data for WN-PC.TO on 2024-03-31
+2025-03-15 18:07:22,960 - INFO - Inserting financial data for WN-PC.TO on 2023-12-31
+2025-03-15 18:07:23,043 - INFO - Inserting financial data for WN-PC.TO on 2023-09-30
+2025-03-15 18:07:23,124 - INFO - Inserting financial data for WN-PC.TO on 2023-06-30
+2025-03-15 18:07:23,207 - INFO - Inserting market data for WN-PC.TO on 2025-02-14
+2025-03-15 18:07:23,294 - INFO - Inserting market data for WN-PC.TO on 2025-02-18
+2025-03-15 18:07:23,378 - INFO - Inserting market data for WN-PC.TO on 2025-02-19
+2025-03-15 18:07:23,461 - INFO - Inserting market data for WN-PC.TO on 2025-02-20
+2025-03-15 18:07:23,546 - INFO - Inserting market data for WN-PC.TO on 2025-02-21
+2025-03-15 18:07:23,630 - INFO - Inserting market data for WN-PC.TO on 2025-02-24
+2025-03-15 18:07:23,714 - INFO - Inserting market data for WN-PC.TO on 2025-02-25
+2025-03-15 18:07:23,797 - INFO - Inserting market data for WN-PC.TO on 2025-02-26
+2025-03-15 18:07:23,888 - INFO - Inserting market data for WN-PC.TO on 2025-02-27
+2025-03-15 18:07:23,972 - INFO - Inserting market data for WN-PC.TO on 2025-02-28
+2025-03-15 18:07:24,055 - INFO - Inserting market data for WN-PC.TO on 2025-03-03
+2025-03-15 18:07:24,138 - INFO - Inserting market data for WN-PC.TO on 2025-03-04
+2025-03-15 18:07:24,221 - INFO - Inserting market data for WN-PC.TO on 2025-03-05
+2025-03-15 18:07:24,304 - INFO - Inserting market data for WN-PC.TO on 2025-03-06
+2025-03-15 18:07:24,392 - INFO - Inserting market data for WN-PC.TO on 2025-03-07
+2025-03-15 18:07:24,475 - INFO - Inserting market data for WN-PC.TO on 2025-03-10
+2025-03-15 18:07:24,560 - INFO - Inserting market data for WN-PC.TO on 2025-03-11
+2025-03-15 18:07:24,645 - INFO - Inserting market data for WN-PC.TO on 2025-03-12
+2025-03-15 18:07:24,728 - INFO - Inserting market data for WN-PC.TO on 2025-03-13
+2025-03-15 18:07:24,811 - INFO - Inserting market data for WN-PC.TO on 2025-03-14
+2025-03-15 18:07:24,894 - INFO - Inserting analyst data for WN-PC.TO on 2025-03-15
+2025-03-15 18:07:24,977 - INFO - Inserting ESG data for WN-PC.TO
+2025-03-15 18:07:25,021 - WARNING - No governance risk data available for WN-PC.TO
+2025-03-15 18:07:25,064 - INFO - Successfully processed WN-PC.TO
+2025-03-15 18:07:27,071 - INFO - Processing ticker 16/35: WN-PD.TO
+2025-03-15 18:07:27,071 - INFO - Processing ticker: WN-PD.TO
+2025-03-15 18:07:27,092 - INFO - Running test-data.py for WN-PD.TO
+2025-03-15 18:08:09,758 - INFO - Retrieved data for WN-PD.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:08:10,105 - INFO - Inserting new company WN-PD.TO
+2025-03-15 18:08:10,166 - INFO - Inserting financial data for WN-PD.TO on 2024-12-31
+2025-03-15 18:08:10,227 - INFO - Inserting financial data for WN-PD.TO on 2024-09-30
+2025-03-15 18:08:10,289 - INFO - Inserting financial data for WN-PD.TO on 2024-06-30
+2025-03-15 18:08:10,347 - INFO - Inserting financial data for WN-PD.TO on 2024-03-31
+2025-03-15 18:08:10,407 - INFO - Inserting financial data for WN-PD.TO on 2023-12-31
+2025-03-15 18:08:10,466 - INFO - Inserting financial data for WN-PD.TO on 2023-09-30
+2025-03-15 18:08:10,525 - INFO - Inserting financial data for WN-PD.TO on 2023-06-30
+2025-03-15 18:08:10,584 - INFO - Inserting market data for WN-PD.TO on 2025-02-14
+2025-03-15 18:08:10,642 - INFO - Inserting market data for WN-PD.TO on 2025-02-18
+2025-03-15 18:08:10,703 - INFO - Inserting market data for WN-PD.TO on 2025-02-19
+2025-03-15 18:08:10,762 - INFO - Inserting market data for WN-PD.TO on 2025-02-20
+2025-03-15 18:08:10,821 - INFO - Inserting market data for WN-PD.TO on 2025-02-21
+2025-03-15 18:08:10,879 - INFO - Inserting market data for WN-PD.TO on 2025-02-24
+2025-03-15 18:08:10,938 - INFO - Inserting market data for WN-PD.TO on 2025-02-25
+2025-03-15 18:08:10,997 - INFO - Inserting market data for WN-PD.TO on 2025-02-26
+2025-03-15 18:08:11,056 - INFO - Inserting market data for WN-PD.TO on 2025-02-27
+2025-03-15 18:08:11,121 - INFO - Inserting market data for WN-PD.TO on 2025-02-28
+2025-03-15 18:08:11,258 - INFO - Inserting market data for WN-PD.TO on 2025-03-03
+2025-03-15 18:08:11,317 - INFO - Inserting market data for WN-PD.TO on 2025-03-04
+2025-03-15 18:08:11,379 - INFO - Inserting market data for WN-PD.TO on 2025-03-05
+2025-03-15 18:08:11,438 - INFO - Inserting market data for WN-PD.TO on 2025-03-06
+2025-03-15 18:08:11,497 - INFO - Inserting market data for WN-PD.TO on 2025-03-07
+2025-03-15 18:08:11,556 - INFO - Inserting market data for WN-PD.TO on 2025-03-10
+2025-03-15 18:08:11,613 - INFO - Inserting market data for WN-PD.TO on 2025-03-11
+2025-03-15 18:08:11,674 - INFO - Inserting market data for WN-PD.TO on 2025-03-12
+2025-03-15 18:08:11,734 - INFO - Inserting market data for WN-PD.TO on 2025-03-13
+2025-03-15 18:08:11,794 - INFO - Inserting market data for WN-PD.TO on 2025-03-14
+2025-03-15 18:08:11,857 - INFO - Inserting analyst data for WN-PD.TO on 2025-03-15
+2025-03-15 18:08:11,918 - INFO - Inserting ESG data for WN-PD.TO
+2025-03-15 18:08:11,946 - WARNING - No governance risk data available for WN-PD.TO
+2025-03-15 18:08:11,976 - INFO - Successfully processed WN-PD.TO
+2025-03-15 18:08:13,979 - INFO - Processing ticker 17/35: WN-PE.TO
+2025-03-15 18:08:13,979 - INFO - Processing ticker: WN-PE.TO
+2025-03-15 18:08:13,981 - INFO - Running test-data.py for WN-PE.TO
+2025-03-15 18:08:58,740 - INFO - Retrieved data for WN-PE.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:08:59,042 - INFO - Inserting new company WN-PE.TO
+2025-03-15 18:08:59,103 - INFO - Inserting financial data for WN-PE.TO on 2024-12-31
+2025-03-15 18:08:59,162 - INFO - Inserting financial data for WN-PE.TO on 2024-09-30
+2025-03-15 18:08:59,219 - INFO - Inserting financial data for WN-PE.TO on 2024-06-30
+2025-03-15 18:08:59,277 - INFO - Inserting financial data for WN-PE.TO on 2024-03-31
+2025-03-15 18:08:59,333 - INFO - Inserting financial data for WN-PE.TO on 2023-12-31
+2025-03-15 18:08:59,390 - INFO - Inserting financial data for WN-PE.TO on 2023-09-30
+2025-03-15 18:08:59,446 - INFO - Inserting financial data for WN-PE.TO on 2023-06-30
+2025-03-15 18:08:59,504 - INFO - Inserting market data for WN-PE.TO on 2025-02-14
+2025-03-15 18:08:59,560 - INFO - Inserting market data for WN-PE.TO on 2025-02-18
+2025-03-15 18:08:59,641 - INFO - Inserting market data for WN-PE.TO on 2025-02-19
+2025-03-15 18:08:59,700 - INFO - Inserting market data for WN-PE.TO on 2025-02-20
+2025-03-15 18:08:59,755 - INFO - Inserting market data for WN-PE.TO on 2025-02-21
+2025-03-15 18:08:59,814 - INFO - Inserting market data for WN-PE.TO on 2025-02-24
+2025-03-15 18:08:59,869 - INFO - Inserting market data for WN-PE.TO on 2025-02-25
+2025-03-15 18:08:59,924 - INFO - Inserting market data for WN-PE.TO on 2025-02-26
+2025-03-15 18:08:59,981 - INFO - Inserting market data for WN-PE.TO on 2025-02-27
+2025-03-15 18:09:00,037 - INFO - Inserting market data for WN-PE.TO on 2025-02-28
+2025-03-15 18:09:00,094 - INFO - Inserting market data for WN-PE.TO on 2025-03-03
+2025-03-15 18:09:00,153 - INFO - Inserting market data for WN-PE.TO on 2025-03-04
+2025-03-15 18:09:00,211 - INFO - Inserting market data for WN-PE.TO on 2025-03-05
+2025-03-15 18:09:00,269 - INFO - Inserting market data for WN-PE.TO on 2025-03-06
+2025-03-15 18:09:00,326 - INFO - Inserting market data for WN-PE.TO on 2025-03-07
+2025-03-15 18:09:00,384 - INFO - Inserting market data for WN-PE.TO on 2025-03-10
+2025-03-15 18:09:00,442 - INFO - Inserting market data for WN-PE.TO on 2025-03-11
+2025-03-15 18:09:00,497 - INFO - Inserting market data for WN-PE.TO on 2025-03-12
+2025-03-15 18:09:00,552 - INFO - Inserting market data for WN-PE.TO on 2025-03-13
+2025-03-15 18:09:00,608 - INFO - Inserting market data for WN-PE.TO on 2025-03-14
+2025-03-15 18:09:00,665 - INFO - Inserting analyst data for WN-PE.TO on 2025-03-15
+2025-03-15 18:09:00,722 - INFO - Inserting ESG data for WN-PE.TO
+2025-03-15 18:09:00,750 - WARNING - No governance risk data available for WN-PE.TO
+2025-03-15 18:09:00,778 - INFO - Successfully processed WN-PE.TO
+2025-03-15 18:09:02,784 - INFO - Processing ticker 18/35: L.TO
+2025-03-15 18:09:02,784 - INFO - Processing ticker: L.TO
+2025-03-15 18:09:02,787 - INFO - Running test-data.py for L.TO
+2025-03-15 18:09:09,197 - INFO - Retrieved data for L.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:09:09,602 - INFO - Inserting new company L.TO
+2025-03-15 18:09:09,686 - INFO - Inserting financial data for L.TO on 2024-12-31
+2025-03-15 18:09:09,769 - INFO - Inserting financial data for L.TO on 2024-09-30
+2025-03-15 18:09:09,852 - INFO - Inserting financial data for L.TO on 2024-06-30
+2025-03-15 18:09:09,935 - INFO - Inserting financial data for L.TO on 2024-03-31
+2025-03-15 18:09:10,019 - INFO - Inserting financial data for L.TO on 2023-12-31
+2025-03-15 18:09:10,103 - INFO - Inserting financial data for L.TO on 2023-09-30
+2025-03-15 18:09:10,186 - INFO - Inserting financial data for L.TO on 2023-06-30
+2025-03-15 18:09:10,270 - INFO - Inserting market data for L.TO on 2025-02-14
+2025-03-15 18:09:10,354 - INFO - Inserting market data for L.TO on 2025-02-18
+2025-03-15 18:09:10,439 - INFO - Inserting market data for L.TO on 2025-02-19
+2025-03-15 18:09:10,527 - INFO - Inserting market data for L.TO on 2025-02-20
+2025-03-15 18:09:10,612 - INFO - Inserting market data for L.TO on 2025-02-21
+2025-03-15 18:09:10,695 - INFO - Inserting market data for L.TO on 2025-02-24
+2025-03-15 18:09:10,780 - INFO - Inserting market data for L.TO on 2025-02-25
+2025-03-15 18:09:10,863 - INFO - Inserting market data for L.TO on 2025-02-26
+2025-03-15 18:09:10,946 - INFO - Inserting market data for L.TO on 2025-02-27
+2025-03-15 18:09:11,028 - INFO - Inserting market data for L.TO on 2025-02-28
+2025-03-15 18:09:11,112 - INFO - Inserting market data for L.TO on 2025-03-03
+2025-03-15 18:09:11,195 - INFO - Inserting market data for L.TO on 2025-03-04
+2025-03-15 18:09:11,279 - INFO - Inserting market data for L.TO on 2025-03-05
+2025-03-15 18:09:11,368 - INFO - Inserting market data for L.TO on 2025-03-06
+2025-03-15 18:09:11,458 - INFO - Inserting market data for L.TO on 2025-03-07
+2025-03-15 18:09:11,543 - INFO - Inserting market data for L.TO on 2025-03-10
+2025-03-15 18:09:11,627 - INFO - Inserting market data for L.TO on 2025-03-11
+2025-03-15 18:09:11,712 - INFO - Inserting market data for L.TO on 2025-03-12
+2025-03-15 18:09:11,797 - INFO - Inserting market data for L.TO on 2025-03-13
+2025-03-15 18:09:11,880 - INFO - Inserting market data for L.TO on 2025-03-14
+2025-03-15 18:09:11,963 - INFO - Inserting analyst data for L.TO on 2025-03-15
+2025-03-15 18:09:12,046 - INFO - Inserting ESG data for L.TO
+2025-03-15 18:09:12,128 - INFO - Inserting governance risk data for L.TO from Company Info
+2025-03-15 18:09:12,213 - INFO - Successfully processed L.TO
+2025-03-15 18:09:14,218 - INFO - Processing ticker 19/35: MRU.TO
+2025-03-15 18:09:14,218 - INFO - Processing ticker: MRU.TO
+2025-03-15 18:09:14,221 - INFO - Running test-data.py for MRU.TO
+2025-03-15 18:09:23,757 - INFO - Retrieved data for MRU.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:09:24,165 - INFO - Inserting new company MRU.TO
+2025-03-15 18:09:24,249 - INFO - Inserting financial data for MRU.TO on 2024-12-31
+2025-03-15 18:09:24,334 - INFO - Inserting financial data for MRU.TO on 2024-09-30
+2025-03-15 18:09:24,420 - INFO - Inserting financial data for MRU.TO on 2024-06-30
+2025-03-15 18:09:24,504 - INFO - Inserting financial data for MRU.TO on 2024-03-31
+2025-03-15 18:09:24,587 - INFO - Inserting financial data for MRU.TO on 2023-12-31
+2025-03-15 18:09:24,672 - INFO - Inserting financial data for MRU.TO on 2023-09-30
+2025-03-15 18:09:24,756 - INFO - Inserting financial data for MRU.TO on 2023-06-30
+2025-03-15 18:09:24,843 - INFO - Inserting market data for MRU.TO on 2025-02-14
+2025-03-15 18:09:24,927 - INFO - Inserting market data for MRU.TO on 2025-02-18
+2025-03-15 18:09:25,012 - INFO - Inserting market data for MRU.TO on 2025-02-19
+2025-03-15 18:09:25,097 - INFO - Inserting market data for MRU.TO on 2025-02-20
+2025-03-15 18:09:25,185 - INFO - Inserting market data for MRU.TO on 2025-02-21
+2025-03-15 18:09:25,270 - INFO - Inserting market data for MRU.TO on 2025-02-24
+2025-03-15 18:09:25,353 - INFO - Inserting market data for MRU.TO on 2025-02-25
+2025-03-15 18:09:25,436 - INFO - Inserting market data for MRU.TO on 2025-02-26
+2025-03-15 18:09:25,521 - INFO - Inserting market data for MRU.TO on 2025-02-27
+2025-03-15 18:09:25,606 - INFO - Inserting market data for MRU.TO on 2025-02-28
+2025-03-15 18:09:25,689 - INFO - Inserting market data for MRU.TO on 2025-03-03
+2025-03-15 18:09:25,775 - INFO - Inserting market data for MRU.TO on 2025-03-04
+2025-03-15 18:09:25,860 - INFO - Inserting market data for MRU.TO on 2025-03-05
+2025-03-15 18:09:25,944 - INFO - Inserting market data for MRU.TO on 2025-03-06
+2025-03-15 18:09:26,031 - INFO - Inserting market data for MRU.TO on 2025-03-07
+2025-03-15 18:09:26,115 - INFO - Inserting market data for MRU.TO on 2025-03-10
+2025-03-15 18:09:26,199 - INFO - Inserting market data for MRU.TO on 2025-03-11
+2025-03-15 18:09:26,282 - INFO - Inserting market data for MRU.TO on 2025-03-12
+2025-03-15 18:09:26,365 - INFO - Inserting market data for MRU.TO on 2025-03-13
+2025-03-15 18:09:26,451 - INFO - Inserting market data for MRU.TO on 2025-03-14
+2025-03-15 18:09:26,534 - INFO - Inserting analyst data for MRU.TO on 2025-03-15
+2025-03-15 18:09:26,617 - INFO - Inserting ESG data for MRU.TO
+2025-03-15 18:09:26,707 - INFO - Inserting governance risk data for MRU.TO from Company Info
+2025-03-15 18:09:26,791 - INFO - Successfully processed MRU.TO
+2025-03-15 18:09:28,797 - INFO - Processing ticker 20/35: NWC.TO
+2025-03-15 18:09:28,797 - INFO - Processing ticker: NWC.TO
+2025-03-15 18:09:28,800 - INFO - Running test-data.py for NWC.TO
+2025-03-15 18:10:14,738 - INFO - Retrieved data for NWC.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:10:15,169 - INFO - Inserting new company NWC.TO
+2025-03-15 18:10:15,255 - INFO - Inserting financial data for NWC.TO on 2024-10-31
+2025-03-15 18:10:15,342 - INFO - Inserting financial data for NWC.TO on 2024-07-31
+2025-03-15 18:10:15,429 - INFO - Inserting financial data for NWC.TO on 2024-04-30
+2025-03-15 18:10:15,513 - INFO - Inserting financial data for NWC.TO on 2024-01-31
+2025-03-15 18:10:15,596 - INFO - Inserting financial data for NWC.TO on 2023-10-31
+2025-03-15 18:10:15,679 - INFO - Inserting financial data for NWC.TO on 2023-07-31
+2025-03-15 18:10:15,762 - INFO - Inserting market data for NWC.TO on 2025-02-14
+2025-03-15 18:10:15,847 - INFO - Inserting market data for NWC.TO on 2025-02-18
+2025-03-15 18:10:15,930 - INFO - Inserting market data for NWC.TO on 2025-02-19
+2025-03-15 18:10:16,015 - INFO - Inserting market data for NWC.TO on 2025-02-20
+2025-03-15 18:10:16,098 - INFO - Inserting market data for NWC.TO on 2025-02-21
+2025-03-15 18:10:16,181 - INFO - Inserting market data for NWC.TO on 2025-02-24
+2025-03-15 18:10:16,264 - INFO - Inserting market data for NWC.TO on 2025-02-25
+2025-03-15 18:10:16,348 - INFO - Inserting market data for NWC.TO on 2025-02-26
+2025-03-15 18:10:16,432 - INFO - Inserting market data for NWC.TO on 2025-02-27
+2025-03-15 18:10:16,514 - INFO - Inserting market data for NWC.TO on 2025-02-28
+2025-03-15 18:10:16,598 - INFO - Inserting market data for NWC.TO on 2025-03-03
+2025-03-15 18:10:16,681 - INFO - Inserting market data for NWC.TO on 2025-03-04
+2025-03-15 18:10:16,764 - INFO - Inserting market data for NWC.TO on 2025-03-05
+2025-03-15 18:10:16,849 - INFO - Inserting market data for NWC.TO on 2025-03-06
+2025-03-15 18:10:16,933 - INFO - Inserting market data for NWC.TO on 2025-03-07
+2025-03-15 18:10:17,016 - INFO - Inserting market data for NWC.TO on 2025-03-10
+2025-03-15 18:10:17,099 - INFO - Inserting market data for NWC.TO on 2025-03-11
+2025-03-15 18:10:17,182 - INFO - Inserting market data for NWC.TO on 2025-03-12
+2025-03-15 18:10:17,265 - INFO - Inserting market data for NWC.TO on 2025-03-13
+2025-03-15 18:10:17,350 - INFO - Inserting market data for NWC.TO on 2025-03-14
+2025-03-15 18:10:17,433 - INFO - Inserting analyst data for NWC.TO on 2025-03-15
+2025-03-15 18:10:17,516 - INFO - Inserting ESG data for NWC.TO
+2025-03-15 18:10:17,601 - INFO - Inserting governance risk data for NWC.TO from Company Info
+2025-03-15 18:10:17,686 - INFO - Successfully processed NWC.TO
+2025-03-15 18:10:19,689 - INFO - Processing ticker 21/35: BU.TO
+2025-03-15 18:10:19,690 - INFO - Processing ticker: BU.TO
+2025-03-15 18:10:19,693 - INFO - Running test-data.py for BU.TO
+2025-03-15 18:12:11,465 - INFO - Retrieved data for BU.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:12:11,938 - INFO - Inserting new company BU.TO
+2025-03-15 18:12:12,023 - INFO - Inserting financial data for BU.TO on 2023-06-30
+2025-03-15 18:12:12,108 - INFO - Inserting market data for BU.TO on 2025-02-14
+2025-03-15 18:12:12,192 - INFO - Inserting market data for BU.TO on 2025-02-18
+2025-03-15 18:12:12,280 - INFO - Inserting market data for BU.TO on 2025-02-19
+2025-03-15 18:12:12,363 - INFO - Inserting market data for BU.TO on 2025-02-20
+2025-03-15 18:12:12,447 - INFO - Inserting market data for BU.TO on 2025-02-21
+2025-03-15 18:12:12,537 - INFO - Inserting market data for BU.TO on 2025-02-24
+2025-03-15 18:12:12,687 - INFO - Inserting market data for BU.TO on 2025-02-25
+2025-03-15 18:12:12,842 - INFO - Inserting market data for BU.TO on 2025-02-26
+2025-03-15 18:12:12,943 - INFO - Inserting market data for BU.TO on 2025-02-27
+2025-03-15 18:12:13,036 - INFO - Inserting market data for BU.TO on 2025-02-28
+2025-03-15 18:12:13,123 - INFO - Inserting market data for BU.TO on 2025-03-03
+2025-03-15 18:12:13,223 - INFO - Inserting market data for BU.TO on 2025-03-04
+2025-03-15 18:12:13,306 - INFO - Inserting market data for BU.TO on 2025-03-05
+2025-03-15 18:12:13,391 - INFO - Inserting market data for BU.TO on 2025-03-06
+2025-03-15 18:12:13,476 - INFO - Inserting market data for BU.TO on 2025-03-07
+2025-03-15 18:12:13,568 - INFO - Inserting market data for BU.TO on 2025-03-10
+2025-03-15 18:12:13,681 - INFO - Inserting market data for BU.TO on 2025-03-11
+2025-03-15 18:12:13,774 - INFO - Inserting market data for BU.TO on 2025-03-12
+2025-03-15 18:12:13,859 - INFO - Inserting market data for BU.TO on 2025-03-13
+2025-03-15 18:12:13,947 - INFO - Inserting market data for BU.TO on 2025-03-14
+2025-03-15 18:12:14,034 - INFO - Inserting analyst data for BU.TO on 2025-03-15
+2025-03-15 18:12:14,121 - INFO - Inserting ESG data for BU.TO
+2025-03-15 18:12:14,165 - WARNING - No governance risk data available for BU.TO
+2025-03-15 18:12:14,206 - INFO - Successfully processed BU.TO
+2025-03-15 18:12:16,221 - INFO - Processing ticker 22/35: DTEA.V
+2025-03-15 18:12:16,222 - INFO - Processing ticker: DTEA.V
+2025-03-15 18:12:16,225 - INFO - Running test-data.py for DTEA.V
+2025-03-15 18:13:20,851 - INFO - Retrieved data for DTEA.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'History', 'Sustainability']
+2025-03-15 18:13:21,288 - INFO - Inserting new company DTEA.V
+2025-03-15 18:13:21,330 - WARNING - No financial data available for DTEA.V
+2025-03-15 18:13:21,373 - INFO - Inserting market data for DTEA.V on 2025-02-14
+2025-03-15 18:13:21,458 - INFO - Inserting market data for DTEA.V on 2025-02-18
+2025-03-15 18:13:21,544 - INFO - Inserting market data for DTEA.V on 2025-02-19
+2025-03-15 18:13:21,630 - INFO - Inserting market data for DTEA.V on 2025-02-20
+2025-03-15 18:13:21,714 - INFO - Inserting market data for DTEA.V on 2025-02-21
+2025-03-15 18:13:21,797 - INFO - Inserting market data for DTEA.V on 2025-02-24
+2025-03-15 18:13:21,881 - INFO - Inserting market data for DTEA.V on 2025-02-25
+2025-03-15 18:13:21,965 - INFO - Inserting market data for DTEA.V on 2025-02-26
+2025-03-15 18:13:22,051 - INFO - Inserting market data for DTEA.V on 2025-02-27
+2025-03-15 18:13:22,159 - INFO - Inserting market data for DTEA.V on 2025-02-28
+2025-03-15 18:13:22,242 - INFO - Inserting market data for DTEA.V on 2025-03-03
+2025-03-15 18:13:22,328 - INFO - Inserting market data for DTEA.V on 2025-03-04
+2025-03-15 18:13:22,412 - INFO - Inserting market data for DTEA.V on 2025-03-05
+2025-03-15 18:13:22,496 - INFO - Inserting market data for DTEA.V on 2025-03-06
+2025-03-15 18:13:22,586 - INFO - Inserting market data for DTEA.V on 2025-03-07
+2025-03-15 18:13:22,671 - INFO - Inserting market data for DTEA.V on 2025-03-10
+2025-03-15 18:13:22,754 - INFO - Inserting market data for DTEA.V on 2025-03-11
+2025-03-15 18:13:22,837 - INFO - Inserting market data for DTEA.V on 2025-03-12
+2025-03-15 18:13:22,920 - INFO - Inserting market data for DTEA.V on 2025-03-13
+2025-03-15 18:13:23,004 - INFO - Inserting market data for DTEA.V on 2025-03-14
+2025-03-15 18:13:23,090 - INFO - Inserting analyst data for DTEA.V on 2025-03-15
+2025-03-15 18:13:23,173 - INFO - Inserting ESG data for DTEA.V
+2025-03-15 18:13:23,215 - WARNING - No governance risk data available for DTEA.V
+2025-03-15 18:13:23,256 - INFO - Successfully processed DTEA.V
+2025-03-15 18:13:25,259 - INFO - Processing ticker 23/35: HLF.TO
+2025-03-15 18:13:25,260 - INFO - Processing ticker: HLF.TO
+2025-03-15 18:13:25,263 - INFO - Running test-data.py for HLF.TO
+2025-03-15 18:13:32,674 - INFO - Retrieved data for HLF.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:13:33,117 - INFO - Inserting new company HLF.TO
+2025-03-15 18:13:33,214 - INFO - Inserting financial data for HLF.TO on 2024-12-31
+2025-03-15 18:13:33,271 - INFO - Inserting financial data for HLF.TO on 2024-09-30
+2025-03-15 18:13:33,329 - INFO - Inserting financial data for HLF.TO on 2024-06-30
+2025-03-15 18:13:33,388 - INFO - Inserting financial data for HLF.TO on 2024-03-31
+2025-03-15 18:13:33,446 - INFO - Inserting financial data for HLF.TO on 2023-12-31
+2025-03-15 18:13:33,507 - INFO - Inserting financial data for HLF.TO on 2023-09-30
+2025-03-15 18:13:33,563 - INFO - Inserting financial data for HLF.TO on 2023-06-30
+2025-03-15 18:13:33,620 - INFO - Inserting market data for HLF.TO on 2025-02-14
+2025-03-15 18:13:33,678 - INFO - Inserting market data for HLF.TO on 2025-02-18
+2025-03-15 18:13:33,736 - INFO - Inserting market data for HLF.TO on 2025-02-19
+2025-03-15 18:13:33,792 - INFO - Inserting market data for HLF.TO on 2025-02-20
+2025-03-15 18:13:33,848 - INFO - Inserting market data for HLF.TO on 2025-02-21
+2025-03-15 18:13:33,903 - INFO - Inserting market data for HLF.TO on 2025-02-24
+2025-03-15 18:13:33,962 - INFO - Inserting market data for HLF.TO on 2025-02-25
+2025-03-15 18:13:34,018 - INFO - Inserting market data for HLF.TO on 2025-02-26
+2025-03-15 18:13:34,074 - INFO - Inserting market data for HLF.TO on 2025-02-27
+2025-03-15 18:13:34,132 - INFO - Inserting market data for HLF.TO on 2025-02-28
+2025-03-15 18:13:34,193 - INFO - Inserting market data for HLF.TO on 2025-03-03
+2025-03-15 18:13:34,251 - INFO - Inserting market data for HLF.TO on 2025-03-04
+2025-03-15 18:13:34,307 - INFO - Inserting market data for HLF.TO on 2025-03-05
+2025-03-15 18:13:34,364 - INFO - Inserting market data for HLF.TO on 2025-03-06
+2025-03-15 18:13:34,421 - INFO - Inserting market data for HLF.TO on 2025-03-07
+2025-03-15 18:13:34,479 - INFO - Inserting market data for HLF.TO on 2025-03-10
+2025-03-15 18:13:34,537 - INFO - Inserting market data for HLF.TO on 2025-03-11
+2025-03-15 18:13:34,594 - INFO - Inserting market data for HLF.TO on 2025-03-12
+2025-03-15 18:13:34,651 - INFO - Inserting market data for HLF.TO on 2025-03-13
+2025-03-15 18:13:34,710 - INFO - Inserting market data for HLF.TO on 2025-03-14
+2025-03-15 18:13:34,769 - INFO - Inserting analyst data for HLF.TO on 2025-03-15
+2025-03-15 18:13:34,827 - INFO - Inserting ESG data for HLF.TO
+2025-03-15 18:13:34,886 - INFO - Inserting governance risk data for HLF.TO from Company Info
+2025-03-15 18:13:34,946 - INFO - Successfully processed HLF.TO
+2025-03-15 18:13:36,951 - INFO - Processing ticker 24/35: IRO.V
+2025-03-15 18:13:36,952 - INFO - Processing ticker: IRO.V
+2025-03-15 18:13:36,954 - INFO - Running test-data.py for IRO.V
+2025-03-15 18:14:17,516 - INFO - Retrieved data for IRO.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:14:17,946 - INFO - Inserting new company IRO.V
+2025-03-15 18:14:18,030 - INFO - Inserting financial data for IRO.V on 2024-09-30
+2025-03-15 18:14:18,113 - INFO - Inserting financial data for IRO.V on 2024-06-30
+2025-03-15 18:14:18,196 - INFO - Inserting financial data for IRO.V on 2024-03-31
+2025-03-15 18:14:18,279 - INFO - Inserting financial data for IRO.V on 2023-12-31
+2025-03-15 18:14:18,364 - INFO - Inserting financial data for IRO.V on 2023-09-30
+2025-03-15 18:14:18,447 - INFO - Inserting financial data for IRO.V on 2023-06-30
+2025-03-15 18:14:18,530 - INFO - Inserting market data for IRO.V on 2025-02-14
+2025-03-15 18:14:18,613 - INFO - Inserting market data for IRO.V on 2025-02-18
+2025-03-15 18:14:18,696 - INFO - Inserting market data for IRO.V on 2025-02-19
+2025-03-15 18:14:18,779 - INFO - Inserting market data for IRO.V on 2025-02-20
+2025-03-15 18:14:18,862 - INFO - Inserting market data for IRO.V on 2025-02-21
+2025-03-15 18:14:18,946 - INFO - Inserting market data for IRO.V on 2025-02-24
+2025-03-15 18:14:19,029 - INFO - Inserting market data for IRO.V on 2025-02-25
+2025-03-15 18:14:19,112 - INFO - Inserting market data for IRO.V on 2025-02-26
+2025-03-15 18:14:19,196 - INFO - Inserting market data for IRO.V on 2025-02-27
+2025-03-15 18:14:19,279 - INFO - Inserting market data for IRO.V on 2025-02-28
+2025-03-15 18:14:19,363 - INFO - Inserting market data for IRO.V on 2025-03-03
+2025-03-15 18:14:19,446 - INFO - Inserting market data for IRO.V on 2025-03-04
+2025-03-15 18:14:19,529 - INFO - Inserting market data for IRO.V on 2025-03-05
+2025-03-15 18:14:19,614 - INFO - Inserting market data for IRO.V on 2025-03-06
+2025-03-15 18:14:19,698 - INFO - Inserting market data for IRO.V on 2025-03-07
+2025-03-15 18:14:19,783 - INFO - Inserting market data for IRO.V on 2025-03-10
+2025-03-15 18:14:19,866 - INFO - Inserting market data for IRO.V on 2025-03-11
+2025-03-15 18:14:19,952 - INFO - Inserting market data for IRO.V on 2025-03-12
+2025-03-15 18:14:20,038 - INFO - Inserting market data for IRO.V on 2025-03-13
+2025-03-15 18:14:20,122 - INFO - Inserting market data for IRO.V on 2025-03-14
+2025-03-15 18:14:20,207 - INFO - Inserting analyst data for IRO.V on 2025-03-15
+2025-03-15 18:14:20,289 - INFO - Inserting ESG data for IRO.V
+2025-03-15 18:14:20,330 - WARNING - No governance risk data available for IRO.V
+2025-03-15 18:14:20,372 - INFO - Successfully processed IRO.V
+2025-03-15 18:14:22,378 - INFO - Processing ticker 25/35: JWEL.TO
+2025-03-15 18:14:22,378 - INFO - Processing ticker: JWEL.TO
+2025-03-15 18:14:22,380 - INFO - Running test-data.py for JWEL.TO
+2025-03-15 18:15:07,687 - INFO - Retrieved data for JWEL.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:15:08,123 - INFO - Inserting new company JWEL.TO
+2025-03-15 18:15:08,213 - INFO - Inserting financial data for JWEL.TO on 2024-12-31
+2025-03-15 18:15:08,298 - INFO - Inserting financial data for JWEL.TO on 2024-09-30
+2025-03-15 18:15:08,386 - INFO - Inserting financial data for JWEL.TO on 2024-06-30
+2025-03-15 18:15:08,471 - INFO - Inserting financial data for JWEL.TO on 2024-03-31
+2025-03-15 18:15:08,556 - INFO - Inserting financial data for JWEL.TO on 2023-12-31
+2025-03-15 18:15:08,641 - INFO - Inserting financial data for JWEL.TO on 2023-09-30
+2025-03-15 18:15:08,726 - INFO - Inserting financial data for JWEL.TO on 2023-06-30
+2025-03-15 18:15:08,811 - INFO - Inserting market data for JWEL.TO on 2025-02-14
+2025-03-15 18:15:08,895 - INFO - Inserting market data for JWEL.TO on 2025-02-18
+2025-03-15 18:15:08,980 - INFO - Inserting market data for JWEL.TO on 2025-02-19
+2025-03-15 18:15:09,069 - INFO - Inserting market data for JWEL.TO on 2025-02-20
+2025-03-15 18:15:09,154 - INFO - Inserting market data for JWEL.TO on 2025-02-21
+2025-03-15 18:15:09,240 - INFO - Inserting market data for JWEL.TO on 2025-02-24
+2025-03-15 18:15:09,324 - INFO - Inserting market data for JWEL.TO on 2025-02-25
+2025-03-15 18:15:09,411 - INFO - Inserting market data for JWEL.TO on 2025-02-26
+2025-03-15 18:15:09,498 - INFO - Inserting market data for JWEL.TO on 2025-02-27
+2025-03-15 18:15:09,587 - INFO - Inserting market data for JWEL.TO on 2025-02-28
+2025-03-15 18:15:09,672 - INFO - Inserting market data for JWEL.TO on 2025-03-03
+2025-03-15 18:15:09,763 - INFO - Inserting market data for JWEL.TO on 2025-03-04
+2025-03-15 18:15:09,862 - INFO - Inserting market data for JWEL.TO on 2025-03-05
+2025-03-15 18:15:09,948 - INFO - Inserting market data for JWEL.TO on 2025-03-06
+2025-03-15 18:15:10,033 - INFO - Inserting market data for JWEL.TO on 2025-03-07
+2025-03-15 18:15:10,118 - INFO - Inserting market data for JWEL.TO on 2025-03-10
+2025-03-15 18:15:10,205 - INFO - Inserting market data for JWEL.TO on 2025-03-11
+2025-03-15 18:15:10,290 - INFO - Inserting market data for JWEL.TO on 2025-03-12
+2025-03-15 18:15:10,375 - INFO - Inserting market data for JWEL.TO on 2025-03-13
+2025-03-15 18:15:10,462 - INFO - Inserting market data for JWEL.TO on 2025-03-14
+2025-03-15 18:15:10,551 - INFO - Inserting analyst data for JWEL.TO on 2025-03-15
+2025-03-15 18:15:10,636 - INFO - Inserting ESG data for JWEL.TO
+2025-03-15 18:15:10,722 - INFO - Inserting governance risk data for JWEL.TO from Company Info
+2025-03-15 18:15:10,811 - INFO - Successfully processed JWEL.TO
+2025-03-15 18:15:12,816 - INFO - Processing ticker 26/35: MFI.TO
+2025-03-15 18:15:12,816 - INFO - Processing ticker: MFI.TO
+2025-03-15 18:15:12,819 - INFO - Running test-data.py for MFI.TO
+2025-03-15 18:15:54,839 - INFO - Retrieved data for MFI.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:15:55,268 - INFO - Inserting new company MFI.TO
+2025-03-15 18:15:55,355 - INFO - Inserting financial data for MFI.TO on 2024-12-31
+2025-03-15 18:15:55,438 - INFO - Inserting financial data for MFI.TO on 2024-09-30
+2025-03-15 18:15:55,523 - INFO - Inserting financial data for MFI.TO on 2024-06-30
+2025-03-15 18:15:55,607 - INFO - Inserting financial data for MFI.TO on 2024-03-31
+2025-03-15 18:15:55,691 - INFO - Inserting financial data for MFI.TO on 2023-12-31
+2025-03-15 18:15:55,774 - INFO - Inserting financial data for MFI.TO on 2023-09-30
+2025-03-15 18:15:55,857 - INFO - Inserting financial data for MFI.TO on 2023-06-30
+2025-03-15 18:15:55,940 - INFO - Inserting market data for MFI.TO on 2025-02-14
+2025-03-15 18:15:56,023 - INFO - Inserting market data for MFI.TO on 2025-02-18
+2025-03-15 18:15:56,106 - INFO - Inserting market data for MFI.TO on 2025-02-19
+2025-03-15 18:15:56,189 - INFO - Inserting market data for MFI.TO on 2025-02-20
+2025-03-15 18:15:56,272 - INFO - Inserting market data for MFI.TO on 2025-02-21
+2025-03-15 18:15:56,357 - INFO - Inserting market data for MFI.TO on 2025-02-24
+2025-03-15 18:15:56,441 - INFO - Inserting market data for MFI.TO on 2025-02-25
+2025-03-15 18:15:56,525 - INFO - Inserting market data for MFI.TO on 2025-02-26
+2025-03-15 18:15:56,608 - INFO - Inserting market data for MFI.TO on 2025-02-27
+2025-03-15 18:15:56,693 - INFO - Inserting market data for MFI.TO on 2025-02-28
+2025-03-15 18:15:56,776 - INFO - Inserting market data for MFI.TO on 2025-03-03
+2025-03-15 18:15:56,859 - INFO - Inserting market data for MFI.TO on 2025-03-04
+2025-03-15 18:15:56,943 - INFO - Inserting market data for MFI.TO on 2025-03-05
+2025-03-15 18:15:57,029 - INFO - Inserting market data for MFI.TO on 2025-03-06
+2025-03-15 18:15:57,116 - INFO - Inserting market data for MFI.TO on 2025-03-07
+2025-03-15 18:15:57,199 - INFO - Inserting market data for MFI.TO on 2025-03-10
+2025-03-15 18:15:57,284 - INFO - Inserting market data for MFI.TO on 2025-03-11
+2025-03-15 18:15:57,368 - INFO - Inserting market data for MFI.TO on 2025-03-12
+2025-03-15 18:15:57,453 - INFO - Inserting market data for MFI.TO on 2025-03-13
+2025-03-15 18:15:57,537 - INFO - Inserting market data for MFI.TO on 2025-03-14
+2025-03-15 18:15:57,620 - INFO - Inserting analyst data for MFI.TO on 2025-03-15
+2025-03-15 18:15:57,705 - INFO - Inserting ESG data for MFI.TO
+2025-03-15 18:15:57,790 - INFO - Inserting governance risk data for MFI.TO from Company Info
+2025-03-15 18:15:57,875 - INFO - Successfully processed MFI.TO
+2025-03-15 18:15:59,877 - INFO - Processing ticker 27/35: PBH.TO
+2025-03-15 18:15:59,877 - INFO - Processing ticker: PBH.TO
+2025-03-15 18:15:59,878 - INFO - Running test-data.py for PBH.TO
+2025-03-15 18:16:42,180 - INFO - Retrieved data for PBH.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:16:42,615 - INFO - Inserting new company PBH.TO
+2025-03-15 18:16:42,707 - INFO - Inserting financial data for PBH.TO on 2024-09-30
+2025-03-15 18:16:42,795 - INFO - Inserting financial data for PBH.TO on 2024-06-30
+2025-03-15 18:16:42,881 - INFO - Inserting financial data for PBH.TO on 2024-03-31
+2025-03-15 18:16:42,968 - INFO - Inserting financial data for PBH.TO on 2023-12-31
+2025-03-15 18:16:43,072 - INFO - Inserting financial data for PBH.TO on 2023-09-30
+2025-03-15 18:16:43,158 - INFO - Inserting financial data for PBH.TO on 2023-06-30
+2025-03-15 18:16:43,243 - INFO - Inserting market data for PBH.TO on 2025-02-14
+2025-03-15 18:16:43,329 - INFO - Inserting market data for PBH.TO on 2025-02-18
+2025-03-15 18:16:43,416 - INFO - Inserting market data for PBH.TO on 2025-02-19
+2025-03-15 18:16:43,504 - INFO - Inserting market data for PBH.TO on 2025-02-20
+2025-03-15 18:16:43,592 - INFO - Inserting market data for PBH.TO on 2025-02-21
+2025-03-15 18:16:43,680 - INFO - Inserting market data for PBH.TO on 2025-02-24
+2025-03-15 18:16:43,780 - INFO - Inserting market data for PBH.TO on 2025-02-25
+2025-03-15 18:16:43,867 - INFO - Inserting market data for PBH.TO on 2025-02-26
+2025-03-15 18:16:43,954 - INFO - Inserting market data for PBH.TO on 2025-02-27
+2025-03-15 18:16:44,045 - INFO - Inserting market data for PBH.TO on 2025-02-28
+2025-03-15 18:16:44,132 - INFO - Inserting market data for PBH.TO on 2025-03-03
+2025-03-15 18:16:44,219 - INFO - Inserting market data for PBH.TO on 2025-03-04
+2025-03-15 18:16:44,305 - INFO - Inserting market data for PBH.TO on 2025-03-05
+2025-03-15 18:16:44,391 - INFO - Inserting market data for PBH.TO on 2025-03-06
+2025-03-15 18:16:44,478 - INFO - Inserting market data for PBH.TO on 2025-03-07
+2025-03-15 18:16:44,565 - INFO - Inserting market data for PBH.TO on 2025-03-10
+2025-03-15 18:16:44,653 - INFO - Inserting market data for PBH.TO on 2025-03-11
+2025-03-15 18:16:44,739 - INFO - Inserting market data for PBH.TO on 2025-03-12
+2025-03-15 18:16:44,826 - INFO - Inserting market data for PBH.TO on 2025-03-13
+2025-03-15 18:16:44,922 - INFO - Inserting market data for PBH.TO on 2025-03-14
+2025-03-15 18:16:45,009 - INFO - Inserting analyst data for PBH.TO on 2025-03-15
+2025-03-15 18:16:45,095 - INFO - Inserting ESG data for PBH.TO
+2025-03-15 18:16:45,183 - INFO - Inserting governance risk data for PBH.TO from Company Info
+2025-03-15 18:16:45,270 - INFO - Successfully processed PBH.TO
+2025-03-15 18:16:47,275 - INFO - Processing ticker 28/35: SAP.TO
+2025-03-15 18:16:47,276 - INFO - Processing ticker: SAP.TO
+2025-03-15 18:16:47,279 - INFO - Running test-data.py for SAP.TO
+2025-03-15 18:17:57,053 - INFO - Retrieved data for SAP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:17:57,481 - INFO - Inserting new company SAP.TO
+2025-03-15 18:17:57,567 - INFO - Inserting financial data for SAP.TO on 2024-12-31
+2025-03-15 18:17:57,652 - INFO - Inserting financial data for SAP.TO on 2024-09-30
+2025-03-15 18:17:57,736 - INFO - Inserting financial data for SAP.TO on 2024-06-30
+2025-03-15 18:17:57,818 - INFO - Inserting financial data for SAP.TO on 2024-03-31
+2025-03-15 18:17:57,901 - INFO - Inserting financial data for SAP.TO on 2023-12-31
+2025-03-15 18:17:57,984 - INFO - Inserting financial data for SAP.TO on 2023-09-30
+2025-03-15 18:17:58,071 - INFO - Inserting financial data for SAP.TO on 2023-06-30
+2025-03-15 18:17:58,155 - INFO - Inserting market data for SAP.TO on 2025-02-14
+2025-03-15 18:17:58,239 - INFO - Inserting market data for SAP.TO on 2025-02-18
+2025-03-15 18:17:58,335 - INFO - Inserting market data for SAP.TO on 2025-02-19
+2025-03-15 18:17:58,418 - INFO - Inserting market data for SAP.TO on 2025-02-20
+2025-03-15 18:17:58,501 - INFO - Inserting market data for SAP.TO on 2025-02-21
+2025-03-15 18:17:58,586 - INFO - Inserting market data for SAP.TO on 2025-02-24
+2025-03-15 18:17:58,667 - INFO - Inserting market data for SAP.TO on 2025-02-25
+2025-03-15 18:17:58,758 - INFO - Inserting market data for SAP.TO on 2025-02-26
+2025-03-15 18:17:58,841 - INFO - Inserting market data for SAP.TO on 2025-02-27
+2025-03-15 18:17:58,925 - INFO - Inserting market data for SAP.TO on 2025-02-28
+2025-03-15 18:17:59,008 - INFO - Inserting market data for SAP.TO on 2025-03-03
+2025-03-15 18:17:59,093 - INFO - Inserting market data for SAP.TO on 2025-03-04
+2025-03-15 18:17:59,176 - INFO - Inserting market data for SAP.TO on 2025-03-05
+2025-03-15 18:17:59,261 - INFO - Inserting market data for SAP.TO on 2025-03-06
+2025-03-15 18:17:59,346 - INFO - Inserting market data for SAP.TO on 2025-03-07
+2025-03-15 18:17:59,429 - INFO - Inserting market data for SAP.TO on 2025-03-10
+2025-03-15 18:17:59,512 - INFO - Inserting market data for SAP.TO on 2025-03-11
+2025-03-15 18:17:59,594 - INFO - Inserting market data for SAP.TO on 2025-03-12
+2025-03-15 18:17:59,677 - INFO - Inserting market data for SAP.TO on 2025-03-13
+2025-03-15 18:17:59,762 - INFO - Inserting market data for SAP.TO on 2025-03-14
+2025-03-15 18:17:59,845 - INFO - Inserting analyst data for SAP.TO on 2025-03-15
+2025-03-15 18:17:59,928 - INFO - Inserting ESG data for SAP.TO
+2025-03-15 18:18:00,014 - INFO - Inserting governance risk data for SAP.TO from Company Info
+2025-03-15 18:18:00,096 - INFO - Successfully processed SAP.TO
+2025-03-15 18:18:02,103 - INFO - Processing ticker 29/35: SHOP.TO
+2025-03-15 18:18:02,104 - INFO - Processing ticker: SHOP.TO
+2025-03-15 18:18:02,108 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 18:18:09,740 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 18:18:10,162 - INFO - Company SHOP.TO already exists, updating...
+2025-03-15 18:18:10,245 - INFO - Financial data for SHOP.TO on 2024-12-31 already exists, updating...
+2025-03-15 18:18:10,330 - INFO - Financial data for SHOP.TO on 2024-09-30 already exists, updating...
+2025-03-15 18:18:10,412 - INFO - Financial data for SHOP.TO on 2024-06-30 already exists, updating...
+2025-03-15 18:18:10,495 - INFO - Financial data for SHOP.TO on 2024-03-31 already exists, updating...
+2025-03-15 18:18:10,578 - INFO - Financial data for SHOP.TO on 2023-12-31 already exists, updating...
+2025-03-15 18:18:10,663 - INFO - Financial data for SHOP.TO on 2023-09-30 already exists, updating...
+2025-03-15 18:18:10,746 - INFO - Financial data for SHOP.TO on 2023-06-30 already exists, updating...
+2025-03-15 18:18:10,829 - INFO - Market data for SHOP.TO on 2025-02-14 already exists, updating...
+2025-03-15 18:18:10,913 - INFO - Market data for SHOP.TO on 2025-02-18 already exists, updating...
+2025-03-15 18:18:10,996 - INFO - Market data for SHOP.TO on 2025-02-19 already exists, updating...
+2025-03-15 18:18:11,078 - INFO - Market data for SHOP.TO on 2025-02-20 already exists, updating...
+2025-03-15 18:18:11,161 - INFO - Market data for SHOP.TO on 2025-02-21 already exists, updating...
+2025-03-15 18:18:11,245 - INFO - Market data for SHOP.TO on 2025-02-24 already exists, updating...
+2025-03-15 18:18:11,331 - INFO - Market data for SHOP.TO on 2025-02-25 already exists, updating...
+2025-03-15 18:18:11,414 - INFO - Market data for SHOP.TO on 2025-02-26 already exists, updating...
+2025-03-15 18:18:11,497 - INFO - Market data for SHOP.TO on 2025-02-27 already exists, updating...
+2025-03-15 18:18:11,580 - INFO - Market data for SHOP.TO on 2025-02-28 already exists, updating...
+2025-03-15 18:18:11,663 - INFO - Market data for SHOP.TO on 2025-03-03 already exists, updating...
+2025-03-15 18:18:11,748 - INFO - Market data for SHOP.TO on 2025-03-04 already exists, updating...
+2025-03-15 18:18:11,833 - INFO - Market data for SHOP.TO on 2025-03-05 already exists, updating...
+2025-03-15 18:18:11,919 - INFO - Market data for SHOP.TO on 2025-03-06 already exists, updating...
+2025-03-15 18:18:12,002 - INFO - Market data for SHOP.TO on 2025-03-07 already exists, updating...
+2025-03-15 18:18:12,085 - INFO - Market data for SHOP.TO on 2025-03-10 already exists, updating...
+2025-03-15 18:18:12,168 - INFO - Market data for SHOP.TO on 2025-03-11 already exists, updating...
+2025-03-15 18:18:12,251 - INFO - Market data for SHOP.TO on 2025-03-12 already exists, updating...
+2025-03-15 18:18:12,335 - INFO - Market data for SHOP.TO on 2025-03-13 already exists, updating...
+2025-03-15 18:18:12,419 - INFO - Market data for SHOP.TO on 2025-03-14 already exists, updating...
+2025-03-15 18:18:12,502 - INFO - Updating analyst targets for SHOP.TO on 2025-03-15
+2025-03-15 18:18:12,587 - INFO - ESG data for SHOP.TO already exists, updating...
+2025-03-15 18:18:12,671 - INFO - Governance risk data for SHOP.TO already exists, updating from Company Info...
+2025-03-15 18:18:12,759 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:18:14,763 - INFO - Processing ticker 30/35: OTEX.TO
+2025-03-15 18:18:14,764 - INFO - Processing ticker: OTEX.TO
+2025-03-15 18:18:14,765 - INFO - Running test-data.py for OTEX.TO
+2025-03-15 18:18:56,932 - INFO - Retrieved data for OTEX.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:18:57,365 - INFO - Inserting new company OTEX.TO
+2025-03-15 18:18:57,486 - INFO - Inserting financial data for OTEX.TO on 2024-12-31
+2025-03-15 18:18:57,570 - INFO - Inserting financial data for OTEX.TO on 2024-09-30
+2025-03-15 18:18:57,654 - INFO - Inserting financial data for OTEX.TO on 2024-06-30
+2025-03-15 18:18:57,737 - INFO - Inserting financial data for OTEX.TO on 2024-03-31
+2025-03-15 18:18:57,820 - INFO - Inserting financial data for OTEX.TO on 2023-12-31
+2025-03-15 18:18:57,903 - INFO - Inserting financial data for OTEX.TO on 2023-09-30
+2025-03-15 18:18:57,987 - INFO - Inserting market data for OTEX.TO on 2025-02-14
+2025-03-15 18:18:58,070 - INFO - Inserting market data for OTEX.TO on 2025-02-18
+2025-03-15 18:18:58,156 - INFO - Inserting market data for OTEX.TO on 2025-02-19
+2025-03-15 18:18:58,239 - INFO - Inserting market data for OTEX.TO on 2025-02-20
+2025-03-15 18:18:58,322 - INFO - Inserting market data for OTEX.TO on 2025-02-21
+2025-03-15 18:18:58,405 - INFO - Inserting market data for OTEX.TO on 2025-02-24
+2025-03-15 18:18:58,490 - INFO - Inserting market data for OTEX.TO on 2025-02-25
+2025-03-15 18:18:58,573 - INFO - Inserting market data for OTEX.TO on 2025-02-26
+2025-03-15 18:18:58,657 - INFO - Inserting market data for OTEX.TO on 2025-02-27
+2025-03-15 18:18:58,743 - INFO - Inserting market data for OTEX.TO on 2025-02-28
+2025-03-15 18:18:58,827 - INFO - Inserting market data for OTEX.TO on 2025-03-03
+2025-03-15 18:18:58,912 - INFO - Inserting market data for OTEX.TO on 2025-03-04
+2025-03-15 18:18:58,995 - INFO - Inserting market data for OTEX.TO on 2025-03-05
+2025-03-15 18:18:59,078 - INFO - Inserting market data for OTEX.TO on 2025-03-06
+2025-03-15 18:18:59,161 - INFO - Inserting market data for OTEX.TO on 2025-03-07
+2025-03-15 18:18:59,246 - INFO - Inserting market data for OTEX.TO on 2025-03-10
+2025-03-15 18:18:59,332 - INFO - Inserting market data for OTEX.TO on 2025-03-11
+2025-03-15 18:18:59,417 - INFO - Inserting market data for OTEX.TO on 2025-03-12
+2025-03-15 18:18:59,502 - INFO - Inserting market data for OTEX.TO on 2025-03-13
+2025-03-15 18:18:59,585 - INFO - Inserting market data for OTEX.TO on 2025-03-14
+2025-03-15 18:18:59,669 - INFO - Inserting analyst data for OTEX.TO on 2025-03-15
+2025-03-15 18:18:59,750 - INFO - Inserting ESG data for OTEX.TO
+2025-03-15 18:18:59,834 - INFO - Inserting governance risk data for OTEX.TO from Company Info
+2025-03-15 18:18:59,919 - INFO - Successfully processed OTEX.TO
+2025-03-15 18:19:01,924 - INFO - Processing ticker 31/35: BB.TO
+2025-03-15 18:19:01,925 - INFO - Processing ticker: BB.TO
+2025-03-15 18:19:01,926 - INFO - Running test-data.py for BB.TO
+2025-03-15 18:19:11,421 - INFO - Retrieved data for BB.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:19:11,703 - INFO - Inserting new company BB.TO
+2025-03-15 18:19:11,762 - INFO - Inserting financial data for BB.TO on 2024-11-30
+2025-03-15 18:19:11,821 - INFO - Inserting financial data for BB.TO on 2024-08-31
+2025-03-15 18:19:11,880 - INFO - Inserting financial data for BB.TO on 2024-05-31
+2025-03-15 18:19:11,939 - INFO - Inserting financial data for BB.TO on 2024-02-29
+2025-03-15 18:19:11,996 - INFO - Inserting financial data for BB.TO on 2023-11-30
+2025-03-15 18:19:12,053 - INFO - Inserting financial data for BB.TO on 2023-08-31
+2025-03-15 18:19:12,110 - INFO - Inserting market data for BB.TO on 2025-02-14
+2025-03-15 18:19:12,167 - INFO - Inserting market data for BB.TO on 2025-02-18
+2025-03-15 18:19:12,224 - INFO - Inserting market data for BB.TO on 2025-02-19
+2025-03-15 18:19:12,281 - INFO - Inserting market data for BB.TO on 2025-02-20
+2025-03-15 18:19:12,337 - INFO - Inserting market data for BB.TO on 2025-02-21
+2025-03-15 18:19:12,397 - INFO - Inserting market data for BB.TO on 2025-02-24
+2025-03-15 18:19:12,454 - INFO - Inserting market data for BB.TO on 2025-02-25
+2025-03-15 18:19:12,511 - INFO - Inserting market data for BB.TO on 2025-02-26
+2025-03-15 18:19:12,568 - INFO - Inserting market data for BB.TO on 2025-02-27
+2025-03-15 18:19:12,627 - INFO - Inserting market data for BB.TO on 2025-02-28
+2025-03-15 18:19:12,684 - INFO - Inserting market data for BB.TO on 2025-03-03
+2025-03-15 18:19:12,750 - INFO - Inserting market data for BB.TO on 2025-03-04
+2025-03-15 18:19:12,806 - INFO - Inserting market data for BB.TO on 2025-03-05
+2025-03-15 18:19:12,864 - INFO - Inserting market data for BB.TO on 2025-03-06
+2025-03-15 18:19:12,921 - INFO - Inserting market data for BB.TO on 2025-03-07
+2025-03-15 18:19:12,977 - INFO - Inserting market data for BB.TO on 2025-03-10
+2025-03-15 18:19:13,035 - INFO - Inserting market data for BB.TO on 2025-03-11
+2025-03-15 18:19:13,093 - INFO - Inserting market data for BB.TO on 2025-03-12
+2025-03-15 18:19:13,150 - INFO - Inserting market data for BB.TO on 2025-03-13
+2025-03-15 18:19:13,207 - INFO - Inserting market data for BB.TO on 2025-03-14
+2025-03-15 18:19:13,264 - INFO - Inserting analyst data for BB.TO on 2025-03-15
+2025-03-15 18:19:13,320 - INFO - Inserting ESG data for BB.TO
+2025-03-15 18:19:13,378 - INFO - Inserting governance risk data for BB.TO from Company Info
+2025-03-15 18:19:13,438 - INFO - Successfully processed BB.TO
+2025-03-15 18:19:15,442 - INFO - Processing ticker 32/35: LSPD.TO
+2025-03-15 18:19:15,442 - INFO - Processing ticker: LSPD.TO
+2025-03-15 18:19:15,443 - INFO - Running test-data.py for LSPD.TO
+2025-03-15 18:19:22,548 - INFO - Retrieved data for LSPD.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:19:22,835 - INFO - Company LSPD.TO already exists, updating...
+2025-03-15 18:19:22,896 - INFO - Financial data for LSPD.TO on 2024-12-31 already exists, updating...
+2025-03-15 18:19:22,956 - INFO - Financial data for LSPD.TO on 2024-09-30 already exists, updating...
+2025-03-15 18:19:23,015 - INFO - Financial data for LSPD.TO on 2024-06-30 already exists, updating...
+2025-03-15 18:19:23,072 - INFO - Financial data for LSPD.TO on 2024-03-31 already exists, updating...
+2025-03-15 18:19:23,129 - INFO - Financial data for LSPD.TO on 2023-12-31 already exists, updating...
+2025-03-15 18:19:23,189 - INFO - Financial data for LSPD.TO on 2023-09-30 already exists, updating...
+2025-03-15 18:19:23,246 - INFO - Market data for LSPD.TO on 2025-02-14 already exists, updating...
+2025-03-15 18:19:23,304 - INFO - Market data for LSPD.TO on 2025-02-18 already exists, updating...
+2025-03-15 18:19:23,361 - INFO - Market data for LSPD.TO on 2025-02-19 already exists, updating...
+2025-03-15 18:19:23,420 - INFO - Market data for LSPD.TO on 2025-02-20 already exists, updating...
+2025-03-15 18:19:23,478 - INFO - Market data for LSPD.TO on 2025-02-21 already exists, updating...
+2025-03-15 18:19:23,535 - INFO - Market data for LSPD.TO on 2025-02-24 already exists, updating...
+2025-03-15 18:19:23,594 - INFO - Market data for LSPD.TO on 2025-02-25 already exists, updating...
+2025-03-15 18:19:23,652 - INFO - Market data for LSPD.TO on 2025-02-26 already exists, updating...
+2025-03-15 18:19:23,710 - INFO - Market data for LSPD.TO on 2025-02-27 already exists, updating...
+2025-03-15 18:19:23,769 - INFO - Market data for LSPD.TO on 2025-02-28 already exists, updating...
+2025-03-15 18:19:23,828 - INFO - Market data for LSPD.TO on 2025-03-03 already exists, updating...
+2025-03-15 18:19:23,886 - INFO - Market data for LSPD.TO on 2025-03-04 already exists, updating...
+2025-03-15 18:19:23,945 - INFO - Market data for LSPD.TO on 2025-03-05 already exists, updating...
+2025-03-15 18:19:24,003 - INFO - Market data for LSPD.TO on 2025-03-06 already exists, updating...
+2025-03-15 18:19:24,065 - INFO - Market data for LSPD.TO on 2025-03-07 already exists, updating...
+2025-03-15 18:19:24,127 - INFO - Market data for LSPD.TO on 2025-03-10 already exists, updating...
+2025-03-15 18:19:24,186 - INFO - Market data for LSPD.TO on 2025-03-11 already exists, updating...
+2025-03-15 18:19:24,245 - INFO - Market data for LSPD.TO on 2025-03-12 already exists, updating...
+2025-03-15 18:19:24,306 - INFO - Market data for LSPD.TO on 2025-03-13 already exists, updating...
+2025-03-15 18:19:24,365 - INFO - Market data for LSPD.TO on 2025-03-14 already exists, updating...
+2025-03-15 18:19:24,423 - INFO - Updating analyst targets for LSPD.TO on 2025-03-15
+2025-03-15 18:19:24,482 - INFO - ESG data for LSPD.TO already exists, updating...
+2025-03-15 18:19:24,539 - INFO - Governance risk data for LSPD.TO already exists, updating from Company Info...
+2025-03-15 18:19:24,599 - INFO - Successfully processed LSPD.TO
+2025-03-15 18:19:26,604 - INFO - Processing ticker 33/35: ENB.TO
+2025-03-15 18:19:26,605 - INFO - Processing ticker: ENB.TO
+2025-03-15 18:19:26,608 - INFO - Running test-data.py for ENB.TO
+2025-03-15 18:19:35,032 - INFO - Retrieved data for ENB.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:19:35,447 - INFO - Inserting new company ENB.TO
+2025-03-15 18:19:35,533 - INFO - Inserting financial data for ENB.TO on 2024-12-31
+2025-03-15 18:19:35,615 - INFO - Inserting financial data for ENB.TO on 2024-09-30
+2025-03-15 18:19:35,698 - INFO - Inserting financial data for ENB.TO on 2024-06-30
+2025-03-15 18:19:35,785 - INFO - Inserting financial data for ENB.TO on 2024-03-31
+2025-03-15 18:19:35,869 - INFO - Inserting financial data for ENB.TO on 2023-12-31
+2025-03-15 18:19:35,952 - INFO - Inserting financial data for ENB.TO on 2023-09-30
+2025-03-15 18:19:36,038 - INFO - Inserting financial data for ENB.TO on 2023-06-30
+2025-03-15 18:19:36,122 - INFO - Inserting market data for ENB.TO on 2025-02-14
+2025-03-15 18:19:36,205 - INFO - Inserting market data for ENB.TO on 2025-02-18
+2025-03-15 18:19:36,288 - INFO - Inserting market data for ENB.TO on 2025-02-19
+2025-03-15 18:19:36,371 - INFO - Inserting market data for ENB.TO on 2025-02-20
+2025-03-15 18:19:36,454 - INFO - Inserting market data for ENB.TO on 2025-02-21
+2025-03-15 18:19:36,538 - INFO - Inserting market data for ENB.TO on 2025-02-24
+2025-03-15 18:19:36,622 - INFO - Inserting market data for ENB.TO on 2025-02-25
+2025-03-15 18:19:36,705 - INFO - Inserting market data for ENB.TO on 2025-02-26
+2025-03-15 18:19:36,788 - INFO - Inserting market data for ENB.TO on 2025-02-27
+2025-03-15 18:19:36,873 - INFO - Inserting market data for ENB.TO on 2025-02-28
+2025-03-15 18:19:36,960 - INFO - Inserting market data for ENB.TO on 2025-03-03
+2025-03-15 18:19:37,044 - INFO - Inserting market data for ENB.TO on 2025-03-04
+2025-03-15 18:19:37,127 - INFO - Inserting market data for ENB.TO on 2025-03-05
+2025-03-15 18:19:37,211 - INFO - Inserting market data for ENB.TO on 2025-03-06
+2025-03-15 18:19:37,298 - INFO - Inserting market data for ENB.TO on 2025-03-07
+2025-03-15 18:19:37,384 - INFO - Inserting market data for ENB.TO on 2025-03-10
+2025-03-15 18:19:37,472 - INFO - Inserting market data for ENB.TO on 2025-03-11
+2025-03-15 18:19:37,556 - INFO - Inserting market data for ENB.TO on 2025-03-12
+2025-03-15 18:19:37,640 - INFO - Inserting market data for ENB.TO on 2025-03-13
+2025-03-15 18:19:37,724 - INFO - Inserting market data for ENB.TO on 2025-03-14
+2025-03-15 18:19:37,808 - INFO - Inserting analyst data for ENB.TO on 2025-03-15
+2025-03-15 18:19:37,893 - INFO - Inserting ESG data for ENB.TO
+2025-03-15 18:19:37,980 - INFO - Inserting governance risk data for ENB.TO from Company Info
+2025-03-15 18:19:38,064 - INFO - Successfully processed ENB.TO
+2025-03-15 18:19:40,066 - INFO - Processing ticker 34/35: CNQ.TO
+2025-03-15 18:19:40,066 - INFO - Processing ticker: CNQ.TO
+2025-03-15 18:19:40,069 - INFO - Running test-data.py for CNQ.TO
+2025-03-15 18:20:49,184 - INFO - Retrieved data for CNQ.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:20:49,716 - INFO - Inserting new company CNQ.TO
+2025-03-15 18:20:49,857 - INFO - Inserting financial data for CNQ.TO on 2024-09-30
+2025-03-15 18:20:49,945 - INFO - Inserting financial data for CNQ.TO on 2024-06-30
+2025-03-15 18:20:50,031 - INFO - Inserting financial data for CNQ.TO on 2024-03-31
+2025-03-15 18:20:50,117 - INFO - Inserting financial data for CNQ.TO on 2023-12-31
+2025-03-15 18:20:50,202 - INFO - Inserting financial data for CNQ.TO on 2023-09-30
+2025-03-15 18:20:50,286 - INFO - Inserting market data for CNQ.TO on 2025-02-14
+2025-03-15 18:20:50,371 - INFO - Inserting market data for CNQ.TO on 2025-02-18
+2025-03-15 18:20:50,457 - INFO - Inserting market data for CNQ.TO on 2025-02-19
+2025-03-15 18:20:50,541 - INFO - Inserting market data for CNQ.TO on 2025-02-20
+2025-03-15 18:20:50,625 - INFO - Inserting market data for CNQ.TO on 2025-02-21
+2025-03-15 18:20:50,724 - INFO - Inserting market data for CNQ.TO on 2025-02-24
+2025-03-15 18:20:50,809 - INFO - Inserting market data for CNQ.TO on 2025-02-25
+2025-03-15 18:20:50,892 - INFO - Inserting market data for CNQ.TO on 2025-02-26
+2025-03-15 18:20:50,973 - INFO - Inserting market data for CNQ.TO on 2025-02-27
+2025-03-15 18:20:51,054 - INFO - Inserting market data for CNQ.TO on 2025-02-28
+2025-03-15 18:20:51,138 - INFO - Inserting market data for CNQ.TO on 2025-03-03
+2025-03-15 18:20:51,226 - INFO - Inserting market data for CNQ.TO on 2025-03-04
+2025-03-15 18:20:51,314 - INFO - Inserting market data for CNQ.TO on 2025-03-05
+2025-03-15 18:20:51,396 - INFO - Inserting market data for CNQ.TO on 2025-03-06
+2025-03-15 18:20:51,484 - INFO - Inserting market data for CNQ.TO on 2025-03-07
+2025-03-15 18:20:51,567 - INFO - Inserting market data for CNQ.TO on 2025-03-10
+2025-03-15 18:20:51,657 - INFO - Inserting market data for CNQ.TO on 2025-03-11
+2025-03-15 18:20:51,739 - INFO - Inserting market data for CNQ.TO on 2025-03-12
+2025-03-15 18:20:51,822 - INFO - Inserting market data for CNQ.TO on 2025-03-13
+2025-03-15 18:20:51,945 - INFO - Inserting market data for CNQ.TO on 2025-03-14
+2025-03-15 18:20:52,047 - INFO - Inserting analyst data for CNQ.TO on 2025-03-15
+2025-03-15 18:20:52,148 - INFO - Inserting ESG data for CNQ.TO
+2025-03-15 18:20:52,236 - INFO - Inserting governance risk data for CNQ.TO from Company Info
+2025-03-15 18:20:52,324 - INFO - Successfully processed CNQ.TO
+2025-03-15 18:20:54,327 - INFO - Processing ticker 35/35: TRP.TO
+2025-03-15 18:20:54,327 - INFO - Processing ticker: TRP.TO
+2025-03-15 18:20:54,329 - INFO - Running test-data.py for TRP.TO
+2025-03-15 18:22:07,802 - INFO - Retrieved data for TRP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:22:08,218 - INFO - Inserting new company TRP.TO
+2025-03-15 18:22:08,282 - INFO - Inserting financial data for TRP.TO on 2024-12-31
+2025-03-15 18:22:08,346 - INFO - Inserting financial data for TRP.TO on 2024-09-30
+2025-03-15 18:22:08,406 - INFO - Inserting financial data for TRP.TO on 2024-06-30
+2025-03-15 18:22:08,465 - INFO - Inserting financial data for TRP.TO on 2024-03-31
+2025-03-15 18:22:08,524 - INFO - Inserting financial data for TRP.TO on 2023-12-31
+2025-03-15 18:22:08,582 - INFO - Inserting financial data for TRP.TO on 2023-09-30
+2025-03-15 18:22:08,641 - INFO - Inserting financial data for TRP.TO on 2023-06-30
+2025-03-15 18:22:08,701 - INFO - Inserting market data for TRP.TO on 2025-02-14
+2025-03-15 18:22:08,761 - INFO - Inserting market data for TRP.TO on 2025-02-18
+2025-03-15 18:22:08,820 - INFO - Inserting market data for TRP.TO on 2025-02-19
+2025-03-15 18:22:08,897 - INFO - Inserting market data for TRP.TO on 2025-02-20
+2025-03-15 18:22:08,955 - INFO - Inserting market data for TRP.TO on 2025-02-21
+2025-03-15 18:22:09,014 - INFO - Inserting market data for TRP.TO on 2025-02-24
+2025-03-15 18:22:09,071 - INFO - Inserting market data for TRP.TO on 2025-02-25
+2025-03-15 18:22:09,129 - INFO - Inserting market data for TRP.TO on 2025-02-26
+2025-03-15 18:22:09,188 - INFO - Inserting market data for TRP.TO on 2025-02-27
+2025-03-15 18:22:09,247 - INFO - Inserting market data for TRP.TO on 2025-02-28
+2025-03-15 18:22:09,306 - INFO - Inserting market data for TRP.TO on 2025-03-03
+2025-03-15 18:22:09,365 - INFO - Inserting market data for TRP.TO on 2025-03-04
+2025-03-15 18:22:09,422 - INFO - Inserting market data for TRP.TO on 2025-03-05
+2025-03-15 18:22:09,480 - INFO - Inserting market data for TRP.TO on 2025-03-06
+2025-03-15 18:22:09,539 - INFO - Inserting market data for TRP.TO on 2025-03-07
+2025-03-15 18:22:09,599 - INFO - Inserting market data for TRP.TO on 2025-03-10
+2025-03-15 18:22:09,680 - INFO - Inserting market data for TRP.TO on 2025-03-11
+2025-03-15 18:22:09,804 - INFO - Inserting market data for TRP.TO on 2025-03-12
+2025-03-15 18:22:09,862 - INFO - Inserting market data for TRP.TO on 2025-03-13
+2025-03-15 18:22:09,920 - INFO - Inserting market data for TRP.TO on 2025-03-14
+2025-03-15 18:22:09,978 - INFO - Inserting analyst data for TRP.TO on 2025-03-15
+2025-03-15 18:22:10,037 - INFO - Inserting ESG data for TRP.TO
+2025-03-15 18:22:10,102 - INFO - Inserting governance risk data for TRP.TO from Company Info
+2025-03-15 18:22:10,161 - INFO - Successfully processed TRP.TO
+2025-03-15 18:22:10,162 - INFO - Completed processing 35/35 tickers successfully
+2025-03-15 18:23:34,246 - INFO - Starting data upload process
+2025-03-15 18:23:34,247 - INFO - Found companies.txt at companies.txt
+2025-03-15 18:23:34,247 - INFO - Found 256 tickers to process
+2025-03-15 18:23:34,247 - INFO - Processing ticker 1/256: ACX.TO
+2025-03-15 18:23:34,247 - INFO - Processing ticker: ACX.TO
+2025-03-15 18:23:34,247 - INFO - Running test-data.py for ACX.TO
+2025-03-15 18:23:41,487 - INFO - Retrieved data for ACX.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:23:42,112 - INFO - Inserting new company ACX.TO
+2025-03-15 18:23:42,201 - INFO - Inserting financial data for ACX.TO on 2024-09-30
+2025-03-15 18:23:42,286 - INFO - Inserting financial data for ACX.TO on 2024-06-30
+2025-03-15 18:23:42,370 - INFO - Inserting financial data for ACX.TO on 2024-03-31
+2025-03-15 18:23:42,453 - INFO - Inserting financial data for ACX.TO on 2023-12-31
+2025-03-15 18:23:42,536 - INFO - Inserting financial data for ACX.TO on 2023-09-30
+2025-03-15 18:23:42,619 - INFO - Inserting financial data for ACX.TO on 2023-06-30
+2025-03-15 18:23:42,702 - INFO - Inserting market data for ACX.TO on 2025-02-14
+2025-03-15 18:23:42,786 - INFO - Inserting market data for ACX.TO on 2025-02-18
+2025-03-15 18:23:42,869 - INFO - Inserting market data for ACX.TO on 2025-02-19
+2025-03-15 18:23:42,954 - INFO - Inserting market data for ACX.TO on 2025-02-20
+2025-03-15 18:23:43,038 - INFO - Inserting market data for ACX.TO on 2025-02-21
+2025-03-15 18:23:43,122 - INFO - Inserting market data for ACX.TO on 2025-02-24
+2025-03-15 18:23:43,208 - INFO - Inserting market data for ACX.TO on 2025-02-25
+2025-03-15 18:23:43,293 - INFO - Inserting market data for ACX.TO on 2025-02-26
+2025-03-15 18:23:43,378 - INFO - Inserting market data for ACX.TO on 2025-02-27
+2025-03-15 18:23:43,463 - INFO - Inserting market data for ACX.TO on 2025-02-28
+2025-03-15 18:23:43,548 - INFO - Inserting market data for ACX.TO on 2025-03-03
+2025-03-15 18:23:43,634 - INFO - Inserting market data for ACX.TO on 2025-03-04
+2025-03-15 18:23:43,720 - INFO - Inserting market data for ACX.TO on 2025-03-05
+2025-03-15 18:23:43,805 - INFO - Inserting market data for ACX.TO on 2025-03-06
+2025-03-15 18:23:43,891 - INFO - Inserting market data for ACX.TO on 2025-03-07
+2025-03-15 18:23:43,981 - INFO - Inserting market data for ACX.TO on 2025-03-10
+2025-03-15 18:23:44,065 - INFO - Inserting market data for ACX.TO on 2025-03-11
+2025-03-15 18:23:44,149 - INFO - Inserting market data for ACX.TO on 2025-03-12
+2025-03-15 18:23:44,234 - INFO - Inserting market data for ACX.TO on 2025-03-13
+2025-03-15 18:23:44,319 - INFO - Inserting market data for ACX.TO on 2025-03-14
+2025-03-15 18:23:44,402 - INFO - Inserting analyst data for ACX.TO on 2025-03-15
+2025-03-15 18:23:44,485 - INFO - Inserting ESG data for ACX.TO
+2025-03-15 18:23:44,527 - WARNING - No governance risk data available for ACX.TO
+2025-03-15 18:23:44,570 - INFO - Successfully processed ACX.TO
+2025-03-15 18:23:46,573 - INFO - Processing ticker 2/256: AKT-A.TO
+2025-03-15 18:23:46,573 - INFO - Processing ticker: AKT-A.TO
+2025-03-15 18:23:46,576 - INFO - Running test-data.py for AKT-A.TO
+2025-03-15 18:24:28,764 - INFO - Retrieved data for AKT-A.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:24:29,078 - INFO - Inserting new company AKT-A.TO
+2025-03-15 18:24:29,141 - INFO - Inserting financial data for AKT-A.TO on 2024-12-31
+2025-03-15 18:24:29,200 - INFO - Inserting financial data for AKT-A.TO on 2024-09-30
+2025-03-15 18:24:29,258 - INFO - Inserting financial data for AKT-A.TO on 2024-06-30
+2025-03-15 18:24:29,317 - INFO - Inserting financial data for AKT-A.TO on 2024-03-31
+2025-03-15 18:24:29,375 - INFO - Inserting financial data for AKT-A.TO on 2023-12-31
+2025-03-15 18:24:29,433 - INFO - Inserting financial data for AKT-A.TO on 2023-09-30
+2025-03-15 18:24:29,488 - INFO - Inserting financial data for AKT-A.TO on 2023-06-30
+2025-03-15 18:24:29,547 - INFO - Inserting market data for AKT-A.TO on 2025-02-14
+2025-03-15 18:24:29,605 - INFO - Inserting market data for AKT-A.TO on 2025-02-18
+2025-03-15 18:24:29,663 - INFO - Inserting market data for AKT-A.TO on 2025-02-19
+2025-03-15 18:24:29,718 - INFO - Inserting market data for AKT-A.TO on 2025-02-20
+2025-03-15 18:24:29,773 - INFO - Inserting market data for AKT-A.TO on 2025-02-21
+2025-03-15 18:24:29,829 - INFO - Inserting market data for AKT-A.TO on 2025-02-24
+2025-03-15 18:24:29,886 - INFO - Inserting market data for AKT-A.TO on 2025-02-25
+2025-03-15 18:24:29,944 - INFO - Inserting market data for AKT-A.TO on 2025-02-26
+2025-03-15 18:24:30,000 - INFO - Inserting market data for AKT-A.TO on 2025-02-27
+2025-03-15 18:24:30,059 - INFO - Inserting market data for AKT-A.TO on 2025-02-28
+2025-03-15 18:24:30,119 - INFO - Inserting market data for AKT-A.TO on 2025-03-03
+2025-03-15 18:24:30,177 - INFO - Inserting market data for AKT-A.TO on 2025-03-04
+2025-03-15 18:24:30,236 - INFO - Inserting market data for AKT-A.TO on 2025-03-05
+2025-03-15 18:24:30,313 - INFO - Inserting market data for AKT-A.TO on 2025-03-06
+2025-03-15 18:24:30,458 - INFO - Inserting market data for AKT-A.TO on 2025-03-07
+2025-03-15 18:24:30,596 - INFO - Inserting market data for AKT-A.TO on 2025-03-10
+2025-03-15 18:24:30,654 - INFO - Inserting market data for AKT-A.TO on 2025-03-11
+2025-03-15 18:24:30,717 - INFO - Inserting market data for AKT-A.TO on 2025-03-12
+2025-03-15 18:24:30,779 - INFO - Inserting market data for AKT-A.TO on 2025-03-13
+2025-03-15 18:24:30,845 - INFO - Inserting market data for AKT-A.TO on 2025-03-14
+2025-03-15 18:24:30,903 - INFO - Inserting analyst data for AKT-A.TO on 2025-03-15
+2025-03-15 18:24:30,960 - INFO - Inserting ESG data for AKT-A.TO
+2025-03-15 18:24:30,989 - WARNING - No governance risk data available for AKT-A.TO
+2025-03-15 18:24:31,018 - INFO - Successfully processed AKT-A.TO
+2025-03-15 18:24:33,024 - INFO - Processing ticker 3/256: ESI.TO
+2025-03-15 18:24:33,026 - INFO - Processing ticker: ESI.TO
+2025-03-15 18:24:33,030 - INFO - Running test-data.py for ESI.TO
+2025-03-15 18:24:39,494 - INFO - Retrieved data for ESI.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:24:39,781 - INFO - Inserting new company ESI.TO
+2025-03-15 18:24:39,841 - INFO - Inserting financial data for ESI.TO on 2024-12-31
+2025-03-15 18:24:39,899 - INFO - Inserting financial data for ESI.TO on 2024-09-30
+2025-03-15 18:24:39,962 - INFO - Inserting financial data for ESI.TO on 2024-06-30
+2025-03-15 18:24:40,045 - INFO - Inserting financial data for ESI.TO on 2024-03-31
+2025-03-15 18:24:40,104 - INFO - Inserting financial data for ESI.TO on 2023-12-31
+2025-03-15 18:24:40,163 - INFO - Inserting financial data for ESI.TO on 2023-09-30
+2025-03-15 18:24:40,224 - INFO - Inserting market data for ESI.TO on 2025-02-14
+2025-03-15 18:24:40,283 - INFO - Inserting market data for ESI.TO on 2025-02-18
+2025-03-15 18:24:40,344 - INFO - Inserting market data for ESI.TO on 2025-02-19
+2025-03-15 18:24:40,404 - INFO - Inserting market data for ESI.TO on 2025-02-20
+2025-03-15 18:24:40,476 - INFO - Inserting market data for ESI.TO on 2025-02-21
+2025-03-15 18:24:40,535 - INFO - Inserting market data for ESI.TO on 2025-02-24
+2025-03-15 18:24:40,594 - INFO - Inserting market data for ESI.TO on 2025-02-25
+2025-03-15 18:24:40,653 - INFO - Inserting market data for ESI.TO on 2025-02-26
+2025-03-15 18:24:40,712 - INFO - Inserting market data for ESI.TO on 2025-02-27
+2025-03-15 18:24:40,770 - INFO - Inserting market data for ESI.TO on 2025-02-28
+2025-03-15 18:24:40,834 - INFO - Inserting market data for ESI.TO on 2025-03-03
+2025-03-15 18:24:40,893 - INFO - Inserting market data for ESI.TO on 2025-03-04
+2025-03-15 18:24:40,952 - INFO - Inserting market data for ESI.TO on 2025-03-05
+2025-03-15 18:24:41,010 - INFO - Inserting market data for ESI.TO on 2025-03-06
+2025-03-15 18:24:41,069 - INFO - Inserting market data for ESI.TO on 2025-03-07
+2025-03-15 18:24:41,128 - INFO - Inserting market data for ESI.TO on 2025-03-10
+2025-03-15 18:24:41,186 - INFO - Inserting market data for ESI.TO on 2025-03-11
+2025-03-15 18:24:41,248 - INFO - Inserting market data for ESI.TO on 2025-03-12
+2025-03-15 18:24:41,307 - INFO - Inserting market data for ESI.TO on 2025-03-13
+2025-03-15 18:24:41,369 - INFO - Inserting market data for ESI.TO on 2025-03-14
+2025-03-15 18:24:41,428 - INFO - Inserting analyst data for ESI.TO on 2025-03-15
+2025-03-15 18:24:41,490 - INFO - Inserting ESG data for ESI.TO
+2025-03-15 18:24:41,549 - INFO - Inserting governance risk data for ESI.TO from Company Info
+2025-03-15 18:24:41,609 - INFO - Successfully processed ESI.TO
+2025-03-15 18:24:43,615 - INFO - Processing ticker 4/256: PHX.TO
+2025-03-15 18:24:43,615 - INFO - Processing ticker: PHX.TO
+2025-03-15 18:24:43,617 - INFO - Running test-data.py for PHX.TO
+2025-03-15 18:24:52,462 - INFO - Retrieved data for PHX.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:24:52,874 - INFO - Inserting new company PHX.TO
+2025-03-15 18:24:52,958 - INFO - Inserting financial data for PHX.TO on 2024-12-31
+2025-03-15 18:24:53,041 - INFO - Inserting financial data for PHX.TO on 2024-09-30
+2025-03-15 18:24:53,126 - INFO - Inserting financial data for PHX.TO on 2024-06-30
+2025-03-15 18:24:53,209 - INFO - Inserting financial data for PHX.TO on 2024-03-31
+2025-03-15 18:24:53,292 - INFO - Inserting financial data for PHX.TO on 2023-12-31
+2025-03-15 18:24:53,375 - INFO - Inserting financial data for PHX.TO on 2023-09-30
+2025-03-15 18:24:53,460 - INFO - Inserting financial data for PHX.TO on 2023-06-30
+2025-03-15 18:24:53,543 - INFO - Inserting market data for PHX.TO on 2025-02-14
+2025-03-15 18:24:53,628 - INFO - Inserting market data for PHX.TO on 2025-02-18
+2025-03-15 18:24:53,711 - INFO - Inserting market data for PHX.TO on 2025-02-19
+2025-03-15 18:24:53,796 - INFO - Inserting market data for PHX.TO on 2025-02-20
+2025-03-15 18:24:53,884 - INFO - Inserting market data for PHX.TO on 2025-02-21
+2025-03-15 18:24:53,967 - INFO - Inserting market data for PHX.TO on 2025-02-24
+2025-03-15 18:24:54,052 - INFO - Inserting market data for PHX.TO on 2025-02-25
+2025-03-15 18:24:54,137 - INFO - Inserting market data for PHX.TO on 2025-02-26
+2025-03-15 18:24:54,221 - INFO - Inserting market data for PHX.TO on 2025-02-27
+2025-03-15 18:24:54,306 - INFO - Inserting market data for PHX.TO on 2025-02-28
+2025-03-15 18:24:54,391 - INFO - Inserting market data for PHX.TO on 2025-03-03
+2025-03-15 18:24:54,476 - INFO - Inserting market data for PHX.TO on 2025-03-04
+2025-03-15 18:24:54,561 - INFO - Inserting market data for PHX.TO on 2025-03-05
+2025-03-15 18:24:54,644 - INFO - Inserting market data for PHX.TO on 2025-03-06
+2025-03-15 18:24:54,729 - INFO - Inserting market data for PHX.TO on 2025-03-07
+2025-03-15 18:24:54,813 - INFO - Inserting market data for PHX.TO on 2025-03-10
+2025-03-15 18:24:54,896 - INFO - Inserting market data for PHX.TO on 2025-03-11
+2025-03-15 18:24:54,981 - INFO - Inserting market data for PHX.TO on 2025-03-12
+2025-03-15 18:24:55,064 - INFO - Inserting market data for PHX.TO on 2025-03-13
+2025-03-15 18:24:55,148 - INFO - Inserting market data for PHX.TO on 2025-03-14
+2025-03-15 18:24:55,232 - INFO - Inserting analyst data for PHX.TO on 2025-03-15
+2025-03-15 18:24:55,315 - INFO - Inserting ESG data for PHX.TO
+2025-03-15 18:24:55,401 - INFO - Inserting governance risk data for PHX.TO from Company Info
+2025-03-15 18:24:55,485 - INFO - Successfully processed PHX.TO
+2025-03-15 18:24:57,487 - INFO - Processing ticker 5/256: PD.TO
+2025-03-15 18:24:57,487 - INFO - Processing ticker: PD.TO
+2025-03-15 18:24:57,490 - INFO - Running test-data.py for PD.TO
+2025-03-15 18:25:08,260 - INFO - Retrieved data for PD.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:25:08,680 - INFO - Inserting new company PD.TO
+2025-03-15 18:25:08,764 - INFO - Inserting financial data for PD.TO on 2024-12-31
+2025-03-15 18:25:08,848 - INFO - Inserting financial data for PD.TO on 2024-09-30
+2025-03-15 18:25:08,931 - INFO - Inserting financial data for PD.TO on 2024-06-30
+2025-03-15 18:25:09,014 - INFO - Inserting financial data for PD.TO on 2024-03-31
+2025-03-15 18:25:09,097 - INFO - Inserting financial data for PD.TO on 2023-12-31
+2025-03-15 18:25:09,182 - INFO - Inserting financial data for PD.TO on 2023-09-30
+2025-03-15 18:25:09,265 - INFO - Inserting financial data for PD.TO on 2023-06-30
+2025-03-15 18:25:09,352 - INFO - Inserting market data for PD.TO on 2025-02-14
+2025-03-15 18:25:09,436 - INFO - Inserting market data for PD.TO on 2025-02-18
+2025-03-15 18:25:09,519 - INFO - Inserting market data for PD.TO on 2025-02-19
+2025-03-15 18:25:09,604 - INFO - Inserting market data for PD.TO on 2025-02-20
+2025-03-15 18:25:09,687 - INFO - Inserting market data for PD.TO on 2025-02-21
+2025-03-15 18:25:09,770 - INFO - Inserting market data for PD.TO on 2025-02-24
+2025-03-15 18:25:09,853 - INFO - Inserting market data for PD.TO on 2025-02-25
+2025-03-15 18:25:09,936 - INFO - Inserting market data for PD.TO on 2025-02-26
+2025-03-15 18:25:10,019 - INFO - Inserting market data for PD.TO on 2025-02-27
+2025-03-15 18:25:10,103 - INFO - Inserting market data for PD.TO on 2025-02-28
+2025-03-15 18:25:10,189 - INFO - Inserting market data for PD.TO on 2025-03-03
+2025-03-15 18:25:10,273 - INFO - Inserting market data for PD.TO on 2025-03-04
+2025-03-15 18:25:10,361 - INFO - Inserting market data for PD.TO on 2025-03-05
+2025-03-15 18:25:10,445 - INFO - Inserting market data for PD.TO on 2025-03-06
+2025-03-15 18:25:10,529 - INFO - Inserting market data for PD.TO on 2025-03-07
+2025-03-15 18:25:10,613 - INFO - Inserting market data for PD.TO on 2025-03-10
+2025-03-15 18:25:10,697 - INFO - Inserting market data for PD.TO on 2025-03-11
+2025-03-15 18:25:10,782 - INFO - Inserting market data for PD.TO on 2025-03-12
+2025-03-15 18:25:10,865 - INFO - Inserting market data for PD.TO on 2025-03-13
+2025-03-15 18:25:10,950 - INFO - Inserting market data for PD.TO on 2025-03-14
+2025-03-15 18:25:11,033 - INFO - Inserting analyst data for PD.TO on 2025-03-15
+2025-03-15 18:25:11,117 - INFO - Inserting ESG data for PD.TO
+2025-03-15 18:25:11,200 - INFO - Inserting governance risk data for PD.TO from Company Info
+2025-03-15 18:25:11,284 - INFO - Successfully processed PD.TO
+2025-03-15 18:25:13,290 - INFO - Processing ticker 6/256: SDI.V
+2025-03-15 18:25:13,290 - INFO - Processing ticker: SDI.V
+2025-03-15 18:25:13,292 - INFO - Running test-data.py for SDI.V
+2025-03-15 18:25:22,106 - INFO - Retrieved data for SDI.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:25:22,517 - INFO - Inserting new company SDI.V
+2025-03-15 18:25:22,608 - INFO - Inserting financial data for SDI.V on 2024-09-30
+2025-03-15 18:25:22,694 - INFO - Inserting financial data for SDI.V on 2024-06-30
+2025-03-15 18:25:22,784 - INFO - Inserting financial data for SDI.V on 2024-03-31
+2025-03-15 18:25:22,870 - INFO - Inserting financial data for SDI.V on 2023-12-31
+2025-03-15 18:25:22,956 - INFO - Inserting financial data for SDI.V on 2023-09-30
+2025-03-15 18:25:23,043 - INFO - Inserting financial data for SDI.V on 2023-06-30
+2025-03-15 18:25:23,132 - INFO - Inserting market data for SDI.V on 2025-02-14
+2025-03-15 18:25:23,219 - INFO - Inserting market data for SDI.V on 2025-02-18
+2025-03-15 18:25:23,306 - INFO - Inserting market data for SDI.V on 2025-02-19
+2025-03-15 18:25:23,393 - INFO - Inserting market data for SDI.V on 2025-02-20
+2025-03-15 18:25:23,481 - INFO - Inserting market data for SDI.V on 2025-02-21
+2025-03-15 18:25:23,567 - INFO - Inserting market data for SDI.V on 2025-02-24
+2025-03-15 18:25:23,654 - INFO - Inserting market data for SDI.V on 2025-02-25
+2025-03-15 18:25:23,740 - INFO - Inserting market data for SDI.V on 2025-02-26
+2025-03-15 18:25:23,827 - INFO - Inserting market data for SDI.V on 2025-02-27
+2025-03-15 18:25:23,914 - INFO - Inserting market data for SDI.V on 2025-02-28
+2025-03-15 18:25:24,000 - INFO - Inserting market data for SDI.V on 2025-03-03
+2025-03-15 18:25:24,086 - INFO - Inserting market data for SDI.V on 2025-03-04
+2025-03-15 18:25:24,173 - INFO - Inserting market data for SDI.V on 2025-03-05
+2025-03-15 18:25:24,263 - INFO - Inserting market data for SDI.V on 2025-03-06
+2025-03-15 18:25:24,351 - INFO - Inserting market data for SDI.V on 2025-03-07
+2025-03-15 18:25:24,441 - INFO - Inserting market data for SDI.V on 2025-03-10
+2025-03-15 18:25:24,528 - INFO - Inserting market data for SDI.V on 2025-03-11
+2025-03-15 18:25:24,615 - INFO - Inserting market data for SDI.V on 2025-03-12
+2025-03-15 18:25:24,700 - INFO - Inserting market data for SDI.V on 2025-03-13
+2025-03-15 18:25:24,787 - INFO - Inserting market data for SDI.V on 2025-03-14
+2025-03-15 18:25:24,873 - INFO - Inserting analyst data for SDI.V on 2025-03-15
+2025-03-15 18:25:24,961 - INFO - Inserting ESG data for SDI.V
+2025-03-15 18:25:25,005 - WARNING - No governance risk data available for SDI.V
+2025-03-15 18:25:25,049 - INFO - Successfully processed SDI.V
+2025-03-15 18:25:27,055 - INFO - Processing ticker 7/256: WRG.TO
+2025-03-15 18:25:27,055 - INFO - Processing ticker: WRG.TO
+2025-03-15 18:25:27,059 - INFO - Running test-data.py for WRG.TO
+2025-03-15 18:26:11,698 - INFO - Retrieved data for WRG.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:26:12,117 - INFO - Inserting new company WRG.TO
+2025-03-15 18:26:12,203 - INFO - Inserting financial data for WRG.TO on 2024-12-31
+2025-03-15 18:26:12,289 - INFO - Inserting financial data for WRG.TO on 2024-09-30
+2025-03-15 18:26:12,383 - INFO - Inserting financial data for WRG.TO on 2024-06-30
+2025-03-15 18:26:12,468 - INFO - Inserting financial data for WRG.TO on 2024-03-31
+2025-03-15 18:26:12,554 - INFO - Inserting financial data for WRG.TO on 2023-12-31
+2025-03-15 18:26:12,638 - INFO - Inserting financial data for WRG.TO on 2023-09-30
+2025-03-15 18:26:12,723 - INFO - Inserting financial data for WRG.TO on 2023-06-30
+2025-03-15 18:26:12,808 - INFO - Inserting market data for WRG.TO on 2025-02-14
+2025-03-15 18:26:12,892 - INFO - Inserting market data for WRG.TO on 2025-02-18
+2025-03-15 18:26:12,977 - INFO - Inserting market data for WRG.TO on 2025-02-19
+2025-03-15 18:26:13,064 - INFO - Inserting market data for WRG.TO on 2025-02-20
+2025-03-15 18:26:13,149 - INFO - Inserting market data for WRG.TO on 2025-02-21
+2025-03-15 18:26:13,240 - INFO - Inserting market data for WRG.TO on 2025-02-24
+2025-03-15 18:26:13,327 - INFO - Inserting market data for WRG.TO on 2025-02-25
+2025-03-15 18:26:13,417 - INFO - Inserting market data for WRG.TO on 2025-02-26
+2025-03-15 18:26:13,502 - INFO - Inserting market data for WRG.TO on 2025-02-27
+2025-03-15 18:26:13,588 - INFO - Inserting market data for WRG.TO on 2025-02-28
+2025-03-15 18:26:13,673 - INFO - Inserting market data for WRG.TO on 2025-03-03
+2025-03-15 18:26:13,759 - INFO - Inserting market data for WRG.TO on 2025-03-04
+2025-03-15 18:26:13,844 - INFO - Inserting market data for WRG.TO on 2025-03-05
+2025-03-15 18:26:13,929 - INFO - Inserting market data for WRG.TO on 2025-03-06
+2025-03-15 18:26:14,013 - INFO - Inserting market data for WRG.TO on 2025-03-07
+2025-03-15 18:26:14,098 - INFO - Inserting market data for WRG.TO on 2025-03-10
+2025-03-15 18:26:14,185 - INFO - Inserting market data for WRG.TO on 2025-03-11
+2025-03-15 18:26:14,274 - INFO - Inserting market data for WRG.TO on 2025-03-12
+2025-03-15 18:26:14,361 - INFO - Inserting market data for WRG.TO on 2025-03-13
+2025-03-15 18:26:14,448 - INFO - Inserting market data for WRG.TO on 2025-03-14
+2025-03-15 18:26:14,534 - INFO - Inserting analyst data for WRG.TO on 2025-03-15
+2025-03-15 18:26:14,621 - INFO - Inserting ESG data for WRG.TO
+2025-03-15 18:26:14,665 - WARNING - No governance risk data available for WRG.TO
+2025-03-15 18:26:14,710 - INFO - Successfully processed WRG.TO
+2025-03-15 18:26:16,714 - INFO - Processing ticker 8/256: WGT.V
+2025-03-15 18:26:16,714 - INFO - Processing ticker: WGT.V
+2025-03-15 18:26:16,715 - INFO - Running test-data.py for WGT.V
+2025-03-15 18:26:22,886 - INFO - Retrieved data for WGT.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:26:23,295 - INFO - Inserting new company WGT.V
+2025-03-15 18:26:23,380 - INFO - Inserting financial data for WGT.V on 2024-09-30
+2025-03-15 18:26:23,464 - INFO - Inserting financial data for WGT.V on 2024-06-30
+2025-03-15 18:26:23,551 - INFO - Inserting financial data for WGT.V on 2023-12-31
+2025-03-15 18:26:23,637 - INFO - Inserting financial data for WGT.V on 2023-09-30
+2025-03-15 18:26:23,721 - INFO - Inserting financial data for WGT.V on 2023-06-30
+2025-03-15 18:26:23,835 - INFO - Inserting market data for WGT.V on 2025-02-14
+2025-03-15 18:26:23,945 - INFO - Inserting market data for WGT.V on 2025-02-18
+2025-03-15 18:26:24,030 - INFO - Inserting market data for WGT.V on 2025-02-19
+2025-03-15 18:26:24,113 - INFO - Inserting market data for WGT.V on 2025-02-20
+2025-03-15 18:26:24,198 - INFO - Inserting market data for WGT.V on 2025-02-21
+2025-03-15 18:26:24,282 - INFO - Inserting market data for WGT.V on 2025-02-24
+2025-03-15 18:26:24,373 - INFO - Inserting market data for WGT.V on 2025-02-25
+2025-03-15 18:26:24,458 - INFO - Inserting market data for WGT.V on 2025-02-26
+2025-03-15 18:26:24,543 - INFO - Inserting market data for WGT.V on 2025-02-27
+2025-03-15 18:26:24,628 - INFO - Inserting market data for WGT.V on 2025-02-28
+2025-03-15 18:26:24,713 - INFO - Inserting market data for WGT.V on 2025-03-03
+2025-03-15 18:26:24,796 - INFO - Inserting market data for WGT.V on 2025-03-04
+2025-03-15 18:26:24,896 - INFO - Inserting market data for WGT.V on 2025-03-05
+2025-03-15 18:26:24,984 - INFO - Inserting market data for WGT.V on 2025-03-06
+2025-03-15 18:26:25,068 - INFO - Inserting market data for WGT.V on 2025-03-07
+2025-03-15 18:26:25,151 - INFO - Inserting market data for WGT.V on 2025-03-10
+2025-03-15 18:26:25,237 - INFO - Inserting market data for WGT.V on 2025-03-11
+2025-03-15 18:26:25,322 - INFO - Inserting market data for WGT.V on 2025-03-12
+2025-03-15 18:26:25,406 - INFO - Inserting market data for WGT.V on 2025-03-13
+2025-03-15 18:26:25,496 - INFO - Inserting market data for WGT.V on 2025-03-14
+2025-03-15 18:26:25,582 - INFO - Inserting analyst data for WGT.V on 2025-03-15
+2025-03-15 18:26:25,668 - INFO - Inserting ESG data for WGT.V
+2025-03-15 18:26:25,710 - WARNING - No governance risk data available for WGT.V
+2025-03-15 18:26:25,752 - INFO - Successfully processed WGT.V
+2025-03-15 18:26:27,754 - INFO - Processing ticker 9/256: AAV.TO
+2025-03-15 18:26:27,754 - INFO - Processing ticker: AAV.TO
+2025-03-15 18:26:27,756 - INFO - Running test-data.py for AAV.TO
+2025-03-15 18:26:34,298 - INFO - Retrieved data for AAV.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:26:34,579 - INFO - Inserting new company AAV.TO
+2025-03-15 18:26:34,637 - INFO - Inserting financial data for AAV.TO on 2024-12-31
+2025-03-15 18:26:34,695 - INFO - Inserting financial data for AAV.TO on 2024-09-30
+2025-03-15 18:26:34,756 - INFO - Inserting financial data for AAV.TO on 2024-06-30
+2025-03-15 18:26:34,813 - INFO - Inserting financial data for AAV.TO on 2024-03-31
+2025-03-15 18:26:34,870 - INFO - Inserting financial data for AAV.TO on 2023-12-31
+2025-03-15 18:26:34,926 - INFO - Inserting financial data for AAV.TO on 2023-09-30
+2025-03-15 18:26:34,983 - INFO - Inserting financial data for AAV.TO on 2023-06-30
+2025-03-15 18:26:35,042 - INFO - Inserting market data for AAV.TO on 2025-02-14
+2025-03-15 18:26:35,099 - INFO - Inserting market data for AAV.TO on 2025-02-18
+2025-03-15 18:26:35,154 - INFO - Inserting market data for AAV.TO on 2025-02-19
+2025-03-15 18:26:35,213 - INFO - Inserting market data for AAV.TO on 2025-02-20
+2025-03-15 18:26:35,270 - INFO - Inserting market data for AAV.TO on 2025-02-21
+2025-03-15 18:26:35,327 - INFO - Inserting market data for AAV.TO on 2025-02-24
+2025-03-15 18:26:35,384 - INFO - Inserting market data for AAV.TO on 2025-02-25
+2025-03-15 18:26:35,443 - INFO - Inserting market data for AAV.TO on 2025-02-26
+2025-03-15 18:26:35,505 - INFO - Inserting market data for AAV.TO on 2025-02-27
+2025-03-15 18:26:35,576 - INFO - Inserting market data for AAV.TO on 2025-02-28
+2025-03-15 18:26:35,638 - INFO - Inserting market data for AAV.TO on 2025-03-03
+2025-03-15 18:26:35,694 - INFO - Inserting market data for AAV.TO on 2025-03-04
+2025-03-15 18:26:35,752 - INFO - Inserting market data for AAV.TO on 2025-03-05
+2025-03-15 18:26:35,810 - INFO - Inserting market data for AAV.TO on 2025-03-06
+2025-03-15 18:26:35,868 - INFO - Inserting market data for AAV.TO on 2025-03-07
+2025-03-15 18:26:35,927 - INFO - Inserting market data for AAV.TO on 2025-03-10
+2025-03-15 18:26:35,984 - INFO - Inserting market data for AAV.TO on 2025-03-11
+2025-03-15 18:26:36,043 - INFO - Inserting market data for AAV.TO on 2025-03-12
+2025-03-15 18:26:36,100 - INFO - Inserting market data for AAV.TO on 2025-03-13
+2025-03-15 18:26:36,157 - INFO - Inserting market data for AAV.TO on 2025-03-14
+2025-03-15 18:26:36,213 - INFO - Inserting analyst data for AAV.TO on 2025-03-15
+2025-03-15 18:26:36,273 - INFO - Inserting ESG data for AAV.TO
+2025-03-15 18:26:36,332 - INFO - Inserting governance risk data for AAV.TO from Company Info
+2025-03-15 18:26:36,392 - INFO - Successfully processed AAV.TO
+2025-03-15 18:26:38,396 - INFO - Processing ticker 10/256: AFE.V
+2025-03-15 18:26:38,397 - INFO - Processing ticker: AFE.V
+2025-03-15 18:26:38,399 - INFO - Running test-data.py for AFE.V
+2025-03-15 18:27:46,101 - INFO - Retrieved data for AFE.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:27:46,544 - INFO - Inserting new company AFE.V
+2025-03-15 18:27:46,631 - INFO - Inserting financial data for AFE.V on 2024-09-30
+2025-03-15 18:27:46,736 - INFO - Inserting financial data for AFE.V on 2024-06-30
+2025-03-15 18:27:46,857 - INFO - Inserting financial data for AFE.V on 2024-03-31
+2025-03-15 18:27:46,943 - INFO - Inserting financial data for AFE.V on 2023-12-31
+2025-03-15 18:27:47,028 - INFO - Inserting financial data for AFE.V on 2023-09-30
+2025-03-15 18:27:47,119 - INFO - Inserting financial data for AFE.V on 2023-06-30
+2025-03-15 18:27:47,242 - INFO - Inserting market data for AFE.V on 2025-02-14
+2025-03-15 18:27:47,328 - INFO - Inserting market data for AFE.V on 2025-02-18
+2025-03-15 18:27:47,416 - INFO - Inserting market data for AFE.V on 2025-02-19
+2025-03-15 18:27:47,501 - INFO - Inserting market data for AFE.V on 2025-02-20
+2025-03-15 18:27:47,587 - INFO - Inserting market data for AFE.V on 2025-02-21
+2025-03-15 18:27:47,672 - INFO - Inserting market data for AFE.V on 2025-02-24
+2025-03-15 18:27:47,757 - INFO - Inserting market data for AFE.V on 2025-02-25
+2025-03-15 18:27:47,842 - INFO - Inserting market data for AFE.V on 2025-02-26
+2025-03-15 18:27:47,927 - INFO - Inserting market data for AFE.V on 2025-02-27
+2025-03-15 18:27:48,013 - INFO - Inserting market data for AFE.V on 2025-02-28
+2025-03-15 18:27:48,099 - INFO - Inserting market data for AFE.V on 2025-03-03
+2025-03-15 18:27:48,184 - INFO - Inserting market data for AFE.V on 2025-03-04
+2025-03-15 18:27:48,268 - INFO - Inserting market data for AFE.V on 2025-03-05
+2025-03-15 18:27:48,354 - INFO - Inserting market data for AFE.V on 2025-03-06
+2025-03-15 18:27:48,440 - INFO - Inserting market data for AFE.V on 2025-03-07
+2025-03-15 18:27:48,525 - INFO - Inserting market data for AFE.V on 2025-03-10
+2025-03-15 18:27:48,610 - INFO - Inserting market data for AFE.V on 2025-03-11
+2025-03-15 18:27:48,695 - INFO - Inserting market data for AFE.V on 2025-03-12
+2025-03-15 18:27:48,779 - INFO - Inserting market data for AFE.V on 2025-03-13
+2025-03-15 18:27:48,866 - INFO - Inserting market data for AFE.V on 2025-03-14
+2025-03-15 18:27:48,959 - INFO - Inserting analyst data for AFE.V on 2025-03-15
+2025-03-15 18:27:49,045 - INFO - Inserting ESG data for AFE.V
+2025-03-15 18:27:49,096 - WARNING - No governance risk data available for AFE.V
+2025-03-15 18:27:49,138 - INFO - Successfully processed AFE.V
+2025-03-15 18:27:51,165 - INFO - Processing ticker 11/256: AOI.TO
+2025-03-15 18:27:51,166 - INFO - Processing ticker: AOI.TO
+2025-03-15 18:27:51,167 - INFO - Running test-data.py for AOI.TO
+2025-03-15 18:28:39,796 - INFO - Retrieved data for AOI.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:28:40,307 - INFO - Inserting new company AOI.TO
+2025-03-15 18:28:40,392 - INFO - Inserting financial data for AOI.TO on 2024-12-31
+2025-03-15 18:28:40,482 - INFO - Inserting financial data for AOI.TO on 2024-09-30
+2025-03-15 18:28:40,567 - INFO - Inserting financial data for AOI.TO on 2024-06-30
+2025-03-15 18:28:40,654 - INFO - Inserting financial data for AOI.TO on 2024-03-31
+2025-03-15 18:28:40,737 - INFO - Inserting financial data for AOI.TO on 2023-12-31
+2025-03-15 18:28:40,820 - INFO - Inserting financial data for AOI.TO on 2023-09-30
+2025-03-15 18:28:40,904 - INFO - Inserting financial data for AOI.TO on 2023-06-30
+2025-03-15 18:28:40,989 - INFO - Inserting market data for AOI.TO on 2025-02-14
+2025-03-15 18:28:41,074 - INFO - Inserting market data for AOI.TO on 2025-02-18
+2025-03-15 18:28:41,157 - INFO - Inserting market data for AOI.TO on 2025-02-19
+2025-03-15 18:28:41,241 - INFO - Inserting market data for AOI.TO on 2025-02-20
+2025-03-15 18:28:41,325 - INFO - Inserting market data for AOI.TO on 2025-02-21
+2025-03-15 18:28:41,413 - INFO - Inserting market data for AOI.TO on 2025-02-24
+2025-03-15 18:28:41,495 - INFO - Inserting market data for AOI.TO on 2025-02-25
+2025-03-15 18:28:41,579 - INFO - Inserting market data for AOI.TO on 2025-02-26
+2025-03-15 18:28:41,669 - INFO - Inserting market data for AOI.TO on 2025-02-27
+2025-03-15 18:28:41,752 - INFO - Inserting market data for AOI.TO on 2025-02-28
+2025-03-15 18:28:41,836 - INFO - Inserting market data for AOI.TO on 2025-03-03
+2025-03-15 18:28:41,921 - INFO - Inserting market data for AOI.TO on 2025-03-04
+2025-03-15 18:28:42,004 - INFO - Inserting market data for AOI.TO on 2025-03-05
+2025-03-15 18:28:42,087 - INFO - Inserting market data for AOI.TO on 2025-03-06
+2025-03-15 18:28:42,170 - INFO - Inserting market data for AOI.TO on 2025-03-07
+2025-03-15 18:28:42,253 - INFO - Inserting market data for AOI.TO on 2025-03-10
+2025-03-15 18:28:42,336 - INFO - Inserting market data for AOI.TO on 2025-03-11
+2025-03-15 18:28:42,421 - INFO - Inserting market data for AOI.TO on 2025-03-12
+2025-03-15 18:28:42,508 - INFO - Inserting market data for AOI.TO on 2025-03-13
+2025-03-15 18:28:42,593 - INFO - Inserting market data for AOI.TO on 2025-03-14
+2025-03-15 18:28:42,677 - INFO - Inserting analyst data for AOI.TO on 2025-03-15
+2025-03-15 18:28:42,761 - INFO - Inserting ESG data for AOI.TO
+2025-03-15 18:28:42,845 - INFO - Inserting governance risk data for AOI.TO from Company Info
+2025-03-15 18:28:42,929 - INFO - Successfully processed AOI.TO
+2025-03-15 18:28:44,932 - INFO - Processing ticker 12/256: ATI.V
+2025-03-15 18:28:44,932 - INFO - Processing ticker: ATI.V
+2025-03-15 18:28:44,934 - INFO - Running test-data.py for ATI.V
+2025-03-15 18:29:27,405 - INFO - Retrieved data for ATI.V with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability']
+2025-03-15 18:29:27,849 - INFO - Inserting new company ATI.V
+2025-03-15 18:29:27,941 - INFO - Inserting financial data for ATI.V on 2024-09-30
+2025-03-15 18:29:28,024 - INFO - Inserting financial data for ATI.V on 2024-06-30
+2025-03-15 18:29:28,107 - INFO - Inserting financial data for ATI.V on 2024-03-31
+2025-03-15 18:29:28,190 - INFO - Inserting financial data for ATI.V on 2023-12-31
+2025-03-15 18:29:28,273 - INFO - Inserting financial data for ATI.V on 2023-09-30
+2025-03-15 18:29:28,356 - INFO - Inserting financial data for ATI.V on 2023-06-30
+2025-03-15 18:29:28,439 - INFO - Inserting market data for ATI.V on 2025-02-14
+2025-03-15 18:29:28,524 - INFO - Inserting market data for ATI.V on 2025-02-18
+2025-03-15 18:29:28,607 - INFO - Inserting market data for ATI.V on 2025-02-19
+2025-03-15 18:29:28,691 - INFO - Inserting market data for ATI.V on 2025-02-20
+2025-03-15 18:29:28,775 - INFO - Inserting market data for ATI.V on 2025-02-21
+2025-03-15 18:29:28,860 - INFO - Inserting market data for ATI.V on 2025-02-24
+2025-03-15 18:29:28,946 - INFO - Inserting market data for ATI.V on 2025-02-25
+2025-03-15 18:29:29,029 - INFO - Inserting market data for ATI.V on 2025-02-26
+2025-03-15 18:29:29,116 - INFO - Inserting market data for ATI.V on 2025-02-27
+2025-03-15 18:29:29,203 - INFO - Inserting market data for ATI.V on 2025-02-28
+2025-03-15 18:29:29,286 - INFO - Inserting market data for ATI.V on 2025-03-03
+2025-03-15 18:29:29,370 - INFO - Inserting market data for ATI.V on 2025-03-04
+2025-03-15 18:29:29,453 - INFO - Inserting market data for ATI.V on 2025-03-05
+2025-03-15 18:29:29,536 - INFO - Inserting market data for ATI.V on 2025-03-06
+2025-03-15 18:29:29,621 - INFO - Inserting market data for ATI.V on 2025-03-07
+2025-03-15 18:29:29,703 - INFO - Inserting market data for ATI.V on 2025-03-10
+2025-03-15 18:29:29,790 - INFO - Inserting market data for ATI.V on 2025-03-11
+2025-03-15 18:29:29,873 - INFO - Inserting market data for ATI.V on 2025-03-12
+2025-03-15 18:29:29,961 - INFO - Inserting market data for ATI.V on 2025-03-13
+2025-03-15 18:29:30,046 - INFO - Inserting market data for ATI.V on 2025-03-14
+2025-03-15 18:29:30,129 - INFO - Inserting analyst data for ATI.V on 2025-03-15
+2025-03-15 18:29:30,214 - INFO - Inserting ESG data for ATI.V
+2025-03-15 18:29:30,256 - WARNING - No governance risk data available for ATI.V
+2025-03-15 18:29:30,299 - INFO - Successfully processed ATI.V
+2025-03-15 18:29:32,305 - INFO - Processing ticker 13/256: ARH.V
+2025-03-15 18:29:32,305 - INFO - Processing ticker: ARH.V
+2025-03-15 18:29:32,307 - INFO - Running test-data.py for ARH.V
+2025-03-15 18:32:46,731 - INFO - Starting data upload process
+2025-03-15 18:32:46,731 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 18:32:46,731 - INFO - Processing ticker: SHOP.TO
+2025-03-15 18:32:46,732 - INFO - Running test-data.py for SHOP.TO
+2025-03-15 18:33:32,152 - WARNING - Could not remove temporary script: [Errno 2] No such file or directory: '/Users/zakirangwala/Desktop/DataMinds/data/temp-test-data.py'
+2025-03-15 18:33:32,154 - INFO - Retrieved data for SHOP.TO with categories: ['Company Info', 'Calendar', 'Analyst Price Targets', 'Quarterly Income Statement', 'History', 'Sustainability', 'Historical ESG Scores']
+2025-03-15 18:33:32,640 - INFO - Company SHOP.TO already exists, updating...
+2025-03-15 18:33:32,682 - ERROR - Error inserting company data for SHOP.TO: column "long_business_summary" of relation "companies" does not exist
+LINE 4: ...       headquarters = 'Ottawa', employees = 8100, long_busin...
+                                                             ^
+
+2025-03-15 18:33:32,821 - INFO - Financial data for SHOP.TO on 2024-12-31 already exists, updating...
+2025-03-15 18:33:32,862 - ERROR - Error inserting financial data for SHOP.TO: column "other_data" of relation "financials" does not exist
+LINE 6:                                     other_data = '{"payoutRa...
+                                            ^
+
+2025-03-15 18:33:32,987 - INFO - Market data for SHOP.TO on 2025-02-14 already exists, updating...
+2025-03-15 18:33:33,071 - INFO - Market data for SHOP.TO on 2025-02-18 already exists, updating...
+2025-03-15 18:33:33,156 - INFO - Market data for SHOP.TO on 2025-02-19 already exists, updating...
+2025-03-15 18:33:33,239 - INFO - Market data for SHOP.TO on 2025-02-20 already exists, updating...
+2025-03-15 18:33:33,322 - INFO - Market data for SHOP.TO on 2025-02-21 already exists, updating...
+2025-03-15 18:33:33,404 - INFO - Market data for SHOP.TO on 2025-02-24 already exists, updating...
+2025-03-15 18:33:33,488 - INFO - Market data for SHOP.TO on 2025-02-25 already exists, updating...
+2025-03-15 18:33:33,571 - INFO - Market data for SHOP.TO on 2025-02-26 already exists, updating...
+2025-03-15 18:33:33,654 - INFO - Market data for SHOP.TO on 2025-02-27 already exists, updating...
+2025-03-15 18:33:33,741 - INFO - Market data for SHOP.TO on 2025-02-28 already exists, updating...
+2025-03-15 18:33:33,823 - INFO - Market data for SHOP.TO on 2025-03-03 already exists, updating...
+2025-03-15 18:33:33,908 - INFO - Market data for SHOP.TO on 2025-03-04 already exists, updating...
+2025-03-15 18:33:33,991 - INFO - Market data for SHOP.TO on 2025-03-05 already exists, updating...
+2025-03-15 18:33:34,076 - INFO - Market data for SHOP.TO on 2025-03-06 already exists, updating...
+2025-03-15 18:33:34,159 - INFO - Market data for SHOP.TO on 2025-03-07 already exists, updating...
+2025-03-15 18:33:34,242 - INFO - Market data for SHOP.TO on 2025-03-10 already exists, updating...
+2025-03-15 18:33:34,327 - INFO - Market data for SHOP.TO on 2025-03-11 already exists, updating...
+2025-03-15 18:33:34,409 - INFO - Market data for SHOP.TO on 2025-03-12 already exists, updating...
+2025-03-15 18:33:34,493 - INFO - Market data for SHOP.TO on 2025-03-13 already exists, updating...
+2025-03-15 18:33:34,577 - INFO - Market data for SHOP.TO on 2025-03-14 already exists, updating...
+2025-03-15 18:33:34,662 - INFO - Updating analyst targets for SHOP.TO on 2025-03-15
+2025-03-15 18:33:34,747 - INFO - ESG data for SHOP.TO already exists, updating...
+2025-03-15 18:33:34,831 - INFO - Governance risk data for SHOP.TO already exists, updating from Company Info...
+2025-03-15 18:33:34,914 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:33:34,915 - INFO - Successfully processed SHOP.TO
+2025-03-15 18:38:41,917 - INFO - Starting data upload process
+2025-03-15 18:38:41,917 - INFO - Processing single ticker: SHOP.TO
+2025-03-15 18:38:41,917 - INFO - Processing ticker: SHOP.TO
+2025-03-15 18:38:41,918 - INFO - Running test-data.py for SHOP.TO

@@ -5,7 +5,9 @@ CREATE TABLE companies (
     industry VARCHAR(100),
     website VARCHAR(255),
     headquarters VARCHAR(255),
-    employees INT
+    employees INT,
+    long_business_summary TEXT,
+    market_cap BIGINT
 );
 
 CREATE TABLE financials (
@@ -23,6 +25,8 @@ CREATE TABLE financials (
     return_on_equity DECIMAL(5,4),
     earnings_growth DECIMAL(5,4),
     revenue_growth DECIMAL(5,4),
+    other_data JSONB,
+    custom_price_alert_confidence DECIMAL(5,4),
     FOREIGN KEY (ticker) REFERENCES companies(ticker)
 );
 
