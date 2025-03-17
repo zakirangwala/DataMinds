@@ -11,11 +11,18 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
 import psycopg2
 from psycopg2.extras import execute_batch
 from dateutil import parser
+import sys
+from pathlib import Path
+
+# Add the root directory to Python path
+root_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(root_dir))
+from utils.db import get_companies
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -25,101 +32,34 @@ logger = logging.getLogger(__name__)
 DB_URL = os.getenv('SUPABASE_URL')
 DB_PASSWORD = os.getenv('SUPABASE_PW')
 
+# Rate limiting settings
+REQUESTS_PER_MINUTE = 60  # Adjust this value based on API limits
+# Minimum time between requests in seconds
+MIN_REQUEST_INTERVAL = 60.0 / REQUESTS_PER_MINUTE
+last_request_time = time.time()
+
+
+def rate_limit():
+    """Implement rate limiting"""
+    global last_request_time
+    current_time = time.time()
+    time_since_last_request = current_time - last_request_time
+
+    if time_since_last_request < MIN_REQUEST_INTERVAL:
+        sleep_time = MIN_REQUEST_INTERVAL - time_since_last_request
+        time.sleep(sleep_time)
+
+    last_request_time = time.time()
+
+
 # tickers
 TICKERS = [
-    "ACX.TO",
-    "AKT-A.TO",
-    "ATH.TO",
-    "BIR.TO",
-    "CNE.TO",
-    "CJ.TO",
-    "FRU.TO",
-    "FEC.TO",
-    "GFR.TO",
-    "IPCO.TO",
-    "JOY.TO",
-    "KEC.TO",
-    "MEG.TO",
-    "NVA.TO",
-    "BR.TO",
-    "SOY.TO",
-    "ADW-A.TO",
-    "CSW-A.TO",
-    "CSW-B.TO",
-    "RSI.TO",
-    "DOL.TO",
-    "EMP-A.TO",
-    "WN-PA.TO",
-    "BU.TO",
-    "DTEA.V",
-    "HLF.TO",
-    "JWEL.TO",
-    "MFI.TO",
-    "OTEX.TO",
-    "DSG.TO",
-    "KXS.TO",
-    "SHOP.TO",
-    "CSU.TO",
-    "LSPD.TO",
-    "DCBO.TO",
-    "ENGH.TO",
-    "HAI.TO",
-    "TIXT.TO",
-    "DND.TO",
-    "ET.TO",
-    "BLN.TO",
-    "TSAT.TO",
-    "ALYA.TO",
     "BTE.TO",
 ]
 
 
 # List of companies
 COMPANIES = [
-    "ACT ENERGY TECHNOLOGIES LTD",
-    "AKITA DRILLING LTD., CL.A, NV",
-    "ATHABASCA OIL CORP",
-    "BIRCHCLIFF ENERGY LTD.",
-    "CANACOL ENERGY LTD",
-    "CARDINAL ENERGY LTD",
-    "FREEHOLD ROYALTIES LTD.",
-    "FRONTERA ENERGY CORPORATION",
-    "GREENFIRE RESOURCES LTD",
-    "INTERNATIONAL PETROLEUM CORPORA",
-    "JOURNEY ENERGY INC",
-    "KIWETINOHK ENERGY CORP",
-    "MEG ENERGY CORP.",
-    "NUVISTA ENERGY LTD.",
-    "BIG ROCK BREWERY INC.",
-    "MOLSON COORS CANADA INC., CL.A",
-    "LASSONDE INDUSTRIES INC., CL A",
-    "SUNOPTA, INC.",
-    "ANDREW PELLER LIMITED, CL.A",
-    "CORBY SPIRIT AND WINE LTD CLASS",
-    "ROGERS SUGAR INC",
-    "DOLLARAMA INC",
-    "EMPIRE COMPANY LIMITED",
-    "GEORGE WESTON LIMITED PR SERIES",
-    "BURCON NUTRASCIENCE CORPORATION",
-    "DAVIDSTEA INC",
-    "HIGH LINER",
-    "JAMIESON WELLNESS INC",
-    "MAPLE LEAF FOODS",
-    "OPEN TEXT CORPORATION",
-    "DESCARTES SYS",
-    "KINAXIS INC",
-    "SHOPIFY INC",
-    "CONSTELLATION SOFTWARE INC.",
-    "LIGHTSPEED COMMERCE INC",
-    "DOCEBO INC",
-    "ENGHOUSE SYSTEMS LIMITED",
-    "HAIVISION SYSTEMS INC",
-    "TELUS INTERNATIONAL CDA INC",
-    "DYE AND DURHAM LIMITED",
-    "EVERTZ TECHNOLOGIES LIMITED",
-    "BLACKLINE SAFETY CORP",
-    "TELESAT CORPORATION",
-    "ALITHYA GROUP INC",
     "BAYTEX ENERGY CORP."
 ]
 
@@ -165,6 +105,7 @@ def get_article_content(url, driver):
 def process_company(company_name, driver):
     """Process news for a single company."""
     logger.info(f"Processing news for: {company_name}")
+    rate_limit()  # Apply rate limiting
 
     gn = GoogleNews()
     search_query = f"{company_name} ESG sustainability"
@@ -177,6 +118,8 @@ def process_company(company_name, driver):
         for entry in s['entries']:
             if count >= 10:
                 break
+
+            rate_limit()  # Apply rate limiting for each article request
 
             # Clean the summary
             soup = BeautifulSoup(entry["summary"], "html.parser")
@@ -198,7 +141,6 @@ def process_company(company_name, driver):
                 }
                 results.append(result)
                 count += 1
-                time.sleep(0.25)
 
     except Exception as e:
         logger.error(f"Error processing company {company_name}: {str(e)}")
@@ -289,7 +231,7 @@ def insert_news_data(conn, company_name, ticker, results):
         cursor.close()
 
 
-def main():
+def main(companies, tickers):
     # Initialize Selenium once for all companies
     driver = setup_selenium()
 
@@ -300,8 +242,20 @@ def main():
         return
 
     try:
-        # Process each company
-        for company, ticker in zip(COMPANIES, TICKERS):
+        # Find the index of OPEN TEXT CORPORATION
+        # try:
+        #     start_index = companies.index("OPEN TEXT CORPORATION")
+        #     logger.info(
+        #         f"Starting from OPEN TEXT CORPORATION at index {start_index}")
+        # except ValueError:
+        #     logger.error(
+        #         "OPEN TEXT CORPORATION not found in companies list. Starting from beginning.")
+        start_index = 0
+
+        # Process each company starting after OPEN TEXT CORPORATION
+        for i in range(start_index, len(companies)):
+            company = companies[i]
+            ticker = tickers[i]
             logger.info(f"Processing {company} ({ticker})")
 
             # Process company
@@ -316,7 +270,7 @@ def main():
                         f"Failed to insert data for {company}: {str(e)}")
                     continue
 
-            time.sleep(2)  # Delay between companies
+            rate_limit()  # Apply rate limiting between companies
 
     finally:
         driver.quit()
@@ -325,4 +279,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    companies = COMPANIES
+    tickers = TICKERS
+    main(companies, tickers)

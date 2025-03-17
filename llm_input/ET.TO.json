@@ -1,0 +1,51 @@
+{
+    "company": {
+        "ticker": "ET.TO",
+        "name": "EVERTZ TECHNOLOGIES LIMITED",
+        "sector": "Technology",
+        "industry": "Communication Equipment",
+        "long_business_summary": "Evertz Technologies Limited engages in the design, manufacture, and distribution of video and audio infrastructure solutions for the production, post-production, broadcast, and telecommunications markets in Canada, the United States, and internationally. The company offers contribution and distribution encoder, decoder, receiver, and processing products; and control panels, intelligent operations and controls, big data analytics, and network management systems, as well as orchestration, monitoring, and analytics solutions. It also provides video encoders, decoders, and multiplexing products comprising encoders/transcoders, decoders, multiplexers, monitoring and auto-changeover products, and enterprise products; optical media transport products; and audio consoles and processing products, such as mixing consoles, routing and I/O products, summing and processing products, and IP audio gateways. In addition, the company offers asset management and playout products, consisting of asset management, ingest, playout and branding, and transcoding/conforming products; live media production products; routers; flexible media edge products; and IP audio/video processing, media gateway, switch routing, timing, and software defined network orchestration products. Further, it provides multiviewers solutions comprising IP and SDI multiviewers, MVP, and accessories; Radio Frequency (RF) products; timing and synchronization products; and infrastructure and conversion products. The company serves content creators, broadcasters, specialty channels, and television service providers. Evertz Technologies Limited was founded in 1966 and is headquartered in Burlington, Canada.",
+        "market_cap": null,
+        "employees": null
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": 17.9,
+        "esg_risk_severity": "Negligible",
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2025-01-31",
+            "revenue": 136916000,
+            "net_income": 20915000,
+            "ebitda": 32577000,
+            "debt": null,
+            "gross_profit": 79098000
+        },
+        {
+            "report_date": "2024-10-31",
+            "revenue": 125260000,
+            "net_income": 15804000,
+            "ebitda": 26301000,
+            "debt": null,
+            "gross_profit": 74260000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": 6,
+        "board_risk": 10,
+        "compensation_risk": 10,
+        "shareholder_rights_risk": 8,
+        "overall_risk": 10
+    },
+    "sentiment_data": [
+        {
+            "search_title": "Irving Oil rules out sale after completing strategic review - The Globe and Mail",
+            "search_summary": "Irving Oil rules out sale after completing strategic review\u00a0\u00a0The Globe and Mail",
+            "article_text": "Open this photo in gallery: Irving Oil president Ian Whitcomb says he has made a 'personal decision' to step down from his position after eight years in the job. The Irving Oil Refinery in Saint John, N.B., on Jan. 29, 2019.Andrew Vaughan/The Canadian Press\n\nIrving Oil Ltd., owner of Canada\u2019s largest refinery, will remain a stand-alone company after ruling out a sale of the family-owned operation.\n\nThe Saint John-based oil refiner and retailer said in a statement late Tuesday that it had completed an 18-month review of its alternatives and decided to remain a private company.\n\nIrving announced the review in June, 2023, leading to speculation about potential buyers for the century-old Atlantic Canadian institution. It gave few details about its motivation at the time, and did not issue any interim reports on its progress.\n\nAlso on Tuesday, Irving named company veteran Jeff Matthews as president and chief executive officer. He has held a number of posts over three decades at the company, including chief business development officer, chief financial officer and, most recently, chair of the executive management committee, Irving said.\n\nIrving is one of New Brunswick\u2019s largest employers. Its Saint John refinery has a capacity of 320,000 barrels a day, and its Whitegate refinery in Ireland has a capacity of 75,000 barrels a day.\n\nThe company also has a chain of more than 1,000 gas stations in Eastern Canada, New England and Ireland, as well as wholesale and fuel-trading businesses. In addition, it operates the Canaport deep-water oil terminal on the north shore of the Bay of Fundy.\n\nWhen Irving announced its strategic review, the fuel industry appeared to be in flux, as the automotive world geared up for what appeared to be a rapid transition to electric vehicles. But that shift has hit snags over the past year, as EV sales growth moderated."
+        }
+    ]
+}

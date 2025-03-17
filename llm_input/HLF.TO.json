@@ -1,0 +1,45 @@
+{
+    "company": {
+        "ticker": "HLF.TO",
+        "name": "HIGH LINER",
+        "sector": "Consumer Defensive",
+        "industry": "Packaged Foods",
+        "long_business_summary": "High Liner Foods Incorporated processes and markets frozen seafood products in North America. The company provides a range of frozen seafood products, including raw fillets and shellfish, and cooked shellfish; and value-added products, such as sauced, glazed, breaded and battered seafood, seafood entrees, and breaded cheese sticks under High Liner, Fisher Boy, Sea Cuisine, C. Wirthy, Mirabel, Catch of the Day, Icelandic Seafood, and FPI brands. It sells its products through distributors to retail and club stores; foodservice distributors to hotels, restaurants, and healthcare and educational organizations; and its website. High Liner Foods Incorporated was founded in 1899 and is headquartered in Lunenburg, Canada.",
+        "market_cap": null,
+        "employees": 1215
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": null,
+        "esg_risk_severity": null,
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-12-31",
+            "revenue": 235039000,
+            "net_income": 5928000,
+            "ebitda": 30706000,
+            "debt": null,
+            "gross_profit": 50965000
+        },
+        {
+            "report_date": "2024-09-30",
+            "revenue": 228884000,
+            "net_income": 18347000,
+            "ebitda": 21303000,
+            "debt": null,
+            "gross_profit": 48346000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": 1,
+        "board_risk": 1,
+        "compensation_risk": 4,
+        "shareholder_rights_risk": 8,
+        "overall_risk": 2
+    },
+    "sentiment_data": []
+}

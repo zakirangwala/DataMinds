@@ -1,0 +1,77 @@
+{
+    "company": {
+        "ticker": "ALYA.TO",
+        "name": "ALITHYA GROUP INC",
+        "sector": "Technology",
+        "industry": "Information Technology Services",
+        "long_business_summary": "Alithya Group Inc. provides strategy and digital technology services in Canada, the United States, and Europe. The company offers strategic consulting, enterprise transformation, and business enablement services. It also offers advisory services for digital strategy, organization performance, cybersecurity, enterprise architecture, and change management. In addition, the company provides enterprise resource planning, supply chain management, enterprise performance management, customer relationship management, and human capital management. Further, it offers digital adoption, training, managed services, change enablement, and quality engineering services; machine learning, artificial intelligence, transformational solutions, custom applications development, legacy systems modernization, control/software engineering, data and analytics, and intelligent document processing services. Additionally, the company provides AI-FI, an integrated artificial intelligence and fidelity solution; Alithya Rapid QA, a solution for functionality of applications on platforms in programming language; Alithya Adaptive Learning, a subscription-based platform for drive usage of applications; CASSI analytics, a solutions for nuclear plants and the energy sector to generate and distribute maintenance performance reports; and SIDER, a secure solution that facilitates distribution of medical results to healthcare sectors and to centralized electronic medical records. It serves financial services, energy, manufacturing, telecommunications, transportation and logistics, professional services, healthcare, and government sectors. Alithya Group Inc. was founded in 1992 and is based in Montreal, Canada.",
+        "market_cap": null,
+        "employees": 3000
+    },
+    "esg_report_analysis": {
+        "environmental_summary": "ALITHYA GROUP INC, as a professional services firm providing IT services and solutions, likely has a relatively low direct environmental impact compared to manufacturing or resource extraction industries. However, ALITHYA GROUP INC likely focuses on reducing its carbon footprint through energy-efficient office operations and promoting remote work options for its employees. ALITHYA GROUP INC likely emphasizes sustainable practices within its data centers and encourages responsible disposal of electronic waste.",
+        "environmental_breakdown": {
+            "Energy Use": "ALITHYA GROUP INC likely implements energy-efficient lighting, HVAC systems, and data center operations. ALITHYA GROUP INC likely monitors its energy consumption and sets targets for reduction.",
+            "Water Usage": "Given ALITHYA GROUP INC's industry, water usage is likely minimal, primarily related to office operations. ALITHYA GROUP INC likely implements water-saving measures in its facilities.",
+            "Carbon Emissions": "ALITHYA GROUP INC likely manages its carbon emissions primarily through reducing energy consumption in its offices and data centers. ALITHYA GROUP INC likely invests in energy-efficient technologies and promotes remote work to minimize employee commuting.",
+            "Waste Management": "ALITHYA GROUP INC likely focuses on reducing waste through recycling programs and promoting paperless operations. ALITHYA GROUP INC likely has policies for responsible disposal of electronic waste.",
+            "Climate Risk Disclosures": "As a publicly traded company, ALITHYA GROUP INC likely provides some level of climate risk disclosure in its annual reports, focusing on potential impacts to its operations and supply chain. ALITHYA GROUP INC likely assesses and mitigates risks related to extreme weather events and regulatory changes."
+        },
+        "social_summary": "ALITHYA GROUP INC likely prioritizes workforce management and safety, adhering to industry standards for employee well-being. ALITHYA GROUP INC likely implements diversity and inclusion programs to foster an equitable workplace. ALITHYA GROUP INC likely engages in community initiatives to support local development and maintains customer service standards relevant to its IT services sector. ALITHYA GROUP INC likely emphasizes ethical conduct and human rights practices throughout its supply chain.",
+        "social_breakdown": {
+            "Human Rights": "ALITHYA GROUP INC likely emphasizes human rights practices within its supply chain, ensuring that its suppliers adhere to ethical labor standards and respect human rights. ALITHYA GROUP INC likely conducts due diligence to identify and mitigate human rights risks.",
+            "Community Impact": "ALITHYA GROUP INC likely engages in community engagement initiatives, such as supporting local charities, sponsoring community events, and providing pro bono services. ALITHYA GROUP INC likely encourages employee volunteerism.",
+            "Labour Practices": "ALITHYA GROUP INC likely maintains comprehensive workforce programs, including training and development opportunities, competitive compensation, and benefits packages. ALITHYA GROUP INC likely adheres to labor laws and promotes a safe working environment.",
+            "Diversity & Inclusion": "ALITHYA GROUP INC likely implements diversity and inclusion initiatives to promote equal opportunities for all employees. ALITHYA GROUP INC likely tracks diversity metrics and sets targets for improvement.",
+            "Product/Service Responsibility": "ALITHYA GROUP INC likely maintains high customer service standards, ensuring the quality and reliability of its IT services and solutions. ALITHYA GROUP INC likely has processes for addressing customer feedback and resolving complaints."
+        },
+        "governance_summary": "ALITHYA GROUP INC likely maintains a governance structure that ensures board oversight, executive accountability, and effective risk management. ALITHYA GROUP INC's board likely includes members with industry expertise and diverse backgrounds. ALITHYA GROUP INC's executive compensation framework likely aligns with market practices and company performance. ALITHYA GROUP INC likely operates compliance programs to adhere to regulatory requirements and promotes ethical conduct throughout the organization.",
+        "governance_breakdown": {
+            "Transparency": "ALITHYA GROUP INC likely maintains transparent disclosure practices, providing timely and accurate information to investors and stakeholders. ALITHYA GROUP INC likely adheres to regulatory reporting requirements and engages in investor relations activities.",
+            "Governance Risk": "ALITHYA GROUP INC likely implements risk management systems to identify, assess, and mitigate risks related to its operations, including financial risks, cybersecurity risks, and reputational risks. ALITHYA GROUP INC likely has a risk management committee that oversees these activities.",
+            "Board Composition": "ALITHYA GROUP INC's board likely includes members with diverse backgrounds and expertise in IT services, finance, and governance. ALITHYA GROUP INC's board likely has committees responsible for audit, compensation, and governance matters.",
+            "Ethical Practices": "ALITHYA GROUP INC likely promotes ethical conduct throughout the organization, with a code of ethics that outlines expected behavior for employees and executives. ALITHYA GROUP INC likely has mechanisms for reporting and addressing ethical concerns.",
+            "Regulatory Compliance": "ALITHYA GROUP INC likely operates compliance programs to adhere to regulatory requirements in its markets, including data privacy laws, securities regulations, and labor laws. ALITHYA GROUP INC likely has internal controls to ensure compliance.",
+            "Executive Compensation": "ALITHYA GROUP INC's executive compensation framework likely aligns with market practices and company performance, including metrics related to revenue growth, profitability, and shareholder value. ALITHYA GROUP INC likely discloses executive compensation details in its annual reports."
+        }
+    },
+    "esg_scores": {
+        "esg_risk_score": null,
+        "esg_risk_severity": null,
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-12-31",
+            "revenue": 115761000,
+            "net_income": -3716000,
+            "ebitda": 5223000,
+            "debt": null,
+            "gross_profit": 37385000
+        },
+        {
+            "report_date": "2024-09-30",
+            "revenue": 111514000,
+            "net_income": -270000,
+            "ebitda": 7421000,
+            "debt": null,
+            "gross_profit": 34128000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": null,
+        "board_risk": null,
+        "compensation_risk": null,
+        "shareholder_rights_risk": null,
+        "overall_risk": null
+    },
+    "sentiment_data": [
+        {
+            "search_title": "GSOA publishes space sustainability Code of Conduct - Capacity Media",
+            "search_summary": "GSOA publishes space sustainability Code of Conduct\u00a0\u00a0Capacity Media",
+            "article_text": "The report calls on operators to implement responsible practices that mitigate the risk of in-orbit collision, minimise the threat of non-trackable debris, protect humans in space and limit effects on optical astronomy.\n\n\u201cSatellites in all orbits deliver vital satellite connectivity and high throughput broadband services. While they offer great promises in bridging the digital divide, they must be launched, deployed, operated and disposed of in a responsible manner,\u201d said Isabelle Mauro, director general of GSOA.\n\nThe Code of Conduct outlines four space sustainability areas which GSOA is recommending operators comply with.\n\nThe first is mitigating the risk of in-orbit collision. Specifically, it says operators should take all reasonable steps to share information with other operators about trackable debris that they may have or may not have generated through the operation of their spacecraft.\n\nSecond is minimising the threat of non-trackable debris. GSOA says that operators should take steps during the design, launch, orbit raising, operational and de-orbit phases of the spacecraft mission \u2013 to ensure that their satellites do not become debris.\n\n\u201cThe satellite industry has proven vital to helping bridge the digital divide and connect the unconnected, whether they are on land, at sea or in the air. These vital services depend on protecting and preserving access to space,\u201d said Dan Goldberg, CEO of Telesat Corporation and GSOA chairman.\n\n\u201cThe development and industry-wide approval of the Code of Conduct is an important step in identifying best practices and mitigations to preserve access to space for future generations.\u201d\n\nThe third area concerns the preservation of human life in space. The association says that human life should be protected, and operators should ensure that astronauts are not put at risk.\n\nThe fourth and final area is limiting the impact on optical astronomy. The Code of Conduct believes that operators and astronomers should work together to minimise negative impacts on ground-based optical astronomy, while allowing observation at optical wavelengths and ensuring the delivery of satellite services.\n\n\u201cAs the satellite industry continues to grow and is expected to bring socio-economic benefits worth more than US$250 billion globally, it is important that the industry works together to implement key sustainability practices that enable the world to continue benefitting from satellites,\u201d said Ali Alhashemi, group CEO of Yahsat and GSOA vice-chair.\n\nGSOA represents over 70 Members, all satellite operators, leads in addressing global challenges, seizing opportunities, and providing a unified voice for the satellite industry.\n\n\u201cThe Code of Conduct is a significant first step in safeguarding space resources. GSOA will continue to analyse additional matters and progress its work and efforts in this important area,\u201d added Eva Berneke, CEO of Eutelsat Group and GSOA vice-chair."
+        }
+    ]
+}
