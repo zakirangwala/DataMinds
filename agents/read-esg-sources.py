@@ -1,31 +1,76 @@
-# !pip install supabase pandas requests pymupdf langchain
-
 import pandas as pd
 import json
 import re
 import requests
-import fitz  # PyMuPDF
+import fitz
 import concurrent.futures
 from supabase import create_client, Client
+from dotenv import load_dotenv
+import os
+import google.generativeai as genai
+import time
+from tenacity import retry, stop_after_attempt, wait_exponential
+import logging
+from datetime import datetime
+from typing import List, Dict
+import asyncio
 
-# ------------------------------------------------------------
-# 1) Initialize Supabase client
-# ------------------------------------------------------------
-url = "https://zwfponltzmrnwcgjevik.supabase.co/"
-key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZnBvbmx0em1ybndjZ2pldmlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIwNzA4NjksImV4cCI6MjA1NzY0Njg2OX0.efK6dWbpOLIlGb-4ORnIYmiiyjg11gCnB1gGquC2lH8"
-supabase: Client = create_client(url, key)
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        # logging.FileHandler(
+        #     f'esg_analysis_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'),
+        logging.StreamHandler()
+    ]
+)
+
+# Suppress verbose logging from libraries
+logging.getLogger('urllib3').setLevel(logging.WARNING)
+logging.getLogger('requests').setLevel(logging.WARNING)
+logging.getLogger('PyPDF2').setLevel(logging.WARNING)
+logging.getLogger('fitz').setLevel(logging.WARNING)
+
+# Load environment variables
+load_dotenv()
+gemini_api_key = os.getenv('GEMINI_API_KEY')
+supabase_url = os.getenv('SUPABASE_STRING')
+supabase_key = os.getenv('SUPABASE_API_KEY')
+
+if not all([gemini_api_key, supabase_url, supabase_key]):
+    logging.error("Missing required environment variables")
+    raise ValueError("Missing required environment variables")
+
+# Initialize Supabase client
+try:
+    supabase: Client = create_client(supabase_url, supabase_key)
+    logging.info(
+        f"Successfully initialized Supabase client with URL: {supabase_url[:30]}...")
+except Exception as e:
+    logging.error(f"Failed to initialize Supabase client: {str(e)}")
+    raise
 
 # ------------------------------------------------------------
 # 2) Fetch company + URLs from 'resources'
 # ------------------------------------------------------------
-resources_response = supabase.table('resources').select('company, urls').execute()
-print("Raw Response:", resources_response)
+try:
+    logging.info("Fetching resources from Supabase...")
+    resources_response = supabase.table('resources').select(
+        'company, ticker, urls').execute()
+    logging.info(
+        f"Raw Response from resources table: {json.dumps(resources_response.model_dump(), indent=2)}")
 
-if resources_response.data:
+    if not resources_response.data:
+        raise Exception("No data returned from resources table")
+
     resources_df = pd.DataFrame(resources_response.data)
-    print(f"Retrieved {len(resources_df)} records from 'resources'.")
-else:
-    raise Exception("Failed to retrieve resources:", resources_response)
+    logging.info(
+        f"Retrieved {len(resources_df)} records from 'resources' table")
+    logging.info(f"Sample data:\n{resources_df.head().to_string()}")
+except Exception as e:
+    logging.error(f"Failed to fetch resources: {str(e)}", exc_info=True)
+    raise
 
 # Display the DataFrame for debugging
 pd.set_option('display.max_colwidth', None)
@@ -33,38 +78,122 @@ pd.options.display.colheader_justify = 'left'
 print(resources_df.to_string(index=False, justify='left'))
 
 # ------------------------------------------------------------
-# 3) Configure DeepSeek API (OpenRouter)
+# 3) Configure Gemini API
 # ------------------------------------------------------------
-deepseek_api_key = "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"
-deepseek_api_base = "https://openrouter.ai/api/v1"
+genai.configure(api_key=gemini_api_key)
 
-def deepseek_chat_completion(prompt, max_tokens, temperature):
-    url = f"{deepseek_api_base}/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {deepseek_api_key}",
-        "Content-Type": "application/json"
-    }
-    payload = {
-        "model": "deepseek/deepseek-r1-distill-llama-70b:free",
-        "messages": [{"role": "user", "content": prompt}],
+# Add rate limiting decorator
+
+
+def rate_limit():
+    """Rate limit decorator to ensure we don't exceed Gemini API limits"""
+    last_call = [0.0]  # Using list to maintain state in closure
+    min_interval = 4.0  # Minimum 2 seconds between calls (15 RPM)
+
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            current_time = time.time()
+            elapsed = current_time - last_call[0]
+            if elapsed < min_interval:
+                sleep_time = min_interval - elapsed
+                print(f"⏳ Rate limiting: Waiting {sleep_time:.1f} seconds...")
+                time.sleep(sleep_time)
+            last_call[0] = time.time()
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=4, max=10),
+    reraise=True
+)
+@rate_limit()
+def gemini_chat_completion(prompt, max_tokens, temperature):
+    model = genai.GenerativeModel('gemini-2.0-flash')
+
+    # Configure generation parameters
+    generation_config = {
+        "max_output_tokens": max_tokens,
         "temperature": temperature,
-        "max_tokens": max_tokens
+        "top_p": 1,
+        "top_k": 32
     }
-    response = requests.post(url, headers=headers, json=payload)
-    response.raise_for_status()
-    return response.json()
 
-print("Using DeepSeek API with base:", deepseek_api_base)
+    # Configure safety settings to be more permissive for business analysis
+    safety_settings = [
+        {
+            "category": "HARM_CATEGORY_HARASSMENT",
+            "threshold": "BLOCK_NONE",
+        },
+        {
+            "category": "HARM_CATEGORY_HATE_SPEECH",
+            "threshold": "BLOCK_NONE",
+        },
+        {
+            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+            "threshold": "BLOCK_NONE",
+        },
+        {
+            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+            "threshold": "BLOCK_NONE",
+        },
+    ]
+
+    try:
+        response = model.generate_content(
+            prompt,
+            generation_config=generation_config,
+            safety_settings=safety_settings,
+            stream=False
+        )
+
+        # Log the raw response for debugging
+        logging.debug(f"Raw Gemini response: {response.text}")
+
+        # Check if response is empty or malformed
+        if not response.text or not response.text.strip():
+            raise ValueError("Empty response from Gemini API")
+
+        # Try to extract JSON from the response
+        # Look for JSON block in markdown format
+        json_match = re.search(r"```json\s*(.*?)\s*```",
+                               response.text, re.DOTALL)
+        if json_match:
+            try:
+                return {"choices": [{"message": {"content": json.loads(json_match.group(1))}}]}
+            except json.JSONDecodeError:
+                logging.error(
+                    f"Failed to parse JSON from markdown block: {json_match.group(1)}")
+
+        # If no JSON block found or parsing failed, try to parse the entire response
+        try:
+            json_data = json.loads(response.text)
+            return {"choices": [{"message": {"content": json_data}}]}
+        except json.JSONDecodeError:
+            logging.error(f"Failed to parse response as JSON: {response.text}")
+            # Return the raw text as fallback
+            return {"choices": [{"message": {"content": response.text}}]}
+
+    except Exception as e:
+        logging.error(f"Gemini API Error: {str(e)}")
+        raise
+
+
+print("Using Gemini API directly with model: gemini-2.0-flash-lite-001")
 
 # ------------------------------------------------------------
 # 4) Helper functions for chunking & aggregation
 # ------------------------------------------------------------
 CHUNK_SIZE = 100000
 
+
 def chunk_text(text, chunk_size=CHUNK_SIZE):
     """Yield successive chunks of text."""
     for i in range(0, len(text), chunk_size):
         yield text[i:i + chunk_size]
+
 
 def aggregate_raw_metrics(results):
     """Aggregate ESG metrics from all chunks."""
@@ -73,13 +202,15 @@ def aggregate_raw_metrics(results):
         "Social": ["Labour Practices", "Diversity & Inclusion", "Community Impact", "Product/Service Responsibility", "Human Rights"],
         "Governance": ["Board Composition", "Executive Compensation", "Transparency", "Regulatory Compliance", "Ethical Practices", "Governance Risk"]
     }
-    aggregated = {pillar: {cat: [] for cat in cats} for pillar, cats in pillars.items()}
+    aggregated = {pillar: {cat: [] for cat in cats}
+                  for pillar, cats in pillars.items()}
 
     for res in results:
         if isinstance(res, dict) and "ESG Metrics" in res:
             for pillar, cats in pillars.items():
                 for cat in cats:
-                    data = res["ESG Metrics"].get(pillar, {}).get(cat, "").strip()
+                    data = res["ESG Metrics"].get(
+                        pillar, {}).get(cat, "").strip()
                     if data and data.lower() not in ["not mentioned", ""]:
                         # Split by common list delimiters
                         points = re.split(r'[\n•-]+', data)
@@ -92,6 +223,8 @@ def aggregate_raw_metrics(results):
 # ------------------------------------------------------------
 # 5) Define the Agent classes
 # ------------------------------------------------------------
+
+
 class PDFExtractorAgent:
     """
     🚀 PDF Extractor Agent
@@ -99,6 +232,7 @@ class PDFExtractorAgent:
     - Extracts text using PyMuPDF.
     - Returns a list of raw texts (one per PDF).
     """
+
     def download_pdf(self, url, filename):
         try:
             response = requests.get(url, stream=True)
@@ -107,33 +241,65 @@ class PDFExtractorAgent:
                     for chunk in response.iter_content(chunk_size=1024):
                         if chunk:
                             f.write(chunk)
+                logging.info(f"Downloaded PDF from {url}")
                 return filename
             else:
-                print("❌ Error downloading PDF:", response.status_code)
+                logging.error(
+                    f"Failed to download PDF from {url}: {response.status_code}")
                 return None
         except Exception as e:
-            print("❌ Download error:", e)
+            logging.error(f"Error downloading PDF from {url}: {str(e)}")
             return None
 
     def extract_text_from_pdf(self, pdf_path):
         try:
             doc = fitz.open(pdf_path)
-            return "\n".join(page.get_text("text") for page in doc)
+            text = "\n".join(page.get_text("text") for page in doc)
+            doc.close()
+            text_length = len(text)
+            logging.info(f"Extracted {text_length} characters from {pdf_path}")
+            return text
         except Exception as e:
-            print("❌ Text extraction error:", e)
+            logging.error(f"Error extracting text from {pdf_path}: {str(e)}")
             return ""
 
+    def cleanup_pdf(self, pdf_path):
+        """Delete a temporary PDF file after processing."""
+        try:
+            if pdf_path and os.path.exists(pdf_path):
+                os.remove(pdf_path)
+                logging.debug(f"Cleaned up {pdf_path}")
+        except Exception as e:
+            logging.warning(f"Could not delete {pdf_path}: {str(e)}")
+
     def process(self, urls):
+        """Process a list of URLs and return combined extracted text."""
         extracted_texts = []
+        os.makedirs("temp", exist_ok=True)
+
         for idx, url in enumerate(urls):
-            filename = f"document_{idx+1}.pdf"
+            filename = f"temp/document_{idx+1}.pdf"
             pdf_path = self.download_pdf(url, filename)
             if pdf_path:
-                print(f"✅ PDF Downloaded: {pdf_path}")
                 text = self.extract_text_from_pdf(pdf_path)
-                print(f"✅ Extracted text preview from {pdf_path} (first 300 characters):\n{text[:300]}")
-                extracted_texts.append(text)
-        return extracted_texts
+                if text:
+                    extracted_texts.append(text)
+                self.cleanup_pdf(pdf_path)
+
+        try:
+            os.rmdir("temp")
+            logging.debug("Cleaned up temp directory")
+        except:
+            pass
+
+        combined_text = "\n\n".join(extracted_texts) if extracted_texts else ""
+        if combined_text:
+            logging.info(
+                f"Successfully extracted {len(combined_text)} total characters from {len(urls)} PDFs")
+        else:
+            logging.warning("No text was extracted from PDFs")
+        return combined_text
+
 
 class ESGAnalystAgent:
     """
@@ -206,9 +372,11 @@ Return your answer in JSON format exactly as follows:
 {text_chunk}
 """
         try:
-            response = deepseek_chat_completion(prompt, max_tokens=2000, temperature=0.2)
+            response = gemini_chat_completion(
+                prompt, max_tokens=2000, temperature=0.2)
             result_text = response["choices"][0]["message"]["content"]
-            json_match = re.search(r"```json\s*(\{.*?\})\s*```", result_text, re.DOTALL)
+            json_match = re.search(
+                r"```json\s*(\{.*?\})\s*```", result_text, re.DOTALL)
             if json_match:
                 result_text = json_match.group(1)
             return json.loads(result_text)
@@ -216,23 +384,30 @@ Return your answer in JSON format exactly as follows:
             print("⚠️ JSON parsing failed. Returning raw response.")
             return result_text
         except Exception as e:
-            print("❌ DeepSeek API Error:", e)
+            print("❌ Gemini API Error:", e)
             return None
 
     def process(self, combined_text):
         esg_results = []
         chunks = list(chunk_text(combined_text))
         print(f"📌 Total chunks to process: {len(chunks)}")
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            futures = [executor.submit(self.extract_esg_metrics_from_chunk, chunk) for chunk in chunks]
-            for idx, future in enumerate(concurrent.futures.as_completed(futures)):
-                result = future.result()
+
+        # Process chunks sequentially to avoid rate limits
+        for idx, chunk in enumerate(chunks):
+            try:
+                result = self.extract_esg_metrics_from_chunk(chunk)
                 esg_results.append(result)
                 if isinstance(result, dict):
-                    print(f"✅ ESG Metrics for chunk {idx+1}:\n{json.dumps(result, indent=2)}")
+                    print(
+                        f"✅ ESG Metrics for chunk {idx+1}:\n{json.dumps(result, indent=2)}")
                 else:
                     print(f"✅ ESG Metrics for chunk {idx+1} (raw):\n{result}")
+            except Exception as e:
+                print(f"❌ Error processing chunk {idx+1}: {str(e)}")
+                esg_results.append(None)
+
         return esg_results
+
 
 class ReportSummarizerAgent:
     """
@@ -241,6 +416,7 @@ class ReportSummarizerAgent:
     - Generates a detailed summary analysis per ESG pillar.
     - Processes each pillar in parallel.
     """
+
     def generate_pillar_summary(self, pillar_name, pillar_data):
         summary_prompt_content = f"For the {pillar_name} pillar, use the following aggregated metrics as context:\n"
         for category, metrics in pillar_data.items():
@@ -258,7 +434,8 @@ Aggregated Metrics:
 Provide only the summary text.
 """
         try:
-            response = deepseek_chat_completion(prompt, max_tokens=1200, temperature=0.2)
+            response = gemini_chat_completion(
+                prompt, max_tokens=1200, temperature=0.2)
             return response["choices"][0]["message"]["content"].strip()
         except Exception as e:
             print("❌ Error generating pillar summary:", e)
@@ -266,16 +443,15 @@ Provide only the summary text.
 
     def process(self, aggregated_metrics):
         summaries = {}
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            future_to_pillar = {
-                executor.submit(self.generate_pillar_summary, pillar, data): pillar
-                for pillar, data in aggregated_metrics.items()
-            }
-            for future in concurrent.futures.as_completed(future_to_pillar):
-                pillar = future_to_pillar[future]
-                summaries[pillar] = future.result()
+        for pillar, data in aggregated_metrics.items():
+            try:
+                summaries[pillar] = self.generate_pillar_summary(pillar, data)
                 print(f"✅ Summary generated for {pillar} pillar.")
+            except Exception as e:
+                print(f"❌ Error generating summary for {pillar}: {str(e)}")
+                summaries[pillar] = "Summary not available."
         return summaries
+
 
 class KeyMetricsBreakdownAgent:
     """
@@ -284,6 +460,7 @@ class KeyMetricsBreakdownAgent:
     - Suggests scoring benchmarks for future ESG evaluations.
     - Returns the breakdowns in JSON format.
     """
+
     def generate_key_metric_breakdown(self, pillar_name, pillar_data):
         breakdown_prompt_content = f"For the {pillar_name} pillar, analyze the following key metrics and provide a detailed breakdown for each metric. For each category, describe the available quantitative and qualitative data, discuss its implications, and suggest how it might be used to score the pillar in future analyses. Return your output in JSON format where each key is the category name and the value is a string with the detailed breakdown.\n"
         for category, metrics in pillar_data.items():
@@ -309,9 +486,11 @@ Aggregated Metrics:
 Provide only the JSON output.
 """
         try:
-            response = deepseek_chat_completion(prompt, max_tokens=1500, temperature=0.2)
+            response = gemini_chat_completion(
+                prompt, max_tokens=1500, temperature=0.2)
             result_text = response["choices"][0]["message"]["content"]
-            json_match = re.search(r"```json\s*(\{.*?\})\s*```", result_text, re.DOTALL)
+            json_match = re.search(
+                r"```json\s*(\{.*?\})\s*```", result_text, re.DOTALL)
             if json_match:
                 result_text = json_match.group(1)
             return json.loads(result_text)
@@ -324,102 +503,253 @@ Provide only the JSON output.
 
     def process(self, aggregated_metrics):
         breakdowns = {}
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            future_to_pillar = {
-                executor.submit(self.generate_key_metric_breakdown, pillar, data): pillar
-                for pillar, data in aggregated_metrics.items()
-            }
-            for future in concurrent.futures.as_completed(future_to_pillar):
-                pillar = future_to_pillar[future]
-                breakdowns[pillar] = future.result()
-                print(f"✅ Key metrics breakdown generated for {pillar} pillar.")
+        for pillar, data in aggregated_metrics.items():
+            try:
+                breakdowns[pillar] = self.generate_key_metric_breakdown(
+                    pillar, data)
+                print(
+                    f"✅ Key metrics breakdown generated for {pillar} pillar.")
+            except Exception as e:
+                print(f"❌ Error generating breakdown for {pillar}: {str(e)}")
+                breakdowns[pillar] = None
         return breakdowns
 
 # ------------------------------------------------------------
 # 6) ESG pipeline function
 # ------------------------------------------------------------
-def run_esg_pipeline(pdf_urls):
-    """
-    Runs the full ESG pipeline on a list of PDF URLs and returns
-    a dict with the final summaries & breakdowns.
-    """
-    # 1) PDF Extraction
-    pdf_agent = PDFExtractorAgent()
-    pdf_texts = pdf_agent.process(pdf_urls)
-    if not pdf_texts:
-        return {
-            "environmental_summary": "",
-            "environmental_breakdown": {},
-            "social_summary": "",
-            "social_breakdown": {},
-            "governance_summary": "",
-            "governance_breakdown": {}
+
+
+def generate_analysis_prompt(text: str, company: str) -> str:
+    """Generate the prompt for ESG analysis."""
+    return f"""You are an expert ESG analyst. Analyze the following text from {company}'s documents and provide a comprehensive ESG analysis.
+Focus on extracting and analyzing:
+
+Environmental factors:
+- Carbon emissions and climate impact
+- Resource usage (energy, water, materials)
+- Waste management and recycling
+- Environmental risks and opportunities
+
+Social factors:
+- Employee relations and workplace practices
+- Diversity and inclusion initiatives
+- Community engagement and impact
+- Product responsibility and customer relations
+
+Governance factors:
+- Board structure and independence
+- Executive compensation
+- Risk management practices
+- Corporate ethics and transparency
+
+IMPORTANT: You MUST respond with ONLY a JSON object. Do not include any other text, markdown formatting, or explanations.
+The JSON must EXACTLY match this structure - any deviation will cause an error:
+{{
+    "environmental_summary": "A detailed paragraph analyzing overall environmental performance...",
+    "environmental_breakdown": {{
+        "Carbon Emissions": "Detailed analysis of carbon emissions data and initiatives...",
+        "Energy Use": "Analysis of energy consumption and renewable energy adoption...",
+        "Water Usage": "Assessment of water management practices and metrics...",
+        "Waste Management": "Evaluation of waste reduction and recycling programs...",
+        "Climate Risk Disclosures": "Analysis of climate-related risk reporting..."
+    }},
+    "social_summary": "A detailed paragraph analyzing overall social impact...",
+    "social_breakdown": {{
+        "Labour Practices": "Analysis of workplace safety, training, and employee relations...",
+        "Diversity & Inclusion": "Assessment of workforce diversity metrics and initiatives...",
+        "Community Impact": "Evaluation of community engagement and development programs...",
+        "Product/Service Responsibility": "Analysis of product safety and quality measures...",
+        "Human Rights": "Assessment of human rights policies and compliance..."
+    }},
+    "governance_summary": "A detailed paragraph analyzing overall governance structure...",
+    "governance_breakdown": {{
+        "Board Composition": "Analysis of board structure and independence...",
+        "Executive Compensation": "Assessment of compensation policies and alignment...",
+        "Transparency": "Evaluation of disclosure practices and reporting...",
+        "Regulatory Compliance": "Analysis of compliance with regulations...",
+        "Ethical Practices": "Assessment of ethics policies and implementation...",
+        "Governance Risk": "Evaluation of governance-related risks..."
+    }}
+}}
+
+Text to analyze:
+{text[:100000]}"""
+
+
+async def analyze_with_gemini(text: str, company: str) -> Dict:
+    """Analyze text using Gemini API and return structured ESG analysis."""
+    logging.info(f"Starting Gemini analysis for {company}")
+
+    try:
+        response = gemini_chat_completion(
+            prompt=generate_analysis_prompt(text, company),
+            max_tokens=2000,
+            temperature=0.2
+        )
+
+        content = response["choices"][0]["message"]["content"]
+
+        # If content is already a dict, validate its structure
+        if isinstance(content, dict):
+            parsed_content = content
+        else:
+            # Try to parse as JSON if it's a string
+            try:
+                parsed_content = json.loads(content)
+            except json.JSONDecodeError:
+                logging.error(
+                    f"Failed to parse Gemini response for {company}: {content}")
+                raise ValueError(
+                    f"Invalid JSON format from Gemini API for {company}")
+
+        # Validate the structure
+        required_fields = {
+            "environmental_summary": str,
+            "environmental_breakdown": {
+                "Carbon Emissions": str,
+                "Energy Use": str,
+                "Water Usage": str,
+                "Waste Management": str,
+                "Climate Risk Disclosures": str
+            },
+            "social_summary": str,
+            "social_breakdown": {
+                "Labour Practices": str,
+                "Diversity & Inclusion": str,
+                "Community Impact": str,
+                "Product/Service Responsibility": str,
+                "Human Rights": str
+            },
+            "governance_summary": str,
+            "governance_breakdown": {
+                "Board Composition": str,
+                "Executive Compensation": str,
+                "Transparency": str,
+                "Regulatory Compliance": str,
+                "Ethical Practices": str,
+                "Governance Risk": str
+            }
         }
 
-    combined_text = "\n".join(pdf_texts)
+        # Check if all required fields are present and have correct types
+        def validate_structure(data: Dict, template: Dict, path: str = "") -> None:
+            for key, expected_type in template.items():
+                if key not in data:
+                    raise ValueError(f"Missing required field: {path + key}")
+                if isinstance(expected_type, dict):
+                    if not isinstance(data[key], dict):
+                        raise ValueError(
+                            f"Field {path + key} should be an object")
+                    validate_structure(
+                        data[key], expected_type, f"{path + key}.")
+                elif not isinstance(data[key], expected_type):
+                    raise ValueError(
+                        f"Field {path + key} should be of type {expected_type.__name__}")
 
-    # 2) ESG Analysis
-    esg_agent = ESGAnalystAgent()
-    esg_results = esg_agent.process(combined_text)
+        validate_structure(parsed_content, required_fields)
+        return parsed_content
 
-    # 3) Aggregate raw metrics
-    aggregated_metrics = aggregate_raw_metrics(esg_results)
-
-    # 4) Summaries
-    summarizer_agent = ReportSummarizerAgent()
-    summaries = summarizer_agent.process(aggregated_metrics)
-
-    # 5) Key metrics breakdown
-    breakdown_agent = KeyMetricsBreakdownAgent()
-    breakdowns = breakdown_agent.process(aggregated_metrics)
-
-    return {
-        "environmental_summary": summaries.get("Environmental", ""),
-        "environmental_breakdown": breakdowns.get("Environmental", {}),
-        "social_summary": summaries.get("Social", ""),
-        "social_breakdown": breakdowns.get("Social", {}),
-        "governance_summary": summaries.get("Governance", ""),
-        "governance_breakdown": breakdowns.get("Governance", {})
-    }
-
-# ------------------------------------------------------------
-# 7) Main loop: For each company, run pipeline & insert results
-# ------------------------------------------------------------
-for idx, row in resources_df.iterrows():
-    company_name = row["company"]
-    pdf_urls = row["urls"]  # This should be a list of PDF URLs
-
-    if not pdf_urls or len(pdf_urls) == 0:
-        print(f"[SKIP] No URLs for company: {company_name}")
-        continue
-
-    print(f"\n=== Processing ESG for company: {company_name} ===")
-    try:
-        results = run_esg_pipeline(pdf_urls)
     except Exception as e:
-        print(f"Error processing {company_name}: {e}")
-        continue
+        logging.error(
+            f"Failed to analyze text with Gemini for {company}: {str(e)}")
+        raise
 
-    # Prepare data for insert
-    insert_payload = {
-        "company": company_name,
-        "environmental_summary": results["environmental_summary"],
-        "environmental_breakdown": results["environmental_breakdown"],  # JSONB
-        "social_summary": results["social_summary"],
-        "social_breakdown": results["social_breakdown"],               # JSONB
-        "governance_summary": results["governance_summary"],
-        "governance_breakdown": results["governance_breakdown"]        # JSONB
-    }
 
-    # Insert into the esg_report_analysis table
-    insert_response = supabase.table('esg_report_analysis').insert(insert_payload).execute()
+async def run_esg_pipeline(resources: List[Dict]) -> Dict:
+    """Run the ESG analysis pipeline for the given resources."""
+    logging.info(f"Starting ESG pipeline for {len(resources)} resources")
 
-    # Convert the response to a dict using model_dump()
-    insert_response_dict = insert_response.model_dump()
-    if insert_response_dict.get("error"):
-        print(f"❌ Failed to insert data for {company_name}. Error: {insert_response_dict.get('error')}")
-        print("Response data:", insert_response_dict.get("data"))
-    else:
-        print(f"✅ ESG analysis inserted for {company_name}!")
+    for resource in resources:
+        ticker = resource['ticker']
+        company = resource['company']
 
-print("\nAll done!")
+        try:
+            # Check if record exists
+            existing_record = supabase.table('esg_report_analysis').select(
+                "*").eq('ticker', ticker).execute()
+
+            if existing_record.data:
+                logging.info(f"Skipping {ticker} - record already exists")
+                continue
+
+            logging.info(f"Processing {ticker} - {company}")
+
+            # Extract text from PDFs
+            pdf_extractor = PDFExtractorAgent()
+            combined_text = pdf_extractor.process(resource['urls'])
+
+            if not combined_text:
+                logging.warning(f"Skipping {ticker} - no text extracted")
+                continue
+
+            # Analyze with Gemini
+            analysis = await analyze_with_gemini(combined_text, company)
+
+            # Prepare results
+            results = {
+                'ticker': ticker,
+                'company': company,
+                'environmental_summary': analysis['environmental_summary'],
+                'environmental_breakdown': analysis['environmental_breakdown'],
+                'social_summary': analysis['social_summary'],
+                'social_breakdown': analysis['social_breakdown'],
+                'governance_summary': analysis['governance_summary'],
+                'governance_breakdown': analysis['governance_breakdown'],
+                'created_at': datetime.utcnow().isoformat()
+            }
+
+            # Upsert to Supabase
+            try:
+                result = supabase.table('esg_report_analysis').upsert(
+                    results,
+                    on_conflict='ticker'
+                ).execute()
+
+                if result.data:
+                    logging.info(
+                        f"Successfully processed and stored analysis for {ticker}")
+                else:
+                    logging.warning(
+                        f"Upsert completed but no data returned for {ticker}")
+
+            except Exception as e:
+                logging.error(
+                    f"Failed to store analysis for {ticker}: {str(e)}")
+                continue
+
+        except Exception as e:
+            logging.error(f"Failed to process {ticker}: {str(e)}")
+            continue
+
+    logging.info("ESG pipeline completed")
+
+
+async def main():
+    """Main entry point for the ESG analysis pipeline."""
+    logging.info("Starting ESG analysis pipeline")
+
+    for idx, row in resources_df.iterrows():
+        company_name = row["company"]
+        ticker = row["ticker"]
+        pdf_urls = row["urls"]
+
+        if not pdf_urls or len(pdf_urls) == 0:
+            logging.warning(f"Skipping {ticker} - no URLs found")
+            continue
+
+        try:
+            resource = {
+                'ticker': ticker,
+                'company': company_name,
+                'urls': pdf_urls
+            }
+            await run_esg_pipeline([resource])
+        except Exception as e:
+            logging.error(f"Failed to process {ticker}: {str(e)}")
+            continue
+
+    logging.info("Pipeline completed")
+
+# Run the async main function
+if __name__ == "__main__":
+    asyncio.run(main())
