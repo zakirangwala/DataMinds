@@ -15,7 +15,7 @@ from pathlib import Path
 # Add the root directory to Python path
 root_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(root_dir))
-from utils.db import execute_query  # Import the database utility
+from utils.db import execute_query, get_companies  # Import the database utility
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -351,12 +351,13 @@ def search_2025_reports(sorted_companies, tickers):
             # Insert into Supabase using the utility function
             try:
                 query = """
-                    INSERT INTO resources (ticker, file_names, titles, urls, source)
-                    VALUES (%s, %s, %s, %s, %s)
+                    INSERT INTO resources (ticker, company, file_names, titles, urls, source)
+                    VALUES (%s, %s, %s, %s, %s, %s)
                 """
                 execute_query(query, (
                     # Get corresponding ticker
                     tickers[sorted_companies.index(company)],
+                    company,
                     Json([pdf["file_name"] for pdf in unique_pdfs]),
                     Json([pdf["title"] for pdf in unique_pdfs]),
                     Json([pdf["url"] for pdf in unique_pdfs]),
@@ -401,5 +402,10 @@ def search_2025_reports(sorted_companies, tickers):
 
 
 if __name__ == "__main__":
-    companies = COMPANIES
-    search_2025_reports(companies, TICKERS)
+    # companies = COMPANIES
+    data = get_companies()
+
+    companies= [item[0] for item in data]
+    tickers= [item[1] for item in data]
+    print(len(companies), len(tickers))
+    search_2025_reports(companies, tickers)
