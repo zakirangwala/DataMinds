@@ -5,6 +5,20 @@ from typing import Dict, List, Any
 from supabase import create_client, Client
 import os
 from dotenv import load_dotenv
+import google.generativeai as genai
+import time
+from datetime import datetime
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('esg_scoring.log'),
+        logging.StreamHandler()
+    ]
+)
 
 
 class ESGScoringAgent:
@@ -15,8 +29,14 @@ class ESGScoringAgent:
         key = os.getenv("SUPABASE_API_KEY")
         self.supabase: Client = create_client(url, key)
 
-        # Create llm_input directory if it doesn't exist
-        os.makedirs('llm_input', exist_ok=True)
+        # Initialize Gemini
+        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
+
+        # Rate limiting settings (15 RPM)
+        self.request_timestamps = []
+        self.max_requests_per_minute = 15
+        self.request_window = 60  # seconds
 
         # Default scores when data is missing
         self.default_scores = {
@@ -25,6 +45,142 @@ class ESGScoringAgent:
             'governance': 50,
             'total_esg': 50
         }
+
+        logging.info("ESGScoringAgent initialized successfully")
+
+    def _rate_limit(self):
+        """
+        Implement rate limiting for Gemini API
+        """
+        current_time = time.time()
+
+        # Remove timestamps older than our window
+        self.request_timestamps = [ts for ts in self.request_timestamps
+                                   if current_time - ts < self.request_window]
+
+        # If we've hit our limit, wait
+        if len(self.request_timestamps) >= self.max_requests_per_minute:
+            sleep_time = self.request_timestamps[0] + \
+                self.request_window - current_time
+            if sleep_time > 0:
+                logging.info(
+                    f"Rate limit reached. Waiting for {sleep_time:.2f} seconds")
+                time.sleep(sleep_time)
+            self.request_timestamps = self.request_timestamps[1:]
+
+        # Add current request timestamp
+        self.request_timestamps.append(current_time)
+
+    def _validate_scores(self, scores: Dict[str, float]) -> bool:
+        """
+        Validate the scores returned by Gemini
+        """
+        required_keys = ['environmental_score', 'social_score',
+                         'governance_score', 'total_esg_score']
+
+        # Check if all required keys exist
+        if not all(key in scores for key in required_keys):
+            logging.error(f"Missing required keys in scores: {scores}")
+            return False
+
+        # Check if all values are floats and within reasonable range (0-100)
+        for key in required_keys:
+            value = scores[key]
+            if not isinstance(value, (int, float)):
+                logging.error(f"Invalid score type for {key}: {type(value)}")
+                return False
+            if not (0 <= value <= 100):
+                logging.error(f"Score out of range for {key}: {value}")
+                return False
+
+        return True
+
+    def _generate_prompt(self, company_data: Dict[str, Any]) -> str:
+        """
+        Generate the prompt for Gemini API
+        """
+        company_name = company_data['company'].get('name', 'Unknown Company')
+        ticker = company_data['company'].get('ticker', 'Unknown Ticker')
+
+        prompt = f"""Given the following ESG data for {company_name} ({ticker}), compute Environmental (E), Social (S), and Governance (G) scores based on these weightings:
+
+Environmental (E):
+- Carbon Emissions (35%)
+- Energy Use (25%)
+- Water Usage (15%)
+- Waste Management (10%)
+- Climate Risk Disclosures (15%)
+
+Social (S):
+- Labour Practices (30%)
+- Diversity & Inclusion (25%)
+- Community Impact (15%)
+- Product/Service Responsibility (15%)
+- Human Rights (15%)
+
+Governance (G):
+- Board Composition (25%)
+- Executive Compensation (20%)
+- Transparency (15%)
+- Regulatory Compliance (15%)
+- Ethical Practices (15%)
+- Governance Risk (10%)
+
+Company Data:
+{json.dumps(company_data, indent=2)}
+
+IMPORTANT: 
+1. All scores MUST be numeric values between 1 and 100
+2. If data is insufficient for any category, use a baseline score of 50
+3. The total_esg_score should be a weighted average: 40% Environmental, 30% Social, 30% Governance
+4. Round all scores to one decimal place
+
+Please provide the scores in the following JSON format:
+{{
+  "environmental_score": float,  # Must be between 1-100, use 50 if insufficient data
+  "social_score": float,        # Must be between 1-100, use 50 if insufficient data
+  "governance_score": float,    # Must be between 1-100, use 50 if insufficient data
+  "total_esg_score": float     # Weighted average of the above scores
+}}"""
+        return prompt
+
+    def _store_scores(self, ticker: str, scores: Dict[str, float]) -> None:
+        """
+        Store the computed scores in Supabase
+        """
+        try:
+            logging.info(f"Attempting to store scores for {ticker}")
+            logging.debug(f"Scores to store: {scores}")
+
+            # First try to update if record exists
+            update_result = self.supabase.table('final_esg_scores').update({
+                'environmental_score': scores['environmental_score'],
+                'social_score': scores['social_score'],
+                'governance_score': scores['governance_score'],
+                'total_esg_score': scores['total_esg_score']
+            }).eq('ticker', ticker).execute()
+
+            logging.debug(f"Update result: {update_result}")
+
+            # If no record was updated, insert new record
+            if not update_result.data:
+                logging.info(
+                    f"No existing record found for {ticker}, creating new record")
+                insert_result = self.supabase.table('final_esg_scores').insert({
+                    'ticker': ticker,
+                    'environmental_score': scores['environmental_score'],
+                    'social_score': scores['social_score'],
+                    'governance_score': scores['governance_score'],
+                    'total_esg_score': scores['total_esg_score']
+                }).execute()
+                logging.debug(f"Insert result: {insert_result}")
+
+            logging.info(f"Successfully stored scores for {ticker}")
+
+        except Exception as e:
+            logging.error(
+                f"Error storing scores for {ticker}: {str(e)}", exc_info=True)
+            raise
 
     def fetch_company_data(self, ticker: str) -> Dict[str, Any]:
         """
@@ -153,50 +309,113 @@ class ESGScoringAgent:
 
         return processed_data
 
-    def compute_scores(self, processed_data: Dict[str, Any]) -> Dict[str, Any]:
+    def compute_scores(self, processed_data: Dict[str, Any]) -> Dict[str, float]:
         """
-        Prepare data for LLM scoring by ensuring all necessary information is present
+        Use Gemini to compute ESG scores
         """
         if not processed_data:
+            logging.error("No processed data provided for scoring")
             return None
 
-        # Add default scores where missing
-        if not processed_data.get('esg_scores'):
-            processed_data['esg_scores'] = self.default_scores
+        try:
+            # Apply rate limiting
+            self._rate_limit()
 
-        return processed_data
+            # Generate prompt
+            prompt = self._generate_prompt(processed_data)
+            logging.info(
+                f"Generated prompt for {processed_data['company'].get('ticker', 'Unknown')}")
+            logging.debug(f"Prompt content: {prompt}")
+
+            # Get response from Gemini
+            logging.info("Sending request to Gemini API")
+            response = self.model.generate_content(prompt)
+            logging.info("Received response from Gemini API")
+            logging.debug(f"Raw response: {response.text}")
+
+            # Extract JSON from response
+            response_text = response.text
+            json_str = response_text[response_text.find(
+                '{'):response_text.rfind('}')+1]
+            logging.debug(f"Extracted JSON string: {json_str}")
+
+            try:
+                scores = json.loads(json_str)
+                logging.info(f"Successfully parsed JSON response: {scores}")
+
+                # Replace any None values with default scores
+                for key in ['environmental_score', 'social_score', 'governance_score']:
+                    if scores.get(key) is None:
+                        logging.warning(
+                            f"Missing {key}, using default score of 50")
+                        scores[key] = 50.0
+
+                # Recompute total_esg_score if missing or invalid
+                if scores.get('total_esg_score') is None:
+                    scores['total_esg_score'] = round(
+                        0.4 * scores['environmental_score'] +
+                        0.3 * scores['social_score'] +
+                        0.3 * scores['governance_score'],
+                        1
+                    )
+                    logging.info(
+                        f"Recomputed total_esg_score: {scores['total_esg_score']}")
+
+            except json.JSONDecodeError as e:
+                logging.error(f"Failed to parse JSON response: {e}")
+                logging.error(f"Response text: {response_text}")
+                return None
+
+            # Validate scores
+            if not self._validate_scores(scores):
+                logging.error("Score validation failed")
+                return None
+
+            return scores
+
+        except Exception as e:
+            logging.error(f"Error computing scores: {str(e)}", exc_info=True)
+            return None
 
     def process_company(self, ticker: str) -> None:
         """
-        Process a single company's ESG data and store for LLM input
+        Process a single company's ESG data and compute scores
         """
         try:
+            logging.info(f"Starting processing for {ticker}")
+
             # Fetch raw data
             raw_data = self.fetch_company_data(ticker)
             if not raw_data:
-                print(f"No data found for {ticker}")
+                logging.error(f"No data found for {ticker}")
                 return
 
             # Preprocess data
             processed_data = self.preprocess_data(raw_data)
             if not processed_data:
-                print(f"Failed to process data for {ticker}")
+                logging.error(f"Failed to process data for {ticker}")
                 return
 
-            # Prepare for LLM scoring
-            llm_ready_data = self.compute_scores(processed_data)
-            if not llm_ready_data:
-                print(f"Failed to prepare LLM data for {ticker}")
+            # Log processed data structure
+            logging.info(f"Processed data structure for {ticker}:")
+            for key in processed_data:
+                logging.info(
+                    f"- {key}: {'Present' if processed_data[key] else 'Missing'}")
+
+            # Compute scores using Gemini
+            scores = self.compute_scores(processed_data)
+            if not scores:
+                logging.error(f"Failed to compute scores for {ticker}")
                 return
 
-            # Save processed data
-            output_path = f'llm_input/{ticker}.json'
-            with open(output_path, 'w') as f:
-                json.dump(llm_ready_data, f, indent=4)
-            print(f"Successfully processed and stored data for {ticker}")
+            # Store scores in database
+            self._store_scores(ticker, scores)
+            logging.info(
+                f"Successfully processed and stored scores for {ticker}")
 
         except Exception as e:
-            print(f"Error processing {ticker}: {str(e)}")
+            logging.error(
+                f"Error processing {ticker}: {str(e)}", exc_info=True)
 
     def process_companies(self, tickers_file: str) -> None:
         """
@@ -207,13 +426,14 @@ class ESGScoringAgent:
             with open(tickers_file, 'r') as f:
                 tickers = [line.strip() for line in f if line.strip()]
 
-            print(f"Processing {len(tickers)} companies...")
+            logging.info(f"Processing {len(tickers)} companies...")
             for ticker in tickers:
-                print(f"\nProcessing {ticker}...")
+                logging.info(f"\nProcessing {ticker}...")
                 self.process_company(ticker)
 
         except Exception as e:
-            print(f"Error processing companies: {str(e)}")
+            logging.error(
+                f"Error processing companies: {str(e)}", exc_info=True)
 
 
 # Example usage
