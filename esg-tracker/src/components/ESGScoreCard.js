@@ -2,17 +2,16 @@ import React from "react";
 
 const ESGScoreCard = ({ esgScores }) => {
   const {
-    environmental = 0,
-    social = 0,
-    governance = 0,
-    total = 0,
+    environmental_score = 0,
+    social_score = 0,
+    governance_score = 0,
+    total_esg_score = 0,
   } = esgScores;
 
-  // Convert fractional scores (0–1) to 0–100 for display
-  const eScore = (environmental * 100).toFixed(0);
-  const sScore = (social * 100).toFixed(0);
-  const gScore = (governance * 100).toFixed(0);
-  const totalScore = (total * 100).toFixed(0);
+  const eScore = environmental_score.toFixed(0);
+  const sScore = social_score.toFixed(0);
+  const gScore = governance_score.toFixed(0);
+  const totalScore = total_esg_score.toFixed(0);
 
   const cardStyle = {
     backgroundColor: "#2D2F30",

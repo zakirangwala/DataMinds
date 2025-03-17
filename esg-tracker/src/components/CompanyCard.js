@@ -9,6 +9,13 @@ const CompanyCard = ({
   stockChange,
   onClick,
 }) => {
+  // Truncate summary to 100 characters
+  const snippetLength = 100;
+  const snippet =
+    summary.length > snippetLength
+      ? summary.substring(0, snippetLength) + "..."
+      : summary;
+
   // For stock price arrow:
   const stockIcon =
     stockChange >= 0 ? (
@@ -18,8 +25,9 @@ const CompanyCard = ({
     );
 
   // For ESG score arrow (based on esgTotal):
+  const threshold = 50;
   const esgIcon =
-    esgTotal >= 0.5 ? (
+    esgTotal >= threshold ? (
       <FaCaretUp style={{ color: "green" }} />
     ) : (
       <FaCaretDown style={{ color: "red" }} />
@@ -44,7 +52,8 @@ const CompanyCard = ({
       <h3 style={{ fontSize: "16px", fontWeight: "bold", margin: 0 }}>
         {name}
       </h3>
-      <p style={{ fontSize: "13px", color: "#ccc", margin: 0 }}>{summary}</p>
+      {/* Use truncated snippet instead of full summary */}
+      <p style={{ fontSize: "13px", color: "#ccc", margin: 0 }}>{snippet}</p>
 
       <div
         style={{
