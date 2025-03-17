@@ -16,6 +16,13 @@ import logging
 import psycopg2
 from psycopg2.extras import execute_batch
 from dateutil import parser
+import sys
+from pathlib import Path
+
+# Add the root directory to Python path
+root_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(root_dir))
+from utils.db import get_companies
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -25,103 +32,103 @@ logger = logging.getLogger(__name__)
 DB_URL = os.getenv('SUPABASE_URL')
 DB_PASSWORD = os.getenv('SUPABASE_PW')
 
-# tickers
-TICKERS = [
-    "ACX.TO",
-    "AKT-A.TO",
-    "ATH.TO",
-    "BIR.TO",
-    "CNE.TO",
-    "CJ.TO",
-    "FRU.TO",
-    "FEC.TO",
-    "GFR.TO",
-    "IPCO.TO",
-    "JOY.TO",
-    "KEC.TO",
-    "MEG.TO",
-    "NVA.TO",
-    "BR.TO",
-    "SOY.TO",
-    "ADW-A.TO",
-    "CSW-A.TO",
-    "CSW-B.TO",
-    "RSI.TO",
-    "DOL.TO",
-    "EMP-A.TO",
-    "WN-PA.TO",
-    "BU.TO",
-    "DTEA.V",
-    "HLF.TO",
-    "JWEL.TO",
-    "MFI.TO",
-    "OTEX.TO",
-    "DSG.TO",
-    "KXS.TO",
-    "SHOP.TO",
-    "CSU.TO",
-    "LSPD.TO",
-    "DCBO.TO",
-    "ENGH.TO",
-    "HAI.TO",
-    "TIXT.TO",
-    "DND.TO",
-    "ET.TO",
-    "BLN.TO",
-    "TSAT.TO",
-    "ALYA.TO",
-    "BTE.TO",
-]
+# # tickers
+# TICKERS = [
+#     "ACX.TO",
+#     "AKT-A.TO",
+#     "ATH.TO",
+#     "BIR.TO",
+#     "CNE.TO",
+#     "CJ.TO",
+#     "FRU.TO",
+#     "FEC.TO",
+#     "GFR.TO",
+#     "IPCO.TO",
+#     "JOY.TO",
+#     "KEC.TO",
+#     "MEG.TO",
+#     "NVA.TO",
+#     "BR.TO",
+#     "SOY.TO",
+#     "ADW-A.TO",
+#     "CSW-A.TO",
+#     "CSW-B.TO",
+#     "RSI.TO",
+#     "DOL.TO",
+#     "EMP-A.TO",
+#     "WN-PA.TO",
+#     "BU.TO",
+#     "DTEA.V",
+#     "HLF.TO",
+#     "JWEL.TO",
+#     "MFI.TO",
+#     "OTEX.TO",
+#     "DSG.TO",
+#     "KXS.TO",
+#     "SHOP.TO",
+#     "CSU.TO",
+#     "LSPD.TO",
+#     "DCBO.TO",
+#     "ENGH.TO",
+#     "HAI.TO",
+#     "TIXT.TO",
+#     "DND.TO",
+#     "ET.TO",
+#     "BLN.TO",
+#     "TSAT.TO",
+#     "ALYA.TO",
+#     "BTE.TO",
+# ]
 
 
-# List of companies
-COMPANIES = [
-    "ACT ENERGY TECHNOLOGIES LTD",
-    "AKITA DRILLING LTD., CL.A, NV",
-    "ATHABASCA OIL CORP",
-    "BIRCHCLIFF ENERGY LTD.",
-    "CANACOL ENERGY LTD",
-    "CARDINAL ENERGY LTD",
-    "FREEHOLD ROYALTIES LTD.",
-    "FRONTERA ENERGY CORPORATION",
-    "GREENFIRE RESOURCES LTD",
-    "INTERNATIONAL PETROLEUM CORPORA",
-    "JOURNEY ENERGY INC",
-    "KIWETINOHK ENERGY CORP",
-    "MEG ENERGY CORP.",
-    "NUVISTA ENERGY LTD.",
-    "BIG ROCK BREWERY INC.",
-    "MOLSON COORS CANADA INC., CL.A",
-    "LASSONDE INDUSTRIES INC., CL A",
-    "SUNOPTA, INC.",
-    "ANDREW PELLER LIMITED, CL.A",
-    "CORBY SPIRIT AND WINE LTD CLASS",
-    "ROGERS SUGAR INC",
-    "DOLLARAMA INC",
-    "EMPIRE COMPANY LIMITED",
-    "GEORGE WESTON LIMITED PR SERIES",
-    "BURCON NUTRASCIENCE CORPORATION",
-    "DAVIDSTEA INC",
-    "HIGH LINER",
-    "JAMIESON WELLNESS INC",
-    "MAPLE LEAF FOODS",
-    "OPEN TEXT CORPORATION",
-    "DESCARTES SYS",
-    "KINAXIS INC",
-    "SHOPIFY INC",
-    "CONSTELLATION SOFTWARE INC.",
-    "LIGHTSPEED COMMERCE INC",
-    "DOCEBO INC",
-    "ENGHOUSE SYSTEMS LIMITED",
-    "HAIVISION SYSTEMS INC",
-    "TELUS INTERNATIONAL CDA INC",
-    "DYE AND DURHAM LIMITED",
-    "EVERTZ TECHNOLOGIES LIMITED",
-    "BLACKLINE SAFETY CORP",
-    "TELESAT CORPORATION",
-    "ALITHYA GROUP INC",
-    "BAYTEX ENERGY CORP."
-]
+# # List of companies
+# COMPANIES = [
+#     "ACT ENERGY TECHNOLOGIES LTD",
+#     "AKITA DRILLING LTD., CL.A, NV",
+#     "ATHABASCA OIL CORP",
+#     "BIRCHCLIFF ENERGY LTD.",
+#     "CANACOL ENERGY LTD",
+#     "CARDINAL ENERGY LTD",
+#     "FREEHOLD ROYALTIES LTD.",
+#     "FRONTERA ENERGY CORPORATION",
+#     "GREENFIRE RESOURCES LTD",
+#     "INTERNATIONAL PETROLEUM CORPORA",
+#     "JOURNEY ENERGY INC",
+#     "KIWETINOHK ENERGY CORP",
+#     "MEG ENERGY CORP.",
+#     "NUVISTA ENERGY LTD.",
+#     "BIG ROCK BREWERY INC.",
+#     "MOLSON COORS CANADA INC., CL.A",
+#     "LASSONDE INDUSTRIES INC., CL A",
+#     "SUNOPTA, INC.",
+#     "ANDREW PELLER LIMITED, CL.A",
+#     "CORBY SPIRIT AND WINE LTD CLASS",
+#     "ROGERS SUGAR INC",
+#     "DOLLARAMA INC",
+#     "EMPIRE COMPANY LIMITED",
+#     "GEORGE WESTON LIMITED PR SERIES",
+#     "BURCON NUTRASCIENCE CORPORATION",
+#     "DAVIDSTEA INC",
+#     "HIGH LINER",
+#     "JAMIESON WELLNESS INC",
+#     "MAPLE LEAF FOODS",
+#     "OPEN TEXT CORPORATION",
+#     "DESCARTES SYS",
+#     "KINAXIS INC",
+#     "SHOPIFY INC",
+#     "CONSTELLATION SOFTWARE INC.",
+#     "LIGHTSPEED COMMERCE INC",
+#     "DOCEBO INC",
+#     "ENGHOUSE SYSTEMS LIMITED",
+#     "HAIVISION SYSTEMS INC",
+#     "TELUS INTERNATIONAL CDA INC",
+#     "DYE AND DURHAM LIMITED",
+#     "EVERTZ TECHNOLOGIES LIMITED",
+#     "BLACKLINE SAFETY CORP",
+#     "TELESAT CORPORATION",
+#     "ALITHYA GROUP INC",
+#     "BAYTEX ENERGY CORP."
+# ]
 
 
 def setup_selenium():
@@ -289,7 +296,7 @@ def insert_news_data(conn, company_name, ticker, results):
         cursor.close()
 
 
-def main():
+def main(companies, tickers):
     # Initialize Selenium once for all companies
     driver = setup_selenium()
 
@@ -301,7 +308,7 @@ def main():
 
     try:
         # Process each company
-        for company, ticker in zip(COMPANIES, TICKERS):
+        for company, ticker in zip(companies, tickers):
             logger.info(f"Processing {company} ({ticker})")
 
             # Process company
@@ -325,4 +332,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    data = get_companies()
+
+    companies= [item[0] for item in data]
+    tickers= [item[1] for item in data]
+    main(companies, tickers)

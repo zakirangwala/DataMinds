@@ -1,12 +1,21 @@
-import requests
-import csv
-import time
-import random
-import re
-import os
-from urllib.parse import quote_plus, urlparse
-from bs4 import BeautifulSoup
+from psycopg2.extras import Json  # For handling JSON data
+import psycopg2
 import logging
+from bs4 import BeautifulSoup
+from urllib.parse import quote_plus, urlparse
+import re
+import random
+import time
+import csv
+import requests
+import os
+import sys
+from pathlib import Path
+
+# Add the root directory to Python path
+root_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(root_dir))
+from utils.db import execute_query  # Import the database utility
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -14,7 +23,8 @@ logger = logging.getLogger(__name__)
 
 # Database connection parameters
 DB_URL = os.getenv('SUPABASE_URL')
-DB_PASSWORD = os.getenv('SUPABASE_PW')
+if not DB_URL:
+    raise ValueError("SUPABASE_URL environment variable is not set")
 
 # tickers
 TICKERS = [
@@ -121,45 +131,43 @@ user_agents = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
-    ]
+]
 
 # Search engines including DuckDuckGo
 search_engines = [
     {
-    "name": "DuckDuckGo",
-    "url": "https://html.duckduckgo.com/html/?q={query}",
-    "link_selector": "a.result__a",
-    "delay": (6, 10)  # Longer delay for DuckDuckGo to avoid rate limiting
+        "name": "DuckDuckGo",
+        "url": "https://html.duckduckgo.com/html/?q={query}",
+        "link_selector": "a.result__a",
+        "delay": (6, 10)  # Longer delay for DuckDuckGo to avoid rate limiting
     },
     {
-    "name": "Brave Search",
-    "url": "https://search.brave.com/search?q={query}",
-    "delay": (4, 7)
+        "name": "Brave Search",
+        "url": "https://search.brave.com/search?q={query}",
+        "delay": (4, 7)
     },
     {
-    "name": "Mojeek",
-    "url": "https://www.mojeek.com/search?q={query}",
-    "delay": (3, 6)
+        "name": "Mojeek",
+        "url": "https://www.mojeek.com/search?q={query}",
+        "delay": (3, 6)
     }
 ]
 
-# Valid sectors (temp)
-correct_sectors = ['Consumer Defensive', 'Consumer Cyclical', 'Energy']
 
-def search_2025_reports(sorted_companies):
+def search_2025_reports(sorted_companies, tickers):
     """
-    Search for 2025 reports for a list of companies.
-    Includes DuckDuckGo as one of the search engines.
+    Search for 2025 reports for a list of companies and upload results to Supabase.
 
     Args:
-        companies (list): List of company names
+        sorted_companies (list): List of company names
+        supabase_client: Supabase client instance
 
     Returns:
         str: Path to the CSV file with results
     """
     results = {}
 
-    for company in companies:
+    for company in sorted_companies:
         print(f"\n==== Searching for {company} 2025 reports ====")
         company_pdfs = []
 
@@ -192,8 +200,8 @@ def search_2025_reports(sorted_companies):
                 # Set headers with random user agent
                 headers = {
                     "User-Agent": random.choice(user_agents),
-                    "Accept": "text/html,application/xhtml+xml,application/xml;q= 0.9,*/*;q= 0.8",
-                    "Accept-Language": "en-US,en;q= 0.5",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                    "Accept-Language": "en-US,en;q=0.5",
                     "DNT": "1",
                     "Connection": "keep-alive",
                     "Upgrade-Insecure-Requests": "1"
@@ -201,7 +209,8 @@ def search_2025_reports(sorted_companies):
 
                 try:
                     # Make the request
-                    response = requests.get(search_url, headers=headers, timeout=15)
+                    response = requests.get(
+                        search_url, headers=headers, timeout=15)
 
                     # Check status code
                     if response.status_code == 200:
@@ -244,13 +253,15 @@ def search_2025_reports(sorted_companies):
                                 if engine["name"] == "DuckDuckGo" and 'uddg=' in href:
                                     try:
                                         from urllib.parse import unquote
-                                        href = unquote(re.search(r'uddg=([^&]+)', href).group(1))
+                                        href = unquote(
+                                            re.search(r'uddg=([^&]+)', href).group(1))
                                     except:
                                         pass  # If extraction fails, use original URL
 
                                 try:
                                     # Extract the filename from URL
-                                    file_name = os.path.basename(urlparse(href).path)
+                                    file_name = os.path.basename(
+                                        urlparse(href).path)
                                 except:
                                     file_name = f"{company}_2025_report_{pdf_links_found+1}.pdf"
 
@@ -272,36 +283,45 @@ def search_2025_reports(sorted_companies):
                                     break
 
                         if pdf_links_found == 0:
-                            print(f"    No 2025 PDFs found on {engine['name']}")
+                            print(
+                                f"    No 2025 PDFs found on {engine['name']}")
                     elif response.status_code == 202 and engine["name"] == "DuckDuckGo":
-                        print(f"    DuckDuckGo rate limited (status 202) - trying different approach")
+                        print(
+                            f"    DuckDuckGo rate limited (status 202) - trying different approach")
 
                         # Try the alternative DuckDuckGo URL
                         try:
                             alt_url = f"https://duckduckgo.com/?q={encoded_query}&ia=web"
-                            alt_response = requests.get(alt_url, headers=headers, timeout=15)
+                            alt_response = requests.get(
+                                alt_url, headers=headers, timeout=15)
 
                             if alt_response.status_code == 200:
-                                soup = BeautifulSoup(alt_response.text, 'html.parser')
+                                soup = BeautifulSoup(
+                                    alt_response.text, 'html.parser')
 
                                 # Try to find organic results
-                                links = soup.find_all('a', {'class': 'result__a'})
+                                links = soup.find_all(
+                                    'a', {'class': 'result__a'})
 
                                 # Process links (same as above)
                                 # Code would be similar to the previous block
-                                print(f"    Alternative approach found {len(links)} potential links")
+                                print(
+                                    f"    Alternative approach found {len(links)} potential links")
                         except Exception as e:
                             print(f"    Alternative approach failed: {str(e)}")
                     else:
-                        print(f"    {engine['name']} returned status code {response.status_code}")
+                        print(
+                            f"    {engine['name']} returned status code {response.status_code}")
 
                 except Exception as e:
                     print(f"    Error with {engine['name']}: {str(e)}")
 
                 # Add a random delay between searches to avoid rate limiting
                 delay = random.uniform(
-                    engine["delay"][0] if isinstance(engine["delay"], tuple) else engine["delay"],
-                    engine["delay"][1] if isinstance(engine["delay"], tuple) else engine["delay"]+3
+                    engine["delay"][0] if isinstance(
+                        engine["delay"], tuple) else engine["delay"],
+                    engine["delay"][1] if isinstance(
+                        engine["delay"], tuple) else engine["delay"]+3
                 )
                 time.sleep(delay)
 
@@ -328,24 +348,44 @@ def search_2025_reports(sorted_companies):
                 "sources": [pdf["source"] for pdf in unique_pdfs]
             }
 
-        # Print summary
-        if not unique_pdfs:
-            print(f"\n❌ No 2025 PDF reports found for {company}")
-        else:
-            print(f"\n✅ Found {len(unique_pdfs)} 2025 PDF reports for {company}:")
+            # Insert into Supabase using the utility function
+            try:
+                query = """
+                    INSERT INTO resources (ticker, file_names, titles, urls, source)
+                    VALUES (%s, %s, %s, %s, %s)
+                """
+                execute_query(query, (
+                    # Get corresponding ticker
+                    tickers[sorted_companies.index(company)],
+                    Json([pdf["file_name"] for pdf in unique_pdfs]),
+                    Json([pdf["title"] for pdf in unique_pdfs]),
+                    Json([pdf["url"] for pdf in unique_pdfs]),
+                    Json([pdf["source"] for pdf in unique_pdfs])
+                ))
+            except Exception as e:
+                logger.error(f"Database error: {str(e)}")
+
+            # Print summary
+            print(
+                f"\n✅ Found {len(unique_pdfs)} 2025 PDF reports for {company}:")
             for pdf in unique_pdfs:
                 print(f"  - {pdf['file_name']} ({pdf['source']})")
+        else:
+            print(f"\n❌ No 2025 PDF reports found for {company}")
 
     # Save results to CSV
     csv_filename = "company_2025_reports.csv"
 
     with open(csv_filename, 'w', newline='', encoding='utf-8') as csvfile:
-        fieldnames = ['company', 'file_names', 'titles', 'urls', 'sources']
+        fieldnames = ['ticker', 'company',
+                      'file_names', 'titles', 'urls', 'sources']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
         for company, data in results.items():
             writer.writerow({
+                # Get corresponding ticker
+                "ticker": tickers[sorted_companies.index(company)],
                 "company": company,
                 "file_names": ", ".join(data["file_names"]),
                 "titles": ", ".join(data["titles"]),
@@ -353,37 +393,13 @@ def search_2025_reports(sorted_companies):
                 "sources": ", ".join(data["sources"])
             })
 
-    print(f"\nTotal 2025 PDF links found: {sum(len(data['urls']) for data in results.values())}")
+    print(
+        f"\nTotal 2025 PDF links found: {sum(len(data['urls']) for data in results.values())}")
     print(f"Results saved to {csv_filename}")
 
     return csv_filename
 
 
-def get_companies(supabase_client):
-
-    # gather company names
-    response = (
-        supabase_client.table('companies')
-        .select('name, headquarters, sector')
-        .execute()
-    )
-    data = response.data
-    companies = []
-
-    #filter data
-    for item in data:
-        name = item['name']
-        if name and item['sector'] in correct_sectors:
-            companies.append(item['name'])
-
-    sorted_companies = sorted(companies)
-    return sorted_companies
-
 if __name__ == "__main__":
-    supabase_url = 'https://zwfponltzmrnwcgjevik.supabase.co'
-    supabase_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp3ZnBvbmx0em1ybndjZ2pldmlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIwNzA4NjksImV4cCI6MjA1NzY0Njg2OX0.efK6dWbpOLIlGb-4ORnIYmiiyjg11gCnB1gGquC2lH8'
-    supabase_client = create_client(supabase_url, supabase_key)
-
-    companies = get_companies(supabase_client)
-
-    search_2025_reports(companies)
+    companies = COMPANIES
+    search_2025_reports(companies, TICKERS)
