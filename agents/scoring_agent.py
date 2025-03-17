@@ -97,50 +97,73 @@ class ESGScoringAgent:
 
     def _generate_prompt(self, company_data: Dict[str, Any]) -> str:
         """
-        Generate the prompt for Gemini API
+        Generate the prompt for Gemini API using a structured ESG framework with boolean criteria
         """
         company_name = company_data['company'].get('name', 'Unknown Company')
         ticker = company_data['company'].get('ticker', 'Unknown Ticker')
 
-        prompt = f"""Given the following ESG data for {company_name} ({ticker}), compute Environmental (E), Social (S), and Governance (G) scores based on these weightings:
+        prompt = f"""Given the following ESG data for {company_name} ({ticker}), evaluate and score the company using this structured ESG framework.
 
-Environmental (E):
-- Carbon Emissions (35%)
-- Energy Use (25%)
-- Water Usage (15%)
-- Waste Management (10%)
-- Climate Risk Disclosures (15%)
+SCORING SYSTEM:
+- Each category (Environmental, Social, Governance) has specific criteria
+- Each criterion is evaluated as TRUE or FALSE based on evidence in the data
+- TRUE means there is ANY evidence that the company meets this criterion
+- FALSE means there is NO evidence that the company meets this criterion
+- Points are tallied by counting the number of TRUE values
+- Calculate percentage scores as (number of TRUE values / total possible criteria) * 100
 
-Social (S):
-- Labour Practices (30%)
-- Diversity & Inclusion (25%)
-- Community Impact (15%)
-- Product/Service Responsibility (15%)
-- Human Rights (15%)
+ENVIRONMENTAL CRITERIA (10 possible points):
+1. Climate Change Management: Evidence of emissions reduction targets or initiatives
+2. Carbon Emissions: Data on emissions measurement or reporting
+3. Energy Efficiency: Energy management programs or renewable energy use
+4. Water Management: Water conservation or efficiency initiatives
+5. Waste Management: Waste reduction or recycling programs
+6. Resource Use: Material efficiency or sustainable sourcing
+7. Biodiversity Protection: Policies or actions to protect biodiversity
+8. Environmental Policy: Existence of environmental policy
+9. Environmental Management System: Evidence of management systems
+10. Environmental Reporting: Evidence of environmental disclosure
 
-Governance (G):
-- Board Composition (25%)
-- Executive Compensation (20%)
-- Transparency (15%)
-- Regulatory Compliance (15%)
-- Ethical Practices (15%)
-- Governance Risk (10%)
+SOCIAL CRITERIA (10 possible points):
+1. Labor Practices: Evidence of fair labor practices
+2. Health and Safety: Worker health and safety programs
+3. Human Capital Development: Training or development programs
+4. Diversity and Inclusion: Workforce or leadership diversity initiatives
+5. Human Rights: Human rights policies
+6. Community Relations: Community engagement or investment
+7. Product Safety: Product safety measures
+8. Data Privacy and Security: Data protection policies
+9. Access and Affordability: Accessibility initiatives for products/services
+10. Supply Chain Management: Social standards in supply chain
+
+GOVERNANCE CRITERIA (10 possible points):
+1. Board Structure: Evidence of independent or diverse board
+2. Board Oversight: Board oversight of management
+3. Executive Compensation: Transparent executive compensation
+4. Shareholder Rights: Protection of shareholder rights
+5. Business Ethics: Code of ethics or ethics program
+6. Tax Transparency: Tax policy disclosure
+7. Bribery and Corruption: Anti-corruption policies
+8. Political Involvement: Political contributions or lobbying disclosure
+9. Regulatory Compliance: Evidence of regulatory compliance
+10. Risk Management: Systems to identify and manage ESG risks
 
 Company Data:
 {json.dumps(company_data, indent=2)}
 
-IMPORTANT: 
-1. All scores MUST be numeric values between 1 and 100
-2. If data is insufficient for any category, use a baseline score of 50
-3. The total_esg_score should be a weighted average: 40% Environmental, 30% Social, 30% Governance
-4. Round all scores to one decimal place
+RESPONSE FORMAT:
+For each criterion, provide:
+1. TRUE or FALSE evaluation
+2. Brief justification for the evaluation based on company data
+3. Calculate subtotal scores for each category as a percentage (count of TRUE values / 10 * 100)
+4. Calculate the total ESG score as weighted average: 40% Environmental, 30% Social, 30% Governance
 
-Please provide the scores in the following JSON format:
+Then provide the final scores in the following JSON format:
 {{
-  "environmental_score": float,  # Must be between 1-100, use 50 if insufficient data
-  "social_score": float,        # Must be between 1-100, use 50 if insufficient data
-  "governance_score": float,    # Must be between 1-100, use 50 if insufficient data
-  "total_esg_score": float     # Weighted average of the above scores
+  "environmental_score": float,  # Percentage score (0-100)
+  "social_score": float,         # Percentage score (0-100)
+  "governance_score": float,     # Percentage score (0-100)
+  "total_esg_score": float       # Weighted average of the above scores
 }}"""
         return prompt
 
