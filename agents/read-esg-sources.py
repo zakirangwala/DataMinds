@@ -521,54 +521,115 @@ Provide only the JSON output.
 
 def generate_analysis_prompt(text: str, company: str) -> str:
     """Generate the prompt for ESG analysis."""
-    return f"""You are an expert ESG analyst. Analyze the following text from {company}'s documents and provide a comprehensive ESG analysis.
-Focus on extracting and analyzing:
 
-Environmental factors:
-- Carbon emissions and climate impact
-- Resource usage (energy, water, materials)
-- Waste management and recycling
-- Environmental risks and opportunities
+    # Determine industry context based on company name
+    industry_context = ""
+    if "AIR" in company.upper() or "AIRLINES" in company.upper() or "AIRWAYS" in company.upper():
+        industry_context = """
+Industry Context: Aviation/Airlines
+- Core business: Passenger and cargo air transportation
+- Key ESG considerations:
+  * Environmental: Aircraft emissions, fuel efficiency, noise pollution
+  * Social: Passenger safety, employee training, customer service
+  * Governance: Safety compliance, route management, fleet maintenance
+- Regulatory framework: Aviation safety regulations, emissions standards
+- Industry peers: Major international and regional airlines
+"""
+    # Add more industry contexts as needed
 
-Social factors:
-- Employee relations and workplace practices
-- Diversity and inclusion initiatives
-- Community engagement and impact
-- Product responsibility and customer relations
+    return f"""You are an expert ESG analyst providing a comprehensive assessment of {company}. 
 
-Governance factors:
-- Board structure and independence
-- Executive compensation
-- Risk management practices
-- Corporate ethics and transparency
+VALIDATION REQUIREMENTS:
+1. FIRST, verify that the text being analyzed corresponds to {company}:
+   - Check for company name mentions, trademarks, and industry-specific terms
+   - If the text appears to be about a different company, focus ONLY on content that is definitely about {company}
+   - If no relevant content is found for {company}, respond with:
+     {{"error": "No relevant content found for {company}"}}
 
-IMPORTANT: You MUST respond with ONLY a JSON object. Do not include any other text, markdown formatting, or explanations.
-The JSON must EXACTLY match this structure - any deviation will cause an error:
+{industry_context}
+
+COMPANY CONTEXT:
+Company Name: {company}
+Analysis Rules:
+1. EVERY statement must explicitly reference {company} - never make generic statements
+2. Make specific, confident assertions about {company}'s actual practices
+3. Base analysis on:
+   - Industry standards for {company}'s sector
+   - {company}'s size and operational scope
+   - Regulatory requirements in {company}'s markets
+   - Common practices among {company}'s direct competitors
+4. NEVER use phrases like:
+   - "The text/document shows/indicates"
+   - "There is no information about"
+   - "It is not clear whether"
+   - "The company may have"
+5. Instead, make definitive statements like:
+   - "{company} implements..."
+   - "{company} maintains..."
+   - "{company} operates..."
+   - "{company} achieves..."
+6. When making inferences:
+   - Base them on industry knowledge and regulatory requirements
+   - Be specific about {company}'s practices
+   - Connect statements to {company}'s actual operations
+   - Maintain confident, authoritative tone
+7. Industry-Specific Focus:
+   - Analyze practices specific to {company}'s industry
+   - Compare against industry benchmarks
+   - Reference relevant regulatory requirements
+   - Consider market-specific challenges and opportunities
+
+ANALYSIS REQUIREMENTS:
+Provide a detailed ESG assessment covering:
+
+Environmental Performance:
+- Carbon footprint and emissions management (industry-specific metrics)
+- Energy efficiency initiatives (relevant to operations)
+- Resource consumption and conservation (sector-appropriate measures)
+- Waste reduction and recycling programs (industry context)
+- Climate risk management and adaptation (market-specific)
+
+Social Impact:
+- Workforce management and safety (industry standards)
+- Diversity and inclusion programs (company-wide)
+- Community engagement initiatives (local impact)
+- Customer service standards (industry-specific)
+- Human rights practices (supply chain focus)
+
+Governance Structure:
+- Board composition and oversight (industry expertise)
+- Executive compensation framework (market alignment)
+- Risk management systems (sector-specific)
+- Compliance programs (regulatory focus)
+- Corporate ethics initiatives (industry context)
+
+RESPONSE FORMAT:
+You MUST respond with ONLY a JSON object matching this exact structure:
 {{
-    "environmental_summary": "A detailed paragraph analyzing overall environmental performance...",
+    "environmental_summary": "A detailed paragraph specifically about {company}'s environmental performance...",
     "environmental_breakdown": {{
-        "Carbon Emissions": "Detailed analysis of carbon emissions data and initiatives...",
-        "Energy Use": "Analysis of energy consumption and renewable energy adoption...",
-        "Water Usage": "Assessment of water management practices and metrics...",
-        "Waste Management": "Evaluation of waste reduction and recycling programs...",
-        "Climate Risk Disclosures": "Analysis of climate-related risk reporting..."
+        "Carbon Emissions": "Specific analysis of {company}'s emissions management...",
+        "Energy Use": "Details of {company}'s energy efficiency programs...",
+        "Water Usage": "Analysis of {company}'s water management practices...",
+        "Waste Management": "Description of {company}'s waste reduction initiatives...",
+        "Climate Risk Disclosures": "Overview of {company}'s climate risk strategies..."
     }},
-    "social_summary": "A detailed paragraph analyzing overall social impact...",
+    "social_summary": "A detailed paragraph about {company}'s social impact and initiatives...",
     "social_breakdown": {{
-        "Labour Practices": "Analysis of workplace safety, training, and employee relations...",
-        "Diversity & Inclusion": "Assessment of workforce diversity metrics and initiatives...",
-        "Community Impact": "Evaluation of community engagement and development programs...",
-        "Product/Service Responsibility": "Analysis of product safety and quality measures...",
-        "Human Rights": "Assessment of human rights policies and compliance..."
+        "Labour Practices": "Analysis of {company}'s workforce programs...",
+        "Diversity & Inclusion": "Details of {company}'s diversity initiatives...",
+        "Community Impact": "Description of {company}'s community engagement...",
+        "Product/Service Responsibility": "Analysis of {company}'s service standards...",
+        "Human Rights": "Overview of {company}'s human rights practices..."
     }},
-    "governance_summary": "A detailed paragraph analyzing overall governance structure...",
+    "governance_summary": "A detailed paragraph about {company}'s governance structure...",
     "governance_breakdown": {{
-        "Board Composition": "Analysis of board structure and independence...",
-        "Executive Compensation": "Assessment of compensation policies and alignment...",
-        "Transparency": "Evaluation of disclosure practices and reporting...",
-        "Regulatory Compliance": "Analysis of compliance with regulations...",
-        "Ethical Practices": "Assessment of ethics policies and implementation...",
-        "Governance Risk": "Evaluation of governance-related risks..."
+        "Board Composition": "Analysis of {company}'s board structure...",
+        "Executive Compensation": "Details of {company}'s compensation framework...",
+        "Transparency": "Overview of {company}'s disclosure practices...",
+        "Regulatory Compliance": "Analysis of {company}'s compliance programs...",
+        "Ethical Practices": "Description of {company}'s ethics initiatives...",
+        "Governance Risk": "Analysis of {company}'s risk management..."
     }}
 }}
 

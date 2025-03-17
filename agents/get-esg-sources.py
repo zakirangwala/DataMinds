@@ -402,10 +402,11 @@ def search_2025_reports(sorted_companies, tickers):
 
 
 if __name__ == "__main__":
-    # companies = COMPANIES
-    data = get_companies()
+    companies = COMPANIES
+    tickers = TICKERS
+    # data = get_companies()
 
-    companies= [item[0] for item in data]
-    tickers= [item[1] for item in data]
+    # companies= [item[0] for item in data]
+    # tickers= [item[1] for item in data]
     print(len(companies), len(tickers))
     search_2025_reports(companies, tickers)
