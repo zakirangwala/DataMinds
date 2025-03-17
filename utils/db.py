@@ -56,13 +56,17 @@ def get_companies():
     """Get list of companies from the database"""
     try:
         query = """
-            SELECT name, headquarters, sector 
+            SELECT name, ticker
             FROM companies 
             WHERE name IS NOT NULL 
             ORDER BY name;
         """
         results = execute_query(query)
-        return [row[0] for row in results]  # Return just the company names
+        return [row for row in results]
     except Exception as e:
         logger.error(f"Error fetching companies: {str(e)}")
         raise
+
+
+# if __name__ == "__main__":
+#     print(get_companies())
