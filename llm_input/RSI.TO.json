@@ -1,0 +1,45 @@
+{
+    "company": {
+        "ticker": "RSI.TO",
+        "name": "ROGERS SUGAR INC",
+        "sector": "Consumer Defensive",
+        "industry": "Confectioners",
+        "long_business_summary": "Rogers Sugar Inc. engages in refining, packaging, marketing, and distribution of sugar, maple, and related products in Canada, the United States, Europe, and internationally. It operates in two segments: Sugar and Maple Products. The company offers granulated, plantation raw, yellow, brown, organic, icing, maple, stevia, liquid, smart sweetener blend, and coconut sugar; and syrups, jam and jelly mixes, and iced tea mixes. It also provides maple syrup products. The company markets its products to industrial, consumer, liquid, and export product markets under the Lantic name in Eastern Canada and Rogers name in Western Canada. Rogers Sugar Inc. was founded in 1888 and is headquartered in Vancouver, Canada.",
+        "market_cap": null,
+        "employees": 956
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": 33.6,
+        "esg_risk_severity": "Severe",
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-12-31",
+            "revenue": 323168000,
+            "net_income": 15808000,
+            "ebitda": 34289000,
+            "debt": null,
+            "gross_profit": 46740000
+        },
+        {
+            "report_date": "2024-09-30",
+            "revenue": 333029000,
+            "net_income": 18562000,
+            "ebitda": 37630000,
+            "debt": null,
+            "gross_profit": 49732000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": 7,
+        "board_risk": 4,
+        "compensation_risk": 3,
+        "shareholder_rights_risk": 8,
+        "overall_risk": 4
+    },
+    "sentiment_data": []
+}

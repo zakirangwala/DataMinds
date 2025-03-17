@@ -1,0 +1,37 @@
+{
+    "company": {
+        "ticker": "DTEA.V",
+        "name": "DAVIDSTEA INC",
+        "sector": "Consumer Defensive",
+        "industry": "Packaged Foods",
+        "long_business_summary": "DAVIDsTEA Inc. operates as a tea retailer in Canada and the United States. It offers loose-leaf teas, pre-packaged teas, tea sachets, and tea-related gifts; tea accessories; and food and beverages. The company also provides its products through e-commerce platform, davidstea.com; the Amazon marketplace, its wholesale customers; and company owned storefronts. DAVIDsTEA Inc. was incorporated in 2008 and is headquartered in Mount Royal, Canada.",
+        "market_cap": null,
+        "employees": null
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": null,
+        "esg_risk_severity": null,
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2025-03-15",
+            "revenue": null,
+            "net_income": null,
+            "ebitda": null,
+            "debt": null,
+            "gross_profit": null
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": null,
+        "board_risk": null,
+        "compensation_risk": null,
+        "shareholder_rights_risk": null,
+        "overall_risk": null
+    },
+    "sentiment_data": []
+}

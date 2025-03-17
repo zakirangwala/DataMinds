@@ -1,0 +1,82 @@
+{
+    "company": {
+        "ticker": "ADW-A.TO",
+        "name": "ANDREW PELLER LIMITED, CL.A",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Wineries & Distilleries",
+        "long_business_summary": "Andrew Peller Limited engages in the production and marketing of wines and craft beverage alcohol products in Canada. The company offers wines under Peller Estates, Trius, Thirty Bench, Wayne Gretzky, Sandhill, Red Rooster, Black Hills Estate Winery, Tinhorn Creek Vineyards, Gray Monk Estate Winery, Raven Conspiracy, and Conviction brands; Peller Family Vineyards, Copper Moon, Black Cellar, and XOXO brands; and Hochtaler, Domaine D'Or, Schloss Laderheim, Royal, and Sommet brands. It also produces craft beverage alcohol products, including ciders under the No Boats on Sunday brand; and seltzers, spirits, and cream whisky products under the Wayne Gretzky No. 99 brand. In addition, the company produces and markets personal winemaking products under Winexpert, Vine Co., Apres, Limited Edition, Passport Series, On the House, Wild Grapes, Island Mist, and Niagara Mist brands. Further, it owns and operates independent retail locations in Ontario under The Wine Shop, Wine Country Vintners, and Wine Country Merchants store names; and operates Andrew Peller Import Agency and The Small Winemaker's Collection Inc., which import and market premium wines. Andrew Peller Limited was founded in 1961 and is headquartered in Grimsby, Canada.",
+        "market_cap": null,
+        "employees": 1367
+    },
+    "esg_report_analysis": {
+        "environmental_summary": "ANDREW PELLER LIMITED, CL.A, as a winery and beverage producer, likely faces environmental challenges related to water usage, energy consumption in production and storage, and waste management from packaging and by-products. ANDREW PELLER LIMITED, CL.A likely implements measures to reduce its carbon footprint through energy-efficient equipment and transportation practices. ANDREW PELLER LIMITED, CL.A likely engages in sustainable viticulture practices to minimize environmental impact in grape cultivation.",
+        "environmental_breakdown": {
+            "Energy Use": "ANDREW PELLER LIMITED, CL.A likely implements energy-efficient technologies in its wineries and bottling plants to reduce overall energy consumption. ANDREW PELLER LIMITED, CL.A likely optimizes its refrigeration and storage processes to minimize energy use.",
+            "Water Usage": "ANDREW PELLER LIMITED, CL.A likely implements water conservation strategies in its vineyards and production facilities, including efficient irrigation systems and water recycling programs. ANDREW PELLER LIMITED, CL.A likely monitors and optimizes water usage to minimize its environmental impact.",
+            "Carbon Emissions": "ANDREW PELLER LIMITED, CL.A likely manages carbon emissions through energy efficiency programs in its production facilities and transportation logistics. ANDREW PELLER LIMITED, CL.A likely invests in renewable energy sources to power its operations, reducing its reliance on fossil fuels.",
+            "Waste Management": "ANDREW PELLER LIMITED, CL.A likely focuses on reducing waste through recycling programs for packaging materials and composting organic waste from grape production. ANDREW PELLER LIMITED, CL.A likely implements strategies to minimize waste generation and promote circular economy principles.",
+            "Climate Risk Disclosures": "ANDREW PELLER LIMITED, CL.A likely assesses and discloses climate-related risks, including potential impacts on grape yields and supply chains due to changing weather patterns. ANDREW PELLER LIMITED, CL.A likely develops adaptation strategies to mitigate these risks and ensure business continuity."
+        },
+        "social_summary": "ANDREW PELLER LIMITED, CL.A likely prioritizes workforce management and safety, adhering to industry standards and regulatory requirements. ANDREW PELLER LIMITED, CL.A likely fosters community engagement through local initiatives and supports responsible alcohol consumption. ANDREW PELLER LIMITED, CL.A likely maintains customer service standards to ensure satisfaction and loyalty.",
+        "social_breakdown": {
+            "Human Rights": "ANDREW PELLER LIMITED, CL.A likely implements due diligence processes to ensure human rights are respected throughout its supply chain. ANDREW PELLER LIMITED, CL.A likely works with suppliers who adhere to ethical labor practices and environmental standards.",
+            "Community Impact": "ANDREW PELLER LIMITED, CL.A likely engages in community initiatives, supporting local charities and organizations. ANDREW PELLER LIMITED, CL.A likely promotes responsible alcohol consumption through educational campaigns and partnerships.",
+            "Labour Practices": "ANDREW PELLER LIMITED, CL.A likely implements fair labor practices, providing competitive wages and benefits to its employees. ANDREW PELLER LIMITED, CL.A likely invests in training and development programs to enhance employee skills and career opportunities.",
+            "Diversity & Inclusion": "ANDREW PELLER LIMITED, CL.A likely promotes diversity and inclusion within its workforce, fostering a welcoming and equitable environment for all employees. ANDREW PELLER LIMITED, CL.A likely implements policies to ensure equal opportunities and prevent discrimination.",
+            "Product/Service Responsibility": "ANDREW PELLER LIMITED, CL.A likely maintains high standards for product quality and safety, ensuring customer satisfaction and trust. ANDREW PELLER LIMITED, CL.A likely provides clear and accurate product information to consumers."
+        },
+        "governance_summary": "ANDREW PELLER LIMITED, CL.A likely maintains a robust governance structure with an experienced board and executive team. ANDREW PELLER LIMITED, CL.A likely implements risk management systems to address sector-specific challenges and ensures regulatory compliance. ANDREW PELLER LIMITED, CL.A likely promotes ethical practices throughout its operations.",
+        "governance_breakdown": {
+            "Transparency": "ANDREW PELLER LIMITED, CL.A likely maintains transparent disclosure practices, providing stakeholders with timely and accurate information about its financial performance and operations. ANDREW PELLER LIMITED, CL.A likely adheres to regulatory reporting requirements and industry best practices.",
+            "Governance Risk": "ANDREW PELLER LIMITED, CL.A likely assesses and manages governance-related risks, including those related to board oversight, executive compensation, and regulatory compliance. ANDREW PELLER LIMITED, CL.A likely implements internal controls and risk mitigation strategies to protect shareholder value.",
+            "Board Composition": "ANDREW PELLER LIMITED, CL.A's board likely includes members with expertise in the beverage industry, finance, and corporate governance. ANDREW PELLER LIMITED, CL.A's board likely provides oversight and guidance to management, ensuring strategic alignment and accountability.",
+            "Ethical Practices": "ANDREW PELLER LIMITED, CL.A likely promotes ethical conduct throughout its organization, implementing a code of ethics and providing training to employees. ANDREW PELLER LIMITED, CL.A likely fosters a culture of integrity and accountability.",
+            "Regulatory Compliance": "ANDREW PELLER LIMITED, CL.A likely implements comprehensive compliance programs to adhere to all relevant laws and regulations in its markets. ANDREW PELLER LIMITED, CL.A likely monitors and updates its compliance procedures to address evolving regulatory requirements.",
+            "Executive Compensation": "ANDREW PELLER LIMITED, CL.A's executive compensation framework likely aligns with market standards and company performance, incentivizing executives to achieve strategic goals. ANDREW PELLER LIMITED, CL.A's compensation structure likely includes both short-term and long-term incentives."
+        }
+    },
+    "esg_scores": {
+        "esg_risk_score": null,
+        "esg_risk_severity": null,
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-12-31",
+            "revenue": 105385000,
+            "net_income": 7677000,
+            "ebitda": 17466000,
+            "debt": null,
+            "gross_profit": 39601000
+        },
+        {
+            "report_date": "2024-09-30",
+            "revenue": 109238000,
+            "net_income": 4560000,
+            "ebitda": 12716000,
+            "debt": null,
+            "gross_profit": 43489000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": 5,
+        "board_risk": 7,
+        "compensation_risk": 9,
+        "shareholder_rights_risk": 10,
+        "overall_risk": 9
+    },
+    "sentiment_data": [
+        {
+            "search_title": "What the Glencore-Teck coal deal means for the Canadian mining industry - CIM Magazine",
+            "search_summary": "What the Glencore-Teck coal deal means for the Canadian mining industry\u00a0\u00a0CIM Magazine",
+            "article_text": "Teck Resources announced on Monday the sale of the majority of its steelmaking coal operations to Swiss mining giant Glencore in a US$6.9 billion cash deal, with the remaining amount to be acquired by two steelmakers, totaling a US$9 billion deal.\n\nIn addition, Glencore has made commitments to Teck that it will retain a Canadian workforce and continue to operate the newly formed company, called Elk Valley Resources (EVR), in Canada through a head office in Vancouver and regional offices in Calgary, Alberta and Sparwood, B.C. and honour current Indigenous partnerships and work with other local Indigenous Nations to increase participation in its activities.\n\nThe ownership of EVR will be divided into three: 77 per cent of the company will be acquired by Glencore, while 20 per cent will be owned by Japan\u2019s Nippon Steel Corporation and the remaining three per cent by South Korean steel giant POSCO.\n\nA timeline of the Glencore-Teck bid\n\nCIM Magazine covered the critical moments of the prolonged deal after several back-and-forth negotiations over the past year.\n\nFebruary 21, 2023: Teck announced intentions to split its business into two: Teck Metal Corps. for its copper-focused, base metals production, and EVR, a spin-off of its steelmaking coal business into a publicly traded company.\n\nApril 3, 2023: Teck rejected a 76 per cent Glencore merger proposal that would see Glencore acquire the entirety of Teck\u2019s business and create two standalone businesses, one metals-focused (MetalsCo) and a thermal and metallurgical coal miner (CoalCo). The unsolicited deal was priced at US$23.1 billion and Teck turned the deal down, stating that it ran contrary to the company\u2019s environmental, social and governance (ESG) commitments and put shareholders at \u201csignificant jurisdictional risk\u201d due to exposure to thermal coal and Glencore\u2019s oil trading.\n\nApril 11, 2023: Glencore added an additional US$8.2 billion cash component and 24 per cent ownership of MetalsCo, to its offer in a second attempt to acquire Teck, eight days after its rejection of the deal.\n\nApril 13, 2023: Teck rejected the new deal, citing a lack of change in Glencore\u2019s bid, other than the cash component.\n\nApril 19, 2023: Frustrations rose as Glencore CEO Gary Nagle wrote an open letter appealing to Teck\u2019s Class B shareholders, writing that Teck\u2019s board \u201cconsistently refused any engagement\u201d with Glencore. Nagle urged Class B shareholders, who owned a majority of the company\u2019s equity, to support Glencore\u2019s merger-demerger attempts amid looming share price value decline.\n\nApril 20, 2023: Sumitomo Metal Mining Co. (SMM), which held 18.9 per cent of Class A shares, part of the controlling shareholder group, announced that it would vote in favour of Teck\u2019s plans of separating its business into two independent companies.\n\nApril 26, 2023: Only hours before its annual shareholder meeting, Teck withdrew its separation plans to split the company but said it would pursue a simple and more direct approach in separating its companies. Glencore\u2019s proposal was still not being considered, Teck said in a press release.\n\nJune 11, 2023: After several months behind closed doors, Teck confirmed it was engaging in non-binding preliminary negotiations with Glencore to acquire Teck\u2019s steelmaking coal business.\n\nNovember 13, 2023: Teck announced the full sale of its steelmaking coal business.\n\nThe road ahead\n\nWhile the companies have agreed on the sale, the closure of the deal is pending federal government approval as a review under the Investment Canada Act (ICA) may take a long time.\n\nThe deal has received local opposition. In a video interview with BNN Bloomberg, Pierre Lassonde, chair emeritus at Franco-Nevada Mining, raised concerns over what this could mean for the Canadian mining industry.\n\n\u201cI\u2019m very disappointed, not for myself, but for Canada. For British Columbia, for the employees,\u201d Lassonde told BNN Bloomberg. \u201cElk Valley Resources is a great Canadian company, it\u2019s 11 per cent of British Columbia\u2019s economy, it\u2019s 11,000 jobs.\u201d\n\nBack in May, Lassonde offered to invest in Teck himself to save the company from Glencore\u2019s hostile takeover bid.\n\nScott Lunny, director of the United Steelworkers (USW) Western Canada union, which represents more than 4,000 Teck employees, highlighted the B.C. mining industry\u2019s leadership in ESG and sustainability goals and stated it will not support the deal without further commitments from Glencore.\n\n\u201cWe need specific assurances and details about future plans for the Elk Valley operations from Glencore, including its commitment to the Fording River Expansion (FRX), before we can consider support for this sale,\u201d Lunny said in a Nov. 15 news release.\n\nWhile Glencore has released details on promises to encourage the federal government to give the deal the greenlight, Lassonde questioned if the company will follow through given its track record.\n\n\u201cGlencore, last year, paid US$1.75 billion in penalties to the U.S., U.K. and to Brazil for bribery, market manipulation and corruption,\u201d Lassonde told BNN Bloomberg in the video interview. \u201cThey\u2019re not exactly choir boys.\u201d\n\nGlencore plans to move ahead to combine Teck\u2019s coal business with its coal assets when the acquisition is closed in the third-quarter of next year."
+        },
+        {
+            "search_title": "The RCC Retail Sustainability Conference 2023 - Grocery Business Magazine",
+            "search_summary": "The RCC Retail Sustainability Conference 2023\u00a0\u00a0Grocery Business Magazine",
+            "article_text": "Retail Council of Canada (RCC) hosted its 2023 Retail Sustainability Conference on October 3 and Grocery Business was there.\n\nThe full-day event brought retailers, value chain partners and leading industry speakers together around sector-specific strategies to support a circular economy, build resilient supply chains, establish a route to net zero emissions, and accelerate ESG solutions across all operations."
+        }
+    ]
+}

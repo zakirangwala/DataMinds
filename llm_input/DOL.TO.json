@@ -1,0 +1,45 @@
+{
+    "company": {
+        "ticker": "DOL.TO",
+        "name": "DOLLARAMA INC",
+        "sector": "Consumer Defensive",
+        "industry": "Discount Stores",
+        "long_business_summary": "Dollarama Inc. operates a chain of dollar stores in Canada. Its stores offer general merchandise, consumables, and seasonal products. It also sells its products through online store. The company was formerly known as Dollarama Capital Corporation and changed its name to Dollarama Inc. in September 2009. Dollarama Inc. was founded in 1992 and is headquartered in Mount Royal, Canada.",
+        "market_cap": null,
+        "employees": null
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": 17.8,
+        "esg_risk_severity": "Negligible",
+        "environmental_score": null,
+        "social_score": 11.1,
+        "governance_score": 3.2
+    },
+    "financials": [
+        {
+            "report_date": "2024-10-31",
+            "revenue": 1562644000,
+            "net_income": 275806000,
+            "ebitda": 513146000,
+            "debt": null,
+            "gross_profit": 698716000
+        },
+        {
+            "report_date": "2024-07-31",
+            "revenue": 1563384000,
+            "net_income": 285942000,
+            "ebitda": 529533000,
+            "debt": null,
+            "gross_profit": 707195000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": 5,
+        "board_risk": 5,
+        "compensation_risk": 5,
+        "shareholder_rights_risk": 8,
+        "overall_risk": 5
+    },
+    "sentiment_data": []
+}

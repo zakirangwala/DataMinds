@@ -1,0 +1,45 @@
+{
+    "company": {
+        "ticker": "CSW-B.TO",
+        "name": "CORBY SPIRIT AND WINE LTD CLASS",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Wineries & Distilleries",
+        "long_business_summary": "Corby Spirit and Wine Limited, together with its subsidiaries, manufactures, markets, and imports spirits, wines, and ready-to-drink cocktails in Canada, the United States, the United Kingdom, and internationally. It offers its products under the J.P. Wiser's, Lot 40, Middleton, Meaghers, Canadian Shield, Pike Creek, Gooderham & Worts, Lamb's rum, Skrewball, Codigo 1530, Martelll, Havana Club, Polar Ice vodka, McGuinness liqueurs, Ungava Gin, Cabot Trail, Chic Choc, Kayak, Quartz, Malfy Gin, Slow Press, Stave & Steel, Mumm Napa, The Foreign Affair Winery, Absolut vodka, ALTOS, Chivas Regal, Aberlour, The Glenlivet and Ballantine's Scotch whiskies, Jameson Irish whiskey, Beefeater gin, Malibu rum, Kahl\u00faa liqueur, Mumm Champagne, Jacob's Creek, G.H. Mumm, Perrier-Jouet, Kenwood Vineyards, Royal Salute, Soho, Redbreast, Spot Whiskeys, Ramazzotti, Olmeca, Pernod, Cottage Springs, Stoneleigh, Nude, Ricard, Lillet, Brancott Estate, George Wyndham, Campo Viejo, and Wyndham Estate brands. The company was formerly known as Corby Distilleries Limited and changed its name to Corby Spirit and Wine Limited in November 2013. The company was incorporated in 1859 and is based in Toronto, Canada. Corby Spirit and Wine Limited operates as a subsidiary of Hiram Walker & Sons Limited.",
+        "market_cap": null,
+        "employees": null
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": null,
+        "esg_risk_severity": null,
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-12-31",
+            "revenue": 61652000,
+            "net_income": 7900000,
+            "ebitda": 17387000,
+            "debt": null,
+            "gross_profit": 31260000
+        },
+        {
+            "report_date": "2024-09-30",
+            "revenue": 65114000,
+            "net_income": 9299000,
+            "ebitda": 19349000,
+            "debt": null,
+            "gross_profit": 32948000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": null,
+        "board_risk": null,
+        "compensation_risk": null,
+        "shareholder_rights_risk": null,
+        "overall_risk": null
+    },
+    "sentiment_data": []
+}

@@ -51,101 +51,15 @@ def rate_limit():
 
     last_request_time = time.time()
 
+
 # tickers
 TICKERS = [
-    "ACX.TO",
-    "AKT-A.TO",
-    "ATH.TO",
-    "BIR.TO",
-    "CNE.TO",
-    "CJ.TO",
-    "FRU.TO",
-    "FEC.TO",
-    "GFR.TO",
-    "IPCO.TO",
-    "JOY.TO",
-    "KEC.TO",
-    "MEG.TO",
-    "NVA.TO",
-    "BR.TO",
-    "SOY.TO",
-    "ADW-A.TO",
-    "CSW-A.TO",
-    "CSW-B.TO",
-    "RSI.TO",
-    "DOL.TO",
-    "EMP-A.TO",
-    "WN-PA.TO",
-    "BU.TO",
-    "DTEA.V",
-    "HLF.TO",
-    "JWEL.TO",
-    "MFI.TO",
-    "OTEX.TO",
-    "DSG.TO",
-    "KXS.TO",
-    "SHOP.TO",
-    "CSU.TO",
-    "LSPD.TO",
-    "DCBO.TO",
-    "ENGH.TO",
-    "HAI.TO",
-    "TIXT.TO",
-    "DND.TO",
-    "ET.TO",
-    "BLN.TO",
-    "TSAT.TO",
-    "ALYA.TO",
     "BTE.TO",
 ]
 
 
 # List of companies
 COMPANIES = [
-    "ACT ENERGY TECHNOLOGIES LTD",
-    "AKITA DRILLING LTD., CL.A, NV",
-    "ATHABASCA OIL CORP",
-    "BIRCHCLIFF ENERGY LTD.",
-    "CANACOL ENERGY LTD",
-    "CARDINAL ENERGY LTD",
-    "FREEHOLD ROYALTIES LTD.",
-    "FRONTERA ENERGY CORPORATION",
-    "GREENFIRE RESOURCES LTD",
-    "INTERNATIONAL PETROLEUM CORPORA",
-    "JOURNEY ENERGY INC",
-    "KIWETINOHK ENERGY CORP",
-    "MEG ENERGY CORP.",
-    "NUVISTA ENERGY LTD.",
-    "BIG ROCK BREWERY INC.",
-    "MOLSON COORS CANADA INC., CL.A",
-    "LASSONDE INDUSTRIES INC., CL A",
-    "SUNOPTA, INC.",
-    "ANDREW PELLER LIMITED, CL.A",
-    "CORBY SPIRIT AND WINE LTD CLASS",
-    "ROGERS SUGAR INC",
-    "DOLLARAMA INC",
-    "EMPIRE COMPANY LIMITED",
-    "GEORGE WESTON LIMITED PR SERIES",
-    "BURCON NUTRASCIENCE CORPORATION",
-    "DAVIDSTEA INC",
-    "HIGH LINER",
-    "JAMIESON WELLNESS INC",
-    "MAPLE LEAF FOODS",
-    "OPEN TEXT CORPORATION",
-    "DESCARTES SYS",
-    "KINAXIS INC",
-    "SHOPIFY INC",
-    "CONSTELLATION SOFTWARE INC.",
-    "LIGHTSPEED COMMERCE INC",
-    "DOCEBO INC",
-    "ENGHOUSE SYSTEMS LIMITED",
-    "HAIVISION SYSTEMS INC",
-    "TELUS INTERNATIONAL CDA INC",
-    "DYE AND DURHAM LIMITED",
-    "EVERTZ TECHNOLOGIES LIMITED",
-    "BLACKLINE SAFETY CORP",
-    "TELESAT CORPORATION",
-    "ALITHYA GROUP INC",
     "BAYTEX ENERGY CORP."
 ]
 
@@ -328,15 +242,17 @@ def main(companies, tickers):
         return
 
     try:
-        # Find the index of CF.TO
-        try:
-            start_index = tickers.index("CF.TO") + 1
-        except ValueError:
-            logger.error(
-                "CF.TO not found in tickers list. Starting from beginning.")
-            start_index = 0
+        # Find the index of OPEN TEXT CORPORATION
+        # try:
+        #     start_index = companies.index("OPEN TEXT CORPORATION")
+        #     logger.info(
+        #         f"Starting from OPEN TEXT CORPORATION at index {start_index}")
+        # except ValueError:
+        #     logger.error(
+        #         "OPEN TEXT CORPORATION not found in companies list. Starting from beginning.")
+        start_index = 0
 
-        # Process each company starting after CF.TO
+        # Process each company starting after OPEN TEXT CORPORATION
         for i in range(start_index, len(companies)):
             company = companies[i]
             ticker = tickers[i]
@@ -365,8 +281,4 @@ def main(companies, tickers):
 if __name__ == "__main__":
     companies = COMPANIES
     tickers = TICKERS
-    # data = get_companies()
-
-    # companies = [item[0] for item in data]
-    # tickers = [item[1] for item in data]
     main(companies, tickers)

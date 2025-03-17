@@ -1,0 +1,51 @@
+{
+    "company": {
+        "ticker": "CNE.TO",
+        "name": "CANACOL ENERGY LTD",
+        "sector": "Energy",
+        "industry": "Oil & Gas E&P",
+        "long_business_summary": "Canacol Energy Ltd operates as an oil and gas company in Colombia. It engages in the exploration and development of natural gas. The company was formerly known as BrazAlta Resources Corp. and changed its name to Canacol Energy Ltd in February 2009. The company was incorporated in 1970 and is headquartered in Calgary, Canada. Canacol Energy Ltd operates as a subsidiary of CDS Clearing and Depository Services Inc.",
+        "market_cap": null,
+        "employees": 396
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": 24.4,
+        "esg_risk_severity": "Medium",
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-09-30",
+            "revenue": 94541000,
+            "net_income": 10346000,
+            "ebitda": 77560000,
+            "debt": null,
+            "gross_profit": 74287000
+        },
+        {
+            "report_date": "2024-06-30",
+            "revenue": 94571000,
+            "net_income": -21298000,
+            "ebitda": 66194000,
+            "debt": null,
+            "gross_profit": 75138000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": 1,
+        "board_risk": 6,
+        "compensation_risk": 3,
+        "shareholder_rights_risk": 2,
+        "overall_risk": 3
+    },
+    "sentiment_data": [
+        {
+            "search_title": "13 promising small-cap stocks - The Globe and Mail",
+            "search_summary": "13 promising small-cap stocks\u00a0\u00a0The Globe and Mail",
+            "article_text": "What we are looking for\n\nA Canadian small-cap name set to outperform based on a quantitative analysis model with a proven track record.\n\nThe London Stock Exchange Group\u2019s (LSEG) Starmine Relative Valuation Model is a quantitative model that measures how attractively valued a stock is using six valuation ratios: enterprise value (EV) to sales and EBITDA; price to earnings (P/E), cash flow and book value; and dividend (including share buyback) yield. For each of these ratios it considers trailing and forward 12-month periods, and for the forward (i.e. forecast) ratios it automatically puts more weight on forecasts from analysts that have historically been more accurate covering that particular stock and sector.\n\nOver the past 12 months, the model has a decile spread of 28 per cent for Canadian stocks. This means that the top 10 per cent as a group has outperformed the bottom 10 per cent by 28 per cent. However, when we look at small-cap stocks, this spread increases to 45 per cent. Put another way, if an investor simply bought the top 10 per cent and shorted the bottom 10 per cent, he or she would have earned a 45-per-cent one-year return (before transaction costs and the interest on short positions).\n\nMore about London Stock Exchange Group\n\nLSEG is one of the world\u2019s leading providers of financial markets infrastructure and delivers financial data, analytics, news and index products to more than 40,000 customers in 190 countries. Since 1698, we have been helping customers seize opportunities and create value.\n\nThe Screen\n\nWe start with a universe which is the TSX small-cap index.\n\nReplicating the top/bottom 10-per-cent strategy would involve more than 50 companies so, for simplification, we screen for only those scoring 100, i.e. the top 1 per cent.\n\nFor reference we include three of the underlying ratios used by the model: next 12-month EV/sales, P/E and dividend yield.\n\nWhat we found\n\nPromising small caps Company Ticker TRBC Industry Group EV/Sales P/E Dividend Yield Laurentian Bank of Canada LB-T Banking Services 1.07 6.79 7.4% Transcontinental Inc TCL-A-T Containers & Packaging 0.63 6.11 6.6% Alaris Equity Partners AD-UN-T Investment Banking & Investment Svcs 4.33 6.43 8.7% Neo Performance Materials NEO-T Metals & Mining 0.35 12.79 6.1% Kiwetinohk Energy Corp KEC-T Oil & Gas 1.22 2.85 0.0% InPlay Oil Corp IPO-T Oil & Gas 1.67 8.81 8.5% Canacol Energy Ltd CNE-T Oil & Gas 2.30 1.15 23.8% Gran Tierra Energy Inc GTE-T Oil & Gas 1.21 6.83 0.0% Obsidian Energy Ltd OBE-T Oil & Gas 1.03 1.97 0.0% Surge Energy Inc (Alberta) SGY-T Oil & Gas 1.24 3.10 7.1% Parex Resources Inc PXT-T Oil & Gas 2.91 4.10 7.3% Chorus Aviation Inc CHR-T Passenger Transportation Services 1.01 9.05 1.8% Cogeco Inc CGO-T Telecommunications Services 2.59 4.24 6.9% Source: LSEG\n\nMore than half of the companies scoring 100 are from the oil and gas sector. Valuation ratios are a double-edged sword, though. If a company\u2019s share price is low relative to forecast earnings, for example, that may be a sign that the stock is underappreciated by the market and should rally in the near future. However, it could also mean that the market doesn\u2019t value the longer-term prospects of the company or the industry \u2013 which may be the case for the oil and gas market in light of the energy transition. In a similar vein, it may also be that there is less demand for oil and gas stocks owing to increased focus on sustainability by big institutional investors.\n\nMining companies also traditionally aren\u2019t darlings of the ESG crowd, but Neo Performance Materials actually has a few sustainability-related tailwinds at its back. Neo is one of the world\u2019s largest producers of rare-earth magnetic powders which have numerous applications, including motors for electric vehicles and processes to remove phosphorus from waste water. The company also has geopolitical tailwinds as Western countries try to shore up supply chains of rare earths and reduce reliance on China.\n\nAnother interesting name is Alaris Equity Partners. Owning units of this company would provide exposure to one of the, if not the, hottest areas of the investment industry today \u2013 private equity \u2013 which is generally only accessible to institutional investors and ultrahigh-net-worth individuals. Headquartered in Calgary, Altaris provides financing to private companies, and its current portfolio includes companies in a diverse range of industries including health care, aerospace, retailing, steel, mining, business services and fitness. It is also sitting on more than $300-million of capital ready to be deployed in new investments \u2013 which could allow it to be opportunistic with new investments in the near future.\n\nHugh Smith, CFA, MBA, is Director, Analytics at London Stock Exchange Group."
+        }
+    ]
+}

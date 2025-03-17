@@ -1,0 +1,45 @@
+{
+    "company": {
+        "ticker": "TPX-A.TO",
+        "name": "MOLSON COORS CANADA INC., CL.A,",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Brewers",
+        "long_business_summary": "Molson Coors Canada Inc. brews, markets, sells, and distributes various beer brands in the Americas, Europe, the Middle East, Africa, and the Asia-Pacific. The company sells its products under the Aguila, Apantinsko, AriZona Hard, Arnold Palmer Spiked, Aspall, Astika, Bergenbier, Bergenbier Non-Alcoholic, Black Horse, Black Ice, Blue Moon, Blue Run Spirits, Bohemian, Borsodi, Branik, Brasseur de Montr\u00e9al, Burgasko, Caffrey's, Carling, Carling Cider, Cobra, Cool, Coors, Coors Banquet, Coors Edge, Coors Light, Coors Original, Coors Seltzer, Coors Whiskey Company, Creemore Springs, Cristal, Cusque\u00f1a, Fine Company, Foster's, Franciscan Well, Fresh, George Killian's Irish Red, Golden Wing, Granville Island Brewing, Grif, Grolsch, Hamm's, Happy Thursday, Henry Weinhard's Gourmet Sodas, Hop Valley, Icehouse, India Beer, Jelen, Kamenitza, Kamenitza Non-Alcoholic, Keystone Light, Laurentide, Lech, and Leinenkugel's brands. It also offers its products under the Madr\u00ed Excepcional, Mickey's, Miller Chill, Miller Genuine Draft, Miller High Life, Miller Lite, Miller64 Extra Light, Milwaukee's Best, Molson Canadian, Molson Canadian Cold Shots, Molson Dry, Molson Exel, Molson Export, Molson Stock Ale, Molson Ultra, Nik\u009aicko, Noroc, Okeefe, Old Style Pilsner, Old Vienna, Olde English 800, Ostravar, O\u009eujsko, Pardubick\u00fd Pivovar, Peace Hard Tea, Peroni, Pilsner Urquell, Praha, Pravha, R\u00e1k\u00f3czi, Redd's Hard Apple, Redd's Wicked, Rekorderlig, Rickard's, Riesenbrau, Roxie, Sharp's, Simply Spiked, Sol Cerveza, Standard Lager, Staropramen, Staropramen Non-Alcoholic, Steel Reserve Alloy Series, Steel Reserve High Gravity, Stones Bitter, Sunny Provisions, Tarquin's, Topo Chico Hard Seltzer, Topo Chico Spirited, Trou Du Diable, Twin Fin, Tyskie, Velvet, Vizzy Hard Seltzer, Vukovarsko, WAI, Worthington's, Zima, and ZOA brands. The company was incorporated in 2005 and is based in Montreal, Canada. Molson Coors Canada Inc. operates as a subsidiary of Molson Coors Beverage Company.",
+        "market_cap": null,
+        "employees": null
+    },
+    "esg_report_analysis": {},
+    "esg_scores": {
+        "esg_risk_score": null,
+        "esg_risk_severity": null,
+        "environmental_score": null,
+        "social_score": null,
+        "governance_score": null
+    },
+    "financials": [
+        {
+            "report_date": "2024-12-31",
+            "revenue": 2735600000,
+            "net_income": 287800000,
+            "ebitda": 604900000,
+            "debt": null,
+            "gross_profit": 1037500000
+        },
+        {
+            "report_date": "2024-09-30",
+            "revenue": 3042700000,
+            "net_income": 199800000,
+            "ebitda": 693200000,
+            "debt": null,
+            "gross_profit": 1202500000
+        }
+    ],
+    "governance_risk": {
+        "audit_risk": null,
+        "board_risk": null,
+        "compensation_risk": null,
+        "shareholder_rights_risk": null,
+        "overall_risk": null
+    },
+    "sentiment_data": []
+}

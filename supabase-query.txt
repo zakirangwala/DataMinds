@@ -1,0 +1,69 @@
+-- Get company details
+SELECT * FROM companies
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
+
+-- Get financial data
+SELECT * FROM financials
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
+
+-- Get market data
+SELECT * FROM market_data
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
+
+-- Get governance and risk data
+SELECT * FROM governance_risk
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
+
+-- Get ESG scores
+SELECT * FROM esg_scores
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
+
+-- Get sentiment data
+SELECT * FROM sentiment_data
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
+
+-- Get ESG report analysis
+SELECT * FROM esg_report_analysis
+WHERE ticker IN (
+    'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
+    'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
+    'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
+    'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
+    'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+);
