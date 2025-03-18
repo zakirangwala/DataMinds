@@ -9,8 +9,8 @@ function App() {
       <Routes>
         {/* Home page */}
         <Route path="/" element={<Home />} />
-        {/* Detail page, accessed via /company/:slug */}
-        <Route path="/company/:slug" element={<CompanyDetail />} />
+        {/* Detail page, accessed via /company/:ticker */}
+        <Route path="/company/:ticker" element={<CompanyDetail />} />
       </Routes>
     </Router>
   );

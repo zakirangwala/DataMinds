@@ -17,20 +17,20 @@ const ESGDefinitionCards = () => {
       >
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "80px",
+            height: "80px",
             borderRadius: "50%",
-            backgroundColor: "black",
+            backgroundColor: "#1C1C1C",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             marginBottom: "10px",
           }}
         >
-          <span style={{ color: "green", fontSize: "20px", fontWeight: "bold" }}>E</span>
+          <span style={{ color: "#48EB6C", fontSize: "55px", fontWeight: "bold" }}>E</span>
         </div>
-        <h3 style={{ color: "#fff", fontWeight: "bold" }}>Environmental</h3>
-        <p style={{ color: "#ccc" }}>
+        <h3 style={{ color: "#fff", fontWeight: "bold", margin: 0 }}>Environmental</h3>
+        <p style={{ color: "#fff", margin: 0 }}>
           Evaluates how a company affects the environment, including carbon emissions, renewable energy use, 
           water conservation, waste management, and climate risk strategies.
         </p>
@@ -50,20 +50,20 @@ const ESGDefinitionCards = () => {
       >
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "80px",
+            height: "80px",
             borderRadius: "50%",
-            backgroundColor: "black",
+            backgroundColor: "#1C1C1C",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             marginBottom: "10px",
           }}
         >
-          <span style={{ color: "blue", fontSize: "20px", fontWeight: "bold" }}>S</span>
+          <span style={{ color: "#2BC6FF", fontSize: "55px", fontWeight: "bold" }}>S</span>
         </div>
-        <h3 style={{ color: "#fff", fontWeight: "bold" }}>Social</h3>
-        <p style={{ color: "#ccc" }}>
+        <h3 style={{ color: "#fff", fontWeight: "bold", margin: 0 }}>Social</h3>
+        <p style={{ color: "#fff", margin: 0 }}>
           Examines how a company interacts with employees, customers, and communities, focusing on fair labor 
           practices, diversity, human rights, social responsibility, and product safety.
         </p>
@@ -83,20 +83,20 @@ const ESGDefinitionCards = () => {
       >
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "80px",
+            height: "80px",
             borderRadius: "50%",
-            backgroundColor: "black",
+            backgroundColor: "#1C1C1C",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             marginBottom: "10px",
           }}
         >
-          <span style={{ color: "purple", fontSize: "20px", fontWeight: "bold" }}>G</span>
+          <span style={{ color: "#AD6CDE", fontSize: "55px", fontWeight: "bold" }}>G</span>
         </div>
-        <h3 style={{ color: "#fff", fontWeight: "bold" }}>Governance</h3>
-        <p style={{ color: "#ccc" }}>
+        <h3 style={{ color: "#fff", fontWeight: "bold", margin: 0 }}>Governance</h3>
+        <p style={{ color: "#fff", margin: 0 }}>
           Assesses the integrity and accountability of a company's leadership, including board diversity, 
           executive pay, transparency, regulatory compliance, and ethical business practices.
         </p>
