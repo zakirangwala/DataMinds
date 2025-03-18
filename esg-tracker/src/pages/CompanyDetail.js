@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import ESGScoreCard from "../components/ESGScoreCard";
@@ -30,11 +30,51 @@ ChartJS.register(
 
 // Allowed tickers list
 const allowedTickers = [
-  'OTEX.TO', 'KXS.TO', 'DSG.TO', 'CSU.TO', 'SHOP.TO', 'LSPD.TO', 'DCBO.TO', 'ENGH.TO', 'HAI.TO', 'TIXT.TO', 
-  'ET.TO', 'BLN.TO', 'DND.TO', 'TSAT.TO', 'ALYA.TO', 'ACX.TO', 'AKT-A.TO', 'ATH.TO', 'BTE.TO', 'BIR.TO', 
-  'CNE.TO', 'CJ.TO', 'FRU.TO', 'FEC.TO', 'GFR.TO', 'IPCO.TO', 'JOY.TO', 'KEC.TO', 'MEG.TO', 'NVA.TO', 
-  'BR.TO', 'TPX-A.TO', 'LAS-A.TO', 'SOY.TO', 'ADW-A.TO', 'CSW-B.TO', 'RSI.TO', 'EMP-A.TO', 'DOL.TO', 
-  'WN-PA.TO', 'BU.TO', 'DTEA.V', 'HLF.TO', 'JWEL.TO', 'MFI.TO'
+  "OTEX.TO",
+  "KXS.TO",
+  "DSG.TO",
+  "CSU.TO",
+  "SHOP.TO",
+  "LSPD.TO",
+  "DCBO.TO",
+  "ENGH.TO",
+  "HAI.TO",
+  "TIXT.TO",
+  "ET.TO",
+  "BLN.TO",
+  "DND.TO",
+  "TSAT.TO",
+  "ALYA.TO",
+  "ACX.TO",
+  "AKT-A.TO",
+  "ATH.TO",
+  "BTE.TO",
+  "BIR.TO",
+  "CNE.TO",
+  "CJ.TO",
+  "FRU.TO",
+  "FEC.TO",
+  "GFR.TO",
+  "IPCO.TO",
+  "JOY.TO",
+  "KEC.TO",
+  "MEG.TO",
+  "NVA.TO",
+  "BR.TO",
+  "TPX-A.TO",
+  "LAS-A.TO",
+  "SOY.TO",
+  "ADW-A.TO",
+  "CSW-B.TO",
+  "RSI.TO",
+  "EMP-A.TO",
+  "DOL.TO",
+  "WN-PA.TO",
+  "BU.TO",
+  "DTEA.V",
+  "HLF.TO",
+  "JWEL.TO",
+  "MFI.TO",
 ];
 
 function CompanyDetail() {
@@ -44,71 +84,8 @@ function CompanyDetail() {
   const [sectorCompanies, setSectorCompanies] = useState([]);
   const [sectorAverages, setSectorAverages] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-  }, [ticker]);
-
-  const fetchData = async () => {
-    try {
-      // 1) Fetch basic company info
-      const { data: compData, error: compError } = await supabase
-        .from("companies")
-        .select("ticker, name, sector, long_business_summary")
-        .eq("ticker", ticker)
-        .single();
-      if (compError) throw compError;
-
-      // 2) Fetch ESG summaries
-      const { data: esgAnalysis, error: esgAnalysisError } = await supabase
-        .from("esg_report_analysis")
-        .select("environmental_summary, social_summary, governance_summary")
-        .eq("ticker", ticker)
-        .single();
-      if (esgAnalysisError && esgAnalysisError.code !== "PGRST116") throw esgAnalysisError;
-
-      // 3) Fetch numeric ESG scores
-      const { data: esgScores, error: esgScoresError } = await supabase
-        .from("final_esg_scores")
-        .select("environmental_score, social_score, governance_score, total_esg_score")
-        .eq("ticker", ticker)
-        .single();
-      if (esgScoresError && esgScoresError.code !== "PGRST116") throw esgScoresError;
-
-      // 4) Fetch sentiment articles
-      const { data: sentimentData, error: sentimentError } = await supabase
-        .from("sentiment_data")
-        .select("article_title, article_text, article_published, article_top_image, article_resolved_url, search_source_title")
-        .eq("ticker", ticker);
-      if (sentimentError) throw sentimentError;
-
-      const combined = {
-        ...compData,
-        environmental_summary: esgAnalysis?.environmental_summary || "Not available",
-        social_summary: esgAnalysis?.social_summary || "Not available",
-        governance_summary: esgAnalysis?.governance_summary || "Not available",
-        final_esg_scores: {
-          environmental_score: esgScores?.environmental_score ?? 0,
-          social_score: esgScores?.social_score ?? 0,
-          governance_score: esgScores?.governance_score ?? 0,
-          total_esg_score: esgScores?.total_esg_score ?? 0,
-        },
-        sentiment_data: sentimentData || [],
-      };
-
-      setCompany(combined);
-
-      await fetchSectorCompanies(combined.sector);
-      await fetchSectorAverages();
-    } catch (err) {
-      console.error("Error fetching data:", err);
-      setCompany(null);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   // Fetch companies in the same sector along with individual ESG component scores
-  const fetchSectorCompanies = async (sector) => {
+  const fetchSectorCompanies = useCallback(async (sector) => {
     try {
       const { data: secData, error: secError } = await supabase
         .from("companies")
@@ -123,7 +100,9 @@ function CompanyDetail() {
       const tickers = secData.map((c) => c.ticker);
       const { data: secESGData, error: secESGError } = await supabase
         .from("final_esg_scores")
-        .select("ticker, total_esg_score, environmental_score, social_score, governance_score")
+        .select(
+          "ticker, total_esg_score, environmental_score, social_score, governance_score"
+        )
         .in("ticker", tickers);
       if (secESGError) {
         console.error("Error fetching sector ESG scores:", secESGError);
@@ -131,7 +110,9 @@ function CompanyDetail() {
         return;
       }
       const merged = (secData || []).map((comp) => {
-        const matching = (secESGData || []).find((esg) => esg.ticker === comp.ticker);
+        const matching = (secESGData || []).find(
+          (esg) => esg.ticker === comp.ticker
+        );
         return {
           ...comp,
           total_esg_score: matching?.total_esg_score ?? 0,
@@ -145,10 +126,10 @@ function CompanyDetail() {
       console.error("Error in fetchSectorCompanies:", error);
       setSectorCompanies([]);
     }
-  };
+  }, []);
 
   // Fetch average ESG scores by sector
-  const fetchSectorAverages = async () => {
+  const fetchSectorAverages = useCallback(async () => {
     try {
       const { data: allCompanies, error: allError } = await supabase
         .from("companies")
@@ -170,7 +151,9 @@ function CompanyDetail() {
         return;
       }
       const merged = (allCompanies || []).map((comp) => {
-        const matching = (allESGData || []).find((esg) => esg.ticker === comp.ticker);
+        const matching = (allESGData || []).find(
+          (esg) => esg.ticker === comp.ticker
+        );
         return {
           ...comp,
           total_esg_score: matching?.total_esg_score ?? 0,
@@ -188,14 +171,87 @@ function CompanyDetail() {
       });
       const averages = Object.keys(groups).map((sec) => ({
         sector: sec,
-        average_esg: groups[sec].count > 0 ? (groups[sec].total / groups[sec].count).toFixed(0) : 0,
+        average_esg:
+          groups[sec].count > 0
+            ? (groups[sec].total / groups[sec].count).toFixed(0)
+            : 0,
       }));
       setSectorAverages(averages);
     } catch (error) {
       console.error("Error in fetchSectorAverages:", error);
       setSectorAverages([]);
     }
-  };
+  }, []);
+
+  const fetchData = useCallback(async () => {
+    try {
+      // 1) Fetch basic company info
+      const { data: compData, error: compError } = await supabase
+        .from("companies")
+        .select("ticker, name, sector, long_business_summary")
+        .eq("ticker", ticker)
+        .single();
+      if (compError) throw compError;
+
+      // 2) Fetch ESG summaries
+      const { data: esgAnalysis, error: esgAnalysisError } = await supabase
+        .from("esg_report_analysis")
+        .select("environmental_summary, social_summary, governance_summary")
+        .eq("ticker", ticker)
+        .single();
+      if (esgAnalysisError && esgAnalysisError.code !== "PGRST116")
+        throw esgAnalysisError;
+
+      // 3) Fetch numeric ESG scores
+      const { data: esgScores, error: esgScoresError } = await supabase
+        .from("final_esg_scores")
+        .select(
+          "environmental_score, social_score, governance_score, total_esg_score"
+        )
+        .eq("ticker", ticker)
+        .single();
+      if (esgScoresError && esgScoresError.code !== "PGRST116")
+        throw esgScoresError;
+
+      // 4) Fetch sentiment articles
+      const { data: sentimentData, error: sentimentError } = await supabase
+        .from("sentiment_data")
+        .select(
+          "article_title, article_text, article_published, article_top_image, article_resolved_url, search_source_title"
+        )
+        .eq("ticker", ticker);
+      if (sentimentError) throw sentimentError;
+
+      const combined = {
+        ...compData,
+        environmental_summary:
+          esgAnalysis?.environmental_summary || "Not available",
+        social_summary: esgAnalysis?.social_summary || "Not available",
+        governance_summary: esgAnalysis?.governance_summary || "Not available",
+        final_esg_scores: {
+          environmental_score: esgScores?.environmental_score ?? 0,
+          social_score: esgScores?.social_score ?? 0,
+          governance_score: esgScores?.governance_score ?? 0,
+          total_esg_score: esgScores?.total_esg_score ?? 0,
+        },
+        sentiment_data: sentimentData || [],
+      };
+
+      setCompany(combined);
+
+      await fetchSectorCompanies(combined.sector);
+      await fetchSectorAverages();
+    } catch (err) {
+      console.error("Error fetching data:", err);
+      setCompany(null);
+    } finally {
+      setLoading(false);
+    }
+  }, [ticker, fetchSectorCompanies, fetchSectorAverages]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   // Helper function to generate chart data for a given score type
   const getSectorChartDataFor = (scoreField, label) => {
@@ -249,7 +305,10 @@ function CompanyDetail() {
       ...baseChartOptions.plugins,
       legend: {
         ...baseChartOptions.plugins.legend,
-        labels: { ...baseChartOptions.plugins.legend.labels, font: { size: 10 } },
+        labels: {
+          ...baseChartOptions.plugins.legend.labels,
+          font: { size: 10 },
+        },
       },
       title: { ...baseChartOptions.plugins.title, font: { size: 12 } },
     },
@@ -268,7 +327,12 @@ function CompanyDetail() {
       ...smallFontChartOptions,
       scales: {
         x: { ...smallFontChartOptions.scales.x },
-        y: { ...smallFontChartOptions.scales.y, beginAtZero: false, min: yMin, max: yMax },
+        y: {
+          ...smallFontChartOptions.scales.y,
+          beginAtZero: false,
+          min: yMin,
+          max: yMax,
+        },
       },
     };
   };
@@ -302,19 +366,35 @@ function CompanyDetail() {
     sector === "Consumer Defensive";
 
   return (
-    <div style={{ backgroundColor: "#1B1D1E", minHeight: "100vh", color: "#fff" }}>
+    <div
+      style={{ backgroundColor: "#1B1D1E", minHeight: "100vh", color: "#fff" }}
+    >
       <div style={{ maxWidth: "960px", margin: "0 auto", padding: "2rem" }}>
         {/* Company Name & Sector */}
-        <h1 style={{ fontSize: "40px", marginBottom: "0.5rem", textAlign: "center" }}>
+        <h1
+          style={{
+            fontSize: "40px",
+            marginBottom: "0.5rem",
+            textAlign: "center",
+          }}
+        >
           {name?.toUpperCase() || "Not available"}
         </h1>
-        <p style={{ margin: "0 0 1rem 0", fontSize: "18px", textAlign: "center" }}>
+        <p
+          style={{
+            margin: "0 0 1rem 0",
+            fontSize: "18px",
+            textAlign: "center",
+          }}
+        >
           Sector: {sector || "Not available"}
         </p>
 
         {/* Business Summary */}
         <h2 style={{ marginBottom: "1rem" }}>Business Summary</h2>
-        <p style={{ fontSize: "16px" }}>{long_business_summary || "Not available"}</p>
+        <p style={{ fontSize: "16px" }}>
+          {long_business_summary || "Not available"}
+        </p>
 
         {/* ESG Score Card */}
         <h2 style={{ marginTop: "2rem" }}>ESG Scores</h2>
@@ -323,16 +403,22 @@ function CompanyDetail() {
         {/* ESG Summaries */}
         <h2 style={{ marginTop: "2rem" }}>ESG Breakdown</h2>
         <h3 style={{ marginTop: "1rem" }}>Environmental (E) Summary:</h3>
-        <p style={{ fontSize: "16px" }}>{environmental_summary || "Not available"}</p>
+        <p style={{ fontSize: "16px" }}>
+          {environmental_summary || "Not available"}
+        </p>
         <h3 style={{ marginTop: "1rem" }}>Social (S) Summary:</h3>
         <p style={{ fontSize: "16px" }}>{social_summary || "Not available"}</p>
         <h3 style={{ marginTop: "1rem" }}>Governance (G) Summary:</h3>
-        <p style={{ fontSize: "16px" }}>{governance_summary || "Not available"}</p>
+        <p style={{ fontSize: "16px" }}>
+          {governance_summary || "Not available"}
+        </p>
 
         {/* Sector Average ESG Chart (larger container) */}
         {sectorAverages.length > 0 && (
           <div style={{ marginTop: "2rem" }}>
-            <h2 style={{ fontSize: "18px", marginTop: "1rem" }}>Sector Average ESG</h2>
+            <h2 style={{ fontSize: "18px", marginTop: "1rem" }}>
+              Sector Average ESG
+            </h2>
             <div style={{ maxWidth: "600px", margin: "0 auto" }}>
               <Bar
                 data={{
@@ -363,21 +449,31 @@ function CompanyDetail() {
               }}
             >
               <div>
-                <h3 style={{ fontSize: "16px", textAlign: "center" }}>Environmental Score</h3>
+                <h3 style={{ fontSize: "16px", textAlign: "center" }}>
+                  Environmental Score
+                </h3>
                 {isLineChart ? (
                   <Line
-                    data={getSectorChartDataFor("environmental_score", "Environmental Score")}
+                    data={getSectorChartDataFor(
+                      "environmental_score",
+                      "Environmental Score"
+                    )}
                     options={smallFontChartOptions}
                   />
                 ) : (
                   <Bar
-                    data={getSectorChartDataFor("environmental_score", "Environmental Score")}
+                    data={getSectorChartDataFor(
+                      "environmental_score",
+                      "Environmental Score"
+                    )}
                     options={smallFontChartOptions}
                   />
                 )}
               </div>
               <div>
-                <h3 style={{ fontSize: "16px", textAlign: "center" }}>Social Score</h3>
+                <h3 style={{ fontSize: "16px", textAlign: "center" }}>
+                  Social Score
+                </h3>
                 {isLineChart ? (
                   <Line
                     data={getSectorChartDataFor("social_score", "Social Score")}
@@ -391,29 +487,45 @@ function CompanyDetail() {
                 )}
               </div>
               <div>
-                <h3 style={{ fontSize: "16px", textAlign: "center" }}>Governance Score</h3>
+                <h3 style={{ fontSize: "16px", textAlign: "center" }}>
+                  Governance Score
+                </h3>
                 {isLineChart ? (
                   <Line
-                    data={getSectorChartDataFor("governance_score", "Governance Score")}
+                    data={getSectorChartDataFor(
+                      "governance_score",
+                      "Governance Score"
+                    )}
                     options={smallFontChartOptions}
                   />
                 ) : (
                   <Bar
-                    data={getSectorChartDataFor("governance_score", "Governance Score")}
+                    data={getSectorChartDataFor(
+                      "governance_score",
+                      "Governance Score"
+                    )}
                     options={smallFontChartOptions}
                   />
                 )}
               </div>
               <div>
-                <h3 style={{ fontSize: "16px", textAlign: "center" }}>Total ESG Score</h3>
+                <h3 style={{ fontSize: "16px", textAlign: "center" }}>
+                  Total ESG Score
+                </h3>
                 {isLineChart ? (
                   <Line
-                    data={getSectorChartDataFor("total_esg_score", "Total ESG Score")}
+                    data={getSectorChartDataFor(
+                      "total_esg_score",
+                      "Total ESG Score"
+                    )}
                     options={smallFontChartOptions}
                   />
                 ) : (
                   <Bar
-                    data={getSectorChartDataFor("total_esg_score", "Total ESG Score")}
+                    data={getSectorChartDataFor(
+                      "total_esg_score",
+                      "Total ESG Score"
+                    )}
                     options={smallFontChartOptions}
                   />
                 )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import CompanyCard from "../components/CompanyCard";
@@ -10,20 +10,56 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // List of tickers to include
-  const allowedTickers = [
-    "OTEX.TO", "KXS.TO", "DSG.TO", "CSU.TO", "SHOP.TO", "LSPD.TO", "DCBO.TO", "ENGH.TO", "HAI.TO", "TIXT.TO",
-    "ET.TO", "BLN.TO", "DND.TO", "TSAT.TO", "ALYA.TO", "ACX.TO", "AKT-A.TO", "ATH.TO", "BTE.TO", "BIR.TO",
-    "CNE.TO", "CJ.TO", "FRU.TO", "FEC.TO", "GFR.TO", "IPCO.TO", "JOY.TO", "KEC.TO", "MEG.TO", "NVA.TO",
-    "BR.TO", "TPX-A.TO", "LAS-A.TO", "SOY.TO", "ADW-A.TO", "CSW-B.TO", "RSI.TO", "EMP-A.TO", "DOL.TO",
-    "WN-PA.TO", "BU.TO", "DTEA.V", "HLF.TO", "JWEL.TO", "MFI.TO",
-  ];
+  const fetchCompaniesData = useCallback(async () => {
+    // List of tickers to include
+    const allowedTickers = [
+      "OTEX.TO",
+      "KXS.TO",
+      "DSG.TO",
+      "CSU.TO",
+      "SHOP.TO",
+      "LSPD.TO",
+      "DCBO.TO",
+      "ENGH.TO",
+      "HAI.TO",
+      "TIXT.TO",
+      "ET.TO",
+      "BLN.TO",
+      "DND.TO",
+      "TSAT.TO",
+      "ALYA.TO",
+      "ACX.TO",
+      "AKT-A.TO",
+      "ATH.TO",
+      "BTE.TO",
+      "BIR.TO",
+      "CNE.TO",
+      "CJ.TO",
+      "FRU.TO",
+      "FEC.TO",
+      "GFR.TO",
+      "IPCO.TO",
+      "JOY.TO",
+      "KEC.TO",
+      "MEG.TO",
+      "NVA.TO",
+      "BR.TO",
+      "TPX-A.TO",
+      "LAS-A.TO",
+      "SOY.TO",
+      "ADW-A.TO",
+      "CSW-B.TO",
+      "RSI.TO",
+      "EMP-A.TO",
+      "DOL.TO",
+      "WN-PA.TO",
+      "BU.TO",
+      "DTEA.V",
+      "HLF.TO",
+      "JWEL.TO",
+      "MFI.TO",
+    ];
 
-  useEffect(() => {
-    fetchCompaniesData();
-  }, []);
-
-  const fetchCompaniesData = async () => {
     try {
       // Fetch basic company info
       const { data: companiesData, error: companiesError } = await supabase
@@ -38,7 +74,9 @@ function Home() {
       // Fetch final ESG scores for allowed tickers
       const { data: esgData, error: esgError } = await supabase
         .from("final_esg_scores")
-        .select("ticker, environmental_score, social_score, governance_score, total_esg_score")
+        .select(
+          "ticker, environmental_score, social_score, governance_score, total_esg_score"
+        )
         .in("ticker", allowedTickers);
 
       if (esgError) {
@@ -47,7 +85,9 @@ function Home() {
 
       // Merge companies with ESG scores by matching ticker
       const combined = (companiesData || []).map((comp) => {
-        const matchingESG = (esgData || []).find((esg) => esg.ticker === comp.ticker);
+        const matchingESG = (esgData || []).find(
+          (esg) => esg.ticker === comp.ticker
+        );
         return {
           ...comp,
           environmental_score: matchingESG?.environmental_score ?? 0,
@@ -63,7 +103,11 @@ function Home() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchCompaniesData();
+  }, [fetchCompaniesData]);
 
   if (loading) {
     return <p style={{ color: "#fff", padding: "1rem" }}>Loading...</p>;
@@ -85,21 +129,36 @@ function Home() {
   });
 
   return (
-    <div style={{ backgroundColor: "#1B1D1E", minHeight: "100vh", color: "#fff" }}>
-      <div style={{ width: "100%", maxWidth: "960px", margin: "0 auto", padding: "1rem" }}>
+    <div
+      style={{ backgroundColor: "#1B1D1E", minHeight: "100vh", color: "#fff" }}
+    >
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "960px",
+          margin: "0 auto",
+          padding: "1rem",
+        }}
+      >
         <ESGDefinitionCards />
 
         {/* Search Bar */}
-        <div style={{ position: "relative", marginTop: "1rem", marginBottom: "1rem" }}>
-          <i 
-            className="fa fa-search" 
-            style={{ 
-              position: "absolute", 
-              top: "50%", 
-              left: "1rem", 
-              transform: "translateY(-50%)", 
-              color: "#AAAAAD", 
-              fontSize: "16px" 
+        <div
+          style={{
+            position: "relative",
+            marginTop: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
+          <i
+            className="fa fa-search"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "1rem",
+              transform: "translateY(-50%)",
+              color: "#AAAAAD",
+              fontSize: "16px",
             }}
           ></i>
           <input
